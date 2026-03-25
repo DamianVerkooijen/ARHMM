@@ -1,0 +1,93 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void MapController_OnEnable_m7AB9F85EEB5F415817CEE6028544995964771D5A (void);
+extern void MapController_OnDisable_m25542BBF4FA07B59964F7C4B60CC63B8B92EB7B9 (void);
+extern void MapController_OnTrackablesChanged_m205179BDE0A459CF72FAD6B7A8DA85672E081F81 (void);
+extern void MapController_UpdateMarkerData_mFD19B085423B82697FA1DCDDC13ED801FCF46F72 (void);
+extern void MapController_RemoveMarkerData_m054D61C215C4B7F5084D4EF4BB94E0C2A716F5C8 (void);
+extern void MapController_HasAllMarkers_m2A67D26887691D7ECD8983B36A7158DE8C835E02 (void);
+extern void MapController_UpdateStatusUI_m8CF30E12BB0389631197B4B55BFB0276DFAD3514 (void);
+extern void MapController_HandleMapPlacement_m63F236384EC8D2887695B92189003BB316FC1EFE (void);
+extern void MapController_GetMapCenter_m88C98D78BA89B9137E44F9D508DCCCFC0617641D (void);
+extern void MapController_GetMapScale_m2927E9DAE325D84A66A93EC94012E741CF69F859 (void);
+extern void MapController_GetMapRotation_m9DB191492F8CB2D348CAFE767D9D13E1D67D3886 (void);
+extern void MapController_SpawnHelicopter_m6AE8BCCEDC2C2FDB21277C714F97BC81AE51686B (void);
+extern void MapController__ctor_m00E8FD02C6C4C34F39E2AE09EDB82BD51066766E (void);
+extern void U3CU3Ec__DisplayClass14_0__ctor_m988261421C7B78771499FC9BF04DB36C73C0B67E (void);
+extern void U3CU3Ec__DisplayClass14_0_U3CUpdateMarkerDataU3Eb__0_m217DAB75490F07DD0224E7C3C2B4E77F2D057B3F (void);
+extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
+extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[19] = 
+{
+	MapController_OnEnable_m7AB9F85EEB5F415817CEE6028544995964771D5A,
+	MapController_OnDisable_m25542BBF4FA07B59964F7C4B60CC63B8B92EB7B9,
+	MapController_OnTrackablesChanged_m205179BDE0A459CF72FAD6B7A8DA85672E081F81,
+	MapController_UpdateMarkerData_mFD19B085423B82697FA1DCDDC13ED801FCF46F72,
+	MapController_RemoveMarkerData_m054D61C215C4B7F5084D4EF4BB94E0C2A716F5C8,
+	MapController_HasAllMarkers_m2A67D26887691D7ECD8983B36A7158DE8C835E02,
+	MapController_UpdateStatusUI_m8CF30E12BB0389631197B4B55BFB0276DFAD3514,
+	MapController_HandleMapPlacement_m63F236384EC8D2887695B92189003BB316FC1EFE,
+	MapController_GetMapCenter_m88C98D78BA89B9137E44F9D508DCCCFC0617641D,
+	MapController_GetMapScale_m2927E9DAE325D84A66A93EC94012E741CF69F859,
+	MapController_GetMapRotation_m9DB191492F8CB2D348CAFE767D9D13E1D67D3886,
+	MapController_SpawnHelicopter_m6AE8BCCEDC2C2FDB21277C714F97BC81AE51686B,
+	MapController__ctor_m00E8FD02C6C4C34F39E2AE09EDB82BD51066766E,
+	U3CU3Ec__DisplayClass14_0__ctor_m988261421C7B78771499FC9BF04DB36C73C0B67E,
+	U3CU3Ec__DisplayClass14_0_U3CUpdateMarkerDataU3Eb__0_m217DAB75490F07DD0224E7C3C2B4E77F2D057B3F,
+	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
+	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[19] = 
+{
+	16629,
+	16629,
+	11216,
+	12632,
+	12632,
+	16206,
+	16629,
+	16629,
+	16618,
+	16618,
+	16462,
+	16629,
+	16629,
+	16629,
+	8908,
+	16629,
+	16629,
+	28819,
+	16629,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	19,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};

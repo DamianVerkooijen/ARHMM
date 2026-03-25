@@ -235,8 +235,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapMarkerManager
   imageManager: {fileID: 11943680}
   mapPrefab: {fileID: 5086116781729726922, guid: 23b7e874b94d5654ab915fcd519fdefb, type: 3}
+  helicopterPrefab: {fileID: 177118, guid: 594f3fc567628034db98d196d4b84924, type: 3}
   statusText: {fileID: 2071321357}
   smoothSpeed: 0.1
+  helicopterLocalOffset: {x: 0, y: 0.1, z: 0}
 --- !u!114 &213210566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,8 +253,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   imageManager: {fileID: 0}
   mapPrefab: {fileID: 0}
+  helicopterPrefab: {fileID: 0}
   statusText: {fileID: 0}
   smoothSpeed: 0.1
+  helicopterLocalOffset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &414603900
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +359,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &551235770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 177118, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_Name
+      value: Heli_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 993.7824
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 113.32005
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -300.75412
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430228, guid: 594f3fc567628034db98d196d4b84924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 594f3fc567628034db98d196d4b84924, type: 3}
 --- !u!1 &634858973
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,3 +960,4 @@ SceneRoots:
   - {fileID: 213210564}
   - {fileID: 414603904}
   - {fileID: 1242974786}
+  - {fileID: 551235770}
