@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/MapMakerPrototype.unity
+    path: Assets/Scenes/MapMakerPrototype.unity
+    guid: 81390783984057b4f9c0e549e4c186fa
+  - enabled: 0
+    path: Assets/Scenes/MapMakerPrototype.unity
     guid: 81390783984057b4f9c0e549e4c186fa
   - enabled: 1
-    path: Assets/Scenes/MapMakerPrototype.unity
-    guid: adfaa1bfbd38e3647af3ab0f6792dd07
+    path: Assets/Scenes/JoystickDemo.unity
+    guid: 07425dd0394398748a0276ca222a0874
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: de788ff07e48ca1498f55c8d9b42a9f2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
