@@ -834,7 +834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 113}
+  m_AnchoredPosition: {x: -300.00003, y: 159}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &523344850
@@ -1125,15 +1125,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 268787845018965174, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 268787845018965174, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 268787845018965174, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 268787845018965174, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1179,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4577422444929883920, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8405868121970845232, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_Name
       value: Helicopter
@@ -1194,6 +1198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8405868121970845232, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1003497069}
+    - targetCorrespondingSourceObject: {fileID: 8405868121970845232, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1003497075}
   m_SourcePrefab: {fileID: 100100000, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
 --- !u!1 &1003497068 stripped
 GameObject:
@@ -1214,13 +1221,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
   leftJoystick: {fileID: 1664082848}
   rightJoystick: {fileID: 2114929558}
-  speed: 2
-  turnSpeed: 90
+  speed: 0.25
+  turnSpeed: 45
 --- !u!4 &1003497072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 268787845018965174, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
   m_PrefabInstance: {fileID: 1003497067}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1003497075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003497068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c2b683e3a17e3449c99e599a45269d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotorCOntrol
+  mainRotor: {fileID: 1118629728}
+  tailRotor: {fileID: 1577892415}
+  mainRotorSpeed: 500
+  tailRotorSpeed: 500
+  mainRotorAxis: {x: 0, y: 1, z: 0}
+  tailRotorAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &1017883257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1278,16 @@ Transform:
   - {fileID: 116535546}
   m_Father: {fileID: 167453775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1118629728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6135254623786464503, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+  m_PrefabInstance: {fileID: 1003497067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1577892415 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 759939026309305747, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+  m_PrefabInstance: {fileID: 1003497067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1664082846
 PrefabInstance:
   m_ObjectHideFlags: 0
