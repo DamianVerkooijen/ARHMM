@@ -8,117 +8,165 @@ public class HelicopterManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ARTrackedImageManager imageManager;
-    [SerializeField] private GameObject helicopter;
+    [SerializeField] public GameObject helicopter;
     [SerializeField] private TMP_Text statusText;
 
-    [Header("Settings")]
     private readonly string[] requiredMarkers = { "TopLeft", "TopRight", "BottomLeft", "BottomRight" };
-    private Dictionary<string, ARTrackedImage> trackedMarkers = new Dictionary<string, ARTrackedImage>();
     
-    // We store the offsets so we know where the center is relative to each marker
+    // Memory of where markers are in the room
+    private Dictionary<string, Pose> savedMarkerPoses = new Dictionary<string, Pose>();
     private Dictionary<string, Vector3> markerOffsets = new Dictionary<string, Vector3>();
-    private bool hasSpawned = false;
+    
+    public bool hasSpawned = false;
     private GameObject masterAnchor;
+
+    [HideInInspector] public float minX, maxX, minZ, maxZ;
 
     private void OnEnable() => imageManager.trackablesChanged.AddListener(OnTrackablesChanged);
     private void OnDisable() => imageManager.trackablesChanged.RemoveListener(OnTrackablesChanged);
 
-    private void OnTrackablesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
+    private void Update()
     {
-        foreach (var img in eventArgs.added) UpdateMarker(img);
-        foreach (var img in eventArgs.updated) UpdateMarker(img);
-        foreach (var img in eventArgs.removed) 
-        {
-            if (trackedMarkers.ContainsKey(img.Value.referenceImage.name))
-                trackedMarkers.Remove(img.Value.referenceImage.name);
-        }
-
-        // 1. INITIAL SPAWN: Needs all 4
-        if (!hasSpawned && trackedMarkers.Count == 4)
+        // Only try to spawn if we have all 4 and haven't spawned yet
+        if (!hasSpawned && savedMarkerPoses.Count == 4)
         {
             InitialCalibration();
         }
 
-        // 2. CONTINUOUS TRACKING: Only needs 1
-        if (hasSpawned && trackedMarkers.Count > 0)
-        {
-            UpdateWorldAnchor();
-        }
+        if (hasSpawned) UpdateTrackingWithLiveMarkers();
 
         UpdateStatusUI();
     }
 
-    private void UpdateMarker(ARTrackedImage image)
+    private void OnTrackablesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
-        string name = image.referenceImage.name;
-        if (System.Array.Exists(requiredMarkers, m => m == name))
+        // Only register markers that are actively being tracked
+        foreach (var img in eventArgs.added) RegisterMarker(img);
+        foreach (var img in eventArgs.updated) RegisterMarker(img);
+    }
+
+    private void RegisterMarker(ARTrackedImage img)
+    {
+        // CRITICAL: Only save if the state is 'Tracking'
+        // If it's 'Limited', the camera is guessing and the data is 'fucked'
+        if (img.trackingState == TrackingState.Tracking)
         {
-            if (image.trackingState == TrackingState.Tracking)
-                trackedMarkers[name] = image;
-            else
-                trackedMarkers.Remove(name);
+            string name = img.referenceImage.name;
+            if (System.Array.Exists(requiredMarkers, m => m == name))
+            {
+                savedMarkerPoses[name] = new Pose(img.transform.position, img.transform.rotation);
+            }
+        }
+        else
+        {
+            // Optional: If a marker goes to 'None', you could choose to remove it from memory
+            // but for "Progressive Scan", we usually keep it once it's locked in.
         }
     }
 
     private void InitialCalibration()
     {
-        // Calculate the initial center
         Vector3 sumPos = Vector3.zero;
-        foreach (var m in trackedMarkers.Values) sumPos += m.transform.position;
+        foreach (var p in savedMarkerPoses.Values) sumPos += p.position;
         Vector3 centerPos = sumPos / 4f;
 
-        // Create an invisible anchor object at the center
+        if (masterAnchor != null) Destroy(masterAnchor);
         masterAnchor = new GameObject("Heli_World_Anchor");
         masterAnchor.transform.position = centerPos;
-        masterAnchor.transform.rotation = Quaternion.identity;
 
-        // Save how far each marker is from the center (the "blueprint")
-        foreach (var kvp in trackedMarkers)
+        // Align Rotation
+        if (savedMarkerPoses.ContainsKey("BottomLeft") && savedMarkerPoses.ContainsKey("BottomRight"))
         {
-            markerOffsets[kvp.Key] = masterAnchor.transform.position - kvp.Value.transform.position;
+            Vector3 tableRight = (savedMarkerPoses["BottomRight"].position - savedMarkerPoses["BottomLeft"].position).normalized;
+            Vector3 tableForward = Vector3.Cross(tableRight, Vector3.up);
+            masterAnchor.transform.rotation = Quaternion.LookRotation(tableForward, Vector3.up);
         }
 
-        // Place the helicopter at the anchor and make it a CHILD
+        // Calculate Bounds
+        minX = minZ = float.MaxValue;
+        maxX = maxZ = float.MinValue;
+
+        foreach (var kvp in savedMarkerPoses)
+        {
+            Vector3 localPos = masterAnchor.transform.InverseTransformPoint(kvp.Value.position);
+            markerOffsets[kvp.Key] = -localPos;
+
+            if (localPos.x < minX) minX = localPos.x;
+            if (localPos.x > maxX) maxX = localPos.x;
+            if (localPos.z < minZ) minZ = localPos.z;
+            if (localPos.z > maxZ) maxZ = localPos.z;
+        }
+
         helicopter.SetActive(true);
-        helicopter.transform.position = centerPos;
         helicopter.transform.SetParent(masterAnchor.transform);
+        helicopter.transform.localPosition = Vector3.zero;
+        helicopter.transform.localRotation = Quaternion.identity;
 
         hasSpawned = true;
     }
 
-    private void UpdateWorldAnchor()
+    private void UpdateTrackingWithLiveMarkers()
     {
-        // Find the first marker we can see
-        foreach (var kvp in trackedMarkers)
+        foreach (var img in imageManager.trackables)
         {
-            if (markerOffsets.ContainsKey(kvp.Key))
+            // Only update position if we are currently looking at a marker
+            if (img.trackingState == TrackingState.Tracking && markerOffsets.ContainsKey(img.referenceImage.name))
             {
-                // Move the Master Anchor to its correct spot relative to this single marker
-                masterAnchor.transform.position = kvp.Value.transform.position + markerOffsets[kvp.Key];
-                
-                // Once we update from ONE marker, we stop (to avoid jitter from multiple markers)
-                break;
+                masterAnchor.transform.position = img.transform.position + masterAnchor.transform.TransformDirection(markerOffsets[img.referenceImage.name]);
+                break; 
             }
         }
     }
 
-    private void UpdateStatusUI(string message = null)
+    private void UpdateStatusUI()
     {
         if (statusText == null) return;
-        if (!string.IsNullOrEmpty(message)) { statusText.text = message; return; }
 
-        if (!hasSpawned)
-            statusText.text = $"Calibration: {trackedMarkers.Count}/4 Markers Found";
+        if (hasSpawned)
+        {
+            statusText.text = "<color=green>Scanning Complete!</color>";
+        }
         else
-            statusText.text = $"Tracking Active (Visible: {trackedMarkers.Count})";
+        {
+            // Show exactly which ones are missing
+            string missing = "";
+            foreach (var m in requiredMarkers)
+            {
+                if (!savedMarkerPoses.ContainsKey(m)) missing += m + " ";
+            }
+            statusText.text = $"Scanned: {savedMarkerPoses.Count}/4\nMissing: {missing}";
+        }
     }
 
     public void ResetHeli()
     {
         hasSpawned = false;
         if (masterAnchor != null) Destroy(masterAnchor);
+        
+        helicopter.transform.SetParent(null); // Detach before disabling
         helicopter.SetActive(false);
-        trackedMarkers.Clear();
+        
+        savedMarkerPoses.Clear();
         markerOffsets.Clear();
+
+        // RE-SCAN CHECK: Only grab what the camera sees AT THIS SECOND
+        foreach (var img in imageManager.trackables)
+        {
+            if (img.trackingState == TrackingState.Tracking)
+            {
+                RegisterMarker(img);
+            }
+        }
     }
+
+    public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
+{
+    if (!hasSpawned || masterAnchor == null) return Vector3.zero;
+
+    // Map 0-10 grid to local min/max
+    float localX = Mathf.Lerp(minX, maxX, gridX / 10f);
+    float localZ = Mathf.Lerp(minZ, maxZ, gridY / 10f);
+
+    return masterAnchor.transform.TransformPoint(new Vector3(localX, 0, localZ));
+}
 }

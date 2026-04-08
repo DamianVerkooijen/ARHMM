@@ -970,6 +970,14 @@
             "icon": null
           },
           {
+            "name": "CapsuleCollider",
+            "scenes": [
+              "Assets/Scenes/JoystickDemo.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "CharacterController",
             "scenes": [],
             "dependencyType": 0,
