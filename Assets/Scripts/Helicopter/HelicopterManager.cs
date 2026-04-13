@@ -25,6 +25,7 @@ public class HelicopterManager : MonoBehaviour
 
     private void OnTrackablesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
+<<<<<<< Updated upstream
         foreach (var img in eventArgs.added) UpdateMarker(img);
         foreach (var img in eventArgs.updated) UpdateMarker(img);
         foreach (var img in eventArgs.removed) 
@@ -35,6 +36,10 @@ public class HelicopterManager : MonoBehaviour
 
         // 1. INITIAL SPAWN: Needs all 4
         if (!hasSpawned && trackedMarkers.Count == 4)
+=======
+        // Only try to spawn if there's 4 markers
+        if (!hasSpawned && savedMarkerPoses.Count == 4)
+>>>>>>> Stashed changes
         {
             InitialCalibration();
         }
@@ -50,6 +55,7 @@ public class HelicopterManager : MonoBehaviour
 
     private void UpdateMarker(ARTrackedImage image)
     {
+<<<<<<< Updated upstream
         string name = image.referenceImage.name;
         if (System.Array.Exists(requiredMarkers, m => m == name))
         {
@@ -57,6 +63,23 @@ public class HelicopterManager : MonoBehaviour
                 trackedMarkers[name] = image;
             else
                 trackedMarkers.Remove(name);
+=======
+        // Only register markers that are actively being tracked
+        foreach (var img in eventArgs.added) RegisterMarker(img);
+        foreach (var img in eventArgs.updated) RegisterMarker(img);
+    }
+
+    private void RegisterMarker(ARTrackedImage img)
+    {
+        //Only save if the state is 'Tracking' else the data is not reliable enough (Limited means the camera guesses)
+        if (img.trackingState == TrackingState.Tracking)
+        {
+            string name = img.referenceImage.name;
+            if (System.Array.Exists(requiredMarkers, m => m == name))
+            {
+                savedMarkerPoses[name] = new Pose(img.transform.position, img.transform.rotation);
+            }
+>>>>>>> Stashed changes
         }
     }
 
