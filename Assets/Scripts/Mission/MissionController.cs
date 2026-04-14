@@ -10,6 +10,7 @@ public class MissionController : MonoBehaviour
     public TMP_Text statusText;
     public GameObject actionButton; 
     public float interactionRange = 0.15f;
+    public RadarMarker missionMarker;
 
     [Header("Mission List")]
     public List<Mission> missions = new List<Mission>();
@@ -61,6 +62,13 @@ public class MissionController : MonoBehaviour
         {
             actionButton.SetActive(false);
             statusText.text = missionActive ? $"Fly to Destination ({missions[currentMissionIndex].endGridPos})" : $"Fly to Start ({missions[currentMissionIndex].startGridPos})";
+        }
+
+        if (missionMarker != null)
+        {
+            // Bepaal huidige target (pad) positie
+            Vector3 targetPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
+            missionMarker.UpdatePosition(targetPos, manager.helicopter.transform.position);
         }
     }
 
