@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.google.ar.core.arfoundation.extensions": "https://github.com/google-ar/arcore-unity-extensions.git",
     "com.unity.ai.navigation": "2.0.11",
     "com.unity.collab-proxy": "2.11.4",
     "com.unity.device-simulator.devices": "1.0.1",

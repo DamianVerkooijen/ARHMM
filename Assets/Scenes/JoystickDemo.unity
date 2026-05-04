@@ -1683,10 +1683,24 @@ MonoBehaviour:
   actionButton: {fileID: 1989379950}
   interactionRange: 0.15
   missionMarker: {fileID: 1465698167}
+  scanDuration: 2
   missions:
-  - missionName: Basic_Mission
+  - missionName: Test Delivery
+    missionType: 0
     startGridPos: {x: 1, y: 1}
     endGridPos: {x: 10, y: 8}
+    searchTargets:
+    - {x: 2, y: 3}
+    scanTargets:
+    - {x: 4, y: 2}
+  - missionName: Test Search and Find
+    missionType: 1
+    startGridPos: {x: 3, y: 3}
+    endGridPos: {x: 7, y: 8}
+    searchTargets:
+    - {x: 3, y: 3}
+    - {x: 4, y: 3}
+    scanTargets: []
 --- !u!4 &1367559005
 Transform:
   m_ObjectHideFlags: 0
