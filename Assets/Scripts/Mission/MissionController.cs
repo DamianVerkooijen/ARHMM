@@ -12,6 +12,7 @@ public class MissionController : MonoBehaviour
     public float interactionRange = 0.15f;
     public RadarMarker missionMarker;
     public float scanDuration = 2f;
+    public LocationRegistry registry;
 
     [Header("Mission List")]
     public List<Mission> missions = new List<Mission>();
@@ -26,13 +27,14 @@ public class MissionController : MonoBehaviour
     public class Mission
     {
         public string missionName;
-        public MissionController.MissionType missionType;
+        public MissionType missionType;
 
-        public Vector2 startGridPos;
-        public Vector2 endGridPos;
+        // Using names instead of coordinates
+        [LocationName] public string startLocation;
+        [LocationName] public string endLocation;
 
-        public List<Vector2> searchTargets;
-        public List<Vector2> scanTargets;
+        [LocationName] public List<string> searchTargets;
+        [LocationName] public List<string> scanTargets;
     }
 
     public enum MissionType
@@ -109,28 +111,28 @@ public class MissionController : MonoBehaviour
     }
 
     private Vector2 GetCurrentTargetGrid(Mission currentMission)
+{
+    switch (currentMission.missionType)
     {
-        switch (currentMission.missionType)
-        {
-            case MissionType.Delivery:
-                return missionActive ? currentMission.endGridPos : currentMission.startGridPos;
+        case MissionType.Delivery:
+            string targetName = missionActive ? currentMission.endLocation : currentMission.startLocation;
+            return registry.GetPosition(targetName);
 
-            case MissionType.SearchFind:
-                if (currentMission.searchTargets != null && currentMission.searchTargets.Count > 0)
-                    return currentMission.searchTargets[currentTargetIndex];
-                break;
+        case MissionType.SearchFind:
+            if (currentMission.searchTargets != null && currentTargetIndex < currentMission.searchTargets.Count)
+                return registry.GetPosition(currentMission.searchTargets[currentTargetIndex]);
+            break;
 
-            case MissionType.Scan:
-                if (currentMission.scanTargets != null && currentMission.scanTargets.Count > 0)
-                    return currentMission.scanTargets[currentTargetIndex];
-                break;
+        case MissionType.Scan:
+            if (currentMission.scanTargets != null && currentTargetIndex < currentMission.scanTargets.Count)
+                return registry.GetPosition(currentMission.scanTargets[currentTargetIndex]);
+            break;
 
-            case MissionType.Free:
-                return currentMission.startGridPos;
-        }
-
-        return Vector2.zero;
+        case MissionType.Free:
+            return registry.GetPosition(currentMission.startLocation);
     }
+    return Vector2.zero;
+}
 
     private void HandleInRange(Mission currentMission)
     {
@@ -185,8 +187,8 @@ public class MissionController : MonoBehaviour
                 if (statusText != null)
                 {
                     statusText.text = missionActive
-                        ? $"Fly to Destination ({currentMission.endGridPos})"
-                        : $"Fly to Start ({currentMission.startGridPos})";
+                        ? $"Fly to Destination ({currentMission.endLocation})"
+                        : $"Fly to Start ({currentMission.startLocation})";
                 }
                 break;
 
