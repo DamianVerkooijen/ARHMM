@@ -2,71 +2,48 @@ using UnityEngine;
 
 public class HelicopterMovement : MonoBehaviour
 {
-    [Header("Input Joysticks")]
+    [Header("Controls")]
     public VariableJoystick leftJoystick;  // Movement/Strafe
-    public VariableJoystick rightJoystick; // Turn (Yaw)
+    public VariableJoystick rightJoystick; // Turn
     
     [Header("Flight Settings")]
-    public float speed = 2f;
-    public float turnSpeed = 90f;
+    public float speed = 0.25f;    // Movement speed 
+    public float turnSpeed = 90f; // Turn speed of right joystick
 
     [Header("Tilt Settings")]
-    public Transform modelTransform; // DRAG YOUR 3D MODEL CHILD HERE
-    public float leanAmount = 20f;
-    public float leanSpeed = 5f;
-
-    private float fixedY;
-
-    void Start()
-    {
-        // Capture the spawn height to keep it consistent
-        fixedY = transform.position.y;
-    }
+    public Transform modelTransform; // Visual model to tilt
+    public float leanAmount = 20f; // Tilt intensity
+    public float leanSpeed = 5f; // How fast it tilts
 
     void Update()
     {
-        // 1. Rotation (Yaw) - Right Stick Horizontal
+        // Rotation (Yaw)
         float turn = rightJoystick.Horizontal * turnSpeed * Time.deltaTime;
         transform.Rotate(0, turn, 0);
 
-        // 2. Movement Logic (Left Stick)
-        float moveX = leftJoystick.Horizontal;
-        float moveZ = leftJoystick.Vertical;
+        // Heading-Based Movement
+        Vector3 direction = (transform.forward * leftJoystick.Vertical) + (transform.right * leftJoystick.Horizontal);
+        transform.position += direction * speed * Time.deltaTime;
 
-        // Using your "Secret Sauce" forward/right logic
-        Vector3 direction = (transform.forward * moveZ) + (transform.right * moveX);
-        
-        // Apply movement while maintaining fixed height
-        Vector3 newPos = transform.position + (direction * speed * Time.deltaTime);
-        newPos.y = fixedY; 
-        transform.position = newPos;
-
-        // 3. Ground Clamp Safety
+        // Ground Clamp
         if (transform.localPosition.y < 0.1f) {
             transform.localPosition = new Vector3(transform.localPosition.x, 0.1f, transform.localPosition.z);
         }
 
-        // 4. Tilt Animation Logic
-        ApplyVisualTilt(moveX, moveZ);
-    }
+        // Visual Tilt Animation
+        // This only rotates the visual child 
+        if (modelTransform != null)
+        {
+            float targetPitch = leftJoystick.Vertical * leanAmount;
+            float targetRoll = -leftJoystick.Horizontal * leanAmount;
 
-    private void ApplyVisualTilt(float xInput, float zInput)
-    {
-        if (modelTransform == null) return;
+            Quaternion targetRot = Quaternion.Euler(targetPitch, 0, targetRoll);
 
-        // Pitch: Leaning forward/back (Z input)
-        // Roll: Leaning left/right (X input)
-        float targetPitch = zInput * leanAmount;
-        float targetRoll = -xInput * leanAmount;
-
-        // Create the target rotation relative to the parent
-        Quaternion targetRot = Quaternion.Euler(targetPitch, 0, targetRoll);
-
-        // Smoothly interpolate (Slerp) to the target tilt
-        modelTransform.localRotation = Quaternion.Slerp(
-            modelTransform.localRotation, 
-            targetRot, 
-            Time.deltaTime * leanSpeed
-        );
+            modelTransform.localRotation = Quaternion.Slerp(
+                modelTransform.localRotation, 
+                targetRot, 
+                Time.deltaTime * leanSpeed
+            );
+        }
     }
 }
