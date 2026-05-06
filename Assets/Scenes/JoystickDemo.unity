@@ -1529,6 +1529,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      propertyPath: leanSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      propertyPath: leanAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: leftJoystick
       value: 
       objectReference: {fileID: 1664082848}
@@ -1622,27 +1630,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MissionController
   manager: {fileID: 167453772}
   padPrefab: {fileID: 1297735875022845903, guid: 46551d2702cdda540915cb39927112a4, type: 3}
+  markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   statusText: {fileID: 794538076}
   actionButton: {fileID: 1989379950}
   interactionRange: 0.15
-  missionMarker: {fileID: 1465698167}
+  radarMarker: {fileID: 0}
   scanDuration: 2
   registry: {fileID: 2033452055}
   missions:
   - missionName: Test Delivery
     missionType: 0
-    startLocation: Location1
-    endLocation: Location2
+    missionColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 0.27058825}
+    isCompleted: 0
+    startLocation:
+      locationName: Location1
+      description: Deliver this chip froom my house to your hosue
+      reward: 0
+    endLocation:
+      locationName: Location3
+      description: final point
+      reward: 0
     searchTargets:
-    - Location1
-    scanTargets: []
+    - locationName: Location2
+      description: its me item
+      reward: 0
+    scanTargets:
+    - locationName: Location1
+      description: target
+      reward: 0
   - missionName: Test Search and Find
     missionType: 1
-    startLocation: Location5
-    endLocation: Location6
+    missionColor: {r: 0, g: 0.3921569, b: 0, a: 0.27058825}
+    isCompleted: 0
+    startLocation:
+      locationName: Location4
+      description: Look for 3 items in my house
+      reward: 0
+    endLocation:
+      locationName: Location6
+      description: final point
+      reward: 0
     searchTargets:
-    - Location3
-    - Location4
+    - locationName: Location5
+      description: item 1
+      reward: 0
+    - locationName: Location7
+      description: item 2
+      reward: 0
+    - locationName: Location4
+      description: item 3
+      reward: 0
     scanTargets: []
 --- !u!4 &1367559005
 Transform:
@@ -1693,7 +1730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0005950928}
+  m_AnchoredPosition: {x: 0, y: -0.00061035156}
   m_SizeDelta: {x: 0, y: 0.8200073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382429426
