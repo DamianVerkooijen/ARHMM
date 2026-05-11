@@ -164,8 +164,8 @@ public class HelicopterManager : MonoBehaviour
     if (!hasSpawned || masterAnchor == null) return Vector3.zero;
 
     // Map 0-10 grid to local min/max
-    float localX = Mathf.Lerp(minX, maxX, gridX / 10f);
-    float localZ = Mathf.Lerp(minZ, maxZ, gridY / 10f);
+    float localX = Mathf.Lerp(minX, maxX, gridX / 100f);
+    float localZ = Mathf.Lerp(minZ, maxZ, gridY / 100f);
 
     return masterAnchor.transform.TransformPoint(new Vector3(localX, 0, localZ));
 }

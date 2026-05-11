@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2419631306528236353}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000001809995, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0000003098612, y: 1.7110919, z: -6.1026206}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0.000001809995, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -580.6085, y: 273.4279, z: -743.9582}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 268787845018965174}
+  m_Father: {fileID: 8398895146117451888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2379671485337303121
 MeshFilter:
@@ -116,12 +116,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7306457311334133053}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000001809995, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000022159836, y: 2.8446393, z: -0.023149014}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0.000001809995, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -580.6085, y: 273.43918, z: -743.8974}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 268787845018965174}
+  m_Father: {fileID: 8398895146117451888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4824025466557445500
 MeshFilter:
@@ -180,6 +180,59 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7819708004035766792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8398895146117451888}
+  - component: {fileID: 9184224146725602748}
+  m_Layer: 0
+  m_Name: Helicopter_Visuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8398895146117451888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819708004035766792}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58060.85, y: -27341.076, z: 74389.72}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7902009007451347817}
+  - {fileID: 6135254623786464503}
+  - {fileID: 759939026309305747}
+  m_Father: {fileID: 268787845018965174}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9184224146725602748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819708004035766792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c2b683e3a17e3449c99e599a45269d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotorCOntrol
+  mainRotor: {fileID: 6135254623786464503}
+  tailRotor: {fileID: 759939026309305747}
+  mainRotorSpeed: 500
+  tailRotorSpeed: 500
+  mainRotorAxis: {x: 0, y: 1, z: 0}
+  tailRotorAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &8405868121970845232
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +243,8 @@ GameObject:
   m_Component:
   - component: {fileID: 268787845018965174}
   - component: {fileID: 4577422444929883920}
-  - component: {fileID: -5910774580169071434}
+  - component: {fileID: 4615827328298413093}
+  - component: {fileID: 7782918319312208205}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
@@ -207,13 +261,11 @@ Transform:
   m_GameObject: {fileID: 8405868121970845232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.484344, y: 87.15463, z: -170.81667}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 7902009007451347817}
-  - {fileID: 6135254623786464503}
-  - {fileID: 759939026309305747}
+  - {fileID: 8398895146117451888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4577422444929883920
@@ -237,7 +289,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.45, y: 2.92, z: 15.49}
   m_Center: {x: 0, y: 1.55, z: -3.2}
---- !u!114 &-5910774580169071434
+--- !u!114 &4615827328298413093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,11 +300,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b1b91f01bbc31e4fafd11312b3203a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HeliFlight
+  m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
   leftJoystick: {fileID: 0}
   rightJoystick: {fileID: 0}
-  speed: 2
+  speed: 0.25
   turnSpeed: 90
+  modelTransform: {fileID: 8398895146117451888}
+  leanAmount: 20
+  leanSpeed: 5
+--- !u!114 &7782918319312208205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8405868121970845232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45eb1bd37a6c284ab9aff75e2964317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoundaryManager
 --- !u!1 &8427593956636346305
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,12 +346,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8427593956636346305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000001809995, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0000015352334, y: 1.3855484, z: -0.8405488}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0.000001809995, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -580.6085, y: 273.4246, z: -743.9056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 268787845018965174}
+  m_Father: {fileID: 8398895146117451888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1087048088512397718
 MeshFilter:
