@@ -7,6 +7,6 @@ public class RadarScanner : MonoBehaviour
     void Update()
     {
         // Roteert om de Z-as (platte kant van de radar)
-        transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+        transform.localEulerAngles += new Vector3(0, 0, -rotationSpeed * Time.deltaTime);
     }
 }

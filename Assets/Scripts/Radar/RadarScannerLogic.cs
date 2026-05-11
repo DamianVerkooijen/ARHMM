@@ -5,6 +5,7 @@ public class RadarScannerLogic : MonoBehaviour
     public RadarMarker marker;
     public float scanWidth = 20f;
     private CanvasGroup markerCanvasGroup;
+    public Transform rotatingScanner;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class RadarScannerLogic : MonoBehaviour
         if (markerAngle < 0) markerAngle += 360;
 
         // Haal de hoek van de scannerhouder op
-        float scannerAngle = (transform.localEulerAngles.z % 360 + 360) % 360;
+        float scannerAngle = (rotatingScanner.localEulerAngles.z % 360 + 360) % 360;
 
         // Check of de hoeken overeenkomen (met scanWidth marge)
         float diff = Mathf.DeltaAngle(scannerAngle, markerAngle);

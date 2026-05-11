@@ -1,32 +1,35 @@
 using UnityEngine;
-
 public class RadarMarker : MonoBehaviour
 {
-    public Transform radarCenter; // Het midden van je radar
-    public float radarRadius = 100f; // Hoe groot is je radar in pixels?
-    public float maxWorldDistance = 5000f; // Hoe ver is "de rand" van je radar in Unity units?
+    public float radarRadius = 100f; // Straal van je UI cirkel
+    public float maxWorldDistance = 500f; // Pas dit aan naar de schaal van je wereld!
 
-    public void UpdatePosition(Vector3 targetWorldPos, Vector3 playerWorldPos)
+    public void UpdatePosition(Vector3 targetWorldPos, Vector3 playerWorldPos, float playerRotationY)
     {
-        Debug.Log("UpdatePosition aangeroepen!");
-        // Bereken de vector van speler naar doel
+        // 1. Bereken de relatieve positie in de wereld
         Vector3 relativePos = targetWorldPos - playerWorldPos;
 
-        // Converteer naar 2D voor de radar (X=X, Z=Y)
-        Vector2 radarPos = new Vector2(relativePos.x, relativePos.z);
+        // 2. Draai de positie mee met de helikopter (zodat 'vooruit' op de radar ook echt 'vooruit' is)
+        Vector3 rotatedPos = Quaternion.Euler(0, -playerRotationY, 0) * relativePos;
 
-        // Bereken de afstand en beperk deze tot de radar straal
-        float distance = radarPos.magnitude;
-        if (distance > maxWorldDistance)
+        // 3. Converteer naar 2D radar coördinaten (X en Z uit wereld worden X en Y in UI)
+        Vector2 radarPos = new Vector2(rotatedPos.x, rotatedPos.z);
+
+        // 4. Schalen: Hoe ver staat het doel t.o.v. de maximale afstand?
+        // Als maxWorldDistance 500 is en de target is op 250m, komt hij op de helft van de radarRadius.
+        float distanceRatio = radarPos.magnitude / maxWorldDistance;
+        
+        // Beperk de marker tot de rand van de radar
+        if (distanceRatio > 1f)
         {
             radarPos = radarPos.normalized * radarRadius;
         }
         else
         {
-            radarPos = (radarPos / maxWorldDistance) * radarRadius;
+            radarPos = radarPos.normalized * (distanceRatio * radarRadius);
         }
 
-        // Zet de positie in lokale ruimte van de RadarUI
-        transform.localPosition = radarPos;
+        // 5. Toepassen op de UI
+        transform.localPosition = new Vector3(radarPos.x, radarPos.y, 0);
     }
 }

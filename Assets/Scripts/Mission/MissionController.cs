@@ -66,9 +66,14 @@ public class MissionController : MonoBehaviour
 
         if (missionMarker != null)
         {
-            // Bepaal huidige target (pad) positie
             Vector3 targetPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
-            missionMarker.UpdatePosition(targetPos, manager.helicopter.transform.position);
+
+            // We sturen nu ook de rotatie van de helikopter mee (eulerAngles.y)
+            missionMarker.UpdatePosition(
+                targetPos,
+                manager.helicopter.transform.position,
+                manager.helicopter.transform.eulerAngles.y
+            );
         }
     }
 
