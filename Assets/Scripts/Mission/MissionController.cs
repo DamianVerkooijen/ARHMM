@@ -7,52 +7,51 @@ public class MissionController : MonoBehaviour
     [Header("Settings")]
     public HelicopterManager manager;
     public GameObject padPrefab;
+    public GameObject markerPrefab;
     public TMP_Text statusText;
     public GameObject actionButton;
-    public float interactionRange = 0.15f;
-    public RadarMarker missionMarker;
+    public float interactionRange = 0.5f; // Increased slightly for easier detection
+    public RadarMarker radarMarker;
     public float scanDuration = 2f;
     public LocationRegistry registry;
 
     [Header("Mission List")]
     public List<Mission> missions = new List<Mission>();
 
-    private int currentMissionIndex = 0;
+    private int selectedMissionIndex = -1;
     private int currentTargetIndex = 0;
     private bool missionActive = false;
     private GameObject activePad;
     private float scanTimer = 0f;
+    private List<GameObject> spawnedMarkers = new List<GameObject>();
+    private bool initialized = false;
 
-    [Header("UI Animation")]
-    public Animator panelAnimator;
-    public TMP_Text missionTaskText;
-    public TMP_Text missionDescriptionText;
+    [System.Serializable]
+    public class MissionTarget
+    {
+        [LocationName] public string locationName;
+        [TextArea] public string description;
+        public int reward;
+    }
 
     [System.Serializable]
     public class Mission
     {
         public string missionName;
         public MissionType missionType;
-
-        // Using names instead of coordinates
-        [LocationName] public string startLocation;
-        [LocationName] public string endLocation;
-
-        [LocationName] public List<string> searchTargets;
-        [LocationName] public List<string> scanTargets;
+        public Color missionColor = Color.yellow;
+        public bool isCompleted = false;
+        public MissionTarget startLocation;
+        public MissionTarget endLocation;
+        public List<MissionTarget> searchTargets;
+        public List<MissionTarget> scanTargets;
     }
 
-    public enum MissionType
-    {
-        Delivery,
-        SearchFind,
-        Scan,
-        Free
-    }
+    public enum MissionType { Delivery, SearchFind, Scan, Free }
+
     void Start()
     {
-        if (actionButton != null)
-            actionButton.SetActive(false);
+        if (actionButton != null) actionButton.SetActive(false);
 
         if (padPrefab != null)
         {
@@ -63,260 +62,209 @@ public class MissionController : MonoBehaviour
 
     void Update()
     {
-        // 1. Safety Checks
-        if (manager == null || !manager.hasSpawned || missions.Count == 0)
-            return;
-
-        if (manager.helicopter == null)
-            return;
-
-        // 2. Check if all missions are complete
-        if (currentMissionIndex >= missions.Count)
+        // SAFETY: Only spawn markers once the manager is actually ready
+        if (!initialized && manager != null && manager.hasSpawned)
         {
-            if (statusText != null)
-                statusText.text = "All Missions Complete!";
-
-            if (activePad != null)
-                activePad.SetActive(false);
-
-            if (actionButton != null)
-                actionButton.SetActive(false);
-
-            return;
+            SpawnWorldMarkers();
+            initialized = true;
         }
 
-        Mission currentMission = missions[currentMissionIndex];
-        Vector2 targetGrid = GetCurrentTargetGrid(currentMission);
+        if (!initialized || manager.helicopter == null) return;
 
-        // 3. Update Pad Position
-        if (activePad != null)
+        if (selectedMissionIndex == -1)
+            HandleMissionSelection();
+        else
+            HandleActiveMission();
+    }
+
+    public void SpawnWorldMarkers()
+    {
+        // Clean up old ones
+        foreach (var marker in spawnedMarkers) if (marker != null) Destroy(marker);
+        spawnedMarkers.Clear();
+
+        for (int i = 0; i < missions.Count; i++)
         {
-            activePad.SetActive(true);
-            activePad.transform.position = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
+            if (missions[i].isCompleted) continue;
+
+            Vector2 gridPos = GetFirstTargetPosition(missions[i]);
+            Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
+
+            // Offset Y so they don't hide in the floor
+            worldPos.y += 0.1f;
+
+            GameObject marker = Instantiate(markerPrefab, worldPos, Quaternion.identity, transform);
+
+            // Set Color
+            Renderer r = marker.GetComponentInChildren<Renderer>();
+            if (r != null)
+            {
+                // Create a unique instance of the material to avoid changing the prefab color
+                r.material = new Material(r.material);
+                r.material.color = missions[i].missionColor;
+            }
+
+            spawnedMarkers.Add(marker);
+        }
+        Debug.Log($"Spawned {spawnedMarkers.Count} mission markers.");
+    }
+
+    private void HandleMissionSelection()
+    {
+        if (activePad != null) activePad.SetActive(false);
+        statusText.text = "Fly to a marker to start a mission";
+
+        int closestIndex = -1;
+        float closestDist = interactionRange;
+
+        for (int i = 0; i < missions.Count; i++)
+        {
+            if (missions[i].isCompleted) continue;
+
+            Vector2 gridPos = GetFirstTargetPosition(missions[i]);
+            Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
+            float dist = GetFlatDistance(manager.helicopter.transform.position, worldPos);
+
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closestIndex = i;
+            }
         }
 
-        // 4. Range Check
-        float dist = GetFlatDistance(manager.helicopter.transform.position, activePad.transform.position);
-
-        if (dist < interactionRange)
+        if (closestIndex != -1)
         {
-            HandleInRange(currentMission);
+            statusText.text = $"[ {missions[closestIndex].missionName} ]\nPress Button to Start";
+            if (actionButton != null) actionButton.SetActive(true);
         }
         else
         {
-            HandleOutOfRange(currentMission);
+            if (actionButton != null) actionButton.SetActive(false);
         }
-
-        // 5. Update Radar Marker
-        if (missionMarker != null)
-        {
-            Vector3 targetPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
-
-            // We sturen nu ook de rotatie van de helikopter mee (eulerAngles.y)
-            missionMarker.UpdatePosition(
-                targetPos,
-                manager.helicopter.transform.position,
-                manager.helicopter.transform.eulerAngles.y
-            );
-        }
-    }
-
-    private Vector2 GetCurrentTargetGrid(Mission currentMission)
-{
-    switch (currentMission.missionType)
-    {
-        case MissionType.Delivery:
-            string targetName = missionActive ? currentMission.endLocation : currentMission.startLocation;
-            return registry.GetPosition(targetName);
-
-        case MissionType.SearchFind:
-            if (currentMission.searchTargets != null && currentTargetIndex < currentMission.searchTargets.Count)
-                return registry.GetPosition(currentMission.searchTargets[currentTargetIndex]);
-            break;
-
-        case MissionType.Scan:
-            if (currentMission.scanTargets != null && currentTargetIndex < currentMission.scanTargets.Count)
-                return registry.GetPosition(currentMission.scanTargets[currentTargetIndex]);
-            break;
-
-        case MissionType.Free:
-            return registry.GetPosition(currentMission.startLocation);
-    }
-    return Vector2.zero;
-}
-
-    public void TriggerMissionStartUI(string task, string description)
-    {
-        missionTaskText.text = task;
-        missionDescriptionText.text = description;
-        panelAnimator.Play("MissionPanel_Expand");
-    }
-
-    public void TriggerMissionCompleteUI()
-    {
-        missionTaskText.text = "Vlieg naar een missie";
-        panelAnimator.Play("MissionPanel_Collapse");
-    }
-
-    private void HandleInRange(Mission currentMission)
-    {
-        if (actionButton != null)
-            actionButton.SetActive(true);
-
-        switch (currentMission.missionType)
-        {
-            case MissionType.Delivery:
-                if (statusText != null)
-                {
-                    statusText.text = missionActive
-                        ? $"Arrived at Destination: {currentMission.missionName}"
-                        : "Ready to Start Mission?";
-                }
-                break;
-
-            case MissionType.SearchFind:
-                if (statusText != null)
-                    statusText.text = $"Found target {currentTargetIndex + 1}! Press button to collect.";
-                break;
-
-            case MissionType.Scan:
-                if (statusText != null)
-                    statusText.text = $"Scanning target {currentTargetIndex + 1}...";
-
-                scanTimer += Time.deltaTime;
-
-                if (scanTimer >= scanDuration)
-                {
-                    CompleteScanTarget();
-                }
-                break;
-
-            case MissionType.Free:
-                if (statusText != null)
-                    statusText.text = currentMission.missionName;
-                break;
-        }
-    }
-
-    private void HandleOutOfRange(Mission currentMission)
-    {
-        if (actionButton != null)
-            actionButton.SetActive(false);
-
-        scanTimer = 0f;
-
-        switch (currentMission.missionType)
-        {
-            case MissionType.Delivery:
-                if (statusText != null)
-                {
-                    statusText.text = missionActive
-                        ? $"Fly to Destination ({currentMission.endLocation})"
-                        : $"Fly to Start ({currentMission.startLocation})";
-                }
-                break;
-
-            case MissionType.SearchFind:
-                if (statusText != null)
-                    statusText.text = $"Fly to Search Target {currentTargetIndex + 1}";
-                break;
-
-            case MissionType.Scan:
-                if (statusText != null)
-                    statusText.text = $"Fly to Scan Target {currentTargetIndex + 1}";
-                break;
-
-            case MissionType.Free:
-                if (statusText != null)
-                    statusText.text = $"Fly freely: {currentMission.missionName}";
-                break;
-        }
-    }
-
-    private float GetFlatDistance(Vector3 a, Vector3 b)
-    {
-        return Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
     }
 
     public void OnActionButtonPressed()
     {
-        if (actionButton != null)
-            actionButton.SetActive(false);
+        if (selectedMissionIndex == -1)
+        {
+            // Find which one we are hovering over
+            for (int i = 0; i < missions.Count; i++)
+            {
+                if (missions[i].isCompleted) continue;
+                Vector2 pos = GetFirstTargetPosition(missions[i]);
+                float d = GetFlatDistance(manager.helicopter.transform.position, manager.GetWorldPositionFromGrid(pos.x, pos.y));
+                if (d < interactionRange)
+                {
+                    StartMission(i);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            ProcessMissionStep();
+        }
+    }
 
-        if (currentMissionIndex >= missions.Count)
-            return;
+    private void StartMission(int index)
+    {
+        selectedMissionIndex = index;
+        missionActive = false;
+        currentTargetIndex = 0;
+        foreach (var m in spawnedMarkers) if (m != null) m.SetActive(false);
+        Debug.Log("Mission Started: " + missions[index].missionName);
+    }
 
-        Mission currentMission = missions[currentMissionIndex];
+    private void HandleActiveMission()
+    {
+        Mission currentMission = missions[selectedMissionIndex];
+        Vector2 targetGrid = GetCurrentTargetGrid(currentMission);
+        Vector3 targetWorldPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
 
+        if (activePad != null)
+        {
+            activePad.SetActive(true);
+            activePad.transform.position = targetWorldPos;
+        }
+
+        if (radarMarker != null)
+            radarMarker.UpdatePosition(targetWorldPos, manager.helicopter.transform.position);
+
+        float dist = GetFlatDistance(manager.helicopter.transform.position, targetWorldPos);
+
+        if (dist < interactionRange)
+        {
+            if (actionButton != null) actionButton.SetActive(true);
+            statusText.text = missionActive ? currentMission.endLocation.description : currentMission.startLocation.description;
+
+            if (currentMission.missionType == MissionType.Scan)
+            {
+                scanTimer += Time.deltaTime;
+                statusText.text = $"Scanning... {Mathf.Round((scanTimer / scanDuration) * 100)}%";
+                if (scanTimer >= scanDuration) CompleteStep();
+            }
+        }
+        else
+        {
+            if (actionButton != null) actionButton.SetActive(false);
+            statusText.text = $"Goal: {currentMission.missionName}";
+        }
+    }
+
+    private void ProcessMissionStep()
+    {
+        Mission m = missions[selectedMissionIndex];
+        if (m.missionType == MissionType.Delivery)
+        {
+            if (!missionActive) { missionActive = true; scanTimer = 0; }
+            else FinishMission();
+        }
+        else if (m.missionType == MissionType.SearchFind)
+        {
+            currentTargetIndex++;
+            if (currentTargetIndex >= m.searchTargets.Count) FinishMission();
+        }
+    }
+
+    private void CompleteStep()
+    {
+        currentTargetIndex++;
+        scanTimer = 0f;
+        if (currentTargetIndex >= missions[selectedMissionIndex].scanTargets.Count) FinishMission();
+    }
+
+    private void FinishMission()
+    {
+        missions[selectedMissionIndex].isCompleted = true;
+        selectedMissionIndex = -1;
+        missionActive = false;
+        if (activePad != null) activePad.SetActive(false);
+        SpawnWorldMarkers();
+    }
+
+    private Vector2 GetFirstTargetPosition(Mission m)
+    {
+        if (m.missionType == MissionType.SearchFind && m.searchTargets != null && m.searchTargets.Count > 0)
+            return registry.GetPosition(m.searchTargets[0].locationName);
+        if (m.missionType == MissionType.Scan && m.scanTargets != null && m.scanTargets.Count > 0)
+            return registry.GetPosition(m.scanTargets[0].locationName);
+
+        return registry.GetPosition(m.startLocation.locationName);
+    }
+
+    private Vector2 GetCurrentTargetGrid(Mission currentMission)
+    {
         switch (currentMission.missionType)
         {
             case MissionType.Delivery:
-                if (!missionActive)
-                {
-                    missionActive = true;
-                    Debug.Log("MISSION STARTED: " + currentMission.missionName);
-                }
-                else
-                {
-                    Debug.Log("MISSION COMPLETE: " + currentMission.missionName);
-                    missionActive = false;
-                    currentMissionIndex++;
-                    ResetMissionState();
-                }
-                break;
-
+                return registry.GetPosition(missionActive ? currentMission.endLocation.locationName : currentMission.startLocation.locationName);
             case MissionType.SearchFind:
-                CollectSearchTarget();
-                break;
-
-            case MissionType.Free:
-                Debug.Log("FREE MISSION COMPLETE: " + currentMission.missionName);
-                currentMissionIndex++;
-                ResetMissionState();
-                break;
+                return registry.GetPosition(currentMission.searchTargets[currentTargetIndex].locationName);
+            case MissionType.Scan:
+                return registry.GetPosition(currentMission.scanTargets[currentTargetIndex].locationName);
         }
+        return registry.GetPosition(currentMission.startLocation.locationName);
     }
 
-    private void CollectSearchTarget()
-    {
-        Mission currentMission = missions[currentMissionIndex];
-
-        Debug.Log("SEARCH TARGET FOUND: " + currentMission.missionName + " | Target " + (currentTargetIndex + 1));
-
-        currentTargetIndex++;
-
-        if (currentMission.searchTargets == null || currentTargetIndex >= currentMission.searchTargets.Count)
-        {
-            Debug.Log("SEARCH MISSION COMPLETE: " + currentMission.missionName);
-            currentMissionIndex++;
-            ResetMissionState();
-        }
-    }
-
-    private void CompleteScanTarget()
-    {
-        if (currentMissionIndex >= missions.Count)
-            return;
-
-        Mission currentMission = missions[currentMissionIndex];
-
-        Debug.Log("SCAN TARGET COMPLETE: " + currentMission.missionName + " | Target " + (currentTargetIndex + 1));
-
-        scanTimer = 0f;
-        currentTargetIndex++;
-
-        if (currentMission.scanTargets == null || currentTargetIndex >= currentMission.scanTargets.Count)
-        {
-            Debug.Log("SCAN MISSION COMPLETE: " + currentMission.missionName);
-            currentMissionIndex++;
-            ResetMissionState();
-        }
-    }
-
-    private void ResetMissionState()
-    {
-        currentTargetIndex = 0;
-        scanTimer = 0f;
-        missionActive = false;
-    }
+    private float GetFlatDistance(Vector3 a, Vector3 b) => Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
 }
