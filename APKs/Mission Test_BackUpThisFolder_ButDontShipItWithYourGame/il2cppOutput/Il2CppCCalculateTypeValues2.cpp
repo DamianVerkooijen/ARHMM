@@ -4730,7 +4730,6 @@ struct HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702  : public Mo
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___modelTransform;
 	float ___leanAmount;
 	float ___leanSpeed;
-	float ___fixedY;
 };
 struct Joystick_tE3193C48A43E3F5577CBD4E9A8204BBFF2FEEB7A  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {

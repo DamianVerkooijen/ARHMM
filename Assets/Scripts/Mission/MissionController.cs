@@ -91,7 +91,7 @@ public class MissionController : MonoBehaviour
             Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
 
             // Offset Y so they don't hide in the floor
-            worldPos.y += 0.5f;
+            worldPos.y += 0.1f;
 
             GameObject marker = Instantiate(markerPrefab, worldPos, Quaternion.identity, transform);
 

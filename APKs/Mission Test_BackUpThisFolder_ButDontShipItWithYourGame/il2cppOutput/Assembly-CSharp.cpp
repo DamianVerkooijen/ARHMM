@@ -1901,7 +1901,6 @@ struct HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702  : public Mo
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___modelTransform;
 	float ___leanAmount;
 	float ___leanSpeed;
-	float ___fixedY;
 };
 struct Joystick_tE3193C48A43E3F5577CBD4E9A8204BBFF2FEEB7A  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -3056,9 +3055,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_deltaTime_mC3195000401F0FD167D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_Rotate_m7EA47AD57F43D478CCB0523D179950EE49CDA3E2 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, float ___0_xAngle, float ___1_yAngle, float ___2_zAngle, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_forward_mFCFACF7165FDAB21E80E384C494DF278386CEE2F (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_right_mC6DC057C23313802E2186A9E0DB760D795A758A4 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement_ApplyVisualTilt_m83378B40910D6114B9965640ABAED8FAA65A0307 (HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702* __this, float ___0_xInput, float ___1_zInput, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline (float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_localRotation_mD53D37611A5DAE93EC6C7BBCAC337408C5CACA77 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_Rotate_mAE711E1B1F639FDBA7B456E1E1B35DB90EEB737A (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_eulers, int32_t ___1_relativeTo, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PropertyAttribute__ctor_m19247686E165101F140615C7306DC2DA3953D97D (PropertyAttribute_t5E0CB5A6CDA6E24CBD4FF26DE3B0C29D8BB54BF0* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_0__ctor_m9CDAE531A46ABCABD3791B0A27873562F22456C9 (U3CU3Ec__DisplayClass2_0_tBB60C4163CBBA5B185E7535DAA072AF0CE0A1EE2* __this, const RuntimeMethod* method) ;
@@ -3180,7 +3176,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp01_mA7E048DBDA83
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Internal_Slerp_mDD63B8384FB0F0AAD4B59635B1D66D6ECB49E763 (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___0_a, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_b, float ___2_t, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Normalize_m1DE89849FE2019B6AA0031306896F3B800849399_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Internal_LookRotation_m489E6A5E916949FFE91C0B11A60C6016D996C1E0 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_forward, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_upwards, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Internal_FromEulerRad_mD0C4C0EFE1D70EC0EA4A92B11F1A4D5B0A134E49 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_euler, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Repeat_m6F1560A163481BB311D685294E1B463C3E4EB3BA_inline (float ___0_t, float ___1_length, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___0_array, int32_t ___1_index, int32_t ___2_length, const RuntimeMethod* method) ;
@@ -7446,33 +7441,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass16_0_U3CRegisterMar
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // Method Definition Index: 88102
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement_Start_mC00E363F763B3492B29BAD00F7EBD74D81BA8BDF (HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702* __this, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:23>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
-		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_0);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
-		L_1 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_0, NULL);
-		float L_2 = L_1.___y;
-		__this->___fixedY = L_2;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:24>
-		return;
-	}
-}
-// Method Definition Index: 88103
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement_Update_mBE9F1AE1457794E5132FC86C6B90A23D9F1DB4D1 (HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
-	float V_1 = 0.0f;
-	float V_2 = 0.0f;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_3;
-	memset((&V_3), 0, sizeof(V_3));
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_4;
-	memset((&V_4), 0, sizeof(V_4));
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
+	memset((&V_1), 0, sizeof(V_1));
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:29>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:21>
 		VariableJoystick_t95B6EAEAADB3D548017BF6A0EB1C6456C9FD30A6* L_0 = __this->___rightJoystick;
 		NullCheck(L_0);
 		float L_1;
@@ -7481,191 +7456,110 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement_Update_mBE9F1AE145779
 		float L_3;
 		L_3 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		V_0 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_1, L_2)), L_3));
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:30>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:22>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4;
 		L_4 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		float L_5 = V_0;
 		NullCheck(L_4);
 		Transform_Rotate_m7EA47AD57F43D478CCB0523D179950EE49CDA3E2(L_4, (0.0f), L_5, (0.0f), NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:33>
-		VariableJoystick_t95B6EAEAADB3D548017BF6A0EB1C6456C9FD30A6* L_6 = __this->___leftJoystick;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:25>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
+		L_6 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_6);
-		float L_7;
-		L_7 = Joystick_get_Horizontal_m78CF4472B86063E54254AC8AE0A52126E4008AFA(L_6, NULL);
-		V_1 = L_7;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:34>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7;
+		L_7 = Transform_get_forward_mFCFACF7165FDAB21E80E384C494DF278386CEE2F(L_6, NULL);
 		VariableJoystick_t95B6EAEAADB3D548017BF6A0EB1C6456C9FD30A6* L_8 = __this->___leftJoystick;
 		NullCheck(L_8);
 		float L_9;
 		L_9 = Joystick_get_Vertical_mA2B0917896CF9CE47A6D342D1734E43441C3D4BE(L_8, NULL);
-		V_2 = L_9;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:37>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_10;
-		L_10 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_10);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11;
-		L_11 = Transform_get_forward_mFCFACF7165FDAB21E80E384C494DF278386CEE2F(L_10, NULL);
-		float L_12 = V_2;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
-		L_13 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_11, L_12, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
-		L_14 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_14);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10;
+		L_10 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_7, L_9, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
+		L_11 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_11);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_12;
+		L_12 = Transform_get_right_mC6DC057C23313802E2186A9E0DB760D795A758A4(L_11, NULL);
+		VariableJoystick_t95B6EAEAADB3D548017BF6A0EB1C6456C9FD30A6* L_13 = __this->___leftJoystick;
+		NullCheck(L_13);
+		float L_14;
+		L_14 = Joystick_get_Horizontal_m78CF4472B86063E54254AC8AE0A52126E4008AFA(L_13, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
-		L_15 = Transform_get_right_mC6DC057C23313802E2186A9E0DB760D795A758A4(L_14, NULL);
-		float L_16 = V_1;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_17;
-		L_17 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_15, L_16, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_18;
-		L_18 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_13, L_17, NULL);
-		V_3 = L_18;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:40>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19;
-		L_19 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_19);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20;
-		L_20 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_19, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21 = V_3;
-		float L_22 = __this->___speed;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23;
-		L_23 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_21, L_22, NULL);
-		float L_24;
-		L_24 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		L_15 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_12, L_14, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
+		L_16 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_10, L_15, NULL);
+		V_1 = L_16;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:26>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
+		L_17 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18 = L_17;
+		NullCheck(L_18);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19;
+		L_19 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_18, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20 = V_1;
+		float L_21 = __this->___speed;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_22;
+		L_22 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_20, L_21, NULL);
+		float L_23;
+		L_23 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_24;
+		L_24 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_22, L_23, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25;
-		L_25 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_23, L_24, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26;
-		L_26 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_20, L_25, NULL);
-		V_4 = L_26;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:41>
-		float L_27 = __this->___fixedY;
-		(&V_4)->___y = L_27;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:42>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_28;
-		L_28 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29 = V_4;
-		NullCheck(L_28);
-		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_28, L_29, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:45>
+		L_25 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_19, L_24, NULL);
+		NullCheck(L_18);
+		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_18, L_25, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:29>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_26;
+		L_26 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_26);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_27;
+		L_27 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_26, NULL);
+		float L_28 = L_27.___y;
+		if ((!(((float)L_28) < ((float)(0.100000001f)))))
+		{
+			goto IL_00e3;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:30>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_29;
+		L_29 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30;
 		L_30 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_30);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_31;
 		L_31 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_30, NULL);
-		float L_32 = L_31.___y;
-		if ((!(((float)L_32) < ((float)(0.100000001f)))))
-		{
-			goto IL_00fd;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:46>
+		float L_32 = L_31.___x;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_33;
 		L_33 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_34;
-		L_34 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_34);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_35;
-		L_35 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_34, NULL);
-		float L_36 = L_35.___x;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_37;
-		L_37 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_37);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_38;
-		L_38 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_37, NULL);
-		float L_39 = L_38.___z;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_40;
-		memset((&L_40), 0, sizeof(L_40));
-		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_40), L_36, (0.100000001f), L_39, NULL);
 		NullCheck(L_33);
-		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_33, L_40, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_34;
+		L_34 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_33, NULL);
+		float L_35 = L_34.___z;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_36;
+		memset((&L_36), 0, sizeof(L_36));
+		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_36), L_32, (0.100000001f), L_35, NULL);
+		NullCheck(L_29);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_29, L_36, NULL);
 	}
 
-IL_00fd:
+IL_00e3:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:50>
-		float L_41 = V_1;
-		float L_42 = V_2;
-		HelicopterMovement_ApplyVisualTilt_m83378B40910D6114B9965640ABAED8FAA65A0307(__this, L_41, L_42, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:51>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:48>
 		return;
 	}
 }
-// Method Definition Index: 88104
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement_ApplyVisualTilt_m83378B40910D6114B9965640ABAED8FAA65A0307 (HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702* __this, float ___0_xInput, float ___1_zInput, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	float V_0 = 0.0f;
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_1;
-	memset((&V_1), 0, sizeof(V_1));
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:55>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___modelTransform;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_1)
-		{
-			goto IL_000f;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:55>
-		return;
-	}
-
-IL_000f:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:59>
-		float L_2 = ___1_zInput;
-		float L_3 = __this->___leanAmount;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:60>
-		float L_4 = ___0_xInput;
-		float L_5 = __this->___leanAmount;
-		V_0 = ((float)il2cpp_codegen_multiply(((-L_4)), L_5));
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:63>
-		float L_6 = V_0;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_7;
-		L_7 = Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline(((float)il2cpp_codegen_multiply(L_2, L_3)), (0.0f), L_6, NULL);
-		V_1 = L_7;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:66>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:67>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:68>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:69>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:70>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8 = __this->___modelTransform;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9 = __this->___modelTransform;
-		NullCheck(L_9);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_10;
-		L_10 = Transform_get_localRotation_mD53D37611A5DAE93EC6C7BBCAC337408C5CACA77(L_9, NULL);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_11 = V_1;
-		float L_12;
-		L_12 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_13 = __this->___leanSpeed;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_14;
-		L_14 = Quaternion_Slerp_m0A9969F500E7716EA4F6BC4E7D5464372D8E9E15_inline(L_10, L_11, ((float)il2cpp_codegen_multiply(L_12, L_13)), NULL);
-		NullCheck(L_8);
-		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_8, L_14, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:71>
-		return;
-	}
-}
-// Method Definition Index: 88105
+// Method Definition Index: 88103
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement__ctor_mCF24735BB9EF45529063493E53E91FDAD094B300 (HelicopterMovement_t98479389A0113AEF2D3E2E1C2695CFF3F4BEE702* __this, const RuntimeMethod* method) 
 {
 	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:10>
-		__this->___speed = (2.0f);
+		__this->___speed = (0.25f);
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:11>
 		__this->___turnSpeed = (90.0f);
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:15>
-		__this->___leanAmount = (20.0f);
+		__this->___leanAmount = (0.100000001f);
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Helicopter/HelicopterMovement.cs:16>
-		__this->___leanSpeed = (5.0f);
+		__this->___leanSpeed = (0.00999999978f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
@@ -7678,7 +7572,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelicopterMovement__ctor_mCF24735BB9EF45
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88106
+// Method Definition Index: 88104
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RotorCOntrol_Update_m8E80EDB5B7B1829EC6501B25587BFF21BB24B39B (RotorCOntrol_t80698EC7B6348B66CCCE60721F08250E3BD2C2B5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7746,7 +7640,7 @@ IL_006a:
 		return;
 	}
 }
-// Method Definition Index: 88107
+// Method Definition Index: 88105
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RotorCOntrol__ctor_mE7BF12326BD07DB83D6BDD2E9D31FACD263111F5 (RotorCOntrol_t80698EC7B6348B66CCCE60721F08250E3BD2C2B5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7774,7 +7668,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RotorCOntrol__ctor_mE7BF12326BD07DB83D6B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88108
+// Method Definition Index: 88106
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocationNameAttribute__ctor_m9FDD7036C7FDF83471B4D9C7DA58080A6D6AC058 (LocationNameAttribute_tC8A63D082FCE4DCEB224D8725FBB1B7C3B033437* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7790,7 +7684,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocationNameAttribute__ctor_m9FDD7036C7F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88109
+// Method Definition Index: 88107
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 LocationRegistry_GetPosition_m5E2E7B0935DF6638159457956926A8F9439A851D (LocationRegistry_tD1523C9C20B7485F1291D9395FCF261A423B925A* __this, String_t* ___0_name, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7856,7 +7750,7 @@ IL_002f:
 		return L_13;
 	}
 }
-// Method Definition Index: 88110
+// Method Definition Index: 88108
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocationRegistry__ctor_m63312217F424C662F3F592C6F0ED9C743E32DC3E (LocationRegistry_tD1523C9C20B7485F1291D9395FCF261A423B925A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7884,7 +7778,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LocationRegistry__ctor_m63312217F424C662
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88111
+// Method Definition Index: 88109
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NamedLocation__ctor_mA7A5DD31B0D9E6F0721D9556D3E69A99B335CA73 (NamedLocation_t3A894B1C91B8DEF9D20A4559E45CF6453F731EBC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7900,7 +7794,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NamedLocation__ctor_mA7A5DD31B0D9E6F0721
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88112
+// Method Definition Index: 88110
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_0__ctor_m9CDAE531A46ABCABD3791B0A27873562F22456C9 (U3CU3Ec__DisplayClass2_0_tBB60C4163CBBA5B185E7535DAA072AF0CE0A1EE2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7908,7 +7802,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass2_0__ctor_m9CDAE531
 		return;
 	}
 }
-// Method Definition Index: 88113
+// Method Definition Index: 88111
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass2_0_U3CGetPositionU3Eb__0_m06D1E7CC4AFC54C64B47ECC6FC97D3E0B502B79D (U3CU3Ec__DisplayClass2_0_tBB60C4163CBBA5B185E7535DAA072AF0CE0A1EE2* __this, NamedLocation_t3A894B1C91B8DEF9D20A4559E45CF6453F731EBC* ___0_l, const RuntimeMethod* method) 
 {
 	{
@@ -7930,7 +7824,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass2_0_U3CGetPositionU
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88114
+// Method Definition Index: 88112
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_Start_m17660B44909FC25B6BA747F7BEE469C3DB693347 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7990,7 +7884,7 @@ IL_0045:
 		return;
 	}
 }
-// Method Definition Index: 88115
+// Method Definition Index: 88113
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_Update_m18A4B41518D788123BE4E4CCA398D95323C9CC87 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8084,7 +7978,7 @@ IL_005c:
 		return;
 	}
 }
-// Method Definition Index: 88116
+// Method Definition Index: 88114
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_SpawnWorldMarkers_m3F4EC74407E1156A09181FBE9BAA51C332894079 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8234,7 +8128,7 @@ IL_0050:
 		float* L_22 = (float*)(&(&V_4)->___y);
 		float* L_23 = L_22;
 		float L_24 = *((float*)L_23);
-		*((float*)L_23) = (float)((float)il2cpp_codegen_add(L_24, (0.5f)));
+		*((float*)L_23) = (float)((float)il2cpp_codegen_add(L_24, (0.100000001f)));
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionController.cs:96>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = __this->___markerPrefab;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26 = V_4;
@@ -8333,7 +8227,7 @@ IL_0110:
 		return;
 	}
 }
-// Method Definition Index: 88117
+// Method Definition Index: 88115
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_HandleMissionSelection_m6E0B6CA37959290EE7DE8F53402571B8A04822B6 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8540,7 +8434,7 @@ IL_0115:
 		return;
 	}
 }
-// Method Definition Index: 88118
+// Method Definition Index: 88116
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_OnActionButtonPressed_m2D14E4CE0991503962A51C556860C5DD3FFAAEF3 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8659,7 +8553,7 @@ IL_0088:
 		return;
 	}
 }
-// Method Definition Index: 88119
+// Method Definition Index: 88117
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_StartMission_m52003377CAE53CCF5CA23EB7A427CEC379DAE368 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8770,7 +8664,7 @@ IL_0054:
 		return;
 	}
 }
-// Method Definition Index: 88120
+// Method Definition Index: 88118
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_HandleActiveMission_mE5BD3FC8C3A6423E6359D1916E12684FA7B7935B (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9025,7 +8919,7 @@ IL_0192:
 		return;
 	}
 }
-// Method Definition Index: 88121
+// Method Definition Index: 88119
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_ProcessMissionStep_m242623F7DAA2CA71D17E700DEB9061597C8A06A4 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9115,7 +9009,7 @@ IL_006c:
 		return;
 	}
 }
-// Method Definition Index: 88122
+// Method Definition Index: 88120
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_CompleteStep_mA43D645F5F375F216C3B5CA80E896A43A163F732 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9159,7 +9053,7 @@ IL_0042:
 		return;
 	}
 }
-// Method Definition Index: 88123
+// Method Definition Index: 88121
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController_FinishMission_mFAA6950C4844BDC92FF166A6DA400E8F19122E27 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9207,7 +9101,7 @@ IL_003f:
 		return;
 	}
 }
-// Method Definition Index: 88124
+// Method Definition Index: 88122
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 MissionController_GetFirstTargetPosition_m6E557A98B8317D68BF85715DD206C59C5C7FB35C (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, Mission_t7F72A021B74B7257CC941066AF1F6B536354AC3C* ___0_m, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9329,7 +9223,7 @@ IL_0078:
 		return L_30;
 	}
 }
-// Method Definition Index: 88125
+// Method Definition Index: 88123
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 MissionController_GetCurrentTargetGrid_m0F6FC4D97C17A1722896D32890885E2068C931DB (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, Mission_t7F72A021B74B7257CC941066AF1F6B536354AC3C* ___0_currentMission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9465,7 +9359,7 @@ IL_008b:
 		return L_30;
 	}
 }
-// Method Definition Index: 88126
+// Method Definition Index: 88124
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MissionController_GetFlatDistance_mF9C486E4C00386E243B4CBEC23A975B67F49BF2D (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) 
 {
 	{
@@ -9489,7 +9383,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MissionController_GetFlatDistance_mF9C4
 		return L_10;
 	}
 }
-// Method Definition Index: 88127
+// Method Definition Index: 88125
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController__ctor_m14951B0DA87377861D33647120CCDD998AC48181 (MissionController_t9BCF54C3E88C53D1A4409B9A4BEBF723904029EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9530,7 +9424,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionController__ctor_m14951B0DA873778
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88128
+// Method Definition Index: 88126
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionTarget__ctor_mA625915948B85566DC4E3C5E682FD71843B02592 (MissionTarget_tB7FFC3C520C5A40FFEEE44FC42F1524F86A43043* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9546,7 +9440,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionTarget__ctor_mA625915948B85566DC4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88129
+// Method Definition Index: 88127
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Mission__ctor_mEBCE92178092C388A770CF5BE40890F03136BE18 (Mission_t7F72A021B74B7257CC941066AF1F6B536354AC3C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9574,7 +9468,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Mission__ctor_mEBCE92178092C388A770CF5BE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88130
+// Method Definition Index: 88128
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Mission__ctor_m8870373C248744B47BB569EE44A5C4C26BFAF4FE (Mission_t678AE5BA211F901522A7B1957FC2A736843D74E1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9590,7 +9484,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Mission__ctor_m8870373C248744B47BB569EE4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88131
+// Method Definition Index: 88129
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_UpdatePosition_mEE86D5B7558E04D1E9BE545E03471EFB9B50D211 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_targetWorldPos, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_playerWorldPos, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9668,7 +9562,7 @@ IL_0061:
 		return;
 	}
 }
-// Method Definition Index: 88132
+// Method Definition Index: 88130
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker__ctor_m0C2AFCEAFF550A198579B9C2560BBF1C7FE85278 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9688,7 +9582,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker__ctor_m0C2AFCEAFF550A198579B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88133
+// Method Definition Index: 88131
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner_Update_mDC7EAF970970B984A2C4CB9CB580EE566D458707 (RadarScanner_t3093043FAFC33DA2C41B54917BE59E3CD9C84A72* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9704,7 +9598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner_Update_mDC7EAF970970B984A2C
 		return;
 	}
 }
-// Method Definition Index: 88134
+// Method Definition Index: 88132
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner__ctor_m41599E490F4101788D1A9F4B23EB786504F6B675 (RadarScanner_t3093043FAFC33DA2C41B54917BE59E3CD9C84A72* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9722,7 +9616,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner__ctor_m41599E490F4101788D1A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88135
+// Method Definition Index: 88133
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_Start_mB16B9A8C3D9E7CDD5314EEE8CDEE7E64CFE18EAF (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9743,7 +9637,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_Start_mB16B9A8C3D9E7CD
 		return;
 	}
 }
-// Method Definition Index: 88136
+// Method Definition Index: 88134
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_Update_m8691A5C1D500F0FB422306CAFFF900F42A6CF749 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -9828,7 +9722,7 @@ IL_007f:
 		return;
 	}
 }
-// Method Definition Index: 88137
+// Method Definition Index: 88135
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic__ctor_m70F9C008B763BA7B56617E68E50E276B25CE6E0F (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9846,7 +9740,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic__ctor_m70F9C008B763BA7
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88138
+// Method Definition Index: 88136
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9862,7 +9756,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A90
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88139
+// Method Definition Index: 88137
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9878,7 +9772,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 88140
+// Method Definition Index: 88138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9912,7 +9806,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 88141
+// Method Definition Index: 88139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10808,24 +10702,6 @@ IL_0010:
 	{
 		float L_5 = V_0;
 		return L_5;
-	}
-}
-// Method Definition Index: 35992
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline (float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) 
-{
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	{
-		il2cpp_codegen_initobj((&V_0), sizeof(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2));
-		float L_0 = ___0_x;
-		(&V_0)->___x = ((float)il2cpp_codegen_multiply(L_0, (0.0174532924f)));
-		float L_1 = ___1_y;
-		(&V_0)->___y = ((float)il2cpp_codegen_multiply(L_1, (0.0174532924f)));
-		float L_2 = ___2_z;
-		(&V_0)->___z = ((float)il2cpp_codegen_multiply(L_2, (0.0174532924f)));
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_3;
-		L_3 = Quaternion_Internal_FromEulerRad_mD0C4C0EFE1D70EC0EA4A92B11F1A4D5B0A134E49((&V_0), NULL);
-		return L_3;
 	}
 }
 // Method Definition Index: 36088

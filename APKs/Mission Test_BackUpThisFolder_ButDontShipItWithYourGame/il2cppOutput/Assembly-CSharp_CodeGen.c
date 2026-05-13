@@ -88,9 +88,7 @@ extern void HelicopterManager_GetWorldPositionFromGrid_m65334D8BCC88E2221DD0BF12
 extern void HelicopterManager__ctor_mBE86756CF0C57625F24B084A5FB917356072C9C4 (void);
 extern void U3CU3Ec__DisplayClass16_0__ctor_mC3ABCEBAAD28DD77325EA05A57D417C49C8EC075 (void);
 extern void U3CU3Ec__DisplayClass16_0_U3CRegisterMarkerU3Eb__0_m9F12B9402CA58293BE4890490EBBC2C5391380AA (void);
-extern void HelicopterMovement_Start_mC00E363F763B3492B29BAD00F7EBD74D81BA8BDF (void);
 extern void HelicopterMovement_Update_mBE9F1AE1457794E5132FC86C6B90A23D9F1DB4D1 (void);
-extern void HelicopterMovement_ApplyVisualTilt_m83378B40910D6114B9965640ABAED8FAA65A0307 (void);
 extern void HelicopterMovement__ctor_mCF24735BB9EF45529063493E53E91FDAD094B300 (void);
 extern void RotorCOntrol_Update_m8E80EDB5B7B1829EC6501B25587BFF21BB24B39B (void);
 extern void RotorCOntrol__ctor_mE7BF12326BD07DB83D6BDD2E9D31FACD263111F5 (void);
@@ -128,7 +126,7 @@ extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
 extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[121] = 
+static Il2CppMethodPointer s_methodPointers[119] = 
 {
 	JoystickPlayerExample_FixedUpdate_m9AEDBA111F95D67A006A5D3821956048224541B7,
 	JoystickPlayerExample__ctor_m702422E0AE29402330CF41FDDBEE76F0506342E2,
@@ -211,9 +209,7 @@ static Il2CppMethodPointer s_methodPointers[121] =
 	HelicopterManager__ctor_mBE86756CF0C57625F24B084A5FB917356072C9C4,
 	U3CU3Ec__DisplayClass16_0__ctor_mC3ABCEBAAD28DD77325EA05A57D417C49C8EC075,
 	U3CU3Ec__DisplayClass16_0_U3CRegisterMarkerU3Eb__0_m9F12B9402CA58293BE4890490EBBC2C5391380AA,
-	HelicopterMovement_Start_mC00E363F763B3492B29BAD00F7EBD74D81BA8BDF,
 	HelicopterMovement_Update_mBE9F1AE1457794E5132FC86C6B90A23D9F1DB4D1,
-	HelicopterMovement_ApplyVisualTilt_m83378B40910D6114B9965640ABAED8FAA65A0307,
 	HelicopterMovement__ctor_mCF24735BB9EF45529063493E53E91FDAD094B300,
 	RotorCOntrol_Update_m8E80EDB5B7B1829EC6501B25587BFF21BB24B39B,
 	RotorCOntrol__ctor_mE7BF12326BD07DB83D6BDD2E9D31FACD263111F5,
@@ -252,7 +248,7 @@ static Il2CppMethodPointer s_methodPointers[121] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[121] = 
+static const int32_t s_InvokerIndices[119] = 
 {
 	16677,
 	16677,
@@ -337,8 +333,6 @@ static const int32_t s_InvokerIndices[121] =
 	8932,
 	16677,
 	16677,
-	6465,
-	16677,
 	16677,
 	16677,
 	16677,
@@ -380,7 +374,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	121,
+	119,
 	s_methodPointers,
 	0,
 	NULL,

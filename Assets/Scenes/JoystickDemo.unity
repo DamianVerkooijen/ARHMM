@@ -1638,48 +1638,59 @@ MonoBehaviour:
   scanDuration: 2
   registry: {fileID: 2033452055}
   missions:
-  - missionName: Test Delivery
+  - missionName: Beacon Delivery
     missionType: 0
     missionColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 0.27058825}
     isCompleted: 0
     startLocation:
       locationName: Location1
-      description: Deliver this chip froom my house to your hosue
+      description: Transport a newly developed technology across Eindhoven and deliver
+        it to where it is needed
       reward: 0
     endLocation:
       locationName: Location3
-      description: final point
+      description: 'Strijp-S in Eindhoven is known as a leading
+
+        technology
+        and innovation hub in Europe, driven by companies like Philips'
       reward: 0
     searchTargets:
     - locationName: Location2
-      description: its me item
-      reward: 0
+      description: 'TU/E - Energy Core
+
+        The thecnical university of Eindhoven
+        TU is one of the  is one of the top technincal universities in the Netherlands
+        and Europe'
+      reward: 100
     scanTargets:
     - locationName: Location1
       description: target
       reward: 0
-  - missionName: Test Search and Find
+  - missionName: Search and Find
     missionType: 1
     missionColor: {r: 0, g: 0.3921569, b: 0, a: 0.27058825}
     isCompleted: 0
     startLocation:
       locationName: Location4
-      description: Look for 3 items in my house
+      description: Look for 3 items scattered around the map! Find and collect them.
       reward: 0
     endLocation:
       locationName: Location6
-      description: final point
+      description: Congratulations! You finished the mission.
       reward: 0
     searchTargets:
     - locationName: Location5
-      description: item 1
-      reward: 0
+      description: "Philips, one of the world\u2019s largest electronics companies,
+        was founded in Eindhoven."
+      reward: 100
     - locationName: Location7
-      description: item 2
-      reward: 0
+      description: The thecnical university of Eindhoven TU is one of the  is one
+        of the top technincal universities in the Netherlands and Europe
+      reward: 100
     - locationName: Location4
-      description: item 3
-      reward: 0
+      description: 'Strijp-S used to be a Philips industrial site and is now a hub
+        for creativity and technology. '
+      reward: 100
     scanTargets: []
 --- !u!4 &1367559005
 Transform:
