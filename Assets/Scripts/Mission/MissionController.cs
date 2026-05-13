@@ -23,6 +23,11 @@ public class MissionController : MonoBehaviour
     private GameObject activePad;
     private float scanTimer = 0f;
 
+    [Header("UI Animation")]
+    public Animator panelAnimator;
+    public TMP_Text missionTaskText;
+    public TMP_Text missionDescriptionText;
+
     [System.Serializable]
     public class Mission
     {
@@ -139,6 +144,19 @@ public class MissionController : MonoBehaviour
     }
     return Vector2.zero;
 }
+
+    public void TriggerMissionStartUI(string task, string description)
+    {
+        missionTaskText.text = task;
+        missionDescriptionText.text = description;
+        panelAnimator.Play("MissionPanel_Expand");
+    }
+
+    public void TriggerMissionCompleteUI()
+    {
+        missionTaskText.text = "Vlieg naar een missie";
+        panelAnimator.Play("MissionPanel_Collapse");
+    }
 
     private void HandleInRange(Mission currentMission)
     {
