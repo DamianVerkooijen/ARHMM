@@ -12,8 +12,8 @@ public class HelicopterMovement : MonoBehaviour
 
     [Header("Tilt Settings")]
     public Transform modelTransform; // Visual model to tilt
-    public float leanAmount = 20f; // Tilt intensity
-    public float leanSpeed = 5f; // How fast it tilts
+    public float leanAmount = 0.1f; // Tilt intensity
+    public float leanSpeed = 0.01f; // How fast it tilts
 
     void Update()
     {
@@ -32,18 +32,18 @@ public class HelicopterMovement : MonoBehaviour
 
         // Visual Tilt Animation
         // This only rotates the visual child 
-        if (modelTransform != null)
-        {
-            float targetPitch = leftJoystick.Vertical * leanAmount;
-            float targetRoll = -leftJoystick.Horizontal * leanAmount;
+        //if (modelTransform != null)
+        //{
+        //    float targetPitch = leftJoystick.Vertical * leanAmount;
+        //    float targetRoll = -leftJoystick.Horizontal * leanAmount;
 
-            Quaternion targetRot = Quaternion.Euler(targetPitch, 0, targetRoll);
+        //    Quaternion targetRot = Quaternion.Euler(targetPitch, 0, targetRoll);
 
-            modelTransform.localRotation = Quaternion.Slerp(
-                modelTransform.localRotation, 
-                targetRot, 
-                Time.deltaTime * leanSpeed
-            );
-        }
+        //    modelTransform.localRotation = Quaternion.Slerp(
+        //        modelTransform.localRotation, 
+        //        targetRot, 
+        //        Time.deltaTime * leanSpeed
+        //    );
+        //}
     }
 }

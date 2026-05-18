@@ -306,8 +306,8 @@ MonoBehaviour:
   speed: 0.25
   turnSpeed: 90
   modelTransform: {fileID: 8398895146117451888}
-  leanAmount: 20
-  leanSpeed: 5
+  leanAmount: 10
+  leanSpeed: 0.5
 --- !u!114 &7782918319312208205
 MonoBehaviour:
   m_ObjectHideFlags: 0
