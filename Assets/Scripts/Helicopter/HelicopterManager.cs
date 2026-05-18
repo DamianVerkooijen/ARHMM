@@ -109,11 +109,19 @@ public class HelicopterManager : MonoBehaviour
     {
         foreach (var img in imageManager.trackables)
         {
-            // Only update position if we are currently looking at a marker
+            // Alleen updaten als de marker ÉCHT goed in beeld is (TrackingState.Tracking)
             if (img.trackingState == TrackingState.Tracking && markerOffsets.ContainsKey(img.referenceImage.name))
             {
-                masterAnchor.transform.position = img.transform.position + masterAnchor.transform.TransformDirection(markerOffsets[img.referenceImage.name]);
-                break; 
+                Vector3 targetWorldPos = img.transform.position + masterAnchor.transform.TransformDirection(markerOffsets[img.referenceImage.name]);
+
+                // GEBRUIK LERP: In plaats van direct teleporteren, vloeit het anker naar de nieuwe positie.
+                // Dit stopt het "shaken" en verspringen van de heli en markers.
+                masterAnchor.transform.position = Vector3.Lerp(masterAnchor.transform.position, targetWorldPos, Time.deltaTime * 2f);
+
+                // Optioneel: doe hetzelfde voor rotatie als dat ook verspringt
+                // masterAnchor.transform.rotation = Quaternion.Lerp(masterAnchor.transform.rotation, img.transform.rotation, Time.deltaTime * 1f);
+
+                break;
             }
         }
     }
@@ -124,11 +132,14 @@ public class HelicopterManager : MonoBehaviour
 
         if (hasSpawned)
         {
-            statusText.text = "<color=green>Scanning Complete!</color>";
+            // Make the text invisible once we're done so the HUD takes over
+            statusText.alpha = Mathf.MoveTowards(statusText.alpha, 0f, Time.deltaTime * 2f);
         }
         else
         {
-            // Show exactly which ones are missing
+            // Make sure the text is visible when scanning
+            statusText.alpha = 1f;
+
             string missing = "";
             foreach (var m in requiredMarkers)
             {
@@ -156,6 +167,21 @@ public class HelicopterManager : MonoBehaviour
             {
                 RegisterMarker(img);
             }
+        }
+    }
+
+    public void SoftResetHeli()
+    {
+        if (hasSpawned && helicopter != null)
+        {
+            // Return the helicopter to the starting point of the calibration
+            helicopter.transform.localPosition = Vector3.zero;
+            helicopter.transform.localRotation = Quaternion.identity;
+
+            // Make sure the statusText remains invisible (alpha 0)
+            if (statusText != null) statusText.alpha = 0f;
+
+            Debug.Log("Heli gereset naar startpositie. Kalibratie behouden.");
         }
     }
 
