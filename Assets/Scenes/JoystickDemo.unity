@@ -1092,10 +1092,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.9678678, y: 0.32769448}
+  m_AnchorMin: {x: 0.9678678, y: 0.6173056}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0998535, y: 209.87762}
-  m_SizeDelta: {x: 2.3, y: -419.7463}
+  m_AnchoredPosition: {x: -1.0998535, y: 0.8776245}
+  m_SizeDelta: {x: 2.2999992, y: -1.7463074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496750213
 MonoBehaviour:
@@ -2363,6 +2363,8 @@ MonoBehaviour:
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
+  rightExtensionAnimator: {fileID: 0}
+  leftExtensionAnimator: {fileID: 0}
   leftBar: {fileID: 1859452126}
   rightBar: {fileID: 496750213}
   botBar: {fileID: 1929267774}
@@ -2370,18 +2372,24 @@ MonoBehaviour:
   topBarL: {fileID: 1226754295}
   missionPanelTopImage: {fileID: 1924977459}
   radarBackground: {fileID: 1939871953}
-  leftBarNormal: {fileID: 21300000, guid: 8c11bf6f5057683459c4e585d7ca53e6, type: 3}
-  rightBarNormal: {fileID: 21300000, guid: 98dc6a4e9bba9854ea917d372b0f8da4, type: 3}
+  extensionRight: {fileID: 1747325558}
+  extensionLeft: {fileID: 1729101535}
+  leftBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
+  rightBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
   botBarNormal: {fileID: 21300000, guid: 1eaf62ff529d5594092bfecd4e4c7f1b, type: 3}
   topBarNormal: {fileID: 21300000, guid: a59644f85644c70478a3f25b0e41580a, type: 3}
   panelNormal: {fileID: 21300000, guid: 04ca6172e0530814195c13e8f173d417, type: 3}
   radarNormal: {fileID: 21300000, guid: 76601d83032e84742ad27f5b857cf29a, type: 3}
-  leftBarFinished: {fileID: 21300000, guid: 5014dab05acdbd1448b878debe1f9557, type: 3}
-  rightBarFinished: {fileID: 21300000, guid: f1a684c4d55c7784aa26252d2c9b4a4c, type: 3}
+  extensionRightNormal: {fileID: 21300000, guid: 96ae13382e5818f4992266897e143edd, type: 3}
+  extensionLeftNormal: {fileID: 21300000, guid: 96ae13382e5818f4992266897e143edd, type: 3}
+  leftBarFinished: {fileID: 21300000, guid: e4f61213edc155a4dae025f97df6e8f6, type: 3}
+  rightBarFinished: {fileID: 21300000, guid: e4f61213edc155a4dae025f97df6e8f6, type: 3}
   botBarFinished: {fileID: 21300000, guid: fe7a902adafdaee4c9519c58e3af7278, type: 3}
   topBarFinished: {fileID: 21300000, guid: 6640c3626e9d4ef498623c5df40cf6ef, type: 3}
   panelFinished: {fileID: 21300000, guid: 99ad27984bff0cb459bfa8f16f8a8969, type: 3}
   radarFinished: {fileID: 21300000, guid: 9a2717560de98644f8368ad644d69c6d, type: 3}
+  extensionRightFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
+  extensionLeftFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
   missions:
   - missionName: BEZORG MISSIE
     missionType: 0
@@ -3059,10 +3067,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1128.8264, y: -8.809326}
-  m_SizeDelta: {x: -2257.618, y: -971.5959}
+  m_AnchorMin: {x: 0, y: 0.32738888}
+  m_AnchorMax: {x: 0.020868057, y: 0.6556945}
+  m_AnchoredPosition: {x: -0.32641602, y: 2.1906738}
+  m_SizeDelta: {x: -0.6179199, y: -3.5958862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729101535
 MonoBehaviour:
@@ -3471,10 +3479,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0.32200003}
+  m_AnchorMin: {x: 0, y: 0.6305001}
   m_AnchorMax: {x: 0.027, y: 1}
-  m_AnchoredPosition: {x: 0.30029297, y: 222.62521}
-  m_SizeDelta: {x: 0.6001, y: -445.2494}
+  m_AnchoredPosition: {x: 0.30029297, y: 0.12521362}
+  m_SizeDelta: {x: 0.60009956, y: -0.24938965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859452126
 MonoBehaviour:
@@ -3675,9 +3683,9 @@ RectTransform:
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.335}
-  m_AnchoredPosition: {x: 0, y: 18.5655}
-  m_SizeDelta: {x: 0, y: 37.1311}
+  m_AnchorMax: {x: 1, y: 0.35969448}
+  m_AnchoredPosition: {x: 0, y: 0.5654907}
+  m_SizeDelta: {x: 0, y: 1.1310997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929267774
 MonoBehaviour:
