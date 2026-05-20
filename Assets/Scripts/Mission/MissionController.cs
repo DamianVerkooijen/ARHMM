@@ -29,6 +29,14 @@ public class MissionController : MonoBehaviour
     [Tooltip("Animator die op het losse linker extensie-paneel zit (voor de Reset-lade indien geanimeerd)")]
     public Animator leftExtensionAnimator;
 
+    [Header("Extension Dynamic Content")]
+    [Tooltip("De tekst die IN de uitschuifbare rechter extensie staat")]
+    public TMP_Text extensionActionText;
+    [Tooltip("De afbeelding/icoon IN de uitschuifbare rechter extensie")]
+    public Image extensionActionIcon;
+    [Tooltip("Standaard icoon voor acties (bijv. landing/interactie pijl)")]
+    public Sprite defaultActionIcon;
+
     [Header("HUD Elements (Vaste Frames)")]
     public Image leftBar;
     public Image rightBar;
@@ -51,6 +59,8 @@ public class MissionController : MonoBehaviour
     public Sprite radarNormal;
     public Sprite extensionRightNormal;
     public Sprite extensionLeftNormal;
+    [Tooltip("Nieuw: Rechter balk (Blauw) wanneer de extensie OPEN staat")]
+    public Sprite rightBarNormalOpened;
 
     [Header("Sprites Finished (Groen)")]
     public Sprite leftBarFinished;
@@ -61,6 +71,8 @@ public class MissionController : MonoBehaviour
     public Sprite radarFinished;
     public Sprite extensionRightFinished;
     public Sprite extensionLeftFinished;
+    [Tooltip("Nieuw: Rechter balk (Groen) wanneer de extensie OPEN staat")]
+    public Sprite rightBarFinishedOpened;
 
     [Header("Mission List")]
     public List<Mission> missions = new List<Mission>();
@@ -72,6 +84,9 @@ public class MissionController : MonoBehaviour
     private float scanTimer = 0f;
     private List<GameObject> spawnedMarkers = new List<GameObject>();
     private bool initialized = false;
+
+    // Houdt centraal bij of de extensie momenteel geopend is
+    private bool isExtensionOpen = false;
 
     [System.Serializable]
     public class MissionTarget
@@ -106,7 +121,8 @@ public class MissionController : MonoBehaviour
             activePad.SetActive(false);
         }
 
-        // Start HUD op blauw en zorg dat de animators in de juiste ruststand staan
+        // Start HUD op blauw en gesloten
+        isExtensionOpen = false;
         SetHUDState(false);
         ResetExtensions();
     }
@@ -134,7 +150,7 @@ public class MissionController : MonoBehaviour
         if (selectedMissionIndex == -1) return;
 
         // Sluit de extensie direct zodra de missie succesvol is afgerond
-        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool("isInRange", false);
+        UpdateExtensionVisualState(false);
 
         StartCoroutine(ShowMissionCompleteRoutine());
     }
@@ -145,7 +161,7 @@ public class MissionController : MonoBehaviour
 
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", false);
 
-        // Zet de complete HUD (inclusief de nieuwe opgesplitste extensies) op groen!
+        // Zet de complete HUD op groen (en houd rekening met de open/dicht status)
         SetHUDState(true);
 
         if (missionTitleText != null) missionTitleText.text = "MISSIE VOLTOOID";
@@ -159,9 +175,9 @@ public class MissionController : MonoBehaviour
         missionActive = false;
         if (activePad != null) activePad.SetActive(false);
 
-        // Terug naar blauw
+        // Terug naar blauw en gesloten
+        UpdateExtensionVisualState(false);
         SetHUDState(false);
-        ResetExtensions();
         SpawnWorldMarkers();
     }
 
@@ -174,21 +190,46 @@ public class MissionController : MonoBehaviour
 
     private void ResetExtensions()
     {
-        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool("isInRange", false);
-        // Mocht je de reset-lade links later ook via code willen sluiten/openen:
-        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool("isInRange", false);
+        UpdateExtensionVisualState(false);
+    }
+
+    /// <summary>
+    /// Update de Animator én de interne state zodat de RightBar weet welke sprite hij moet kiezen.
+    /// </summary>
+    private void UpdateExtensionVisualState(bool open)
+    {
+        isExtensionOpen = open;
+
+        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool("isInRange", open);
+        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool("isInRange", open);
+
+        // Update de HUD sprites direct mee op basis van de huidige missie-status (groen of blauw)
+        bool isCurrentMissionFinished = (selectedMissionIndex != -1) ? missions[selectedMissionIndex].isCompleted : false;
+        SetHUDState(isCurrentMissionFinished);
     }
 
     private void SetHUDState(bool isFinished)
     {
         // Verandert de sprites van de vaste frames
         if (leftBar != null) leftBar.sprite = isFinished ? leftBarFinished : leftBarNormal;
-        if (rightBar != null) rightBar.sprite = isFinished ? rightBarFinished : rightBarNormal;
         if (botBar != null) botBar.sprite = isFinished ? botBarFinished : botBarNormal;
         if (topBarR != null) topBarR.sprite = isFinished ? topBarFinished : topBarNormal;
         if (topBarL != null) topBarL.sprite = isFinished ? topBarFinished : topBarNormal;
         if (missionPanelTopImage != null) missionPanelTopImage.sprite = isFinished ? panelFinished : panelNormal;
         if (radarBackground != null) radarBackground.sprite = isFinished ? radarFinished : radarNormal;
+
+        // DYNAMISCHE STRATECHIE VOOR DE RIGHTBAR (Kijkt naar isFinished én isExtensionOpen)
+        if (rightBar != null)
+        {
+            if (isFinished)
+            {
+                rightBar.sprite = isExtensionOpen ? rightBarFinishedOpened : rightBarFinished;
+            }
+            else
+            {
+                rightBar.sprite = isExtensionOpen ? rightBarNormalOpened : rightBarNormal;
+            }
+        }
 
         // Verandert de sprites van de losgekoppelde uitschuifbare extensies
         if (extensionRight != null) extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
@@ -235,8 +276,14 @@ public class MissionController : MonoBehaviour
         {
             statusText.text = $"[ {missions[closestIndex].missionName} ]\nPress Button to Start";
             if (actionButton != null) actionButton.SetActive(true);
+            UpdateExtensionContent("Druk op de knop om de missie te starten.", defaultActionIcon);
+            UpdateExtensionVisualState(true);
         }
-        else if (actionButton != null) actionButton.SetActive(false);
+        else
+        {
+            if (actionButton != null) actionButton.SetActive(false);
+            if (selectedMissionIndex == -1) UpdateExtensionVisualState(false);
+        }
     }
 
     public void OnActionButtonPressed()
@@ -284,6 +331,12 @@ public class MissionController : MonoBehaviour
             if (missionTaskText != null) missionTaskText.text = currentTarget.shortInstruction;
             if (missionDescriptionText != null) missionDescriptionText.text = currentTarget.description;
         }
+    }
+
+    private void UpdateExtensionContent(string instruction, Sprite icon)
+    {
+        if (extensionActionText != null) extensionActionText.text = instruction;
+        if (extensionActionIcon != null && icon != null) extensionActionIcon.sprite = icon;
     }
 
     public bool IsMissionActive()
@@ -336,18 +389,20 @@ public class MissionController : MonoBehaviour
         if (dist < interactionRange)
         {
             if (actionButton != null) actionButton.SetActive(true);
-            statusText.text = missionActive ? currentMission.endLocation.description : currentMission.startLocation.description;
 
-            // --- RECHTER EXTENSIE ANIMEREN: Binnen de range! ---
-            if (rightExtensionAnimator != null)
-            {
-                rightExtensionAnimator.SetBool("isInRange", true);
-            }
+            string activeDescription = missionActive ? currentMission.endLocation.description : currentMission.startLocation.description;
+            string activeInstruction = missionActive ? currentMission.endLocation.shortInstruction : currentMission.startLocation.shortInstruction;
+
+            statusText.text = activeDescription;
+
+            UpdateExtensionContent(activeInstruction, defaultActionIcon);
+            UpdateExtensionVisualState(true);
 
             if (currentMission.missionType == MissionType.Scan)
             {
                 scanTimer += Time.deltaTime;
                 statusText.text = $"Scanning... {Mathf.Round((scanTimer / scanDuration) * 100)}%";
+                UpdateExtensionContent($"Bezig met scannen... {Mathf.Round((scanTimer / scanDuration) * 100)}%", defaultActionIcon);
                 if (scanTimer >= scanDuration) CompleteStep();
             }
         }
@@ -356,11 +411,7 @@ public class MissionController : MonoBehaviour
             if (actionButton != null) actionButton.SetActive(false);
             statusText.text = $"Goal: {currentMission.missionName}";
 
-            // --- RECHTER EXTENSIE SLUITEN: Buiten de range gevlogen ---
-            if (rightExtensionAnimator != null)
-            {
-                rightExtensionAnimator.SetBool("isInRange", false);
-            }
+            UpdateExtensionVisualState(false);
         }
     }
 
@@ -427,7 +478,7 @@ public class MissionController : MonoBehaviour
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", false);
 
         ResetUIToDefault();
-        ResetExtensions();
+        UpdateExtensionVisualState(false);
         SetHUDState(false);
 
         SpawnWorldMarkers();
