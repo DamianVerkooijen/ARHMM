@@ -901,7 +901,8 @@ GameObject:
   - component: {fileID: 167453775}
   - component: {fileID: 167453774}
   - component: {fileID: 167453773}
-  - component: {fileID: 167453772}
+  - component: {fileID: 167453777}
+  - component: {fileID: 167453776}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -909,26 +910,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &167453772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167453771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04b92823407e21443a573de4055cb9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HeliManager
-  imageManager: {fileID: 167453773}
-  helicopter: {fileID: 1003497068}
-  statusText: {fileID: 794538076}
-  hasSpawned: 0
-  minX: 0
-  maxX: 0
-  minZ: 0
-  maxZ: 0
 --- !u!114 &167453773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +962,43 @@ Transform:
   - {fileID: 1003497072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167453776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167453771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c72d33018d4efc4f95bebd11c2d3535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ARTrackingManager
+  imageManager: {fileID: 167453773}
+  statusText: {fileID: 794538076}
+  minX: 0
+  maxX: 0
+  minZ: 0
+  maxZ: 0
+--- !u!114 &167453777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167453771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b92823407e21443a573de4055cb9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HelicopterManager
+  trackingManager: {fileID: 167453776}
+  helicopter: {fileID: 1003497068}
+  minX: 0
+  maxX: 0
+  minZ: 0
+  maxZ: 0
+  hasSpawned: 0
 --- !u!1 &259813124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9678678, y: 0.6173056}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0998535, y: 0.8776245}
+  m_AnchoredPosition: {x: -1.0998535, y: 0.8775635}
   m_SizeDelta: {x: 2.2999992, y: -1.7463074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496750213
@@ -1169,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05030208, y: 0.816695}
   m_AnchorMax: {x: 0.16013196, y: 0.9250001}
-  m_AnchoredPosition: {x: -1.0002441, y: 0}
+  m_AnchoredPosition: {x: -1.0004883, y: 0}
   m_SizeDelta: {x: 0.97998047, y: -0.040100098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &523344850
@@ -1707,7 +1725,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167453772}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HelicopterManager, Assembly-CSharp
         m_MethodName: ResetHeli
         m_Mode: 1
@@ -1809,7 +1827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.66269845, y: 0.97400004}
   m_AnchorMax: {x: 0.9678678, y: 1}
-  m_AnchoredPosition: {x: 0.7324219, y: -0.77233887}
+  m_AnchoredPosition: {x: 0.7324219, y: -0.7722168}
   m_SizeDelta: {x: 3.1496582, y: 1.5640869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966162315
@@ -2280,7 +2298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027, y: 0.9823051}
   m_AnchorMax: {x: 0.328, y: 1}
-  m_AnchoredPosition: {x: 0.41918945, y: -6.3199463}
+  m_AnchoredPosition: {x: 0.4189453, y: -6.3200684}
   m_SizeDelta: {x: 4.2316895, y: 12.564087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226754295
@@ -2350,7 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b046e16f78658b4479a8f12a7bb428ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionController
-  manager: {fileID: 167453772}
+  manager: {fileID: 167453777}
   padPrefab: {fileID: 1297735875022845903, guid: 46551d2702cdda540915cb39927112a4, type: 3}
   markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   statusText: {fileID: 794538076}
@@ -3069,7 +3087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.32738888}
   m_AnchorMax: {x: 0.020868057, y: 0.6556945}
-  m_AnchoredPosition: {x: -0.32641602, y: 2.1906738}
+  m_AnchoredPosition: {x: -0.32666016, y: 2.1906738}
   m_SizeDelta: {x: -0.6179199, y: -3.5958862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729101535
@@ -3144,7 +3162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.97686815, y: 0.335}
   m_AnchorMax: {x: 1, y: 0.6446945}
-  m_AnchoredPosition: {x: 0.099975586, y: -0.3540039}
+  m_AnchoredPosition: {x: 0.099853516, y: -0.3540039}
   m_SizeDelta: {x: -0.1619873, y: 0.79000854}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747325558
@@ -3481,7 +3499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.6305001}
   m_AnchorMax: {x: 0.027, y: 1}
-  m_AnchoredPosition: {x: 0.30029297, y: 0.12521362}
+  m_AnchoredPosition: {x: 0.30029297, y: 0.12524414}
   m_SizeDelta: {x: 0.60009956, y: -0.24938965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859452126
@@ -3684,7 +3702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.35969448}
-  m_AnchoredPosition: {x: 0, y: 0.5654907}
+  m_AnchoredPosition: {x: 0, y: 0.5654297}
   m_SizeDelta: {x: 0, y: 1.1310997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929267774
@@ -4166,7 +4184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25.94
+      value: 25.939941
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

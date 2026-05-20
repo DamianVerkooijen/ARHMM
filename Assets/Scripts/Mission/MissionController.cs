@@ -87,7 +87,6 @@ public class MissionController : MonoBehaviour
     {
         public string missionName;
         public MissionType missionType;
-        public Color missionColor = Color.yellow;
         public bool isCompleted = false;
         public MissionTarget startLocation;
         public MissionTarget endLocation;
@@ -208,14 +207,10 @@ public class MissionController : MonoBehaviour
             if (missions[i].isCompleted) continue;
             Vector2 gridPos = GetFirstTargetPosition(missions[i]);
             Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
-            worldPos.y += 0.1f;
-            GameObject marker = Instantiate(markerPrefab, worldPos, Quaternion.identity, transform);
+            Vector3 markerPos = worldPos;
+            markerPos.y += 0.01f;
+            GameObject marker = Instantiate(markerPrefab, markerPos, Quaternion.identity, transform);
             Renderer r = marker.GetComponentInChildren<Renderer>();
-            if (r != null)
-            {
-                r.material = new Material(r.material);
-                r.material.color = missions[i].missionColor;
-            }
             spawnedMarkers.Add(marker);
         }
     }
