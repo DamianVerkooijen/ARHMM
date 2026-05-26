@@ -5,7 +5,6 @@ using TMPro;
 
 public class MissionUIController : MonoBehaviour
 {
-    // --- EXACT ORIGINAL VARIABLE NAMES RETAINED ---
     public TMP_Text statusText;
     public GameObject actionButton;
 
@@ -128,14 +127,24 @@ public class MissionUIController : MonoBehaviour
         }
     }
 
-    public void HandleProximityDisplay(bool isInRange, string instruction, string statusLabel)
+    public void HandleProximityDisplay(bool isInRange, string actionText, Sprite actionIcon, string statusLabel)
     {
         if (statusText != null) statusText.text = statusLabel;
-        if (actionButton != null) actionButton.SetActive(isInRange);
+
+        if (extensionRight != null)
+        {
+            Button extButton = extensionRight.GetComponent<Button>();
+            if (extButton != null)
+            {
+                // Makes the button only pressable when you're actualyl in range
+                extButton.interactable = isInRange;
+            }
+        }
 
         if (isInRange)
         {
-            UpdateExtensionContent(instruction, defaultActionIcon);
+            Sprite iconToUse = actionIcon != null ? actionIcon : defaultActionIcon;
+            UpdateExtensionContent(actionText, iconToUse);
             UpdateExtensionVisualState(true, EvaluateIndexStateFinished());
         }
         else
@@ -154,6 +163,9 @@ public class MissionUIController : MonoBehaviour
     private void HandleMissionStarted(int index)
     {
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", true);
+
+        // Close extension right immediately when mission starts
+        UpdateExtensionVisualState(false, false);
         UpdateMissionUI();
     }
 
@@ -163,7 +175,11 @@ public class MissionUIController : MonoBehaviour
         StartCoroutine(ShowMissionCompletePanel());
     }
 
-    private void HandleStepCompleted() => UpdateMissionUI();
+    private void HandleStepCompleted()
+    {
+        UpdateExtensionVisualState(false, false);
+        UpdateMissionUI();
+    }
 
     private void HandleMissionReset()
     {

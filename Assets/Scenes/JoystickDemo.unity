@@ -1078,6 +1078,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &378369189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+  m_PrefabInstance: {fileID: 1664082846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &496750211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1203,257 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523344847}
   m_CullTransparentMesh: 1
+--- !u!1 &529481340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529481341}
+  - component: {fileID: 529481344}
+  - component: {fileID: 529481343}
+  - component: {fileID: 529481342}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &529481341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529481340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1367559005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &529481342
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529481340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &529481343
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529481340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &529481344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529481340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce31bd74de596c4a91056fc362ae9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MissionAudioManager
+  stateController: {fileID: 1130430549}
+  missionController: {fileID: 1367559006}
+  sfxSource: {fileID: 529481343}
+  loopSource: {fileID: 529481342}
+  helicopterMovement: {fileID: 1003497080}
+  hoverSound: {fileID: 8300000, guid: c210c343e7e4f6343afe32f3d4e6a7a9, type: 3}
+  joystickClickSound: {fileID: 8300000, guid: 56648d534b568264fbdd4a7fbfea37da, type: 3}
+  topPanelExpandSound: {fileID: 8300000, guid: 972b7b552ab2b5140bf97cad9c439256, type: 3}
+  expansionSideSound: {fileID: 8300000, guid: 01bc89755720395479b5d816895a81db, type: 3}
+  actionButtonClickSound: {fileID: 8300000, guid: 0da16bb46321c3e48b662a207bc439af, type: 3}
+  missionFinishedSound: {fileID: 8300000, guid: 8a53b24b984dcf144afab91a3246be0a, type: 3}
 --- !u!1 &555763194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2402,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45eb1bd37a6c284ab9aff75e2964317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoundaryManager
+--- !u!114 &1003497080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+  m_PrefabInstance: {fileID: 1003497067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003497068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1b91f01bbc31e4fafd11312b3203a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
 --- !u!1 &1017883257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2551,8 @@ MonoBehaviour:
     isCompleted: 0
     startLocation:
       locationName: BEZORG MISSIE
+      actionText: Ophalen
+      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
       shortInstruction: Vlieg naar ASML
       description: "Bestuur je helikopter om te vervoeren \r\neen belangrijk item
         uit \xE9\xE9n Nederlandse stad\r\nnaar een ander. Lever het veilig af bij
@@ -2291,22 +2560,29 @@ MonoBehaviour:
       reward: 0
     endLocation:
       locationName: BEZORG MISSIE
+      actionText: Bezorgen
+      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
       shortInstruction: Vlieg naar PSV stadium
       description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
         in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
       reward: 0
     searchTargets:
     - locationName: BEZORG MISSIE
+      actionText: 
+      targetIcon: {fileID: 0}
       shortInstruction: 
       description: 
       reward: 0
     scanTargets:
     - locationName: BEZORG MISSIE
+      actionText: 
+      targetIcon: {fileID: 0}
       shortInstruction: 
       description: 
       reward: 0
   interactionRange: 0.5
   scanDuration: 2
+  defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,9 +3001,9 @@ RectTransform:
   - {fileID: 1467935545}
   m_Father: {fileID: 1184956939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79, y: -35}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -100}
   m_SizeDelta: {x: 210.2795, y: 57.4168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1367559000
@@ -2739,7 +3015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367559005}
-  - component: {fileID: 1367559001}
+  - component: {fileID: 1367559006}
   m_Layer: 0
   m_Name: MissionController
   m_TagString: Untagged
@@ -2747,90 +3023,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1367559001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367559000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b046e16f78658b4479a8f12a7bb428ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MissionController
-  manager: {fileID: 167453777}
-  padPrefab: {fileID: 1297735875022845903, guid: 46551d2702cdda540915cb39927112a4, type: 3}
-  markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
-  statusText: {fileID: 794538076}
-  actionButton: {fileID: 1989379950}
-  interactionRange: 0.15
-  radarMarker: {fileID: 1465698167}
-  scanDuration: 2
-  registry: {fileID: 555763195}
-  panelAnimator: {fileID: 1924977461}
-  missionTitleText: {fileID: 1976554554}
-  missionTaskText: {fileID: 1225162054}
-  missionDescriptionText: {fileID: 1795525815}
-  rightExtensionAnimator: {fileID: 1747325560}
-  leftExtensionAnimator: {fileID: 0}
-  extensionActionText: {fileID: 1467935546}
-  extensionActionIcon: {fileID: 1145419104}
-  defaultActionIcon: {fileID: 21300000, guid: 03cff2fef5b9c4947a67cea111c95430, type: 3}
-  leftBar: {fileID: 1859452126}
-  rightBar: {fileID: 496750213}
-  botBar: {fileID: 1929267774}
-  topBarR: {fileID: 966162315}
-  topBarL: {fileID: 1226754295}
-  missionPanelTopImage: {fileID: 1924977459}
-  radarBackground: {fileID: 1939871953}
-  extensionRight: {fileID: 1747325558}
-  extensionLeft: {fileID: 1729101535}
-  leftBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
-  rightBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
-  botBarNormal: {fileID: 21300000, guid: 1eaf62ff529d5594092bfecd4e4c7f1b, type: 3}
-  topBarNormal: {fileID: 21300000, guid: a59644f85644c70478a3f25b0e41580a, type: 3}
-  panelNormal: {fileID: 21300000, guid: 04ca6172e0530814195c13e8f173d417, type: 3}
-  radarNormal: {fileID: 21300000, guid: 76601d83032e84742ad27f5b857cf29a, type: 3}
-  extensionRightNormal: {fileID: 21300000, guid: bd9f394da30db2447a5685b692b40be2, type: 3}
-  extensionLeftNormal: {fileID: 21300000, guid: bd9f394da30db2447a5685b692b40be2, type: 3}
-  rightBarNormalOpened: {fileID: 21300000, guid: 31461ca3307e2cb46ac63469f1e383f0, type: 3}
-  leftBarFinished: {fileID: 21300000, guid: 527816dae2cb0414390b3bcba03308c4, type: 3}
-  rightBarFinished: {fileID: 21300000, guid: 527816dae2cb0414390b3bcba03308c4, type: 3}
-  botBarFinished: {fileID: 21300000, guid: fe7a902adafdaee4c9519c58e3af7278, type: 3}
-  topBarFinished: {fileID: 21300000, guid: 6640c3626e9d4ef498623c5df40cf6ef, type: 3}
-  panelFinished: {fileID: 21300000, guid: 99ad27984bff0cb459bfa8f16f8a8969, type: 3}
-  radarFinished: {fileID: 21300000, guid: 6c6590256d5745b459553b570ea5da63, type: 3}
-  extensionRightFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
-  extensionLeftFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
-  rightBarFinishedOpened: {fileID: 21300000, guid: 0c2b457070ba65e4cb9bb4a26f7ecc51, type: 3}
-  missions:
-  - missionName: BEZORG MISSIE
-    missionType: 0
-    isCompleted: 0
-    startLocation:
-      locationName: BEZORG MISSIE
-      shortInstruction: Vlieg naar ASML
-      description: "Bestuur je helikopter om te vervoeren \r\neen belangrijk item
-        uit \xE9\xE9n Nederlandse stad\r\nnaar een ander. Lever het veilig af bij
-        \r\nvoltooi de missie."
-      reward: 0
-    endLocation:
-      locationName: BEZORG MISSIE
-      shortInstruction: Vlieg naar PSV stadium
-      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
-        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
-      reward: 0
-    searchTargets:
-    - locationName: BEZORG MISSIE
-      shortInstruction: 
-      description: 
-      reward: 0
-    scanTargets:
-    - locationName: BEZORG MISSIE
-      shortInstruction: 
-      description: 
-      reward: 0
 --- !u!4 &1367559005
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,8 +3039,28 @@ Transform:
   - {fileID: 1130430548}
   - {fileID: 630351678}
   - {fileID: 886075152}
+  - {fileID: 529481341}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367559006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367559000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae1d5b45c4465f4590866ab9ae9a549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MissionController
+  stateController: {fileID: 1130430549}
+  uiController: {fileID: 886075153}
+  markerManager: {fileID: 630351679}
+  audioManager: {fileID: 529481344}
+  manager: {fileID: 167453777}
+  registry: {fileID: 555763195}
+  radarMarker: {fileID: 1465698167}
 --- !u!1 &1382429424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,7 +3297,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1367559001}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
         m_MethodName: TriggerFullReset
         m_Mode: 1
@@ -3571,7 +3783,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1664082851}
   m_SourcePrefab: {fileID: 100100000, guid: ec536a7718376554185e4a856d5ae230, type: 3}
 --- !u!224 &1664082847 stripped
 RectTransform:
@@ -3583,12 +3798,41 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
   m_PrefabInstance: {fileID: 1664082846}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 378369189}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42844a4fccbd54746b90cade4ff70f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1664082851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378369189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 529481344}
+          m_TargetAssemblyTypeName: MissionAudioManager, Assembly-CSharp
+          m_MethodName: PlayJoystickTouchSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1729101533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,6 +3920,7 @@ GameObject:
   - component: {fileID: 1747325559}
   - component: {fileID: 1747325558}
   - component: {fileID: 1747325560}
+  - component: {fileID: 1747325561}
   m_Layer: 5
   m_Name: ExtensionRightB
   m_TagString: Untagged
@@ -3763,6 +4008,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1747325561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747325556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1747325558}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1367559006}
+        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
+        m_MethodName: OnActionButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1759543125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,9 +4360,9 @@ RectTransform:
   - {fileID: 1145419103}
   m_Father: {fileID: 1184956939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79, y: 44}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -63.791603}
   m_SizeDelta: {x: 78.6396, y: 78.6396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859139267
@@ -4691,7 +4992,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1367559001}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
         m_MethodName: OnActionButtonPressed
         m_Mode: 1
@@ -4761,6 +5062,11 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: 0}
   m_SizeDelta: {x: 67.2023, y: 62.3713}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2055478601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+  m_PrefabInstance: {fileID: 2114929556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2114929556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4853,6 +5159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Variable Joystick R
       objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4944,7 +5254,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2114929561}
   m_SourcePrefab: {fileID: 100100000, guid: ec536a7718376554185e4a856d5ae230, type: 3}
 --- !u!224 &2114929557 stripped
 RectTransform:
@@ -4956,12 +5269,41 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
   m_PrefabInstance: {fileID: 2114929556}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2055478601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42844a4fccbd54746b90cade4ff70f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2114929561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055478601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 529481344}
+          m_TargetAssemblyTypeName: MissionAudioManager, Assembly-CSharp
+          m_MethodName: PlayJoystickTouchSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class MissionController : MonoBehaviour
     [SerializeField] private MissionStateController stateController;
     [SerializeField] private MissionUIController uiController;
     [SerializeField] private MarkerManager markerManager;
+    [SerializeField] private MissionAudioManager audioManager;
 
     [Header("AR World Scene Tracking References")]
     public HelicopterManager manager;
@@ -27,6 +28,8 @@ public class MissionController : MonoBehaviour
         if (stateController != null) stateController.Initialize(manager, registry);
         if (uiController != null) uiController.Initialize(stateController);
         if (markerManager != null) markerManager.Initialize(stateController, manager);
+        if (audioManager == null) audioManager = GetComponentInChildren<MissionAudioManager>();
+        if (audioManager != null) audioManager.Initialize(stateController, this);
     }
 
     private void Update()
@@ -49,6 +52,7 @@ public class MissionController : MonoBehaviour
     public void OnActionButtonPressed()
     {
         if (stateController == null || manager == null || manager.helicopter == null) return;
+        if (audioManager != null) audioManager.PlayClickSound();
 
         if (stateController.selectedMissionIndex == -1)
         {

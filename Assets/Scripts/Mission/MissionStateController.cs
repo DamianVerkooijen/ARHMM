@@ -10,6 +10,8 @@ public class MissionStateController : MonoBehaviour
     public class MissionTarget
     {
         [LocationName] public string locationName;
+        public string actionText;
+        public Sprite targetIcon;
         public string shortInstruction;
         [TextArea] public string description;
         public int reward;
@@ -31,6 +33,8 @@ public class MissionStateController : MonoBehaviour
     public List<Mission> missions = new List<Mission>();
     public float interactionRange = 0.5f;
     public float scanDuration = 2f;
+    [Tooltip("Standard icon for starting a new mission")]
+    public Sprite defaultStartIcon;
 
     // Progression properties (State Engine)
     public int selectedMissionIndex { get; private set; } = -1;
@@ -43,9 +47,9 @@ public class MissionStateController : MonoBehaviour
     public event Action<int> OnMissionCompleted;
     public event Action OnStepCompleted;
     public event Action OnMissionReset;
-    
+
     // UI Notification bindings
-    public event Action<bool, string, string> OnProximityChanged; // isInRange, stepInstruction, displayDescription
+    public event Action<bool, string, Sprite, string> OnProximityChanged; // isInRange, stepInstruction, displayDescription
     public event Action<float> OnScanProgressUpdated; // Progress percentage
 
     private HelicopterManager manager;
@@ -87,9 +91,9 @@ public class MissionStateController : MonoBehaviour
         {
             wasInRange = isInRange;
             if (isInRange)
-                OnProximityChanged?.Invoke(true, "Druk op de knop om de missie te starten.", $"[ {missions[closestIndex].missionName} ]\nPress Button to Start");
+                OnProximityChanged?.Invoke(true, "Start Missie", defaultStartIcon, $"[ {missions[closestIndex].missionName} ]\nPress Button to Start");
             else
-                OnProximityChanged?.Invoke(false, "", "Fly to a marker to start a mission");
+                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
         }
     }
 
@@ -102,24 +106,38 @@ public class MissionStateController : MonoBehaviour
 
         if (dist < interactionRange)
         {
-            string activeDescription = missionActive ? currentMission.endLocation.description : currentMission.startLocation.description;
-            string activeInstruction = missionActive ? currentMission.endLocation.shortInstruction : currentMission.startLocation.shortInstruction;
-
-            if (currentMission.missionType == MissionType.Scan)
+            MissionTarget currentTarget = null;
+            if (currentMission.missionType == MissionType.Delivery)
             {
-                scanTimer += Time.deltaTime;
-                float progress = Mathf.Round((scanTimer / scanDuration) * 100);
-                OnScanProgressUpdated?.Invoke(progress);
-                if (scanTimer >= scanDuration) CompleteStep();
+                currentTarget = missionActive ? currentMission.endLocation : currentMission.startLocation;
             }
-            else
+            else if (currentMission.missionType == MissionType.SearchFind)
             {
-                OnProximityChanged?.Invoke(true, activeInstruction, activeDescription);
+                currentTarget = currentMission.searchTargets[currentTargetIndex];
+            }
+            else if (currentMission.missionType == MissionType.Scan)
+            {
+                currentTarget = currentMission.scanTargets[currentTargetIndex];
+            }
+
+            if (currentTarget != null)
+            {
+                if (currentMission.missionType == MissionType.Scan)
+                {
+                    scanTimer += Time.deltaTime;
+                    float progress = Mathf.Round((scanTimer / scanDuration) * 100);
+                    OnScanProgressUpdated?.Invoke(progress);
+                    if (scanTimer >= scanDuration) CompleteStep();
+                }
+                else
+                {
+                    OnProximityChanged?.Invoke(true, currentTarget.actionText, currentTarget.targetIcon, currentTarget.description);
+                }
             }
         }
         else
         {
-            OnProximityChanged?.Invoke(false, "", $"Goal: {currentMission.missionName}");
+            OnProximityChanged?.Invoke(false, "", null, $"Goal: {currentMission.missionName}");
         }
     }
 
