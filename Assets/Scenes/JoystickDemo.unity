@@ -176,7 +176,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reset Session
+  m_text: 'Reset Mission
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -999,6 +1001,139 @@ MonoBehaviour:
   minZ: 0
   maxZ: 0
   hasSpawned: 0
+--- !u!1 &220962934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220962935}
+  - component: {fileID: 220962938}
+  - component: {fileID: 220962937}
+  - component: {fileID: 220962936}
+  m_Layer: 5
+  m_Name: FullReset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &220962935
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220962934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1038858613}
+  m_Father: {fileID: 1382429425}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 901.51, y: 487}
+  m_SizeDelta: {x: 348.4232, y: 98.0103}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &220962936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220962934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 220962937}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1367559006}
+        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
+        m_MethodName: FullSystemHardReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &220962937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220962934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 20f9689f9e8060844b664aa02addd198, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &220962938
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220962934}
+  m_CullTransparentMesh: 1
 --- !u!1 &259813124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.31974632}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 18.132004, y: 0.017997742}
+  m_AnchoredPosition: {x: 18.131958, y: 0.018005371}
   m_SizeDelta: {x: 37.243103, y: -0.0769043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794538076
@@ -2064,6 +2199,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615827328298413093, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+      propertyPath: maxSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8405868121970845232, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
       propertyPath: m_Name
       value: Helicopter
@@ -2106,8 +2249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
   leftJoystick: {fileID: 1664082848}
   rightJoystick: {fileID: 2114929558}
-  speed: 0.25
+  maxSpeed: 0.25
   turnSpeed: 90
+  turnSpeedReduction: 0.8
+  acceleration: 0.15
+  deceleration: 0.3
   modelTransform: {fileID: 0}
   leanAmount: 20
   leanSpeed: 5
@@ -2178,6 +2324,145 @@ Transform:
   - {fileID: 116535546}
   m_Father: {fileID: 167453775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1038858612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038858613}
+  - component: {fileID: 1038858615}
+  - component: {fileID: 1038858614}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1038858613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038858612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 220962935}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1038858614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038858612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Reset Markers
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 40
+  m_fontSizeBase: 40
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1038858615
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038858612}
+  m_CullTransparentMesh: 1
 --- !u!1 &1090870376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +3024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367559005}
-  - component: {fileID: 1367559001}
+  - component: {fileID: 1367559006}
   m_Layer: 0
   m_Name: MissionController
   m_TagString: Untagged
@@ -2747,90 +3032,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1367559001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367559000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b046e16f78658b4479a8f12a7bb428ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MissionController
-  manager: {fileID: 167453777}
-  padPrefab: {fileID: 1297735875022845903, guid: 46551d2702cdda540915cb39927112a4, type: 3}
-  markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
-  statusText: {fileID: 794538076}
-  actionButton: {fileID: 1989379950}
-  interactionRange: 0.15
-  radarMarker: {fileID: 1465698167}
-  scanDuration: 2
-  registry: {fileID: 555763195}
-  panelAnimator: {fileID: 1924977461}
-  missionTitleText: {fileID: 1976554554}
-  missionTaskText: {fileID: 1225162054}
-  missionDescriptionText: {fileID: 1795525815}
-  rightExtensionAnimator: {fileID: 1747325560}
-  leftExtensionAnimator: {fileID: 0}
-  extensionActionText: {fileID: 1467935546}
-  extensionActionIcon: {fileID: 1145419104}
-  defaultActionIcon: {fileID: 21300000, guid: 03cff2fef5b9c4947a67cea111c95430, type: 3}
-  leftBar: {fileID: 1859452126}
-  rightBar: {fileID: 496750213}
-  botBar: {fileID: 1929267774}
-  topBarR: {fileID: 966162315}
-  topBarL: {fileID: 1226754295}
-  missionPanelTopImage: {fileID: 1924977459}
-  radarBackground: {fileID: 1939871953}
-  extensionRight: {fileID: 1747325558}
-  extensionLeft: {fileID: 1729101535}
-  leftBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
-  rightBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
-  botBarNormal: {fileID: 21300000, guid: 1eaf62ff529d5594092bfecd4e4c7f1b, type: 3}
-  topBarNormal: {fileID: 21300000, guid: a59644f85644c70478a3f25b0e41580a, type: 3}
-  panelNormal: {fileID: 21300000, guid: 04ca6172e0530814195c13e8f173d417, type: 3}
-  radarNormal: {fileID: 21300000, guid: 76601d83032e84742ad27f5b857cf29a, type: 3}
-  extensionRightNormal: {fileID: 21300000, guid: bd9f394da30db2447a5685b692b40be2, type: 3}
-  extensionLeftNormal: {fileID: 21300000, guid: bd9f394da30db2447a5685b692b40be2, type: 3}
-  rightBarNormalOpened: {fileID: 21300000, guid: 31461ca3307e2cb46ac63469f1e383f0, type: 3}
-  leftBarFinished: {fileID: 21300000, guid: 527816dae2cb0414390b3bcba03308c4, type: 3}
-  rightBarFinished: {fileID: 21300000, guid: 527816dae2cb0414390b3bcba03308c4, type: 3}
-  botBarFinished: {fileID: 21300000, guid: fe7a902adafdaee4c9519c58e3af7278, type: 3}
-  topBarFinished: {fileID: 21300000, guid: 6640c3626e9d4ef498623c5df40cf6ef, type: 3}
-  panelFinished: {fileID: 21300000, guid: 99ad27984bff0cb459bfa8f16f8a8969, type: 3}
-  radarFinished: {fileID: 21300000, guid: 6c6590256d5745b459553b570ea5da63, type: 3}
-  extensionRightFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
-  extensionLeftFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
-  rightBarFinishedOpened: {fileID: 21300000, guid: 0c2b457070ba65e4cb9bb4a26f7ecc51, type: 3}
-  missions:
-  - missionName: BEZORG MISSIE
-    missionType: 0
-    isCompleted: 0
-    startLocation:
-      locationName: BEZORG MISSIE
-      shortInstruction: Vlieg naar ASML
-      description: "Bestuur je helikopter om te vervoeren \r\neen belangrijk item
-        uit \xE9\xE9n Nederlandse stad\r\nnaar een ander. Lever het veilig af bij
-        \r\nvoltooi de missie."
-      reward: 0
-    endLocation:
-      locationName: BEZORG MISSIE
-      shortInstruction: Vlieg naar PSV stadium
-      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
-        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
-      reward: 0
-    searchTargets:
-    - locationName: BEZORG MISSIE
-      shortInstruction: 
-      description: 
-      reward: 0
-    scanTargets:
-    - locationName: BEZORG MISSIE
-      shortInstruction: 
-      description: 
-      reward: 0
 --- !u!4 &1367559005
 Transform:
   m_ObjectHideFlags: 0
@@ -2849,6 +3050,24 @@ Transform:
   - {fileID: 886075152}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367559006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367559000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae1d5b45c4465f4590866ab9ae9a549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MissionController
+  stateController: {fileID: 1130430549}
+  uiController: {fileID: 886075153}
+  markerManager: {fileID: 630351679}
+  manager: {fileID: 167453777}
+  registry: {fileID: 555763195}
+  radarMarker: {fileID: 1465698167}
 --- !u!1 &1382429424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,6 +3109,7 @@ RectTransform:
   - {fileID: 2114929557}
   - {fileID: 1664082847}
   - {fileID: 1451629077}
+  - {fileID: 220962935}
   - {fileID: 1729101534}
   - {fileID: 1747325557}
   m_Father: {fileID: 68131153}
@@ -3015,7 +3235,7 @@ GameObject:
   - component: {fileID: 1451629079}
   - component: {fileID: 1451629078}
   m_Layer: 5
-  m_Name: ResetSession
+  m_Name: ResetMission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3085,9 +3305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1367559001}
+      - m_Target: {fileID: 1367559006}
         m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
-        m_MethodName: TriggerFullReset
+        m_MethodName: ResetMissionsOnly
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4691,7 +4911,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1367559001}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
         m_MethodName: OnActionButtonPressed
         m_Mode: 1

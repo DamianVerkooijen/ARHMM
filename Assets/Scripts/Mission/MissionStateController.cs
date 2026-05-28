@@ -184,11 +184,17 @@ public class MissionStateController : MonoBehaviour
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
         missionActive = false;
-        scanTimer = 0f;
-        wasInRange = false;
+        scanTimer = 0f;     
+        wasInRange = false;    
 
-        foreach (var m in missions) m.isCompleted = false;
-        OnMissionReset?.Invoke();
+        // Loop door alle missies heen en zet ze weer open
+        foreach (var mission in missions)
+        {
+            mission.isCompleted = false;
+        }
+
+        // Activeer het event zodat de UI en MarkerManager weten dat alles gereset is
+        if (OnMissionReset != null) OnMissionReset();
     }
 
     // Help Getters
