@@ -1485,10 +1485,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocationRegistry
   locations:
-  - locationName: BEZORG MISSIE
-    gridPosition: {x: 15, y: 25}
-  - locationName: BEZORG MISSIE
-    gridPosition: {x: 10, y: 15}
+  - locationName: ASML
+    gridPosition: {x: 24, y: 26}
+  - locationName: Airport
+    gridPosition: {x: 14, y: 68}
+  - locationName: Brainport Tech Campus
+    gridPosition: {x: 29, y: 73}
+  - locationName: Stadium
+    gridPosition: {x: 52, y: 59}
+  - locationName: Train Station
+    gridPosition: {x: 57, y: 61}
+  - locationName: High Tech Campus
+    gridPosition: {x: 49, y: 26}
+  - locationName: TU
+    gridPosition: {x: 61, y: 66}
+  - locationName: Strijp S
+    gridPosition: {x: 49, y: 66}
+  - locationName: Evoluon
+    gridPosition: {x: 42, y: 61}
+  - locationName: DAF Museum
+    gridPosition: {x: 64, y: 54}
+  - locationName: Philips Museum
+    gridPosition: {x: 56, y: 56}
+  - locationName: Van Abbemuseum
+    gridPosition: {x: 58, y: 52}
 --- !u!4 &555763196
 Transform:
   m_ObjectHideFlags: 0
@@ -1745,7 +1765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.75
+  m_fontSize: 45.6
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2551,7 +2571,7 @@ MonoBehaviour:
     missionType: 0
     isCompleted: 0
     startLocation:
-      locationName: BEZORG MISSIE
+      locationName: ASML
       actionText: Ophalen
       targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
       shortInstruction: Vlieg naar ASML
@@ -2581,8 +2601,100 @@ MonoBehaviour:
       shortInstruction: 
       description: 
       reward: 0
+  - missionName: Test
+    missionType: 2
+    isCompleted: 0
+    startLocation:
+      locationName: ASML
+      actionText: Balls
+      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
+      shortInstruction: Fly to Balzac
+      description: my balzac
+      reward: 0
+    endLocation:
+      locationName: ASML
+      actionText: Bezorgen
+      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
+      shortInstruction: Vlieg naar PSV stadium
+      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
+        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
+      reward: 0
+    searchTargets: []
+    scanTargets:
+    - locationName: ASML
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls
+      description: balzac
+      reward: 0
+    - locationName: Airport
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Brainport Tech Campus
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Stadium
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Train Station
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: High Tech Campus
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: TU
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Strijp S
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Evoluon
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: DAF Museum
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Philips Museum
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
+    - locationName: Van Abbemuseum
+      actionText: scan
+      targetIcon: {fileID: 0}
+      shortInstruction: Balls2
+      description: balzac2
+      reward: 0
   interactionRange: 0.5
-  scanDuration: 2
+  scanDuration: 1.5
   defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
 GameObject:
