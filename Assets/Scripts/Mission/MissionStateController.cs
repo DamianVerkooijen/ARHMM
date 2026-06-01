@@ -31,7 +31,7 @@ public class MissionStateController : MonoBehaviour
 
     [Header("Missions Configuration")]
     public List<Mission> missions = new List<Mission>();
-    public float interactionRange = 0.5f;
+    public float interactionRange = 0.01f;
     public float scanDuration = 2f;
     [Tooltip("Standard icon for starting a new mission")]
     public Sprite defaultStartIcon;
@@ -41,6 +41,9 @@ public class MissionStateController : MonoBehaviour
     public int currentTargetIndex { get; private set; } = 0;
     public bool missionActive { get; private set; } = false;
     public float scanTimer { get; private set; } = 0f;
+
+    // Cached closest mission index for button press handling
+    public int closestAvailableMissionIndex { get; private set; } = -1;
 
     // Structural decoupled architecture communication events
     public event Action<int> OnMissionStarted;
@@ -62,9 +65,21 @@ public class MissionStateController : MonoBehaviour
         registry = locRegistry;
     }
 
+    private bool hasMovedFromSpawn = false;
+
     public void EvaluateProgressionTick()
     {
         if (manager == null || manager.helicopter == null || registry == null) return;
+
+        if (manager.helicopter.transform.localPosition == Vector3.zero)
+        {
+            if (wasInRange)
+            {
+                wasInRange = false;
+                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
+            }
+            return;
+        }
 
         if (selectedMissionIndex == -1)
             EvaluateSelectionRange();
@@ -85,6 +100,9 @@ public class MissionStateController : MonoBehaviour
             float dist = GetFlatDistance(manager.helicopter.transform.position, worldPos);
             if (dist < closestDist) { closestDist = dist; closestIndex = i; }
         }
+
+        // Cache so OnActionButtonPressed always knows which mission to start
+        closestAvailableMissionIndex = closestIndex;
 
         bool isInRange = closestIndex != -1;
         if (isInRange != wasInRange)
@@ -129,14 +147,17 @@ public class MissionStateController : MonoBehaviour
                     OnScanProgressUpdated?.Invoke(progress);
                     if (scanTimer >= scanDuration) CompleteStep();
                 }
-                else
+                else if (!wasInRange)
                 {
+                    // Only fire once when entering range, not every frame
+                    wasInRange = true;
                     OnProximityChanged?.Invoke(true, currentTarget.actionText, currentTarget.targetIcon, currentTarget.description);
                 }
             }
         }
-        else
+        else if (wasInRange)
         {
+            wasInRange = false;
             OnProximityChanged?.Invoke(false, "", null, $"Goal: {currentMission.missionName}");
         }
     }
@@ -155,14 +176,14 @@ public class MissionStateController : MonoBehaviour
     {
         if (selectedMissionIndex == -1) return;
         Mission m = missions[selectedMissionIndex];
-        
+
         if (m.missionType == MissionType.Delivery)
         {
-            if (!missionActive) 
-            { 
-                missionActive = true; 
-                scanTimer = 0; 
-                OnStepCompleted?.Invoke(); 
+            if (!missionActive)
+            {
+                missionActive = true;
+                scanTimer = 0;
+                OnStepCompleted?.Invoke();
             }
             else FinishMission();
         }
@@ -204,6 +225,7 @@ public class MissionStateController : MonoBehaviour
         missionActive = false;
         scanTimer = 0f;
         wasInRange = false;
+        closestAvailableMissionIndex = -1;
 
         foreach (var m in missions) m.isCompleted = false;
         OnMissionReset?.Invoke();

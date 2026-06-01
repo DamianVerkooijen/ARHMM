@@ -65,25 +65,36 @@ public class MissionUIController : MonoBehaviour
     [Tooltip("Nieuw: Rechter balk (Groen) wanneer de extensie OPEN staat")]
     public Sprite rightBarFinishedOpened;
 
+    private const string ANIM_PARAM = "IsInRange";
+
     private MissionStateController stateController;
     private bool isExtensionOpen = false;
+
+    // Blokkeert ENKEL proximity-updates TIJDENS het tonen van het 5-seconden scherm
+    private bool isMissionCompleteDisplayActive = false;
 
     public void Initialize(MissionStateController controller)
     {
         stateController = controller;
 
-        // Event hooks
+        if (rightExtensionAnimator == null)
+        {
+            rightExtensionAnimator = GetComponentInChildren<Animator>();
+            if (rightExtensionAnimator == null)
+            {
+                Transform foundExtension = transform.Find("ExtensionRightB");
+                if (foundExtension != null) rightExtensionAnimator = foundExtension.GetComponent<Animator>();
+            }
+        }
+
         stateController.OnMissionStarted += HandleMissionStarted;
         stateController.OnMissionCompleted += HandleMissionCompleted;
         stateController.OnStepCompleted += HandleStepCompleted;
         stateController.OnMissionReset += HandleMissionReset;
         stateController.OnProximityChanged += HandleProximityDisplay;
-        stateController.OnScanProgressUpdated += HandleScanProgress;
+        stateController.OnScanProgressUpdated += HandleScanProgressUpdated;
 
-        if (actionButton != null) actionButton.SetActive(false);
-        isExtensionOpen = false;
-        SetHUDState(false);
-        UpdateExtensionVisualState(false, false);
+        ResetUI();
     }
 
     private void OnDestroy()
@@ -94,29 +105,29 @@ public class MissionUIController : MonoBehaviour
         stateController.OnStepCompleted -= HandleStepCompleted;
         stateController.OnMissionReset -= HandleMissionReset;
         stateController.OnProximityChanged -= HandleProximityDisplay;
-        stateController.OnScanProgressUpdated -= HandleScanProgress;
+        stateController.OnScanProgressUpdated -= HandleScanProgressUpdated;
     }
 
     public void UpdateMissionUI()
     {
         if (stateController.selectedMissionIndex == -1) return;
         var activeMission = stateController.missions[stateController.selectedMissionIndex];
-        
+
         if (missionTitleText != null) missionTitleText.text = activeMission.missionName;
 
         MissionStateController.MissionTarget currentTarget = null;
         switch (activeMission.missionType)
         {
-            case MissionStateController.MissionType.Delivery: 
-                currentTarget = !stateController.missionActive ? activeMission.startLocation : activeMission.endLocation; 
+            case MissionStateController.MissionType.Delivery:
+                currentTarget = !stateController.missionActive ? activeMission.startLocation : activeMission.endLocation;
                 break;
-            case MissionStateController.MissionType.SearchFind: 
-                if (stateController.currentTargetIndex < activeMission.searchTargets.Count) 
-                    currentTarget = activeMission.searchTargets[stateController.currentTargetIndex]; 
+            case MissionStateController.MissionType.SearchFind:
+                if (stateController.currentTargetIndex < activeMission.searchTargets.Count)
+                    currentTarget = activeMission.searchTargets[stateController.currentTargetIndex];
                 break;
-            case MissionStateController.MissionType.Scan: 
-                if (stateController.currentTargetIndex < activeMission.scanTargets.Count) 
-                    currentTarget = activeMission.scanTargets[stateController.currentTargetIndex]; 
+            case MissionStateController.MissionType.Scan:
+                if (stateController.currentTargetIndex < activeMission.scanTargets.Count)
+                    currentTarget = activeMission.scanTargets[stateController.currentTargetIndex];
                 break;
         }
 
@@ -127,75 +138,93 @@ public class MissionUIController : MonoBehaviour
         }
     }
 
-    public void HandleProximityDisplay(bool isInRange, string actionText, Sprite actionIcon, string statusLabel)
+    private void HandleProximityDisplay(bool isInRange, string actionText, Sprite actionIcon, string statusLabel)
     {
+        // Gecorrigeerd: Alleen blokkeren als het eindscherm daadwerkelijk in beeld flitst
+        if (isMissionCompleteDisplayActive) return;
+
         if (statusText != null) statusText.text = statusLabel;
-
-        if (extensionRight != null)
-        {
-            Button extButton = extensionRight.GetComponent<Button>();
-            if (extButton != null)
-            {
-                // Makes the button only pressable when you're actualyl in range
-                extButton.interactable = isInRange;
-            }
-        }
-
-        if (isInRange)
-        {
-            Sprite iconToUse = actionIcon != null ? actionIcon : defaultActionIcon;
-            UpdateExtensionContent(actionText, iconToUse);
-            UpdateExtensionVisualState(true, EvaluateIndexStateFinished());
-        }
-        else
-        {
-            UpdateExtensionVisualState(false, EvaluateIndexStateFinished());
-        }
+        UpdateExtensionVisualState(isInRange, actionText, actionIcon);
     }
 
-    private void HandleScanProgress(float percentage)
+    public void UpdateExtensionVisualState(bool open, string actionText, Sprite actionIcon)
     {
-        if (statusText != null) statusText.text = $"Scanning... {percentage}%";
-        UpdateExtensionContent($"Bezig met scannen... {percentage}%", defaultActionIcon);
-        UpdateExtensionVisualState(true, false);
+        isExtensionOpen = open;
+
+        if (actionButton != null) actionButton.SetActive(true);
+
+        if (extensionActionText != null) extensionActionText.text = open ? actionText : "";
+        if (extensionActionIcon != null) extensionActionIcon.sprite = open ? (actionIcon != null ? actionIcon : defaultActionIcon) : null;
+
+        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool(ANIM_PARAM, open);
+        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool(ANIM_PARAM, open);
+
+        // Altijd de HUD-staat updaten op basis van de werkelijke voortgang
+        SetHUDState(EvaluateIndexStateFinished());
+    }
+
+    private void HandleScanProgressUpdated(float progressPercent)
+    {
+        if (isMissionCompleteDisplayActive) return;
+
+        if (statusText != null) statusText.text = $"Scanning... {progressPercent}%";
+        if (extensionActionText != null) extensionActionText.text = $"Bezig met scannen... {progressPercent}%";
+
+        isExtensionOpen = true;
+        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool(ANIM_PARAM, true);
+        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool(ANIM_PARAM, true);
     }
 
     private void HandleMissionStarted(int index)
     {
+        isMissionCompleteDisplayActive = false;
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", true);
 
-        // Close extension right immediately when mission starts
-        UpdateExtensionVisualState(false, false);
+        UpdateExtensionVisualState(false, "", null);
         UpdateMissionUI();
     }
 
     private void HandleMissionCompleted(int index)
     {
-        UpdateExtensionVisualState(false, true);
+        isMissionCompleteDisplayActive = true;
+
+        // Sluit de extensie animatie, maar vernietig/verberg de sprites niet vroegtijdig!
+        isExtensionOpen = false;
+        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool(ANIM_PARAM, false);
+        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool(ANIM_PARAM, false);
+
         StartCoroutine(ShowMissionCompletePanel());
     }
 
     private void HandleStepCompleted()
     {
-        UpdateExtensionVisualState(false, false);
+        // Na een tussentijdse taak sluiten we de lade netjes en wachten op de volgende range-trigger
+        UpdateExtensionVisualState(false, "", null);
         UpdateMissionUI();
     }
 
     private void HandleMissionReset()
     {
         StopAllCoroutines();
+        isMissionCompleteDisplayActive = false;
         ResetUI();
     }
 
     public IEnumerator ShowMissionCompletePanel()
     {
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", false);
+
+        // Forceer direct GROEN over het hele scherm
         SetHUDState(true);
 
         if (missionTitleText != null) missionTitleText.text = "MISSIE VOLTOOID";
         if (missionTaskText != null) missionTaskText.text = "Goed gedaan!";
+        if (missionDescriptionText != null) missionDescriptionText.text = "";
+        if (statusText != null) statusText.text = "";
 
         yield return new WaitForSeconds(5f);
+
+        isMissionCompleteDisplayActive = false;
         ResetUI();
     }
 
@@ -205,24 +234,19 @@ public class MissionUIController : MonoBehaviour
         if (missionTaskText != null) missionTaskText.text = "Volg de radar voor een missie";
         if (missionDescriptionText != null) missionDescriptionText.text = "";
         if (statusText != null) statusText.text = "Fly to a marker to start a mission";
-        if (actionButton != null) actionButton.SetActive(false);
-        
-        UpdateExtensionVisualState(false, false);
+
+        // Zorg dat de actionButton zichtbaar/beschikbaar blijft voor de volgende missie-selectie
+        if (actionButton != null) actionButton.SetActive(true);
+
+        isExtensionOpen = false;
+        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool(ANIM_PARAM, false);
+        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool(ANIM_PARAM, false);
+
+        if (extensionActionText != null) extensionActionText.text = "";
+        if (extensionActionIcon != null) extensionActionIcon.sprite = null;
+
+        // Reset de complete HUD-sprites keurig terug naar Normaal (Blauw)
         SetHUDState(false);
-    }
-
-    private void UpdateExtensionContent(string instruction, Sprite icon)
-    {
-        if (extensionActionText != null) extensionActionText.text = instruction;
-        if (extensionActionIcon != null && icon != null) extensionActionIcon.sprite = icon;
-    }
-
-    private void UpdateExtensionVisualState(bool open, bool isFinished)
-    {
-        isExtensionOpen = open;
-        if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool("isInRange", open);
-        if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool("isInRange", open);
-        SetHUDState(isFinished);
     }
 
     public void SetHUDState(bool isFinished)
@@ -242,13 +266,15 @@ public class MissionUIController : MonoBehaviour
                 rightBar.sprite = isExtensionOpen ? rightBarNormalOpened : rightBarNormal;
         }
 
+        // FIX: Voorkom dat de extensie-afbeeldingen op 'null' springen of onzichtbaar worden
         if (extensionRight != null) extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
         if (extensionLeft != null) extensionLeft.sprite = isFinished ? extensionLeftFinished : extensionLeftNormal;
     }
 
     private bool EvaluateIndexStateFinished()
     {
-        if (stateController.selectedMissionIndex == -1) return false;
+        // Veilige fallback: als de stateController denkt dat er geen missie is, is hij sowieso false (blauw)
+        if (stateController == null || stateController.selectedMissionIndex == -1) return false;
         return stateController.missions[stateController.selectedMissionIndex].isCompleted;
     }
 }
