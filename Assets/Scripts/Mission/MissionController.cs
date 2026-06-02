@@ -74,12 +74,6 @@ public class MissionController : MonoBehaviour
         }
     }
 
-    public void TriggerFullReset()
-    {
-        if (stateController != null) stateController.TriggerFullReset();
-        if (manager != null) manager.SoftResetHeli();
-    }
-
     // Pass-through calls to keep dependencies intact across external scripts
     public bool IsMissionActive() => stateController != null && stateController.selectedMissionIndex != -1;
     public Vector3 GetCurrentTargetWorldPos() => stateController != null ? stateController.GetCurrentTargetWorldPos() : Vector3.zero;

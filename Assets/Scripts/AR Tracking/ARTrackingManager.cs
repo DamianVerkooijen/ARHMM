@@ -9,6 +9,7 @@ public class ARTrackingManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ARTrackedImageManager imageManager;
+    [SerializeField] private ARSession arSession; 
     [SerializeField] private TMP_Text statusText;
 
     private readonly string[] requiredMarkers = { "TopLeft", "TopRight", "BottomLeft", "BottomRight" };
@@ -99,6 +100,7 @@ public class ARTrackingManager : MonoBehaviour
 
         if (IsCalibrated)
         {
+            // Fades out cleanly when playing
             statusText.alpha = Mathf.MoveTowards(statusText.alpha, 0f, Time.deltaTime * 2f);
         }
         else
@@ -109,25 +111,34 @@ public class ARTrackingManager : MonoBehaviour
             {
                 if (!savedMarkerPoses.ContainsKey(m)) missing += m + " ";
             }
-            statusText.text = $"Scanned: {savedMarkerPoses.Count}/4\nMissing: {missing}";
+            statusText.text = $"<color=green>Scanned: {savedMarkerPoses.Count}/4\nMissing: {missing}</color>";
         }
     }
 
     public void ResetSetup()
     {
         IsCalibrated = false;
+        
         if (MasterAnchor != null) Destroy(MasterAnchor);
 
         savedMarkerPoses.Clear();
         MarkerOffsets.Clear();
 
-        foreach (var img in imageManager.trackables)
+        // === FIX 1: WIPE THE AR ENGINE SUBSYSTEM MEMORY ===
+        // This clears out cached images and forces old trackables to vanish.
+        if (arSession != null)
         {
-            if (img.trackingState == TrackingState.Tracking)
-            {
-                RegisterMarker(img);
-            }
+            arSession.Reset();
         }
+
+        // === FIX 2: RE-SHOW DEBUG UI IMMEDIATELY ===
+        if (statusText != null)
+        {
+            statusText.alpha = 1f; 
+            statusText.text = "<color=green>Scanned: 0/4\nMissing: TopLeft TopRight BottomLeft BottomRight </color>";
+        }
+
+        // Alert HelicopterManager to turn off the helicopter/boundaries
         OnSetupReset?.Invoke();
     }
 
