@@ -396,6 +396,17 @@ public class MissionStateController : MonoBehaviour
         return closestPos;
     }
 
+    /// <summary>
+    /// Exposes the specific string identifier of the current active location target step.
+    /// Used directly by the MarkerManager layout systems.
+    /// </summary>
+    public string GetCurrentTargetLocationName()
+    {
+        if (selectedMissionIndex == -1) return string.Empty;
+        MissionTarget currentTarget = GetCurrentTarget(missions[selectedMissionIndex]);
+        return currentTarget != null ? currentTarget.locationName : string.Empty;
+    }
+
     private MissionTarget GetCurrentTarget(Mission currentMission)
     {
         if (currentMission.missionType == MissionType.Delivery)

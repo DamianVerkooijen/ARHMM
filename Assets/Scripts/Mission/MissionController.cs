@@ -61,7 +61,7 @@ public class MissionController : MonoBehaviour
 
         if (stateController.selectedMissionIndex == -1)
         {
-            // Use the cached closest mission index — no need to re-scan
+            // Use the cached closest mission index â€” no need to re-scan
             int target = stateController.closestAvailableMissionIndex;
             if (target != -1)
             {

@@ -333,15 +333,16 @@ GameObject:
   m_Component:
   - component: {fileID: 268787845018965174}
   - component: {fileID: 4577422444929883920}
-  - component: {fileID: 4615827328298413093}
   - component: {fileID: 7782918319312208205}
+  - component: {fileID: 3911530563454312534}
+  - component: {fileID: 2127407904016932595}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &268787845018965174
 Transform:
   m_ObjectHideFlags: 0
@@ -380,7 +381,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.45, y: 2.92, z: 15.49}
   m_Center: {x: 0, y: 1.55, z: -3.2}
---- !u!114 &4615827328298413093
+--- !u!114 &7782918319312208205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8405868121970845232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45eb1bd37a6c284ab9aff75e2964317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoundaryManager
+--- !u!114 &3911530563454312534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,12 +407,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
   leftJoystick: {fileID: 0}
   rightJoystick: {fileID: 0}
-  speed: 0.25
+  maxSpeed: 0.25
   turnSpeed: 90
-  modelTransform: {fileID: 8398895146117451888}
-  leanAmount: 10
-  leanSpeed: 0.5
---- !u!114 &7782918319312208205
+  turnSpeedReduction: 0.8
+  acceleration: 0.15
+  deceleration: 0.3
+  modelTransform: {fileID: 0}
+  leanAmount: 20
+  leanSpeed: 5
+--- !u!114 &2127407904016932595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,9 +424,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8405868121970845232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45eb1bd37a6c284ab9aff75e2964317, type: 3}
+  m_Script: {fileID: 11500000, guid: 33c2b683e3a17e3449c99e599a45269d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoundaryManager
+  m_EditorClassIdentifier: Assembly-CSharp::RotorCOntrol
+  mainRotor: {fileID: 6135254623786464503}
+  tailRotor: {fileID: 759939026309305747}
+  mainRotorSpeed: 500
+  tailRotorSpeed: 500
+  mainRotorAxis: {x: 0, y: 1, z: 0}
+  tailRotorAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &8427593956636346305
 GameObject:
   m_ObjectHideFlags: 0
