@@ -204,6 +204,9 @@ public class MissionUIController : MonoBehaviour
         // staat (bijv. bij Delivery op de startmarker) vuurt OnProximityChanged direct
         // opnieuw met de juiste nieuwe tekst (Bezorgen). Als de speler buiten range is,
         // sluit de StateController de extensie vanzelf via OnProximityChanged(false).
+
+        UpdateExtensionVisualState(false, "", null);
+
         UpdateMissionUI();
     }
 
@@ -262,15 +265,15 @@ public class MissionUIController : MonoBehaviour
         if (missionPanelTopImage != null) missionPanelTopImage.sprite = isFinished ? panelFinished : panelNormal;
         if (radarBackground != null) radarBackground.sprite = isFinished ? radarFinished : radarNormal;
 
+        // WATERDICHTE FIX: De vaste rechterbalk gebruikt nu ALTIJD de stabiele basis-sprites.
+        // Geen checks meer met 'isExtensionOpen' of 'Opened' sprites, zodat hij bij de start
+        // van een opvolgende missie nooit meer in een zwart gat kan veranderen!
         if (rightBar != null)
         {
-            if (isFinished)
-                rightBar.sprite = isExtensionOpen ? rightBarFinishedOpened : rightBarFinished;
-            else
-                rightBar.sprite = isExtensionOpen ? rightBarNormalOpened : rightBarNormal;
+            rightBar.sprite = isFinished ? rightBarFinished : rightBarNormal;
         }
 
-        // FIX: Voorkom dat de extensie-afbeeldingen op 'null' springen of onzichtbaar worden
+        // Voorkom dat de uitschuifbare extensie-afbeeldingen zelf op 'null' springen
         if (extensionRight != null) extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
         if (extensionLeft != null) extensionLeft.sprite = isFinished ? extensionLeftFinished : extensionLeftNormal;
     }
