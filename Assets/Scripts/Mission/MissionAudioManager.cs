@@ -28,6 +28,7 @@ public class MissionAudioManager : MonoBehaviour
     public AudioClip missionFinishedSound;
 
     [Range(0f, 1f)] public float joystickVolume = 0.5f;
+    [Range(0f, 1f)] public float heliVolume = 0.5f;
 
     private bool wasExtensionOpen = false;
     private bool engineStarted = false;
@@ -105,6 +106,7 @@ public class MissionAudioManager : MonoBehaviour
         {
             loopSource.clip = hoverSound;
             loopSource.loop = true;
+            loopSource.volume = heliVolume;
             loopSource.Play();
             engineStarted = true;
         }
