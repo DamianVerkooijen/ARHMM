@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.75
+  m_fontSize: 45.6
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3049,7 +3049,7 @@ MonoBehaviour:
         robotvoetbal heeft gewonnen
       reward: 0
     scanTargets: []
-  - missionName: Missie scannen
+  - missionName: Missie Scannen Museums
     missionType: 2
     isCompleted: 0
     startLocation:
@@ -3095,7 +3095,58 @@ MonoBehaviour:
       shortInstruction: Scan Philips Museum
       description: Philips is het grootste technologiebedrijf van Europa
       reward: 0
+  - missionName: 'Levering Missie '
+    missionType: 0
+    isCompleted: 0
+    startLocation:
+      locationName: ASML
+      actionText: 'Levering Missie '
+      targetIcon: {fileID: 0}
+      shortInstruction: Een chip leveren
+      description: Lever de chip van ASML aan de TU/e
+      reward: 0
+    endLocation:
+      locationName: TU
+      actionText: 'Finale '
+      targetIcon: {fileID: 0}
+      shortInstruction: Gefeliciteerd
+      description: Gefeliciteerd met het inleveren van de chip!
+      reward: 0
+    searchTargets: []
     scanTargets: []
+  - missionName: 'Missie Scannen Eindhoven '
+    missionType: 0
+    isCompleted: 0
+    startLocation:
+      locationName: Airport
+      actionText: 'Missie Scannen Eindhoven '
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan rond in Eindhoven
+      description: Ontdek interessante plekken in Eindhoven en leer er meer over.
+      reward: 0
+    endLocation:
+      locationName: TU
+      actionText: 'Finale '
+      targetIcon: {fileID: 0}
+      shortInstruction: Gefeliciteerd
+      description: Gefeliciteerd met het inleveren van de chip!
+      reward: 0
+    searchTargets: []
+    scanTargets:
+    - locationName: Stadium
+      actionText: 'Scan het stadion '
+      targetIcon: {fileID: 0}
+      shortInstruction: 'Scan het stadion '
+      description: Het Philips Stadion is de thuisbasis van PSV, dat de Eredivisie
+        al drie seizoenen op rij heeft gewonnen.
+      reward: 0
+    - locationName: Train Station
+      actionText: 'Scan het station '
+      targetIcon: {fileID: 0}
+      shortInstruction: 'Scan het station '
+      description: Buiten de Randstad is station Eindhoven het drukste station van
+        het land.
+      reward: 0
   interactionRange: 0.1
   scanDuration: 1
   defaultStartIcon: {fileID: 0}
