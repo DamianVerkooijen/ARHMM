@@ -5270,7 +5270,7 @@ struct U3CInstallU3Ed__37_t0A68C1CB1C41C1957F770501E08FC18AD6398091  : public Ru
 struct U3CU3Ec_tF827337AB87AB1F22F0FD24BFFFB95D8DEEDC1D0  : public RuntimeObject
 {
 };
-struct U3CU3Ec__DisplayClass33_0_t6E7994A982845DD15AC17E1298F65AE6CFF1B854  : public RuntimeObject
+struct U3CU3Ec__DisplayClass30_0_t662D653696E2D6A572ADA048BB200CB1330034AC  : public RuntimeObject
 {
 	String_t* ___name;
 };
@@ -6190,7 +6190,7 @@ struct MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1  : public Runtime
 	String_t* ___description;
 	int32_t ___reward;
 };
-struct U3CShowMissionCompletePanelU3Ed__52_tC096B7ABEE624464C44988C9EE3085D215FB0DF2  : public RuntimeObject
+struct U3CShowMissionCompletePanelU3Ed__53_t560ED90A71483E5C5316BC1B76CF82929C3861F0  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -49549,7 +49549,6 @@ struct ARTrackingManager_t1761671BD0AF8BCA651DC34357D848733B72719C  : public Mon
 	float ___minZ;
 	float ___maxZ;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnSetupComplete;
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnSetupReset;
 };
 struct AllocateBinsPerBatch_t5239CCD1592A1183C158D7DBFBCB38CFB8A65904 
 {
@@ -50232,6 +50231,7 @@ struct MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477  : public M
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___missionTitleText;
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___missionTaskText;
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___missionDescriptionText;
+	IntroSequenceController_t779009D1E4AD5C832383251C15EDEAD8E55CF37E* ___introSequence;
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___rightExtensionAnimator;
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___leftExtensionAnimator;
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___extensionActionText;
@@ -70430,7 +70430,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize10596 = { sizeof(U3CU3Ec__Di
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10597;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10597 = { sizeof(MapController_tCB783F79CE662E0DDA177BA5AC30A8B2B0F6D16E), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10598;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize10598 = { sizeof(U3CU3Ec__DisplayClass33_0_t6E7994A982845DD15AC17E1298F65AE6CFF1B854), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize10598 = { sizeof(U3CU3Ec__DisplayClass30_0_t662D653696E2D6A572ADA048BB200CB1330034AC), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10599;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10599 = { sizeof(ARTrackingManager_t1761671BD0AF8BCA651DC34357D848733B72719C), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10600;
@@ -70484,7 +70484,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize10623 = { sizeof(Mission_t7A
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10624;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10624 = { sizeof(MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10625;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize10625 = { sizeof(U3CShowMissionCompletePanelU3Ed__52_tC096B7ABEE624464C44988C9EE3085D215FB0DF2), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize10625 = { sizeof(U3CShowMissionCompletePanelU3Ed__53_t560ED90A71483E5C5316BC1B76CF82929C3861F0), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10626;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize10626 = { sizeof(MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize10627;
