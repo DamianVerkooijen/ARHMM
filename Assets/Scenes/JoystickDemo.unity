@@ -1448,13 +1448,14 @@ MonoBehaviour:
   sfxSource: {fileID: 529481343}
   loopSource: {fileID: 529481342}
   helicopterMovement: {fileID: 1003497080}
-  hoverSound: {fileID: 8300000, guid: c210c343e7e4f6343afe32f3d4e6a7a9, type: 3}
+  hoverSound: {fileID: 8300000, guid: bf06b572d8b65aa4aa669f128f9de4eb, type: 3}
   joystickClickSound: {fileID: 8300000, guid: 56648d534b568264fbdd4a7fbfea37da, type: 3}
   topPanelExpandSound: {fileID: 8300000, guid: 972b7b552ab2b5140bf97cad9c439256, type: 3}
   expansionSideSound: {fileID: 8300000, guid: 01bc89755720395479b5d816895a81db, type: 3}
   actionButtonClickSound: {fileID: 8300000, guid: 0da16bb46321c3e48b662a207bc439af, type: 3}
   missionFinishedSound: {fileID: 8300000, guid: 8a53b24b984dcf144afab91a3246be0a, type: 3}
-  joystickVolume: 0.5
+  joystickVolume: 0.4
+  heliVolume: 0.2
 --- !u!1 &555763194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,10 +1536,10 @@ RectTransform:
   - {fileID: 1939871952}
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.43656597, y: 0.024694327}
-  m_AnchorMax: {x: 0.5542639, y: 0.21430567}
-  m_AnchoredPosition: {x: 1.1694336, y: -7}
-  m_SizeDelta: {x: 0.04119873, y: 0.015899658}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -9.330566, y: -554.5}
+  m_SizeDelta: {x: 271.0412, y: 273.01587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &630351677
 GameObject:
@@ -1884,10 +1885,10 @@ RectTransform:
   - {fileID: 1465698168}
   m_Father: {fileID: 1939871952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11829985, y: 0.1012518}
-  m_AnchorMax: {x: 0.8887002, y: 0.8951234}
-  m_AnchoredPosition: {x: -1, y: 0.5}
-  m_SizeDelta: {x: 0.10409546, y: -0.6190033}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 208.1041, y: 218.381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851004076
 MonoBehaviour:
@@ -1939,12 +1940,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd67d633e49ea2f449b79f136dcf322a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadarScannerLogic
-  missionController: {fileID: 0}
-  radarMarker: {fileID: 1465698167}
+  missionController: {fileID: 1367559006}
   rotatingScanner: {fileID: 641044867}
+  radarMarkerPrefab: {fileID: 1465698166}
+  radarRadius: 60
+  maxVisualDistance: 0
   scanWidth: 5
   fadeSpeed: 1
   minAlpha: 0.05
+  radarRoot: {fileID: 0}
 --- !u!1 &851549266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2133,7 @@ MonoBehaviour:
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
   rightExtensionAnimator: {fileID: 1747325560}
-  leftExtensionAnimator: {fileID: 0}
+  leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
   extensionActionIcon: {fileID: 1145419104}
   defaultActionIcon: {fileID: 21300000, guid: 03cff2fef5b9c4947a67cea111c95430, type: 3}
@@ -2581,7 +2585,7 @@ MonoBehaviour:
       shortInstruction: 
       description: 
       reward: 0
-  interactionRange: 0.5
+  interactionRange: 0.1
   scanDuration: 2
   defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
@@ -2659,6 +2663,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145419102}
   m_CullTransparentMesh: 1
+--- !u!1 &1184932610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184932611}
+  - component: {fileID: 1184932613}
+  - component: {fileID: 1184932612}
+  m_Layer: 5
+  m_Name: ContentWrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1184932611
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184932610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729101534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 20}
+  m_SizeDelta: {x: 150, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1184932612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184932610}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &1184932613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184932610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 10
+    m_Bottom: 10
+  m_ChildAlignment: 4
+  m_Spacing: 15
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1184956938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,7 +3332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 901.51, y: 603}
+  m_AnchoredPosition: {x: 901.51, y: 599}
   m_SizeDelta: {x: 348.4232, y: 98.0103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451629078
@@ -3380,8 +3461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89d2f988c797b648aedde56cdf3abdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadarMarker
-  radarRadius: 80
-  maxVisualDistance: 2
+  labelText: {fileID: 0}
 --- !u!224 &1465698168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3845,6 +3925,8 @@ GameObject:
   - component: {fileID: 1729101534}
   - component: {fileID: 1729101536}
   - component: {fileID: 1729101535}
+  - component: {fileID: 1729101537}
+  - component: {fileID: 1729101538}
   m_Layer: 5
   m_Name: ExtensionLeftB
   m_TagString: Untagged
@@ -3863,13 +3945,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1184932611}
   m_Father: {fileID: 1382429425}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0.32738888}
-  m_AnchorMax: {x: 0.020868057, y: 0.6556945}
-  m_AnchoredPosition: {x: -0.32666016, y: 2.1906738}
-  m_SizeDelta: {x: -0.6179199, y: -3.5958862}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 22, y: -10.309326}
+  m_SizeDelta: {x: 47.38208, y: 469.4041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729101535
 MonoBehaviour:
@@ -3909,6 +3992,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729101533}
   m_CullTransparentMesh: 1
+--- !u!95 &1729101537
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729101533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08ec2c6fdb4c89041ac83c2161231da6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1729101538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729101533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e19c640d6301a45839a7c27c9d97c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIExtensionDrawer
+  extensionAnimator: {fileID: 1729101537}
+  animParamName: isOpen
+  swipeThreshold: 80
+  requireLeftEdgeStart: 1
+  edgeZoneWidth: 150
 --- !u!1 &1747325556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,10 +4863,10 @@ RectTransform:
   - {fileID: 851004075}
   m_Father: {fileID: 568188393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.022000002}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.4900208}
-  m_SizeDelta: {x: -0.95880127, y: 9.0159}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.5099792}
+  m_SizeDelta: {x: 271.0412, y: 277.0159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939871953
 MonoBehaviour:

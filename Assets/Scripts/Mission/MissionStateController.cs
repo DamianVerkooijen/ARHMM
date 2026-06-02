@@ -31,7 +31,7 @@ public class MissionStateController : MonoBehaviour
 
     [Header("Missions Configuration")]
     public List<Mission> missions = new List<Mission>();
-    public float interactionRange = 0.01f;
+    public float interactionRange = 0.1f;
     public float scanDuration = 2f;
     [Tooltip("Standard icon for starting a new mission")]
     public Sprite defaultStartIcon;
@@ -183,6 +183,9 @@ public class MissionStateController : MonoBehaviour
             {
                 missionActive = true;
                 scanTimer = 0;
+                // Reset wasInRange zodat de proximity-check de volgende tick
+                // opnieuw evalueert (speler kan nog op de marker staan).
+                wasInRange = false;
                 OnStepCompleted?.Invoke();
             }
             else FinishMission();
@@ -190,6 +193,7 @@ public class MissionStateController : MonoBehaviour
         else if (m.missionType == MissionType.SearchFind)
         {
             currentTargetIndex++;
+            wasInRange = false; // Zelfde reden: hercheck proximity voor volgend target
             if (currentTargetIndex >= m.searchTargets.Count) FinishMission();
             else OnStepCompleted?.Invoke();
         }
@@ -199,6 +203,7 @@ public class MissionStateController : MonoBehaviour
     {
         currentTargetIndex++;
         scanTimer = 0f;
+        wasInRange = false; // Hercheck proximity voor volgend scan-target
         if (currentTargetIndex >= missions[selectedMissionIndex].scanTargets.Count) FinishMission();
         else OnStepCompleted?.Invoke();
     }

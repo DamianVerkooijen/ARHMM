@@ -198,8 +198,12 @@ public class MissionUIController : MonoBehaviour
 
     private void HandleStepCompleted()
     {
-        // Na een tussentijdse taak sluiten we de lade netjes en wachten op de volgende range-trigger
-        UpdateExtensionVisualState(false, "", null);
+        // Teksten updaten voor het volgende doel.
+        // De extensie NIET sluiten hier — MissionStateController heeft wasInRange gereset
+        // en evalueert de proximity opnieuw de volgende tick. Als de speler nog in range
+        // staat (bijv. bij Delivery op de startmarker) vuurt OnProximityChanged direct
+        // opnieuw met de juiste nieuwe tekst (Bezorgen). Als de speler buiten range is,
+        // sluit de StateController de extensie vanzelf via OnProximityChanged(false).
         UpdateMissionUI();
     }
 
