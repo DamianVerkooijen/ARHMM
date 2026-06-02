@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissionStateController : MonoBehaviour
 {
-    public enum MissionType { Delivery, SearchFind, Scan, Free }
+    public enum MissionType { Delivery, SearchFind, Scan }
 
     [System.Serializable]
     public class MissionTarget
@@ -29,7 +29,7 @@ public class MissionStateController : MonoBehaviour
         public List<MissionTarget> scanTargets;
     }
 
-    [Header("Missions Configuration")]
+    [Header("Configuratie van missies")]
     public List<Mission> missions = new List<Mission>();
 
     [Tooltip("How close the helicopter must be to interact with a location")]
@@ -82,7 +82,7 @@ public class MissionStateController : MonoBehaviour
                 isScanning = false;
                 scanTimer = 0f;
                 OnScanProgressUpdated?.Invoke(0f);
-                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
+                OnProximityChanged?.Invoke(false, "", null, "Vlieg naar een markering om een missie te starten");
             }
 
             return;
@@ -129,12 +129,12 @@ public class MissionStateController : MonoBehaviour
                     true,
                     "Start Missie",
                     defaultStartIcon,
-                    $"[ {missions[closestIndex].missionName} ]\nPress Button to Start"
+                    $"[ {missions[closestIndex].missionName} ]\nDruk op de knop om te starten"
                 );
             }
             else
             {
-                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
+                OnProximityChanged?.Invoke(false, "", null, "Vlieg naar een markering om een missie te starten");
             }
         }
     }
@@ -203,7 +203,7 @@ public class MissionStateController : MonoBehaviour
             scanTimer = 0f;
 
             OnScanProgressUpdated?.Invoke(0f);
-            OnProximityChanged?.Invoke(false, "", null, $"Goal: {currentMission.missionName}");
+            OnProximityChanged?.Invoke(false, "", null, $"Doel: {currentMission.missionName}");
         }
     }
 
@@ -268,7 +268,7 @@ public class MissionStateController : MonoBehaviour
                 {
                     OnProximityChanged?.Invoke(
                         true,
-                        "Scanning...",
+                        "Scannen...",
                         currentTarget.targetIcon,
                         currentTarget.description
                     );

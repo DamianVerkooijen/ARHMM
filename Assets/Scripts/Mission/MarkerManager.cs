@@ -75,7 +75,14 @@ public class MarkerManager : MonoBehaviour
 
     private void HandleMissionStarted(int index)
     {
-        foreach (var marker in spawnedMarkers) if (marker != null) marker.SetActive(false);
+
+        for (int i = 0; i < spawnedMarkers.Count; i++)
+        {
+            if (spawnedMarkers[i] != null)
+            {
+                spawnedMarkers[i].SetActive(i == index);
+            }
+        }
     }
 
     private void HandleMissionCompleted(int index)
