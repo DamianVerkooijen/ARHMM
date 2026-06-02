@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ARTrackingManager
   imageManager: {fileID: 167453773}
+  arSession: {fileID: 0}
   statusText: {fileID: 794538076}
   minX: 0
   maxX: 0
@@ -947,9 +948,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1367559006}
-        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
-        m_MethodName: FullSystemHardReset
+      - m_Target: {fileID: 1070780744}
+        m_TargetAssemblyTypeName: GameResetManager, Assembly-CSharp
+        m_MethodName: FullAppReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1746,7 +1747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2581,6 +2582,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038858612}
   m_CullTransparentMesh: 1
+--- !u!1 &1070780743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070780745}
+  - component: {fileID: 1070780744}
+  m_Layer: 0
+  m_Name: ResetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1070780744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070780743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac3826b86ef0f0478297de1d916916e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameResetManager
+  arTrackingManager: {fileID: 167453776}
+  helicopterManager: {fileID: 167453777}
+  markerManager: {fileID: 630351679}
+  stateController: {fileID: 1130430549}
+--- !u!4 &1070780745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070780743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 723.0668, y: 0.28822, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090870376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,9 +3595,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
-        m_MethodName: ResetMissionsOnly
+      - m_Target: {fileID: 1070780744}
+        m_TargetAssemblyTypeName: GameResetManager, Assembly-CSharp
+        m_MethodName: GameResetOnly
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5570,3 +5619,4 @@ SceneRoots:
   - {fileID: 259813127}
   - {fileID: 1367559005}
   - {fileID: 555763196}
+  - {fileID: 1070780745}

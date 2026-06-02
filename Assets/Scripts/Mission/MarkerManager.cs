@@ -223,4 +223,18 @@ public class MarkerManager : MonoBehaviour
             SpawnWorldMarkers(stateController.missions);
         }
     }
+
+    public void ClearAllActiveMarkers()
+{
+    foreach (var marker in spawnedMarkers) 
+    {
+        if (marker != null) Destroy(marker);
+    }
+    spawnedMarkers.Clear();
+
+    if (activeWaypoint != null)
+    {
+        activeWaypoint.SetActive(false);
+    }
+}
 }
