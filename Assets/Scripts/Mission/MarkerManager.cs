@@ -35,8 +35,6 @@ public class MarkerManager : MonoBehaviour
         registry = FindFirstObjectByType<LocationRegistry>();
         if (Camera.main != null) mainCameraTransform = Camera.main.transform;
 
-        //LogToScreen("Initializing Marker Manager...");
-
         if (waypointPrefab != null)
         {
             activeWaypoint = Instantiate(waypointPrefab, transform);
@@ -44,11 +42,6 @@ public class MarkerManager : MonoBehaviour
             if (iconTransform != null)
             {
                 innerIconComponent = iconTransform.GetComponent<Image>();
-                //LogToScreen("Waypoint prefab successfully loaded and cached.");
-            }
-            else
-            {
-                //LogToScreen($"WARNING: InnerIcon not found at path: '{imageChildPath}'");
             }
 
             activeWaypoint.SetActive(false);
@@ -75,9 +68,18 @@ public class MarkerManager : MonoBehaviour
 
         if (stateController.selectedMissionIndex != -1 && activeWaypoint != null)
         {
+            if (manager.helicopter != null && manager.helicopter.transform.parent != null)
+            {
+                Transform activeARAnchor = manager.helicopter.transform.parent;
+
+                if (activeWaypoint.transform.parent != activeARAnchor)
+                {
+                    activeWaypoint.transform.SetParent(activeARAnchor, true);
+                }
+            }
+
             if (!activeWaypoint.activeSelf)
             {
-                //LogToScreen($"Mission {stateController.selectedMissionIndex} active. Activating floating waypoint prefab.");
                 activeWaypoint.SetActive(true);
             }
 
@@ -90,7 +92,6 @@ public class MarkerManager : MonoBehaviour
         }
         else if (activeWaypoint != null && activeWaypoint.activeSelf)
         {
-            //LogToScreen("No active mission. Deactivating floating waypoint.");
             activeWaypoint.SetActive(false);
         }
     }
@@ -100,18 +101,35 @@ public class MarkerManager : MonoBehaviour
         foreach (var marker in spawnedMarkers) if (marker != null) Destroy(marker);
         spawnedMarkers.Clear();
 
-        //LogToScreen($"Spawning selection rings for {currentMissions.Count} missions.");
+        Transform activeARAnchor = transform; 
+        if (manager != null && manager.helicopter != null && manager.helicopter.transform.parent != null)
+        {
+            activeARAnchor = manager.helicopter.transform.parent;
+        }
 
         for (int i = 0; i < currentMissions.Count; i++)
         {
             if (currentMissions[i].isCompleted) continue;
-            Vector2 gridPos = stateController.GetFirstTargetPosition(currentMissions[i]);
-            Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
             
-            Vector3 markerPos = worldPos;
-            markerPos.y += 0.01f;
+            // This gives you values between 0 and 100
+            Vector2 gridPos = stateController.GetFirstTargetPosition(currentMissions[i]);
+            
+            // === THE FINAL MATH FIX ===
+            // 1. Convert the 0-100 grid coordinates into a percentage (0.0f to 1.0f)
+            float percentX = gridPos.x / 100f;
+            float percentZ = gridPos.y / 100f; 
 
-            GameObject marker = Instantiate(markerPrefab, markerPos, Quaternion.identity, transform);
+            // 2. Map that percentage exactly between the physical AR corners
+            float preciseLocalX = Mathf.Lerp(manager.minX, manager.maxX, percentX);
+            float preciseLocalZ = Mathf.Lerp(manager.minZ, manager.maxZ, percentZ);
+
+            // Apply it directly
+            Vector3 pureLocalPosition = new Vector3(preciseLocalX, 0.01f, preciseLocalZ);
+
+            GameObject marker = Instantiate(markerPrefab, activeARAnchor);
+            marker.transform.localPosition = pureLocalPosition;
+            marker.transform.localRotation = Quaternion.identity;
+
             spawnedMarkers.Add(marker);
         }
     }
@@ -141,7 +159,7 @@ public class MarkerManager : MonoBehaviour
 
         // LIVE ONSCREEN TELEMETRY FEEDBACK
         string spriteStatus = (targetSprite != null) ? "FOUND custom photo" : "USING fallback circle";
-        //LogToScreen($"WAYPOINT UPDATED:\n• Target Name: '{activeLocationName}'\n• World Coords: {calculatedWaypointPos}\n• Sprite Status: {spriteStatus}");
+        
     }
 
     private string GetCurrentLocationNameFromState()
@@ -168,48 +186,24 @@ public class MarkerManager : MonoBehaviour
         return string.Empty;
     }
 
-    /// <summary>
-    /// Custom logging method that updates both the Unity Editor Console AND your on-screen UI text box.
-    /// </summary>
-    // private void LogToScreen(string message)
-    // {
-    //     Debug.Log($"[MarkerManager] {message}");
-
-    //     if (debugTextBox != null)
-    //     {
-    //         // Prepends timestamps so you see the newest events rolling in sequentially at the top
-    //         debugTextBox.text = $"[{Time.time:F2}] {message}\n\n" + debugTextBox.text;
-
-    //         // Optional safety boundary: trims text if it gets too long for a single layout container
-    //         if (debugTextBox.text.Length > 1500)
-    //         {
-    //             debugTextBox.text = debugTextBox.text.Substring(0, 1000);
-    //         }
-    //     }
-    // }
-
     private void HandleMissionStarted(int index)
     {
-        //LogToScreen($"Event Fired: HandleMissionStarted for Index {index}. Hiding select rings.");
         foreach (var marker in spawnedMarkers) if (marker != null) marker.SetActive(false);
     }
 
     private void HandleMissionCompleted(int index)
     {
-        //LogToScreen($"Event Fired: HandleMissionCompleted for Index {index}.");
         if (activeWaypoint != null) activeWaypoint.SetActive(false);
         SpawnWorldMarkers(stateController.missions);
     }
 
     private void HandleStepCompleted()
     {
-        //LogToScreen("Event Fired: HandleStepCompleted.");
         UpdateWaypointPositionAndSprite();
     }
 
     private void HandleMissionReset()
     {
-        //LogToScreen("Event Fired: HandleMissionReset.");
         if (activeWaypoint != null) activeWaypoint.SetActive(false);
         SpawnWorldMarkers(stateController.missions);
     }
@@ -220,7 +214,6 @@ public class MarkerManager : MonoBehaviour
     {
         if (stateController != null)
         {
-            //LogToScreen("CRITICAL: Developer context menu option triggered inside inspector!");
             stateController.StartMission(0);
             SpawnWorldMarkers(stateController.missions);
         }
