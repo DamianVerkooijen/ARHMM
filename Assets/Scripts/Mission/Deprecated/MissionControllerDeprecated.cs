@@ -463,6 +463,8 @@ public class MissionControllerDeprecated : MonoBehaviour
     {
         StopAllCoroutines();
 
+        if (manager != null) manager.SoftResetHeli();
+
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
         missionActive = false;

@@ -20,6 +20,7 @@ public class HelicopterManager : MonoBehaviour
         if (trackingManager != null)
         {
             trackingManager.OnSetupComplete += HandleSetupComplete;
+            trackingManager.OnSetupReset += HandleSetupReset;
         }
     }
 
@@ -28,6 +29,7 @@ public class HelicopterManager : MonoBehaviour
         if (trackingManager != null)
         {
             trackingManager.OnSetupComplete -= HandleSetupComplete;
+            trackingManager.OnSetupReset -= HandleSetupReset;
         }
     }
 
@@ -90,6 +92,24 @@ public class HelicopterManager : MonoBehaviour
         }
     }
 
+    public void ResetHeli()
+    {
+        if (trackingManager != null) trackingManager.ResetSetup();
+    }
+
+    public void SoftResetHeli()
+    {
+        if (hasSpawned && helicopter != null)
+        {
+            helicopter.transform.localPosition = Vector3.zero;
+            helicopter.transform.localRotation = Quaternion.identity;
+
+            if (trackingManager != null) trackingManager.ForceHideUI();
+
+            Debug.Log("Heli gereset naar startpositie. Kalibratie behouden.");
+        }
+    }
+
     public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
 {
     // 1. Convert the 0-100 grid coordinates into a percentage (0.0f to 1.0f)
@@ -111,22 +131,4 @@ public class HelicopterManager : MonoBehaviour
     // Fallback
     return localPosition;
 }
-
-
-    public void ResetHelicopterPosition()
-    {
-        if (helicopter == null || trackingManager == null || trackingManager.MasterAnchor == null) return;
-
-        // Put it back in the middle of the 100x100 grid system anchor
-        helicopter.transform.SetParent(trackingManager.MasterAnchor.transform);
-        helicopter.transform.localPosition = Vector3.zero;
-        helicopter.transform.localRotation = Quaternion.identity;
-
-        // Reset physics forces if you are using a Rigidbody
-        if (helicopter.TryGetComponent<Rigidbody>(out Rigidbody rb))
-        {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-    }
 }

@@ -839,7 +839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ARTrackingManager
   imageManager: {fileID: 167453773}
-  arSession: {fileID: 0}
   statusText: {fileID: 794538076}
   minX: 0
   maxX: 0
@@ -948,9 +947,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070780744}
-        m_TargetAssemblyTypeName: GameResetManager, Assembly-CSharp
-        m_MethodName: FullAppReset
+      - m_Target: {fileID: 1367559006}
+        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
+        m_MethodName: FullSystemHardReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1485,41 +1484,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocationRegistry
   locations:
   - locationName: ASML
-    gridPosition: {x: 24, y: 26}
-    locationPreviewImage: {fileID: 21300000, guid: f8e6035a49366b842bd2022393646d50, type: 3}
+    gridPosition: {x: 25, y: 7}
+    locationPreviewImage: {fileID: 21300000, guid: a0f8cc79acce34c4f8d608dedecbf0ff, type: 3}
   - locationName: Airport
-    gridPosition: {x: 14, y: 68}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 60, y: 68}
+    locationPreviewImage: {fileID: 21300000, guid: b73b9e61847cef74b9887705672fe56d, type: 3}
   - locationName: Brainport Tech Campus
-    gridPosition: {x: 29, y: 73}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 29, y: 85}
+    locationPreviewImage: {fileID: 21300000, guid: df3a57aa36afa054b8502b8621ca81d0, type: 3}
   - locationName: Stadium
-    gridPosition: {x: 52, y: 59}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 68, y: 59}
+    locationPreviewImage: {fileID: 21300000, guid: e734e645279c2a14aae72330a55e6489, type: 3}
   - locationName: Train Station
-    gridPosition: {x: 57, y: 61}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 75, y: 61}
+    locationPreviewImage: {fileID: 21300000, guid: fb781ffd364f85e4c994f0f409ac14d4, type: 3}
   - locationName: High Tech Campus
-    gridPosition: {x: 49, y: 26}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 55, y: 15}
+    locationPreviewImage: {fileID: 21300000, guid: fc3bd65ad21ff1c43894b1a19377064f, type: 3}
   - locationName: TU
-    gridPosition: {x: 61, y: 66}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 82, y: 72}
+    locationPreviewImage: {fileID: 21300000, guid: e560f0c3b13550141a27c77e5cc1976c, type: 3}
   - locationName: Strijp S
-    gridPosition: {x: 49, y: 66}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 55, y: 66}
+    locationPreviewImage: {fileID: 21300000, guid: b6089187e474fb842865c7d6049d648c, type: 3}
   - locationName: Evoluon
-    gridPosition: {x: 42, y: 61}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 58, y: 61}
+    locationPreviewImage: {fileID: 21300000, guid: 481fc2fbb01b19f43bc6f249cc78f12c, type: 3}
   - locationName: DAF Museum
-    gridPosition: {x: 64, y: 54}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 74, y: 54}
+    locationPreviewImage: {fileID: 21300000, guid: 775807cf45c3ed94e92475d4ae56a0f5, type: 3}
   - locationName: Philips Museum
-    gridPosition: {x: 56, y: 56}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 75, y: 48}
+    locationPreviewImage: {fileID: 21300000, guid: a4e372d97f3c32c4ca0e14fccc41a5fe, type: 3}
   - locationName: Van Abbemuseum
-    gridPosition: {x: 58, y: 52}
-    locationPreviewImage: {fileID: 0}
+    gridPosition: {x: 75, y: 45}
+    locationPreviewImage: {fileID: 21300000, guid: 43de958ea8666684187778dd2c3e1311, type: 3}
 --- !u!4 &555763196
 Transform:
   m_ObjectHideFlags: 0
@@ -1747,7 +1746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1780,7 +1779,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.75
+  m_fontSize: 45.6
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2582,54 +2581,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038858612}
   m_CullTransparentMesh: 1
---- !u!1 &1070780743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1070780745}
-  - component: {fileID: 1070780744}
-  m_Layer: 0
-  m_Name: ResetManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1070780744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070780743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac3826b86ef0f0478297de1d916916e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameResetManager
-  arTrackingManager: {fileID: 167453776}
-  helicopterManager: {fileID: 167453777}
-  markerManager: {fileID: 630351679}
-  stateController: {fileID: 1130430549}
---- !u!4 &1070780745
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070780743}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 723.0668, y: 0.28822, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090870376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,134 +2677,158 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionStateController
   missions:
-  - missionName: BEZORG MISSIE
-    missionType: 0
-    isCompleted: 0
-    startLocation:
-      locationName: ASML
-      actionText: Ophalen
-      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
-      shortInstruction: Vlieg naar ASML
-      description: "Bestuur je helikopter om te vervoeren \r\neen belangrijk item
-        uit \xE9\xE9n Nederlandse stad\r\nnaar een ander. Lever het veilig af bij
-        \r\nvoltooi de missie."
-      reward: 0
-    endLocation:
-      locationName: ASML
-      actionText: Bezorgen
-      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
-      shortInstruction: Vlieg naar PSV stadium
-      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
-        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
-      reward: 0
-    searchTargets:
-    - locationName: ASML
-      actionText: 
-      targetIcon: {fileID: 0}
-      shortInstruction: 
-      description: 
-      reward: 0
-    scanTargets:
-    - locationName: ASML
-      actionText: 
-      targetIcon: {fileID: 0}
-      shortInstruction: 
-      description: 
-      reward: 0
-  - missionName: Test
+  - missionName: Test Scan
     missionType: 2
     isCompleted: 0
     startLocation:
-      locationName: ASML
-      actionText: Balls
-      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
-      shortInstruction: Fly to Balzac
-      description: my balzac
+      locationName: Airport
+      actionText: Airporty
+      targetIcon: {fileID: 0}
+      shortInstruction: Airporty
+      description: Airporty
       reward: 0
     endLocation:
       locationName: ASML
-      actionText: Bezorgen
-      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
-      shortInstruction: Vlieg naar PSV stadium
-      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
-        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: 
+      description: 
       reward: 0
     searchTargets: []
     scanTargets:
     - locationName: ASML
-      actionText: scan
+      actionText: ASML
       targetIcon: {fileID: 0}
-      shortInstruction: Balls
-      description: balzac
-      reward: 0
-    - locationName: Airport
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: ASML
+      description: ASML
       reward: 0
     - locationName: Brainport Tech Campus
-      actionText: scan
+      actionText: Brainport
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Brainport
+      description: Brainport
       reward: 0
     - locationName: Stadium
-      actionText: scan
+      actionText: Stadium
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Stadium
+      description: Stadium
       reward: 0
     - locationName: Train Station
-      actionText: scan
+      actionText: Station
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Station
+      description: Station
       reward: 0
     - locationName: High Tech Campus
-      actionText: scan
+      actionText: HighTech
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: HighTech
+      description: HighTech
       reward: 0
     - locationName: TU
-      actionText: scan
+      actionText: TU
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: TU
+      description: TU
       reward: 0
     - locationName: Strijp S
-      actionText: scan
+      actionText: Strijp
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Strijp
+      description: Strijp
       reward: 0
     - locationName: Evoluon
-      actionText: scan
+      actionText: Evoluon
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Evoluon
+      description: Evoluon
       reward: 0
     - locationName: DAF Museum
-      actionText: scan
+      actionText: DAF
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: DAF
+      description: DAF
       reward: 0
     - locationName: Philips Museum
-      actionText: scan
+      actionText: Phil
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Phil
+      description: Phil
       reward: 0
     - locationName: Van Abbemuseum
-      actionText: scan
+      actionText: Van
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: Van
+      description: Van
       reward: 0
+  - missionName: Test Seatch & FInd
+    missionType: 1
+    isCompleted: 0
+    startLocation:
+      locationName: Stadium
+      actionText: Stadium
+      targetIcon: {fileID: 0}
+      shortInstruction: Stadium
+      description: 
+      reward: 0
+    endLocation:
+      locationName: ASML
+      actionText: as
+      targetIcon: {fileID: 0}
+      shortInstruction: as
+      description: sa
+      reward: 0
+    searchTargets:
+    - locationName: Evoluon
+      actionText: ev
+      targetIcon: {fileID: 0}
+      shortInstruction: ev
+      description: ev
+      reward: 0
+    scanTargets: []
+  - missionName: Missie scannen
+    missionType: 2
+    isCompleted: 0
+    startLocation:
+      locationName: Train Station
+      actionText: Missie scannen
+      targetIcon: {fileID: 0}
+      shortInstruction: Verschillende plekken ontdekken
+      description: Bekijk alle populaire musea in Eindhoven
+      reward: 0
+    endLocation:
+      locationName: Train Station
+      actionText: 'Finale '
+      targetIcon: {fileID: 0}
+      shortInstruction: Gefeliciteerd
+      description: Gefeliciteerd, je hebt de missie succesvol voltooid!
+      reward: 0
+    searchTargets:
+    - locationName: DAF Museum
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan DAF Museum
+      description: Wist je dat DAF vroeger de uitklapbare wielen maakte waarmee F-16
+        gevechtsvliegtuigen landen?
+      reward: 0
+    - locationName: Van Abbemuseum
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan Van Abbemuseum
+      description: Het Van Abbemuseum was het allereerste museum ter wereld dat een
+        permanente tentoonstelling heeft ontworpen speciaal voor blinde en slechtziende
+        bezoekers.
+      reward: 0
+    - locationName: Philips Museum
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan Philips Museum
+      description: Philips is het grootste technologiebedrijf van Europa
+      reward: 0
+    scanTargets: []
   interactionRange: 0.5
-  scanDuration: 1.5
+  scanDuration: 1
   defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
 GameObject:
@@ -3571,9 +3546,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070780744}
-        m_TargetAssemblyTypeName: GameResetManager, Assembly-CSharp
-        m_MethodName: GameResetOnly
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MissionController, Assembly-CSharp
+        m_MethodName: ResetMissionsOnly
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5595,4 +5570,3 @@ SceneRoots:
   - {fileID: 259813127}
   - {fileID: 1367559005}
   - {fileID: 555763196}
-  - {fileID: 1070780745}
