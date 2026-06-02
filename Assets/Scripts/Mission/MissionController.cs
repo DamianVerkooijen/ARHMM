@@ -61,7 +61,7 @@ public class MissionController : MonoBehaviour
 
         if (stateController.selectedMissionIndex == -1)
         {
-            // Use the cached closest mission index — no need to re-scan
+            // Use the cached closest mission index â€” no need to re-scan
             int target = stateController.closestAvailableMissionIndex;
             if (target != -1)
             {
@@ -74,50 +74,10 @@ public class MissionController : MonoBehaviour
         }
     }
 
-    // OPTIE 1: Alleen de missies herstarten (Behoudt de gescande wereld-markers)
-    public void ResetMissionsOnly()
+    public void TriggerFullReset()
     {
-        if (stateController != null)
-        {
-            stateController.TriggerFullReset(); // Reset de logica en zet index op -1
-        }
-        
-        if (markerManager != null && stateController != null)
-        {
-            // Verwijder oude markers en spawn direct de missie-markers opnieuw
-            markerManager.SpawnWorldMarkers(stateController.missions);
-        }
-
-        if (uiController != null)
-        {
-            uiController.ResetUI(); // Reset de UI-schermen naar de beginstand
-        }
-    }
-
-    // OPTIE 2: Volledige harde reset (Helikopter naar het midden, markers opnieuw scannen)
-    public void FullSystemHardReset()
-    {
-        // 1. Reset alle missie-logica naar het absolute begin
-        if (stateController != null)
-        {
-            stateController.TriggerFullReset();
-        }
-
-        // 2. Reset de UI schermen
-        if (uiController != null)
-        {
-            uiController.ResetUI();
-        }
-
-        // 3. Reset de helikopter fysiek naar de startpositie in het midden
-        if (manager != null)
-        {
-            manager.SoftResetHeli(); // Zet de helikopter terug naar spawnpositie
-        }
-
-        // 4. Forceer het marker-systeem om de initialisatie-vlag te resetten
-        // Hierdoor denkt het script dat de helikopter net is gespawned en start het scan-proces opnieuw
-        initialized = false; 
+        if (stateController != null) stateController.TriggerFullReset();
+        if (manager != null) manager.SoftResetHeli();
     }
 
     // Pass-through calls to keep dependencies intact across external scripts
