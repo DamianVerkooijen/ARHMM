@@ -176,9 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reset Mission
-
-'
+  m_text: Reset Session
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2051,7 +2049,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.6
+  m_fontSize: 46.75
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2441,6 +2439,7 @@ MonoBehaviour:
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
+  introSequence: {fileID: 1459896828}
   rightExtensionAnimator: {fileID: 1747325560}
   leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
@@ -2785,7 +2784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reset Markers
+  m_text: 'Reset App
 
 '
   m_isRightToLeft: 0
@@ -3090,7 +3089,14 @@ MonoBehaviour:
         permanente tentoonstelling heeft ontworpen speciaal voor blinde en slechtziende
         bezoekers.
       reward: 0
-  interactionRange: 0.5
+    - locationName: Philips Museum
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan Philips Museum
+      description: Philips is het grootste technologiebedrijf van Europa
+      reward: 0
+    scanTargets: []
+  interactionRange: 0.1
   scanDuration: 1
   defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
