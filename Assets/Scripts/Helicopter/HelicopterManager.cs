@@ -6,13 +6,12 @@ public class HelicopterManager : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private ARTrackingManager trackingManager;
-    public Transform imageTargetAnchor;
 
     [Header("References")]
     public float cellSize = 0.1f;
     [SerializeField] public GameObject helicopter;
 
-    // CRITICAL: Keep these names identical so your HelicopterBoundary script compiles perfectly!
+    // Keep these identical so your HelicopterBoundary script compiles perfectly!
     [HideInInspector] public float minX, maxX, minZ, maxZ;
     [HideInInspector] public bool hasSpawned = false;
 
@@ -36,7 +35,8 @@ public class HelicopterManager : MonoBehaviour
 
     private void Update()
     {
-        // if (hasSpawned) UpdateTrackingWithLiveMarkers();
+        // FIX 1: UNCOMMENTED THIS. This must run frame-by-frame to fight AR Drift!
+        if (hasSpawned) UpdateTrackingWithLiveMarkers();
     }
 
     private void HandleSetupComplete()
@@ -74,10 +74,19 @@ public class HelicopterManager : MonoBehaviour
         {
             if (img.trackingState == TrackingState.Tracking && trackingManager.MarkerOffsets.ContainsKey(img.referenceImage.name))
             {
+                // Calculate where the MasterAnchor should be based on the live tracked image position and its initial offset
                 Vector3 targetWorldPos = img.transform.position + trackingManager.MasterAnchor.transform.TransformDirection(trackingManager.MarkerOffsets[img.referenceImage.name]);
 
-                // Maintain the smooth positional Lerp logic to stop environmental jitter
+                // Smoothly Lerp the anchor position to eliminate tracking jitter
                 trackingManager.MasterAnchor.transform.position = Vector3.Lerp(trackingManager.MasterAnchor.transform.position, targetWorldPos, Time.deltaTime * 2f);
+                
+                // Get the marker's rotation, but ONLY extract the Y-axis (left/right rotation)
+                Vector3 markerEuler = img.transform.rotation.eulerAngles;
+                Quaternion strictlyFlatRotation = Quaternion.Euler(0f, markerEuler.y, 0f);
+            
+                // Apply the flat rotation. Now the map can rotate to match the paper, but will never tilt up or down!
+                trackingManager.MasterAnchor.transform.rotation = Quaternion.Lerp(trackingManager.MasterAnchor.transform.rotation, strictlyFlatRotation, Time.deltaTime * 2f);
+                
                 break;
             }
         }
@@ -102,17 +111,24 @@ public class HelicopterManager : MonoBehaviour
     }
 
     public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
+{
+    // 1. Convert the 0-100 grid coordinates into a percentage (0.0f to 1.0f)
+    float percentX = gridX / 100f;
+    float percentZ = gridY / 100f;
+
+    // 2. Map that percentage exactly between your dynamic AR corners
+    float preciseLocalX = Mathf.Lerp(minX, maxX, percentX);
+    float preciseLocalZ = Mathf.Lerp(minZ, maxZ, percentZ);
+
+    Vector3 localPosition = new Vector3(preciseLocalX, 0f, preciseLocalZ);
+
+    // 3. Translate that local point into the correct AR world space
+    if (trackingManager != null && trackingManager.MasterAnchor != null)
     {
-        // 1. Calculate the position in local meters relative to the grid origin
-        Vector3 localPosition = new Vector3(gridX * cellSize, 0f, gridY * cellSize);
-
-        // 2. Translate that local point into shifting AR world space
-        if (imageTargetAnchor != null)
-        {
-            return imageTargetAnchor.TransformPoint(localPosition);
-        }
-
-        // Fallback for testing in the editor if no anchor is assigned
-        return localPosition;
+        return trackingManager.MasterAnchor.transform.TransformPoint(localPosition);
     }
+
+    // Fallback
+    return localPosition;
+}
 }
