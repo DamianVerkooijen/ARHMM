@@ -31,10 +31,7 @@ public class MissionStateController : MonoBehaviour
 
     [Header("Configuratie van missies")]
     public List<Mission> missions = new List<Mission>();
-
-    [Tooltip("How close the helicopter must be to interact with a location")]
-    public float interactionRange = 0.008f;
-
+    public float interactionRange = 0.1f;
     public float scanDuration = 2f;
 
     [Tooltip("Standard icon for starting a new mission")]
@@ -231,7 +228,10 @@ public class MissionStateController : MonoBehaviour
             if (!missionActive)
             {
                 missionActive = true;
-                scanTimer = 0f;
+                scanTimer = 0;
+                // Reset wasInRange zodat de proximity-check de volgende tick
+                // opnieuw evalueert (speler kan nog op de marker staan).
+                wasInRange = false;
                 OnStepCompleted?.Invoke();
             }
             else
