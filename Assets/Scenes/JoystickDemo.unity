@@ -857,6 +857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelicopterManager
   trackingManager: {fileID: 167453776}
+  imageTargetAnchor: {fileID: 0}
+  cellSize: 0.1
   helicopter: {fileID: 1003497068}
   minX: 0
   maxX: 0
@@ -1451,8 +1453,8 @@ MonoBehaviour:
   expansionSideSound: {fileID: 8300000, guid: 01bc89755720395479b5d816895a81db, type: 3}
   actionButtonClickSound: {fileID: 8300000, guid: 0da16bb46321c3e48b662a207bc439af, type: 3}
   missionFinishedSound: {fileID: 8300000, guid: 8a53b24b984dcf144afab91a3246be0a, type: 3}
-  joystickVolume: 0.4
-  heliVolume: 0.2
+  joystickVolume: 0.3
+  heliVolume: 0.3
 --- !u!1 &555763194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2415,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45eb1bd37a6c284ab9aff75e2964317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoundaryManager
+--- !u!114 &1003497080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3911530563454312534, guid: 525565af04ea7ac458def313ceaf2b29, type: 3}
+  m_PrefabInstance: {fileID: 1003497067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003497068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1b91f01bbc31e4fafd11312b3203a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HelicopterMovement
 --- !u!1 &1017883257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,14 +2714,14 @@ MonoBehaviour:
         in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
       reward: 0
     searchTargets:
-    - locationName: BEZORG MISSIE
+    - locationName: ASML
       actionText: 
       targetIcon: {fileID: 0}
       shortInstruction: 
       description: 
       reward: 0
     scanTargets:
-    - locationName: BEZORG MISSIE
+    - locationName: ASML
       actionText: 
       targetIcon: {fileID: 0}
       shortInstruction: 
