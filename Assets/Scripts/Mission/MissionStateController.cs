@@ -451,11 +451,26 @@ public class MissionStateController : MonoBehaviour
 
 
     public void ResetAllMissionsToStart()
-{
-    selectedMissionIndex = -1; 
-    foreach (var mission in missions)
     {
-        mission.isCompleted = false;
+        // 1. Wipe all active tracking parameters completely
+        selectedMissionIndex = -1; 
+        currentTargetIndex = 0;
+        missionActive = false;
+        scanTimer = 0f;
+        isScanning = false;
+        wasInRange = false;
+        closestAvailableMissionIndex = -1;
+
+        // 2. Set all structural mission progression data back to uncompleted
+        foreach (var mission in missions)
+        {
+            mission.isCompleted = false;
+        }
+
+        // 3. Force-clear the progress bars
+        OnScanProgressUpdated?.Invoke(0f);
+
+        // 4. MAGIC SPARK: Tell the MissionUIController to run its ResetUI routine!
+        OnMissionReset?.Invoke();
     }
-}
 }

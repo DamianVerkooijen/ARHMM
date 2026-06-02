@@ -23,7 +23,6 @@ public class ARTrackingManager : MonoBehaviour
 
     // Events to alert the HelicopterManager when initialization changes
     public event Action OnSetupComplete;
-    public event Action OnSetupReset;
 
     public ARTrackedImageManager ImageManager => imageManager;
 
@@ -115,32 +114,6 @@ public class ARTrackingManager : MonoBehaviour
         }
     }
 
-    public void ResetSetup()
-    {
-        IsCalibrated = false;
-        
-        if (MasterAnchor != null) Destroy(MasterAnchor);
-
-        savedMarkerPoses.Clear();
-        MarkerOffsets.Clear();
-
-        // === FIX 1: WIPE THE AR ENGINE SUBSYSTEM MEMORY ===
-        // This clears out cached images and forces old trackables to vanish.
-        if (arSession != null)
-        {
-            arSession.Reset();
-        }
-
-        // === FIX 2: RE-SHOW DEBUG UI IMMEDIATELY ===
-        if (statusText != null)
-        {
-            statusText.alpha = 1f; 
-            statusText.text = "<color=green>Scanned: 0/4\nMissing: TopLeft TopRight BottomLeft BottomRight </color>";
-        }
-
-        // Alert HelicopterManager to turn off the helicopter/boundaries
-        OnSetupReset?.Invoke();
-    }
 
     public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
     {
