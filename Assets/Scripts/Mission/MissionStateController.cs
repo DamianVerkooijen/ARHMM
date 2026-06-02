@@ -448,4 +448,14 @@ public class MissionStateController : MonoBehaviour
     {
         return Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
     }
+
+
+    public void ResetAllMissionsToStart()
+{
+    selectedMissionIndex = -1; 
+    foreach (var mission in missions)
+    {
+        mission.isCompleted = false;
+    }
+}
 }
