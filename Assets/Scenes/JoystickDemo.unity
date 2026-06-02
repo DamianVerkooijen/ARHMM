@@ -3011,100 +3011,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionStateController
   missions:
-  - missionName: Test Scan
-    missionType: 2
-    isCompleted: 0
-    startLocation:
-      locationName: Airport
-      actionText: Airporty
-      targetIcon: {fileID: 0}
-      shortInstruction: Airporty
-      description: Airporty
-      reward: 0
-    endLocation:
-      locationName: ASML
-      actionText: 
-      targetIcon: {fileID: 0}
-      shortInstruction: 
-      description: 
-      reward: 0
-    searchTargets: []
-    scanTargets:
-    - locationName: ASML
-      actionText: ASML
-      targetIcon: {fileID: 0}
-      shortInstruction: ASML
-      description: ASML
-      reward: 0
-    - locationName: Brainport Tech Campus
-      actionText: Brainport
-      targetIcon: {fileID: 0}
-      shortInstruction: Brainport
-      description: Brainport
-      reward: 0
-    - locationName: Stadium
-      actionText: Stadium
-      targetIcon: {fileID: 0}
-      shortInstruction: Stadium
-      description: Stadium
-      reward: 0
-    - locationName: Train Station
-      actionText: Station
-      targetIcon: {fileID: 0}
-      shortInstruction: Station
-      description: Station
-      reward: 0
-    - locationName: High Tech Campus
-      actionText: HighTech
-      targetIcon: {fileID: 0}
-      shortInstruction: HighTech
-      description: HighTech
-      reward: 0
-    - locationName: TU
-      actionText: TU
-      targetIcon: {fileID: 0}
-      shortInstruction: TU
-      description: TU
-      reward: 0
-    - locationName: Strijp S
-      actionText: Strijp
-      targetIcon: {fileID: 0}
-      shortInstruction: Strijp
-      description: Strijp
-      reward: 0
-    - locationName: Evoluon
-      actionText: Evoluon
-      targetIcon: {fileID: 0}
-      shortInstruction: Evoluon
-      description: Evoluon
-      reward: 0
-    - locationName: DAF Museum
-      actionText: DAF
-      targetIcon: {fileID: 0}
-      shortInstruction: DAF
-      description: DAF
-      reward: 0
-    - locationName: Philips Museum
-      actionText: Phil
-      targetIcon: {fileID: 0}
-      shortInstruction: Phil
-      description: Phil
-      reward: 0
-    - locationName: Van Abbemuseum
-      actionText: Van
-      targetIcon: {fileID: 0}
-      shortInstruction: Van
-      description: Van
-      reward: 0
-  - missionName: Test Seatch & FInd
+  - missionName: Zoeken & vinden missie
     missionType: 1
     isCompleted: 0
     startLocation:
       locationName: Stadium
-      actionText: Stadium
+      actionText: Stadion
       targetIcon: {fileID: 0}
-      shortInstruction: Stadium
-      description: 
+      shortInstruction: Stadion
+      description: Vind de drie technische campussen in EIndhoven.
       reward: 0
     endLocation:
       locationName: ASML
@@ -3114,11 +3029,25 @@ MonoBehaviour:
       description: sa
       reward: 0
     searchTargets:
-    - locationName: Evoluon
-      actionText: ev
-      targetIcon: {fileID: 0}
-      shortInstruction: ev
-      description: ev
+    - locationName: Brainport Tech Campus
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: 'Het Brainport Tech Campus zit vol met autonome robots die de
+        wetenschappers helpen bij hun projecten. '
+      reward: 0
+    - locationName: High Tech Campus
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: Op de High Tech Campus zijn 300 bedrijven gevestigd
+      reward: 0
+    - locationName: TU
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: De TU/e heeft een robotvoetbalteam dat al meerdere keren het wereldkampioenschap
+        robotvoetbal heeft gewonnen
       reward: 0
     scanTargets: []
   - missionName: Missie scannen
@@ -3138,29 +3067,29 @@ MonoBehaviour:
       shortInstruction: Gefeliciteerd
       description: Gefeliciteerd, je hebt de missie succesvol voltooid!
       reward: 0
-    searchTargets:
+    searchTargets: []
+    scanTargets:
     - locationName: DAF Museum
-      actionText: 
-      targetIcon: {fileID: 0}
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
       shortInstruction: Scan DAF Museum
       description: Wist je dat DAF vroeger de uitklapbare wielen maakte waarmee F-16
         gevechtsvliegtuigen landen?
       reward: 0
+    - locationName: Philips Museum
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
+      shortInstruction: Scan Philips Museum
+      description: Philips is het grootste technologiebedrijf van Europa
+      reward: 0
     - locationName: Van Abbemuseum
-      actionText: 
-      targetIcon: {fileID: 0}
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
       shortInstruction: Scan Van Abbemuseum
       description: Het Van Abbemuseum was het allereerste museum ter wereld dat een
         permanente tentoonstelling heeft ontworpen speciaal voor blinde en slechtziende
         bezoekers.
       reward: 0
-    - locationName: Philips Museum
-      actionText: 
-      targetIcon: {fileID: 0}
-      shortInstruction: Scan Philips Museum
-      description: Philips is het grootste technologiebedrijf van Europa
-      reward: 0
-    scanTargets: []
   interactionRange: 0.5
   scanDuration: 1
   defaultStartIcon: {fileID: 0}
