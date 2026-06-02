@@ -6,8 +6,10 @@ public class HelicopterManager : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private ARTrackingManager trackingManager;
+    public Transform imageTargetAnchor;
 
     [Header("References")]
+    public float cellSize = 0.1f;
     [SerializeField] public GameObject helicopter;
 
     // CRITICAL: Keep these names identical so your HelicopterBoundary script compiles perfectly!
@@ -101,7 +103,16 @@ public class HelicopterManager : MonoBehaviour
 
     public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
     {
-        if (trackingManager == null) return Vector3.zero;
-        return trackingManager.GetWorldPositionFromGrid(gridX, gridY);
+        // 1. Calculate the position in local meters relative to the grid origin
+        Vector3 localPosition = new Vector3(gridX * cellSize, 0f, gridY * cellSize);
+
+        // 2. Translate that local point into shifting AR world space
+        if (imageTargetAnchor != null)
+        {
+            return imageTargetAnchor.TransformPoint(localPosition);
+        }
+
+        // Fallback for testing in the editor if no anchor is assigned
+        return localPosition;
     }
 }
