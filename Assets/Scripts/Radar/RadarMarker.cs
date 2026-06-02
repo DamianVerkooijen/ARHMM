@@ -1,35 +1,37 @@
 using UnityEngine;
+
 public class RadarMarker : MonoBehaviour
 {
-    public float radarRadius = 100f; // Straal van je UI cirkel
-    public float maxWorldDistance = 500f; // Pas dit aan naar de schaal van je wereld!
+    public float radarRadius = 60f;
+    public float maxVisualDistance = 10f; // Zet deze op 10 voor festival gebruik
+    private CanvasGroup canvasGroup;
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        canvasGroup.alpha = 0f;
+    }
 
     public void UpdatePosition(Vector3 targetWorldPos, Vector3 playerWorldPos, float playerRotationY)
     {
-        // 1. Bereken de relatieve positie in de wereld
         Vector3 relativePos = targetWorldPos - playerWorldPos;
-
-        // 2. Draai de positie mee met de helikopter (zodat 'vooruit' op de radar ook echt 'vooruit' is)
+        // Draai de positie mee met de helikopter
         Vector3 rotatedPos = Quaternion.Euler(0, -playerRotationY, 0) * relativePos;
 
-        // 3. Converteer naar 2D radar coördinaten (X en Z uit wereld worden X en Y in UI)
+        // UI X = Wereld X, UI Y = Wereld Z
         Vector2 radarPos = new Vector2(rotatedPos.x, rotatedPos.z);
+        float realDist = radarPos.magnitude;
 
-        // 4. Schalen: Hoe ver staat het doel t.o.v. de maximale afstand?
-        // Als maxWorldDistance 500 is en de target is op 250m, komt hij op de helft van de radarRadius.
-        float distanceRatio = radarPos.magnitude / maxWorldDistance;
-        
-        // Beperk de marker tot de rand van de radar
-        if (distanceRatio > 1f)
-        {
-            radarPos = radarPos.normalized * radarRadius;
-        }
+        // Bepaal de positie op de radar (clamp op de radius)
+        if (realDist > maxVisualDistance)
+            transform.localPosition = radarPos.normalized * radarRadius;
         else
-        {
-            radarPos = radarPos.normalized * (distanceRatio * radarRadius);
-        }
+            transform.localPosition = radarPos.normalized * (realDist / maxVisualDistance * radarRadius);
+    }
 
-        // 5. Toepassen op de UI
-        transform.localPosition = new Vector3(radarPos.x, radarPos.y, 0);
+    public void SetAlpha(float a)
+    {
+        if (canvasGroup != null) canvasGroup.alpha = a;
     }
 }

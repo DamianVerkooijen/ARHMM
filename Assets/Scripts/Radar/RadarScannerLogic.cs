@@ -2,36 +2,74 @@ using UnityEngine;
 
 public class RadarScannerLogic : MonoBehaviour
 {
-    public RadarMarker marker;
-    public float scanWidth = 20f;
-    private CanvasGroup markerCanvasGroup;
-    public Transform rotatingScanner;
+    public MissionController missionController;
+    public RadarMarker radarMarker;
+    public Transform rotatingScanner; // Het draaiende streepje
 
-    void Start()
-    {
-        markerCanvasGroup = marker.GetComponent<CanvasGroup>();
-    }
+    [Header("Ping Settings")]
+    public float scanWidth = 25f;
+    public float fadeSpeed = 0.7f;
+    public float minAlpha = 0.05f; // Een heel klein beetje zichtbaar blijven is vaak fijner
 
     void Update()
     {
-        // Bereken de hoek van de marker (0-360)
-        Vector3 dir = marker.transform.localPosition;
-        float markerAngle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
-        if (markerAngle < 0) markerAngle += 360;
-
-        // Haal de hoek van de scannerhouder op
-        float scannerAngle = (rotatingScanner.localEulerAngles.z % 360 + 360) % 360;
-
-        // Check of de hoeken overeenkomen (met scanWidth marge)
-        float diff = Mathf.DeltaAngle(scannerAngle, markerAngle);
-
-        if (Mathf.Abs(diff) < scanWidth)
+        // 1. Veiligheidschecks: als de heli er niet is, marker weg.
+        if (missionController == null || missionController.manager == null || !missionController.manager.hasSpawned || missionController.manager.helicopter == null)
         {
-            markerCanvasGroup.alpha = 1f; // Oplichten
+            if (radarMarker != null) radarMarker.SetAlpha(0f);
+            return;
+        }
+
+        // 2. Doel bepalen
+        Vector3 targetPos = missionController.IsMissionActive()
+            ? missionController.GetCurrentTargetWorldPos()
+            : missionController.GetClosestAvailableMissionPos();
+
+        // 3. Update positie en ping
+        if (targetPos != Vector3.zero)
+        {
+            radarMarker.UpdatePosition(targetPos,
+                missionController.manager.helicopter.transform.position,
+                missionController.manager.helicopter.transform.eulerAngles.y);
+
+            HandlePing();
         }
         else
         {
-            markerCanvasGroup.alpha = Mathf.Max(0.2f, markerCanvasGroup.alpha - Time.deltaTime * 2f); // Faden
+            radarMarker.SetAlpha(0f);
+        }
+    }
+
+    void HandlePing()
+    {
+        // 1. Verkrijg de CanvasGroup van de marker (voor transparantie)
+        CanvasGroup cg = radarMarker.GetComponent<CanvasGroup>();
+        if (cg == null) return;
+
+        // 2. Bereken de hoek van de marker t.o.v. de bovenkant van de radar
+        Vector2 mPos = radarMarker.transform.localPosition;
+        // We gebruiken -Atan2(x,y) om de hoek te matchen met Unity's rotatie (CW)
+        float markerAngle = Mathf.Atan2(mPos.x, mPos.y) * Mathf.Rad2Deg;
+        if (markerAngle < 0) markerAngle += 360f;
+
+        // 3. Bereken de hoek van de scanner
+        // Unity rotatie gaat van 0 naar -360 voor de klok mee, we maken dit 0 tot 360
+        float scannerAngle = -rotatingScanner.localEulerAngles.z;
+        if (scannerAngle < 0) scannerAngle += 360f;
+
+        // 4. Check of de scanner over de marker gaat
+        float angleDiff = Mathf.Abs(Mathf.DeltaAngle(scannerAngle, markerAngle));
+
+        if (angleDiff < scanWidth)
+        {
+            // De scanner raakt de marker: Zet hem op maximale helderheid (1.5 voor extra 'glow' effect)
+            cg.alpha = 1f;
+        }
+        else
+        {
+            // De scanner is voorbij: Langzaam uitfaden naar 0
+            // Verhoog 'fadeSpeed' als hij te lang zichtbaar blijft (bijv. naar 1.5f of 2.0f)
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 0f, Time.deltaTime * fadeSpeed);
         }
     }
 }
