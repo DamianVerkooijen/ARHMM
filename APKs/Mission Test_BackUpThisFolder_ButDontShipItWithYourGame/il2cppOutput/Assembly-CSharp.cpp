@@ -15794,7 +15794,7 @@ IL_00a4:
 	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:111>
 		V_3 = 0;
-		goto IL_017a;
+		goto IL_0183;
 	}
 
 IL_00ab:
@@ -15876,70 +15876,53 @@ IL_00ab:
 		bool L_57 = L_56->___isCompleted;
 		if (!L_57)
 		{
-			goto IL_0169;
+			goto IL_016a;
 		}
 	}
 	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:128>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_58 = V_9;
-		NullCheck(L_58);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_58, (bool)0, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_58, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:129>
+		goto IL_017f;
 	}
 
-IL_0169:
+IL_016a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:131>
-		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_59 = __this->___spawnedMarkers;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_60 = V_9;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:132>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_59 = V_9;
 		NullCheck(L_59);
-		List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_inline(L_59, L_60, List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_RuntimeMethod_var);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:111>
-		int32_t L_61 = V_3;
-		V_3 = ((int32_t)il2cpp_codegen_add(L_61, 1));
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_59, (bool)1, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:133>
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_60 = __this->___spawnedMarkers;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_61 = V_9;
+		NullCheck(L_60);
+		List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_inline(L_60, L_61, List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_RuntimeMethod_var);
 	}
 
-IL_017a:
+IL_017f:
 	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:111>
 		int32_t L_62 = V_3;
-		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_63 = ___0_currentMissions;
-		NullCheck(L_63);
-		int32_t L_64;
-		L_64 = List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_inline(L_63, List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
-		if ((((int32_t)L_62) < ((int32_t)L_64)))
+		V_3 = ((int32_t)il2cpp_codegen_add(L_62, 1));
+	}
+
+IL_0183:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:111>
+		int32_t L_63 = V_3;
+		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_64 = ___0_currentMissions;
+		NullCheck(L_64);
+		int32_t L_65;
+		L_65 = List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_inline(L_64, List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
+		if ((((int32_t)L_63) < ((int32_t)L_65)))
 		{
 			goto IL_00ab;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:133>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_65 = __this->___stateController;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_66;
-		L_66 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_65, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_66)
-		{
-			goto IL_01a8;
-		}
-	}
-	{
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_67 = __this->___stateController;
-		NullCheck(L_67);
-		int32_t L_68;
-		L_68 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_67, NULL);
-		if ((((int32_t)L_68) == ((int32_t)(-1))))
-		{
-			goto IL_01a8;
-		}
-	}
-	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:135>
-		MarkerManager_HideAllStartMarkers_m7B456900501C9B2214EB80591E2BEAFD77485BAA(__this, NULL);
-	}
-
-IL_01a8:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:137>
 		return;
 	}
 }
@@ -15963,7 +15946,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_UpdateWaypointPositionAndS
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B10_0 = NULL;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B10_1 = NULL;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:141>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:139>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___activeWaypoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15986,19 +15969,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_UpdateWaypointPositionAndS
 
 IL_001c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:141>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:139>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:143>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:141>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_4 = __this->___stateController;
 		NullCheck(L_4);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
 		L_5 = MissionStateController_GetCurrentTargetWorldPos_m9537246EBF22B5D801EB273C849F7425749907BE(L_4, NULL);
 		V_0 = L_5;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:144>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:142>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = V_0;
 		float L_7 = L_6.___x;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = V_0;
@@ -16007,7 +15990,7 @@ IL_001d:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11 = V_0;
 		float L_12 = L_11.___z;
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_1), L_7, ((float)il2cpp_codegen_add(L_9, L_10)), L_12, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:145>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:143>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->___activeWaypoint;
 		NullCheck(L_13);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
@@ -16015,13 +15998,13 @@ IL_001d:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15 = V_1;
 		NullCheck(L_14);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_14, L_15, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:147>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:145>
 		String_t* L_16;
 		L_16 = MarkerManager_GetCurrentLocationNameFromState_m4E257E2650633D3A551C49ADE63D439F5B315992(__this, NULL);
 		V_2 = L_16;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:149>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:147>
 		V_3 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:150>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:148>
 		LocationRegistry_tD1523C9C20B7485F1291D9395FCF261A423B925A* L_17 = __this->___registry;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_18;
@@ -16041,7 +16024,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:152>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:150>
 		LocationRegistry_tD1523C9C20B7485F1291D9395FCF261A423B925A* L_21 = __this->___registry;
 		String_t* L_22 = V_2;
 		NullCheck(L_21);
@@ -16052,7 +16035,7 @@ IL_001d:
 
 IL_0086:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:155>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:153>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_24 = __this->___innerIconComponent;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_25;
@@ -16063,7 +16046,7 @@ IL_0086:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:157>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:155>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_26 = __this->___innerIconComponent;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_27 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -16098,7 +16081,7 @@ IL_00ac:
 
 IL_00b1:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:159>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:157>
 		return;
 	}
 }
@@ -16115,14 +16098,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HideAllStartMarkers_m7B456
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:162>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:160>
 		V_0 = 0;
 		goto IL_002e;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:164>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:162>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_0 = __this->___spawnedMarkers;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
@@ -16137,7 +16120,7 @@ IL_0004:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:166>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:164>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_4 = __this->___spawnedMarkers;
 		int32_t L_5 = V_0;
 		NullCheck(L_4);
@@ -16149,14 +16132,14 @@ IL_0004:
 
 IL_002a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:162>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:160>
 		int32_t L_7 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_7, 1));
 	}
 
 IL_002e:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:162>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:160>
 		int32_t L_8 = V_0;
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_9 = __this->___spawnedMarkers;
 		NullCheck(L_9);
@@ -16168,7 +16151,7 @@ IL_002e:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:169>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:167>
 		return;
 	}
 }
@@ -16187,7 +16170,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MarkerManager_GetCurrentLocationNam
 	Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:173>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:171>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -16210,14 +16193,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MarkerManager_GetCurrentLocationNam
 
 IL_001c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:173>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:171>
 		String_t* L_4 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_defaults.string_class))->___Empty;
 		return L_4;
 	}
 
 IL_0022:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:175>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:173>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_5 = __this->___stateController;
 		NullCheck(L_5);
 		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_6 = L_5->___missions;
@@ -16229,7 +16212,7 @@ IL_0022:
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_9;
 		L_9 = List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC(L_6, L_8, List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
 		V_0 = L_9;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:177>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:175>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_10 = V_0;
 		NullCheck(L_10);
 		int32_t L_11 = L_10->___missionType;
@@ -16257,7 +16240,7 @@ IL_0022:
 
 IL_005c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:180>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:178>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_13 = __this->___stateController;
 		NullCheck(L_13);
 		bool L_14;
@@ -16288,7 +16271,7 @@ IL_0075:
 
 IL_0081:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:183>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:181>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_21 = V_0;
 		NullCheck(L_21);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_22 = L_21->___searchTargets;
@@ -16314,7 +16297,7 @@ IL_0081:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:184>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:182>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_28 = V_0;
 		NullCheck(L_28);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_29 = L_28->___searchTargets;
@@ -16332,7 +16315,7 @@ IL_0081:
 
 IL_00bd:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:188>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:186>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_34 = V_0;
 		NullCheck(L_34);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_35 = L_34->___scanTargets;
@@ -16358,7 +16341,7 @@ IL_00bd:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:189>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:187>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_41 = V_0;
 		NullCheck(L_41);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_42 = L_41->___scanTargets;
@@ -16376,7 +16359,7 @@ IL_00bd:
 
 IL_00f9:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:192>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:190>
 		String_t* L_47 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_defaults.string_class))->___Empty;
 		return L_47;
 	}
@@ -16385,9 +16368,9 @@ IL_00f9:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionStarted_m08024374E729CB84FA208B883D5F8E1B6050D9DE (MarkerManager_t79B46CE9F788AADB2BE0A32D6A6C2189939DBC10* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:197>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:195>
 		MarkerManager_HideAllStartMarkers_m7B456900501C9B2214EB80591E2BEAFD77485BAA(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:198>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:196>
 		return;
 	}
 }
@@ -16401,7 +16384,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionCompleted_m7A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:202>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:200>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___activeWaypoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -16412,7 +16395,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionCompleted_m7A
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:202>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:200>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___activeWaypoint;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -16420,12 +16403,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionCompleted_m7A
 
 IL_001a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:203>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:201>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_3 = __this->___stateController;
 		NullCheck(L_3);
 		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_4 = L_3->___missions;
 		MarkerManager_SpawnWorldMarkers_m7D67B9317783ADA29A6DF195C4FA0B3C16427625(__this, L_4, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:204>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:202>
 		return;
 	}
 }
@@ -16433,9 +16416,9 @@ IL_001a:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleStepCompleted_mEC0FB0B686F59E131480A1208A506364102EAAFB (MarkerManager_t79B46CE9F788AADB2BE0A32D6A6C2189939DBC10* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:208>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:206>
 		MarkerManager_UpdateWaypointPositionAndSprite_m6EF3482BBE186BBB12AA26B9A34B5F3FDCA82C2F(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:209>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:207>
 		return;
 	}
 }
@@ -16449,7 +16432,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionReset_m192DEE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:213>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:211>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___activeWaypoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -16460,7 +16443,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionReset_m192DEE
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:213>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:211>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___activeWaypoint;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -16468,12 +16451,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_HandleMissionReset_m192DEE
 
 IL_001a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:214>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:212>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_3 = __this->___stateController;
 		NullCheck(L_3);
 		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_4 = L_3->___missions;
 		MarkerManager_SpawnWorldMarkers_m7D67B9317783ADA29A6DF195C4FA0B3C16427625(__this, L_4, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:215>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:213>
 		return;
 	}
 }
@@ -16487,7 +16470,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_DebugForceStartMission_m3E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:220>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:218>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -16498,11 +16481,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_DebugForceStartMission_m3E
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:222>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:220>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_2 = __this->___stateController;
 		NullCheck(L_2);
 		MissionStateController_StartMission_m59E783683C7BDFD49FA369A51E366C0EC25BD587(L_2, 0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:223>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:221>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_3 = __this->___stateController;
 		NullCheck(L_3);
 		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_4 = L_3->___missions;
@@ -16511,7 +16494,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_DebugForceStartMission_m3E
 
 IL_002b:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:225>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:223>
 		return;
 	}
 }
@@ -16533,7 +16516,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MarkerManager_ClearAllActiveMarkers_mE93
 	memset((&V_0), 0, sizeof(V_0));
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_1 = NULL;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:229>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:227>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_0 = __this->___spawnedMarkers;
 		NullCheck(L_0);
 		Enumerator_t88BD1282EF117E59AACFC9EC55B89F0B9EDACE60 L_1;
@@ -16558,11 +16541,11 @@ FINALLY_0030:
 
 IL_000e_1:
 			{
-				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:229>
+				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:227>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 				L_2 = Enumerator_get_Current_m7236EBE1CFCB6533F96E030500D322B13D0CA5A4_inline((&V_0), Enumerator_get_Current_m7236EBE1CFCB6533F96E030500D322B13D0CA5A4_RuntimeMethod_var);
 				V_1 = L_2;
-				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:231>
+				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:229>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = V_1;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				bool L_4;
@@ -16573,7 +16556,7 @@ IL_000e_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:231>
+				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:229>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = V_1;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_5, NULL);
@@ -16581,7 +16564,7 @@ IL_000e_1:
 
 IL_0025_1:
 			{
-				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:229>
+				//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:227>
 				bool L_6;
 				L_6 = Enumerator_MoveNext_m96F4B0BD0A5485C8E8CC57D961DF6F1FA256AF27((&V_0), Enumerator_MoveNext_m96F4B0BD0A5485C8E8CC57D961DF6F1FA256AF27_RuntimeMethod_var);
 				if (L_6)
@@ -16601,11 +16584,11 @@ IL_0025_1:
 
 IL_003e:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:233>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:231>
 		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_7 = __this->___spawnedMarkers;
 		NullCheck(L_7);
 		List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_inline(L_7, List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_RuntimeMethod_var);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:235>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:233>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___activeWaypoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -16616,7 +16599,7 @@ IL_003e:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:237>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:235>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___activeWaypoint;
 		NullCheck(L_10);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_10, (bool)0, NULL);
@@ -16624,7 +16607,7 @@ IL_003e:
 
 IL_0063:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:239>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MarkerManager.cs:237>
 		return;
 	}
 }
@@ -19764,10 +19747,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionStateController_FinishMission_m7C
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B4_0 = NULL;
-	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B3_0 = NULL;
-	Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* G_B7_0 = NULL;
-	Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* G_B6_0 = NULL;
+	Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* G_B4_0 = NULL;
+	Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* G_B3_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B7_0 = NULL;
+	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* G_B6_0 = NULL;
 	{
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:301>
 		int32_t L_0;
@@ -19797,58 +19780,60 @@ IL_000a:
 		NullCheck(L_4);
 		L_4->___isCompleted = (bool)1;
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:306>
-		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_5 = __this->___OnMissionCompleted;
-		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_6 = L_5;
+		MissionStateController_set_selectedMissionIndex_m17847112B70CABAF778924839CC0A7A4DB941E5E_inline(__this, (-1), NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:307>
+		MissionStateController_set_missionActive_mF2167D4F479FCE24A961B1A5FBBE884CC8160C5D_inline(__this, (bool)0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:308>
+		MissionStateController_set_currentTargetIndex_m34943FB675B83BE2BFE197C3B33110376D8A9953_inline(__this, 0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:309>
+		MissionStateController_set_scanTimer_mD2E45BD137BEE7872FD07F66AF4416F2A6F17B02_inline(__this, (0.0f), NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:310>
+		MissionStateController_set_isScanning_m76A7C06C56F1B1B2E987D320AA98F52DA0084065_inline(__this, (bool)0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:311>
+		__this->___wasInRange = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:312>
+		MissionStateController_set_closestAvailableMissionIndex_mC6AF5DA4F6E69F444D6384554822DABCEF289127_inline(__this, (-1), NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:314>
+		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_5 = __this->___OnScanProgressUpdated;
+		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_6 = L_5;
 		if (L_6)
 		{
 			G_B4_0 = L_6;
-			goto IL_002f;
+			goto IL_0064;
 		}
 		G_B3_0 = L_6;
 	}
 	{
-		goto IL_0035;
+		goto IL_006e;
 	}
 
-IL_002f:
+IL_0064:
 	{
-		int32_t L_7 = V_0;
 		NullCheck(G_B4_0);
-		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B4_0, L_7, NULL);
+		Action_1_Invoke_mA8F89FB04FEA0F48A4F22EC84B5F9ADB2914341F_inline(G_B4_0, (0.0f), NULL);
 	}
 
-IL_0035:
+IL_006e:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:308>
-		MissionStateController_set_selectedMissionIndex_m17847112B70CABAF778924839CC0A7A4DB941E5E_inline(__this, (-1), NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:309>
-		MissionStateController_set_missionActive_mF2167D4F479FCE24A961B1A5FBBE884CC8160C5D_inline(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:310>
-		MissionStateController_set_currentTargetIndex_m34943FB675B83BE2BFE197C3B33110376D8A9953_inline(__this, 0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:311>
-		MissionStateController_set_scanTimer_mD2E45BD137BEE7872FD07F66AF4416F2A6F17B02_inline(__this, (0.0f), NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:312>
-		MissionStateController_set_isScanning_m76A7C06C56F1B1B2E987D320AA98F52DA0084065_inline(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:313>
-		__this->___wasInRange = (bool)0;
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:315>
-		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_8 = __this->___OnScanProgressUpdated;
-		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_9 = L_8;
-		if (L_9)
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_7 = __this->___OnMissionCompleted;
+		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_8 = L_7;
+		if (L_8)
 		{
-			G_B7_0 = L_9;
-			goto IL_006e;
+			G_B7_0 = L_8;
+			goto IL_0079;
 		}
-		G_B6_0 = L_9;
+		G_B6_0 = L_8;
 	}
 	{
 		return;
 	}
 
-IL_006e:
+IL_0079:
 	{
+		int32_t L_9 = V_0;
 		NullCheck(G_B7_0);
-		Action_1_Invoke_mA8F89FB04FEA0F48A4F22EC84B5F9ADB2914341F_inline(G_B7_0, (0.0f), NULL);
+		Action_1_Invoke_mAC3C34BA1905AB5B79E483CD9BB082B7D667F703_inline(G_B7_0, L_9, NULL);
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionStateController.cs:316>
 		return;
 	}
@@ -23066,7 +23051,7 @@ IL_00d8:
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Radar/RadarMarker.cs:23>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_21 = __this->___canvasGroup;
 		NullCheck(L_21);
-		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_21, (0.0f), NULL);
+		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_21, (1.0f), NULL);
 		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Radar/RadarMarker.cs:24>
 		return;
 	}
@@ -23216,7 +23201,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float RadarMarker_GetAlpha_m4247347FFF47E08D1
 		}
 	}
 	{
-		return (0.0f);
+		return (1.0f);
 	}
 
 IL_0014:

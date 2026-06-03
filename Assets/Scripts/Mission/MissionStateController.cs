@@ -300,10 +300,8 @@ public class MissionStateController : MonoBehaviour
     {
         if (selectedMissionIndex == -1) return;
 
-        int activeIndex = selectedMissionIndex;
-        missions[activeIndex].isCompleted = true;
-
-        OnMissionCompleted?.Invoke(activeIndex);
+        int completedMissionIndex = selectedMissionIndex;
+        missions[completedMissionIndex].isCompleted = true;
 
         selectedMissionIndex = -1;
         missionActive = false;
@@ -311,8 +309,10 @@ public class MissionStateController : MonoBehaviour
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
+        closestAvailableMissionIndex = -1;
 
         OnScanProgressUpdated?.Invoke(0f);
+        OnMissionCompleted?.Invoke(completedMissionIndex);
     }
 
     public void TriggerFullReset()
