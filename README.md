@@ -14,6 +14,7 @@
     * [Installation](#installation)
 6. [Usage & Configuration](#usage--configuration)
 7. [Mechanics & Input Layout](#mechanics--input-layout)
+8. [License & Contact](#license--contact)
 
 
 ---
@@ -173,3 +174,10 @@ These inputs are the most important for enabling gameplay and managing a session
 | **Full Reset Click** | Full Scene Reset | Reloads the scene, requiring the markers to be scanned again before continuing the gameplay |
 
 ---
+
+##  License & Contact
+
+Distributed under the MIT License. See project root `LICENSE` asset parameters for more details.
+
+* **Project Developer:** DamianVerkooijen
+* **Repository Endpoint:** https://github.com/DamianVerkooijen/ARHMM
