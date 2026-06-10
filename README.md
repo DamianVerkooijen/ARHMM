@@ -5,15 +5,15 @@
 
 
 ## Table of Contents
-1. [About the Project](#-about-the-project)
-2. [Key Features](#-key-features)
-3. [System Architecture & Workflow](#-system-architecture--workflow)
-4. [Directory Structure](#-directory-structure)
-5. [Getting Started](#-getting-started)
+1. [About the Project](#about-the-project)
+2. [Key Features](#key-features)
+3. [System Architecture & Workflow](#system-architecture--workflow)
+4. [Directory Structure](#directory-structure)
+5. [Getting Started](#getting-started)
     * [Prerequisites](#prerequisites)
     * [Installation](#installation)
-6. [Usage & Configuration](#-usage--configuration)
-7. [Mechanics & Input Layout](#-mechanics--input-layout)
+6. [Usage & Configuration](#usage--configuration)
+7. [Mechanics & Input Layout](#mechanics--input-layout)
 
 
 ---
