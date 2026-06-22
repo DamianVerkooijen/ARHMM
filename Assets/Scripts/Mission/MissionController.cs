@@ -10,7 +10,7 @@ public class MissionController : MonoBehaviour
 
     [Header("AR World Scene Tracking References")]
     public HelicopterManager manager;
-    public LocationRegistry registry;
+    public LocationRegistry registry;// i like kids
     public RadarMarker radarMarker; // Retained field reference for external systems
 
     private bool initialized = false;
