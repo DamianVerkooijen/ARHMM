@@ -36,7 +36,7 @@ public class IntroSequenceController : MonoBehaviour
         }
 
         // Zet de startposities direct in Awake keihard goed
-        if (variableJoystickL != null) variableJoystickL.SetActive(false);
+        if (variableJoystickL != null) variableJoystickL.SetActive(true);
         if (variableJoystickR != null) variableJoystickR.SetActive(false);
         if (introPanel != null) introPanel.SetActive(true);
     }
@@ -51,6 +51,18 @@ public class IntroSequenceController : MonoBehaviour
 
     private IEnumerator StartGameSequence()
     {
+        // 1. Verhuis de linker joystick nu definitief naar de hoofd-UI zodat hij ALTIJD blijft staan
+        if (variableJoystickL != null && introPanel != null)
+        {
+            if (variableJoystickL.transform.IsChildOf(introPanel.transform))
+            {
+                variableJoystickL.transform.SetParent(introPanel.transform.parent, true);
+            }
+
+            // Dwing alle alphas op de linker joystick naar 1 (voorkomt onzichtbaarheid)
+            CanvasGroup[] allJLCGs = variableJoystickL.GetComponentsInChildren<CanvasGroup>(true);
+            foreach (var cg in allJLCGs) cg.alpha = 1f;
+        }
 
         // 2. Activeer direct de rechter joystick voor de besturing
         if (variableJoystickR != null)
@@ -58,13 +70,6 @@ public class IntroSequenceController : MonoBehaviour
             variableJoystickR.SetActive(true);
             CanvasGroup[] allJRCGs = variableJoystickR.GetComponentsInChildren<CanvasGroup>(true);
             foreach (var cg in allJRCGs) cg.alpha = 1f;
-        }
-
-        if (variableJoystickL != null)
-        {
-            variableJoystickL.SetActive(true);
-            CanvasGroup[] allJLCGs = variableJoystickL.GetComponentsInChildren<CanvasGroup>(true);
-            foreach (var cg in allJLCGs) cg.alpha = 1f;
         }
 
         // 3. Fade het intro paneel netjes uit
@@ -93,31 +98,5 @@ public class IntroSequenceController : MonoBehaviour
         {
             startButton.onClick.RemoveListener(OnStartButtonPressed);
         }
-    }
-
-    public void ResetIntroSequence()
-    {
-        // 1. Ensure this controller GameObject is active again so it can run code
-        gameObject.SetActive(true);
-
-        // 2. Stop any lingering fade coroutines safely
-        StopAllCoroutines();
-
-        // 3. Reset the alpha and button interactability back to pristine states
-        if (introCanvasGroup != null) introCanvasGroup.alpha = 1f;
-        if (startButton != null) startButton.interactable = true;
-
-        // 4. Reset the panel visibility and joystick setups
-        InitialSetupState();
-    }
-
-    /// <summary>
-    /// Shared state logic to guarantee identical layout on Awake and on Soft Reset.
-    /// </summary>
-    private void InitialSetupState()
-    {
-        if (variableJoystickL != null) variableJoystickL.SetActive(false);
-        if (variableJoystickR != null) variableJoystickR.SetActive(false);
-        if (introPanel != null) introPanel.SetActive(true);
     }
 }

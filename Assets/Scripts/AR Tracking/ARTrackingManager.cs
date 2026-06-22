@@ -9,7 +9,6 @@ public class ARTrackingManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ARTrackedImageManager imageManager;
-    [SerializeField] private ARSession arSession; 
     [SerializeField] private TMP_Text statusText;
 
     private readonly string[] requiredMarkers = { "TopLeft", "TopRight", "BottomLeft", "BottomRight" };
@@ -23,6 +22,7 @@ public class ARTrackingManager : MonoBehaviour
 
     // Events to alert the HelicopterManager when initialization changes
     public event Action OnSetupComplete;
+    public event Action OnSetupReset;
 
     public ARTrackedImageManager ImageManager => imageManager;
 
@@ -99,7 +99,6 @@ public class ARTrackingManager : MonoBehaviour
 
         if (IsCalibrated)
         {
-            // Fades out cleanly when playing
             statusText.alpha = Mathf.MoveTowards(statusText.alpha, 0f, Time.deltaTime * 2f);
         }
         else
@@ -110,10 +109,27 @@ public class ARTrackingManager : MonoBehaviour
             {
                 if (!savedMarkerPoses.ContainsKey(m)) missing += m + " ";
             }
-            statusText.text = $"<color=green>Scanned: {savedMarkerPoses.Count}/4\nMissing: {missing}</color>";
+            statusText.text = $"Scanned: {savedMarkerPoses.Count}/4\nMissing: {missing}";
         }
     }
 
+    public void ResetSetup()
+    {
+        IsCalibrated = false;
+        if (MasterAnchor != null) Destroy(MasterAnchor);
+
+        savedMarkerPoses.Clear();
+        MarkerOffsets.Clear();
+
+        foreach (var img in imageManager.trackables)
+        {
+            if (img.trackingState == TrackingState.Tracking)
+            {
+                RegisterMarker(img);
+            }
+        }
+        OnSetupReset?.Invoke();
+    }
 
     public Vector3 GetWorldPositionFromGrid(float gridX, float gridY)
     {
