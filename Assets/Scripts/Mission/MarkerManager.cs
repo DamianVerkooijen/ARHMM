@@ -125,14 +125,12 @@ public class MarkerManager : MonoBehaviour
             marker.transform.localRotation = Quaternion.identity;
             if (currentMissions[i].isCompleted)
             {
-                marker.SetActive(false);
+                Destroy(marker);
+                continue;
             }
 
+            marker.SetActive(true);
             spawnedMarkers.Add(marker);
-        }
-        if (stateController != null && stateController.selectedMissionIndex != -1)
-        {
-            HideAllStartMarkers();
         }
     }
 

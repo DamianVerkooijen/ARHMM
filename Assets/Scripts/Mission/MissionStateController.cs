@@ -300,10 +300,8 @@ public class MissionStateController : MonoBehaviour
     {
         if (selectedMissionIndex == -1) return;
 
-        int activeIndex = selectedMissionIndex;
-        missions[activeIndex].isCompleted = true;
-
-        OnMissionCompleted?.Invoke(activeIndex);
+        int completedMissionIndex = selectedMissionIndex;
+        missions[completedMissionIndex].isCompleted = true;
 
         selectedMissionIndex = -1;
         missionActive = false;
@@ -311,8 +309,10 @@ public class MissionStateController : MonoBehaviour
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
+        closestAvailableMissionIndex = -1;
 
         OnScanProgressUpdated?.Invoke(0f);
+        OnMissionCompleted?.Invoke(completedMissionIndex);
     }
 
     public void TriggerFullReset()
@@ -447,5 +447,30 @@ public class MissionStateController : MonoBehaviour
     private float GetFlatDistance(Vector3 a, Vector3 b)
     {
         return Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
+    }
+
+
+    public void ResetAllMissionsToStart()
+    {
+        // 1. Wipe all active tracking parameters completely
+        selectedMissionIndex = -1; 
+        currentTargetIndex = 0;
+        missionActive = false;
+        scanTimer = 0f;
+        isScanning = false;
+        wasInRange = false;
+        closestAvailableMissionIndex = -1;
+
+        // 2. Set all structural mission progression data back to uncompleted
+        foreach (var mission in missions)
+        {
+            mission.isCompleted = false;
+        }
+
+        // 3. Force-clear the progress bars
+        OnScanProgressUpdated?.Invoke(0f);
+
+        // 4. MAGIC SPARK: Tell the MissionUIController to run its ResetUI routine!
+        OnMissionReset?.Invoke();
     }
 }

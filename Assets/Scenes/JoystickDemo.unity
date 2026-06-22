@@ -176,9 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reset Mission
-
-'
+  m_text: Reset Session
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2050,7 +2048,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.6
+  m_fontSize: 46.75
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2440,6 +2438,7 @@ MonoBehaviour:
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
+  introSequence: {fileID: 1459896828}
   rightExtensionAnimator: {fileID: 1747325560}
   leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
@@ -2784,7 +2783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reset Markers
+  m_text: 'Reset App
 
 '
   m_isRightToLeft: 0
@@ -2962,117 +2961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionStateController
   missions:
-  - missionName: Test Scan
-    missionType: 2
-    isCompleted: 0
-    startLocation:
-      locationName: Airport
-      actionText: Airporty
-      targetIcon: {fileID: 0}
-      shortInstruction: Airporty
-      description: Airporty
-      reward: 0
-    endLocation:
-      locationName: ASML
-      actionText: 
-      targetIcon: {fileID: 0}
-      shortInstruction: 
-      description: 
-      reward: 0
-    searchTargets: []
-    scanTargets:
-    - locationName: ASML
-      actionText: ASML
-      targetIcon: {fileID: 0}
-      shortInstruction: ASML
-      description: ASML
-      reward: 0
-    - locationName: Brainport Tech Campus
-      actionText: Brainport
-      targetIcon: {fileID: 0}
-      shortInstruction: Brainport
-      description: Brainport
-      reward: 0
-    - locationName: Stadium
-      actionText: Stadium
-      targetIcon: {fileID: 0}
-      shortInstruction: Stadium
-      description: Stadium
-      reward: 0
-    - locationName: Train Station
-      actionText: Station
-      targetIcon: {fileID: 0}
-      shortInstruction: Station
-      description: Station
-      reward: 0
-    - locationName: High Tech Campus
-      actionText: HighTech
-      targetIcon: {fileID: 0}
-      shortInstruction: HighTech
-      description: HighTech
-      reward: 0
-    - locationName: TU
-      actionText: TU
-      targetIcon: {fileID: 0}
-      shortInstruction: TU
-      description: TU
-      reward: 0
-    - locationName: Strijp S
-      actionText: Strijp
-      targetIcon: {fileID: 0}
-      shortInstruction: Strijp
-      description: Strijp
-      reward: 0
-    - locationName: Evoluon
-      actionText: Evoluon
-      targetIcon: {fileID: 0}
-      shortInstruction: Evoluon
-      description: Evoluon
-      reward: 0
-    - locationName: DAF Museum
-      actionText: DAF
-      targetIcon: {fileID: 0}
-      shortInstruction: DAF
-      description: DAF
-      reward: 0
-    - locationName: Philips Museum
-      actionText: Phil
-      targetIcon: {fileID: 0}
-      shortInstruction: Phil
-      description: Phil
-      reward: 0
-    - locationName: Van Abbemuseum
-      actionText: Van
-      targetIcon: {fileID: 0}
-      shortInstruction: Van
-      description: Van
-      reward: 0
-  - missionName: Test Seatch & FInd
-    missionType: 1
-    isCompleted: 0
-    startLocation:
-      locationName: Stadium
-      actionText: Stadium
-      targetIcon: {fileID: 0}
-      shortInstruction: Stadium
-      description: 
-      reward: 0
-    endLocation:
-      locationName: ASML
-      actionText: as
-      targetIcon: {fileID: 0}
-      shortInstruction: as
-      description: sa
-      reward: 0
-    searchTargets:
-    - locationName: Evoluon
-      actionText: ev
-      targetIcon: {fileID: 0}
-      shortInstruction: ev
-      description: ev
-      reward: 0
-    scanTargets: []
-  - missionName: Missie scannen
+  - missionName: Missie Scannen Museums
     missionType: 2
     isCompleted: 0
     startLocation:
@@ -3089,17 +2978,24 @@ MonoBehaviour:
       shortInstruction: Gefeliciteerd
       description: Gefeliciteerd, je hebt de missie succesvol voltooid!
       reward: 0
-    searchTargets:
+    searchTargets: []
+    scanTargets:
     - locationName: DAF Museum
-      actionText: 
-      targetIcon: {fileID: 0}
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
       shortInstruction: Scan DAF Museum
       description: Wist je dat DAF vroeger de uitklapbare wielen maakte waarmee F-16
         gevechtsvliegtuigen landen?
       reward: 0
+    - locationName: Philips Museum
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
+      shortInstruction: Scan Philips Museum
+      description: Philips is het grootste technologiebedrijf van Europa
+      reward: 0
     - locationName: Van Abbemuseum
-      actionText: 
-      targetIcon: {fileID: 0}
+      actionText: Scan
+      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
       shortInstruction: Scan Van Abbemuseum
       description: Het Van Abbemuseum was het allereerste museum ter wereld dat een
         permanente tentoonstelling heeft ontworpen speciaal voor blinde en slechtziende
@@ -3111,8 +3007,98 @@ MonoBehaviour:
       shortInstruction: Scan Philips Museum
       description: Philips is het grootste technologiebedrijf van Europa
       reward: 0
+  - missionName: Zoeken & vinden missie
+    missionType: 1
+    isCompleted: 0
+    startLocation:
+      locationName: Stadium
+      actionText: Stadion
+      targetIcon: {fileID: 0}
+      shortInstruction: Stadion
+      description: Vind de drie technische campussen in EIndhoven.
+      reward: 0
+    endLocation:
+      locationName: ASML
+      actionText: Finale
+      targetIcon: {fileID: 0}
+      shortInstruction: Gefeliciteerd
+      description: Je hebt alle campussen ontdekt!
+      reward: 0
+    searchTargets:
+    - locationName: Brainport Tech Campus
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: 'Het Brainport Tech Campus zit vol met autonome robots die de
+        wetenschappers helpen bij hun projecten. '
+      reward: 0
+    - locationName: High Tech Campus
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: Op de High Tech Campus zijn 300 bedrijven gevestigd
+      reward: 0
+    - locationName: TU
+      actionText: Zoeken
+      targetIcon: {fileID: 21300000, guid: 04185ef2a4f18de44b6c47a95817110d, type: 3}
+      shortInstruction: Zoeken
+      description: De TU/e heeft een robotvoetbalteam dat al meerdere keren het wereldkampioenschap
+        robotvoetbal heeft gewonnen
+      reward: 0
     scanTargets: []
-  interactionRange: 0.5
+  - missionName: 'Levering Missie '
+    missionType: 0
+    isCompleted: 0
+    startLocation:
+      locationName: ASML
+      actionText: 'Levering Missie '
+      targetIcon: {fileID: 0}
+      shortInstruction: Een chip leveren
+      description: Lever de chip van ASML aan de TU/e
+      reward: 0
+    endLocation:
+      locationName: TU
+      actionText: 'Levering Missie '
+      targetIcon: {fileID: 0}
+      shortInstruction: Een chip leveren
+      description: Lever de chip van ASML aan de TU/e
+      reward: 0
+    searchTargets: []
+    scanTargets: []
+  - missionName: 'Missie Scannen Eindhoven '
+    missionType: 0
+    isCompleted: 0
+    startLocation:
+      locationName: Airport
+      actionText: 'Missie Scannen Eindhoven '
+      targetIcon: {fileID: 0}
+      shortInstruction: Scan rond in Eindhoven
+      description: Ontdek interessante plekken in Eindhoven en leer er meer over.
+      reward: 0
+    endLocation:
+      locationName: TU
+      actionText: 'Finale '
+      targetIcon: {fileID: 0}
+      shortInstruction: Gefeliciteerd
+      description: Gefeliciteerd met het inleveren van de chip!
+      reward: 0
+    searchTargets: []
+    scanTargets:
+    - locationName: Stadium
+      actionText: 'Scan het stadion '
+      targetIcon: {fileID: 0}
+      shortInstruction: 'Scan het stadion '
+      description: Het Philips Stadion is de thuisbasis van PSV, dat de Eredivisie
+        al drie seizoenen op rij heeft gewonnen.
+      reward: 0
+    - locationName: Train Station
+      actionText: 'Scan het station '
+      targetIcon: {fileID: 0}
+      shortInstruction: 'Scan het station '
+      description: Buiten de Randstad is station Eindhoven het drukste station van
+        het land.
+      reward: 0
+  interactionRange: 0.1
   scanDuration: 1
   defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
