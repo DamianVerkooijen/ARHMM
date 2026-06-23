@@ -14,6 +14,13 @@ public class MissionUIController : MonoBehaviour
     public TMP_Text missionTaskText;
     public TMP_Text missionDescriptionText;
 
+    [Header("Delivery Timer Test UI")]
+    [Tooltip("Assign a TextMeshPro UI text placed in the top-left corner of the Canvas.")]
+    public TMP_Text deliveryTimerText;
+
+    [Min(10)]
+    public int deliveryTimerFontSize = 36;
+
     [Header("Intro Settings")]
     public IntroSequenceController introSequence;
 
@@ -96,6 +103,8 @@ public class MissionUIController : MonoBehaviour
         stateController.OnMissionReset += HandleMissionReset;
         stateController.OnProximityChanged += HandleProximityDisplay;
         stateController.OnScanProgressUpdated += HandleScanProgressUpdated;
+        stateController.OnDeliveryTimerUpdated += HandleDeliveryTimerUpdated;
+        stateController.OnMissionFailed += HandleMissionFailed;
 
         ResetUI();
     }
@@ -109,6 +118,8 @@ public class MissionUIController : MonoBehaviour
         stateController.OnMissionReset -= HandleMissionReset;
         stateController.OnProximityChanged -= HandleProximityDisplay;
         stateController.OnScanProgressUpdated -= HandleScanProgressUpdated;
+        stateController.OnDeliveryTimerUpdated -= HandleDeliveryTimerUpdated;
+        stateController.OnMissionFailed -= HandleMissionFailed;
     }
 
     public void UpdateMissionUI()
@@ -178,9 +189,45 @@ public class MissionUIController : MonoBehaviour
         if (leftExtensionAnimator != null) leftExtensionAnimator.SetBool(ANIM_PARAM, true);
     }
 
+    private void HandleDeliveryTimerUpdated(float remainingTime, float totalTime)
+    {
+        if (deliveryTimerText == null) return;
+
+        bool shouldShow =
+            !isMissionCompleteDisplayActive &&
+            totalTime > 0f &&
+            remainingTime > 0f;
+
+        deliveryTimerText.gameObject.SetActive(shouldShow);
+
+        if (!shouldShow)
+        {
+            deliveryTimerText.text = "";
+            return;
+        }
+
+        deliveryTimerText.fontSize = deliveryTimerFontSize;
+        deliveryTimerText.color = Color.green;
+        deliveryTimerText.text = Mathf.CeilToInt(remainingTime).ToString();
+    }
+
+    private void HandleMissionFailed(int index)
+    {
+        HideDeliveryTimer();
+    }
+
+    private void HideDeliveryTimer()
+    {
+        if (deliveryTimerText == null) return;
+
+        deliveryTimerText.text = "";
+        deliveryTimerText.gameObject.SetActive(false);
+    }
+
     private void HandleMissionStarted(int index)
     {
         isMissionCompleteDisplayActive = false;
+        HideDeliveryTimer();
         if (panelAnimator != null) panelAnimator.SetBool("isOpen", true);
 
         UpdateExtensionVisualState(false, "", null);
@@ -190,6 +237,7 @@ public class MissionUIController : MonoBehaviour
     private void HandleMissionCompleted(int index)
     {
         isMissionCompleteDisplayActive = true;
+        HideDeliveryTimer();
 
         // Sluit de extensie animatie, maar vernietig/verberg de sprites niet vroegtijdig!
         isExtensionOpen = false;
@@ -216,6 +264,7 @@ public class MissionUIController : MonoBehaviour
     private void HandleMissionReset()
     {
         StopAllCoroutines();
+        HideDeliveryTimer();
         isMissionCompleteDisplayActive = false;
 
         if (introSequence != null)
@@ -246,6 +295,7 @@ public class MissionUIController : MonoBehaviour
 
     public void ResetUI()
     {
+        HideDeliveryTimer();
 
         if (missionTitleText != null) missionTitleText.text = "Start een missie";
         if (missionTaskText != null) missionTaskText.text = "Volg de radar voor een missie";
