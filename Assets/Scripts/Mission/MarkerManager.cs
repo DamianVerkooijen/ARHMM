@@ -71,30 +71,8 @@ public class MarkerManager : MonoBehaviour
 
         if (stateController.selectedMissionIndex == -1)
         {
-            if (manager.helicopter != null && manager.helicopter.transform.parent != null)
-            {
-                Transform activeARAnchor = manager.helicopter.transform.parent;
-
-                if (activeWaypoint.transform.parent != activeARAnchor)
-                {
-                    activeWaypoint.transform.SetParent(activeARAnchor, true);
-                }
-            }
-
-            if (!activeWaypoint.activeSelf)
-            {
-                activeWaypoint.SetActive(true);
-            }
-
-            UpdateWaypointPositionAndSprite();
-
-            if (mainCameraTransform != null)
-            {
-                // Use prefab rotation instead of LookAt for consistent orientation with mission markers
-                activeWaypoint.transform.localRotation = waypointPrefab.transform.localRotation;
-            }
-
-            HideAllStartMarkers();
+            HideAllWaypoints();
+            return;
         }
 
         if (stateController.selectedMissionIndex >= stateController.missions.Count)
@@ -119,44 +97,7 @@ public class MarkerManager : MonoBehaviour
         UpdateActiveWaypoint();
     }
 
-    public void SpawnWorldMarkers(List<MissionStateController.Mission> currentMissions)
-    {
-        foreach (var marker in spawnedMarkers) if (marker != null) Destroy(marker);
-        spawnedMarkers.Clear();
-
-        Transform activeARAnchor = transform;
-        if (manager != null && manager.helicopter != null && manager.helicopter.transform.parent != null)
-        {
-            activeARAnchor = manager.helicopter.transform.parent;
-        }
-
-        for (int i = 0; i < currentMissions.Count; i++)
-        {
-            Vector2 gridPos = stateController.GetFirstTargetPosition(currentMissions[i]);
-
-            float percentX = gridPos.x / 100f;
-            float percentZ = gridPos.y / 100f;
-
-            float preciseLocalX = Mathf.Lerp(manager.minX, manager.maxX, percentX);
-            float preciseLocalZ = Mathf.Lerp(manager.minZ, manager.maxZ, percentZ);
-
-            Vector3 pureLocalPosition = new Vector3(preciseLocalX, 0.01f, preciseLocalZ);
-
-            GameObject marker = Instantiate(markerPrefab, activeARAnchor);
-            marker.transform.localPosition = pureLocalPosition;
-            marker.transform.localRotation = markerPrefab.transform.localRotation;
-            if (currentMissions[i].isCompleted)
-            {
-                Destroy(marker);
-                continue;
-            }
-
-            marker.SetActive(true);
-            spawnedMarkers.Add(marker);
-        }
-    }
-
-    private void UpdateWaypointPositionAndSprite()
+    private void UpdateActiveWaypoint()
     {
         if (activeWaypoint == null || stateController == null) return;
 

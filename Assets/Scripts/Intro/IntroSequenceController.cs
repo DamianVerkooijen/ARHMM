@@ -115,29 +115,23 @@ public class IntroSequenceController : MonoBehaviour
             yield break;
         }
 
-        var firstMission = stateController.missions[0];
-        var introPopup = firstMission.missionIntroPopup;
+        MissionStateController.Mission firstMission =
+            stateController.missions[0];
 
-        string title = "⚠️ WAARSCHUWING!";
-        string description = "De EVIL AI stuurt zijn handlangers op pad naar ASML om de chips te bemachtigen! " +
-                             "Laat dit niet gebeuren! We hebben deze chips hard nodig om de EVIL AI uit te schakelen!";
-        Sprite icon = firstMission.startLocation?.targetIcon;
-        string actionLabel = "Start Missie!";
+        MissionStateController.MissionTarget firstTarget =
+            GetFirstTarget(firstMission);
 
-        if (introPopup != null)
-        {
-            if (!string.IsNullOrEmpty(introPopup.title)) title = introPopup.title;
-            if (!string.IsNullOrEmpty(introPopup.description)) description = introPopup.description;
-            if (introPopup.icon != null) icon = introPopup.icon;
-            if (!string.IsNullOrEmpty(introPopup.actionButtonText)) actionLabel = introPopup.actionButtonText;
-        }
+        Sprite icon = firstTarget != null
+            ? firstTarget.targetIcon
+            : null;
 
         PopupManager.Instance.ShowPopup(
-            title,
-            description,
+            "⚠️ WAARSCHUWING!",
+            "De EVIL AI stuurt zijn handlangers op pad naar ASML om de chips te bemachtigen! " +
+            "Laat dit niet gebeuren! We hebben deze chips hard nodig om de EVIL AI uit te schakelen!",
             icon,
-            actionLabel,
-            () => stateController.StartMission(0)
+            "Start Missie!",
+            stateController.StartMissionChain
         );
 
         FinishIntro();
