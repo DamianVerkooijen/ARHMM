@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,19 +32,15 @@ public class MissionStateController : MonoBehaviour
     [Header("Missions Configuration")]
     public List<Mission> missions = new List<Mission>();
     public float interactionRange = 0.1f;
-    public float scanDuration = 2f;
+    public float scanDuration = 3f; // Tijd in seconden voor de scan
 
-    [Tooltip("Standard icon for starting a new mission")]
     public Sprite defaultStartIcon;
 
-    // Progression properties
     public int selectedMissionIndex { get; private set; } = -1;
     public int currentTargetIndex { get; private set; } = 0;
     public bool missionActive { get; private set; } = false;
     public float scanTimer { get; private set; } = 0f;
     public bool isScanning { get; private set; } = false;
-
-    // Cached closest mission index for button press handling
     public int closestAvailableMissionIndex { get; private set; } = -1;
 
     // Events
@@ -52,8 +48,6 @@ public class MissionStateController : MonoBehaviour
     public event Action<int> OnMissionCompleted;
     public event Action OnStepCompleted;
     public event Action OnMissionReset;
-
-    // UI events
     public event Action<bool, string, Sprite, string> OnProximityChanged;
     public event Action<float> OnScanProgressUpdated;
 
@@ -75,13 +69,8 @@ public class MissionStateController : MonoBehaviour
         {
             if (wasInRange)
             {
-                wasInRange = false;
-                isScanning = false;
-                scanTimer = 0f;
-                OnScanProgressUpdated?.Invoke(0f);
-                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
+                ResetProximityState();
             }
-
             return;
         }
 
@@ -102,7 +91,6 @@ public class MissionStateController : MonoBehaviour
 
             Vector2 gridPos = GetFirstTargetPosition(missions[i]);
             Vector3 worldPos = manager.GetWorldPositionFromGrid(gridPos.x, gridPos.y);
-
             float dist = GetFlatDistance(manager.helicopter.transform.position, worldPos);
 
             if (dist < closestDist)
@@ -113,27 +101,18 @@ public class MissionStateController : MonoBehaviour
         }
 
         closestAvailableMissionIndex = closestIndex;
-
         bool isInRange = closestIndex != -1;
 
         if (isInRange != wasInRange)
         {
             wasInRange = isInRange;
-
-            // FIX: We sturen geen 'true' meer naar de HUD om de extensiebalk te openen voor het starten.
-            // De HUD blijft nu netjes gesloten en leeg totdat de missie via de pop-up geactiveerd is!
             if (isInRange)
             {
-                OnProximityChanged?.Invoke(
-                    false, // <--- Staat nu op false, dus de extensie blijft dicht!
-                    "",
-                    null,
-                    $"[ {missions[closestIndex].missionName} ] beschikbaar."
-                );
+                OnProximityChanged?.Invoke(false, "", null, $"[ {missions[closestIndex].missionName} ] beschikbaar.");
             }
             else
             {
-                OnProximityChanged?.Invoke(false, "", null, "");
+                OnProximityChanged?.Invoke(false, "", null, "Vlieg naar een marker om te beginnen.");
             }
         }
     }
@@ -141,16 +120,13 @@ public class MissionStateController : MonoBehaviour
     private void EvaluateActiveMissionRange()
     {
         Mission currentMission = missions[selectedMissionIndex];
-
         Vector2 targetGrid = GetCurrentTargetGrid(currentMission);
         Vector3 targetWorldPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
-
         float dist = GetFlatDistance(manager.helicopter.transform.position, targetWorldPos);
 
         if (dist < interactionRange)
         {
             MissionTarget currentTarget = GetCurrentTarget(currentMission);
-
             if (currentTarget == null) return;
 
             if (currentMission.missionType == MissionType.Scan)
@@ -162,20 +138,23 @@ public class MissionStateController : MonoBehaviour
                     isScanning = false;
                     OnScanProgressUpdated?.Invoke(0f);
 
-                    OnProximityChanged?.Invoke(
-                        true,
-                        currentTarget.actionText,
-                        currentTarget.targetIcon,
-                        currentTarget.description
-                    );
+                    if (PopupManager.Instance != null)
+                    {
+                        PopupManager.Instance.ShowPopup(
+                            "📡 SCANNER GEACTIVEERD",
+                            $"{currentTarget.description}\n\nBreng de helikopter tot stilstand om de scan uit te voeren.",
+                            currentTarget.targetIcon,
+                            "Start Scannen",
+                            () => { isScanning = true; }
+                        );
+                    }
                 }
 
                 if (isScanning)
                 {
                     scanTimer += Time.deltaTime;
-
-                    float progress = Mathf.Clamp(Mathf.Round((scanTimer / scanDuration) * 100f), 0f, 100f);
-                    OnScanProgressUpdated?.Invoke(progress);
+                    float progress = Mathf.Clamp((scanTimer / scanDuration) * 100f, 0f, 100f);
+                    OnScanProgressUpdated?.Invoke(Mathf.Round(progress));
 
                     if (scanTimer >= scanDuration)
                     {
@@ -183,27 +162,43 @@ public class MissionStateController : MonoBehaviour
                     }
                 }
             }
-            else if (!wasInRange)
+            else
             {
-                wasInRange = true;
-
-                OnProximityChanged?.Invoke(
-                    true,
-                    currentTarget.actionText,
-                    currentTarget.targetIcon,
-                    currentTarget.description
-                );
+                // Delivery of SearchFind
+                if (!wasInRange)
+                {
+                    wasInRange = true;
+                    if (PopupManager.Instance != null)
+                    {
+                        PopupManager.Instance.ShowPopup(
+                            "📍 BESTEMMING BEREIKT",
+                            currentTarget.description,
+                            currentTarget.targetIcon,
+                            currentTarget.actionText,
+                            () => { ProcessMissionStep(); }
+                        );
+                    }
+                }
             }
         }
         else if (wasInRange)
         {
-            wasInRange = false;
-            isScanning = false;
-            scanTimer = 0f;
-
-            OnScanProgressUpdated?.Invoke(0f);
-            OnProximityChanged?.Invoke(false, "", null, $"Goal: {currentMission.missionName}");
+            // Speler vliegt weg van de locatie -> Sluit pop-up en reset scan status
+            ResetProximityState();
         }
+    }
+
+    private void ResetProximityState()
+    {
+        wasInRange = false;
+        isScanning = false;
+        scanTimer = 0f;
+        OnScanProgressUpdated?.Invoke(0f);
+
+        if (PopupManager.Instance != null) PopupManager.Instance.ClosePopup();
+
+        string label = selectedMissionIndex != -1 ? $"Doel: {missions[selectedMissionIndex].missionName}" : "Vlieg naar een marker.";
+        OnProximityChanged?.Invoke(false, "", null, label);
     }
 
     public void StartMission(int index)
@@ -222,7 +217,6 @@ public class MissionStateController : MonoBehaviour
     public void ProcessMissionStep()
     {
         if (selectedMissionIndex == -1) return;
-
         Mission m = missions[selectedMissionIndex];
 
         if (m.missionType == MissionType.Delivery)
@@ -230,9 +224,6 @@ public class MissionStateController : MonoBehaviour
             if (!missionActive)
             {
                 missionActive = true;
-                scanTimer = 0;
-                // Reset wasInRange zodat de proximity-check de volgende tick
-                // opnieuw evalueert (speler kan nog op de marker staan).
                 wasInRange = false;
                 OnStepCompleted?.Invoke();
             }
@@ -244,38 +235,11 @@ public class MissionStateController : MonoBehaviour
         else if (m.missionType == MissionType.SearchFind)
         {
             currentTargetIndex++;
-
+            wasInRange = false;
             if (currentTargetIndex >= m.searchTargets.Count)
-            {
                 FinishMission();
-            }
             else
-            {
                 OnStepCompleted?.Invoke();
-            }
-        }
-        else if (m.missionType == MissionType.Scan)
-        {
-            if (!IsCurrentTargetInRange()) return;
-
-            if (!isScanning)
-            {
-                isScanning = true;
-                scanTimer = 0f;
-                OnScanProgressUpdated?.Invoke(0f);
-
-                MissionTarget currentTarget = GetCurrentTarget(m);
-
-                if (currentTarget != null)
-                {
-                    OnProximityChanged?.Invoke(
-                        true,
-                        "Scanning...",
-                        currentTarget.targetIcon,
-                        currentTarget.description
-                    );
-                }
-            }
         }
     }
 
@@ -285,17 +249,12 @@ public class MissionStateController : MonoBehaviour
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
-
         OnScanProgressUpdated?.Invoke(0f);
 
         if (currentTargetIndex >= missions[selectedMissionIndex].scanTargets.Count)
-        {
             FinishMission();
-        }
         else
-        {
             OnStepCompleted?.Invoke();
-        }
     }
 
     public void FinishMission()
@@ -313,7 +272,6 @@ public class MissionStateController : MonoBehaviour
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
-
         OnScanProgressUpdated?.Invoke(0f);
     }
 
@@ -327,10 +285,7 @@ public class MissionStateController : MonoBehaviour
         wasInRange = false;
         closestAvailableMissionIndex = -1;
 
-        foreach (var m in missions)
-        {
-            m.isCompleted = false;
-        }
+        foreach (var m in missions) m.isCompleted = false;
 
         OnScanProgressUpdated?.Invoke(0f);
         OnMissionReset?.Invoke();
@@ -340,7 +295,6 @@ public class MissionStateController : MonoBehaviour
     {
         if (m.missionType == MissionType.SearchFind && m.searchTargets != null && m.searchTargets.Count > 0)
             return registry.GetPosition(m.searchTargets[0].locationName);
-
         if (m.missionType == MissionType.Scan && m.scanTargets != null && m.scanTargets.Count > 0)
             return registry.GetPosition(m.scanTargets[0].locationName);
 
@@ -352,24 +306,18 @@ public class MissionStateController : MonoBehaviour
         switch (currentMission.missionType)
         {
             case MissionType.Delivery:
-                return registry.GetPosition(missionActive
-                    ? currentMission.endLocation.locationName
-                    : currentMission.startLocation.locationName);
-
+                return registry.GetPosition(missionActive ? currentMission.endLocation.locationName : currentMission.startLocation.locationName);
             case MissionType.SearchFind:
                 return registry.GetPosition(currentMission.searchTargets[currentTargetIndex].locationName);
-
             case MissionType.Scan:
                 return registry.GetPosition(currentMission.scanTargets[currentTargetIndex].locationName);
         }
-
         return registry.GetPosition(currentMission.startLocation.locationName);
     }
 
     public Vector3 GetCurrentTargetWorldPos()
     {
         if (selectedMissionIndex == -1) return Vector3.zero;
-
         Vector2 grid = GetCurrentTargetGrid(missions[selectedMissionIndex]);
         return manager.GetWorldPositionFromGrid(grid.x, grid.y);
     }
@@ -382,10 +330,8 @@ public class MissionStateController : MonoBehaviour
         foreach (var m in missions)
         {
             if (m.isCompleted) continue;
-
             Vector2 grid = GetFirstTargetPosition(m);
             Vector3 worldPos = manager.GetWorldPositionFromGrid(grid.x, grid.y);
-
             float d = GetFlatDistance(manager.helicopter.transform.position, worldPos);
 
             if (d < closestDist)
@@ -394,56 +340,19 @@ public class MissionStateController : MonoBehaviour
                 closestPos = worldPos;
             }
         }
-
         return closestPos;
-    }
-
-    /// <summary>
-    /// Exposes the specific string identifier of the current active location target step.
-    /// Used directly by the MarkerManager layout systems.
-    /// </summary>
-    public string GetCurrentTargetLocationName()
-    {
-        if (selectedMissionIndex == -1) return string.Empty;
-        MissionTarget currentTarget = GetCurrentTarget(missions[selectedMissionIndex]);
-        return currentTarget != null ? currentTarget.locationName : string.Empty;
     }
 
     private MissionTarget GetCurrentTarget(Mission currentMission)
     {
         if (currentMission.missionType == MissionType.Delivery)
-        {
             return missionActive ? currentMission.endLocation : currentMission.startLocation;
-        }
-
         if (currentMission.missionType == MissionType.SearchFind)
-        {
-            if (currentMission.searchTargets == null || currentMission.searchTargets.Count == 0) return null;
-            return currentMission.searchTargets[currentTargetIndex];
-        }
-
+            return (currentMission.searchTargets != null && currentMission.searchTargets.Count > 0) ? currentMission.searchTargets[currentTargetIndex] : null;
         if (currentMission.missionType == MissionType.Scan)
-        {
-            if (currentMission.scanTargets == null || currentMission.scanTargets.Count == 0) return null;
-            return currentMission.scanTargets[currentTargetIndex];
-        }
+            return (currentMission.scanTargets != null && currentMission.scanTargets.Count > 0) ? currentMission.scanTargets[currentTargetIndex] : null;
 
         return null;
-    }
-
-    private bool IsCurrentTargetInRange()
-    {
-        if (selectedMissionIndex == -1) return false;
-        if (manager == null || manager.helicopter == null || registry == null) return false;
-
-        Mission currentMission = missions[selectedMissionIndex];
-
-        Vector2 targetGrid = GetCurrentTargetGrid(currentMission);
-        Vector3 targetWorldPos = manager.GetWorldPositionFromGrid(targetGrid.x, targetGrid.y);
-
-        float dist = GetFlatDistance(manager.helicopter.transform.position, targetWorldPos);
-
-        return dist < interactionRange;
     }
 
     private float GetFlatDistance(Vector3 a, Vector3 b)

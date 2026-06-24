@@ -19,14 +19,12 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private MissionStateController stateController;
 
     [Header("Settings")]
-    [SerializeField] private float betweenPopupDelay = 0.3f;
     [SerializeField] private float missionCompleteDelay = 1f;
 
     private TMP_Text buttonText;
     private Action pendingCallback;
     private bool subscribed = false;
-
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
+    private string originalDescription = "";
 
     private void Awake()
     {
@@ -35,7 +33,6 @@ public class PopupManager : MonoBehaviour
 
         if (actionButton != null)
         {
-            actionButton.onClick.AddListener(OnActionButtonClick);
             buttonText = actionButton.GetComponentInChildren<TMP_Text>();
         }
 
@@ -47,9 +44,6 @@ public class PopupManager : MonoBehaviour
         TrySubscribe();
     }
 
-    /// <summary>
-    /// Probeert te subscriben. Lukt het niet direct, dan via coroutine retry.
-    /// </summary>
     private void TrySubscribe()
     {
         if (subscribed) return;
@@ -59,16 +53,13 @@ public class PopupManager : MonoBehaviour
 
         if (stateController != null)
         {
-            stateController.OnMissionStarted += HandleMissionStarted;
-            stateController.OnStepCompleted += HandleStepCompleted;
             stateController.OnMissionCompleted += HandleMissionCompleted;
             stateController.OnMissionReset += HandleMissionReset;
+            stateController.OnScanProgressUpdated += HandleScanProgressUpdate;
             subscribed = true;
-            Debug.Log("[PopupManager] Gesubscribed op MissionStateController.");
         }
         else
         {
-            Debug.LogWarning("[PopupManager] MissionStateController nog niet gevonden, retry volgende frame...");
             StartCoroutine(RetrySubscribe());
         }
     }
@@ -86,54 +77,29 @@ public class PopupManager : MonoBehaviour
     {
         if (stateController != null)
         {
-            stateController.OnMissionStarted -= HandleMissionStarted;
-            stateController.OnStepCompleted -= HandleStepCompleted;
             stateController.OnMissionCompleted -= HandleMissionCompleted;
             stateController.OnMissionReset -= HandleMissionReset;
+            stateController.OnScanProgressUpdated -= HandleScanProgressUpdate;
         }
-        if (actionButton != null)
-            actionButton.onClick.RemoveListener(OnActionButtonClick);
     }
 
-    // ── Event handlers ────────────────────────────────────────────────────────
-
-    private void HandleMissionStarted(int index)
+    private void HandleScanProgressUpdate(float progressPercent)
     {
-        StartCoroutine(ShowAfterDelay(() =>
+        if (visualPanel != null && visualPanel.activeSelf && stateController != null && stateController.isScanning)
         {
-            if (stateController == null || index >= stateController.missions.Count) return;
-            var mission = stateController.missions[index];
-            var firstTarget = GetFirstTarget(mission);
+            if (textDescription != null)
+                textDescription.text = $"{originalDescription}\n\n🛰️ Progressie: {progressPercent}%";
 
-            ShowPopup(
-                $"MISSIE: {mission.missionName}",
-                firstTarget != null ? firstTarget.description : mission.missionName,
-                firstTarget != null ? firstTarget.targetIcon : null,
-                "Begrepen!"
-            );
-        }));
-    }
+            if (buttonText != null)
+                buttonText.text = $"Scannen... {progressPercent}%";
 
-    private void HandleStepCompleted()
-    {
-        StartCoroutine(ShowAfterDelay(() =>
-        {
-            if (stateController == null || stateController.selectedMissionIndex == -1) return;
-            var mission = stateController.missions[stateController.selectedMissionIndex];
-            var nextTarget = GetCurrentTarget(mission);
-            if (nextTarget == null) return;
-
-            ShowPopup(
-                $"{mission.missionName} — Volgende stap",
-                nextTarget.description,
-                nextTarget.targetIcon,
-                "Volgende!"
-            );
-        }));
+            if (actionButton != null) actionButton.interactable = false;
+        }
     }
 
     private void HandleMissionCompleted(int completedIndex)
     {
+        ClosePopup();
         StartCoroutine(ShowCompletionThenNext());
     }
 
@@ -177,36 +143,21 @@ public class PopupManager : MonoBehaviour
     {
         StopAllCoroutines();
         ClosePopup();
-        // Na reset opnieuw subscriben als dat nodig is
         subscribed = false;
         TrySubscribe();
     }
-
-    // ── Helpers ───────────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Sluit de huidige popup als die open is, wacht de delay, dan voer actie uit.
-    /// </summary>
-    private IEnumerator ShowAfterDelay(Action show)
-    {
-        if (visualPanel != null && visualPanel.activeSelf)
-        {
-            visualPanel.SetActive(false);
-            yield return new WaitForSeconds(betweenPopupDelay);
-        }
-        show?.Invoke();
-    }
-
-    // ── Public API ────────────────────────────────────────────────────────────
 
     public void ShowPopup(string title, string description, Sprite iconSprite,
                           string buttonLabel, Action onConfirmCallback = null)
     {
         pendingCallback = onConfirmCallback;
+        originalDescription = description;
 
         if (textTitle != null) textTitle.text = title;
         if (textDescription != null) textDescription.text = description;
         if (buttonText != null) buttonText.text = buttonLabel;
+
+        if (actionButton != null) actionButton.interactable = true;
 
         if (missionIcon != null)
         {
@@ -216,7 +167,6 @@ public class PopupManager : MonoBehaviour
         }
 
         if (visualPanel != null) visualPanel.SetActive(true);
-        Debug.Log($"[PopupManager] ShowPopup: '{title}'");
     }
 
     public void ClosePopup()
@@ -225,45 +175,27 @@ public class PopupManager : MonoBehaviour
         pendingCallback = null;
     }
 
-    // ── Button handler ────────────────────────────────────────────────────────
-
-    private void OnActionButtonClick()
+    // VERANDERD NAAR PUBLIC: Nu bereikbaar via de Unity Inspector koppeling!
+    public void OnActionButtonClick()
     {
-        Debug.Log("[PopupManager] Popup knop geklikt.");
-        if (visualPanel != null) visualPanel.SetActive(false);
-
         Action cb = pendingCallback;
-        pendingCallback = null;
+
+        if (stateController == null || !stateController.isScanning)
+        {
+            if (visualPanel != null) visualPanel.SetActive(false);
+            pendingCallback = null;
+        }
+
         cb?.Invoke();
     }
-
-    // ── Target helpers ────────────────────────────────────────────────────────
 
     private MissionStateController.MissionTarget GetFirstTarget(MissionStateController.Mission m)
     {
         switch (m.missionType)
         {
-            case MissionStateController.MissionType.Delivery:
-                return m.startLocation;
-            case MissionStateController.MissionType.SearchFind:
-                return (m.searchTargets != null && m.searchTargets.Count > 0) ? m.searchTargets[0] : null;
-            case MissionStateController.MissionType.Scan:
-                return (m.scanTargets != null && m.scanTargets.Count > 0) ? m.scanTargets[0] : null;
-        }
-        return null;
-    }
-
-    private MissionStateController.MissionTarget GetCurrentTarget(MissionStateController.Mission m)
-    {
-        int idx = stateController.currentTargetIndex;
-        switch (m.missionType)
-        {
-            case MissionStateController.MissionType.Delivery:
-                return stateController.missionActive ? m.endLocation : m.startLocation;
-            case MissionStateController.MissionType.SearchFind:
-                return (m.searchTargets != null && idx < m.searchTargets.Count) ? m.searchTargets[idx] : null;
-            case MissionStateController.MissionType.Scan:
-                return (m.scanTargets != null && idx < m.scanTargets.Count) ? m.scanTargets[idx] : null;
+            case MissionStateController.MissionType.Delivery: return m.startLocation;
+            case MissionStateController.MissionType.SearchFind: return (m.searchTargets != null && m.searchTargets.Count > 0) ? m.searchTargets[0] : null;
+            case MissionStateController.MissionType.Scan: return (m.scanTargets != null && m.scanTargets.Count > 0) ? m.scanTargets[0] : null;
         }
         return null;
     }
