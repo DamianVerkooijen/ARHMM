@@ -638,7 +638,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 110025014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2064326831}
+        m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
+        m_MethodName: OnActionButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &110025014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,10 +2112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bff5cf7b1b0be4d875922ad683d47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MarkerManager
-  waypointPrefab: {fileID: 7496823615588689458, guid: a727e57d3afeb3f478ba6d3192cb1a0d, type: 3}
+  markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
+  waypointPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   hoverHeight: 0
-  imageChildPath: TeardropBase/ImageMask/InnerIcon
-  defaultFallbackSprite: {fileID: 0}
   debugTextBox: {fileID: 851549268}
 --- !u!1 &641044866
 GameObject:
@@ -2397,7 +2408,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.6
+  m_fontSize: 46.75
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2782,14 +2793,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionUIController
   statusText: {fileID: 794538076}
-  actionButton: {fileID: 1747325556}
+  actionButton: {fileID: 0}
   panelAnimator: {fileID: 1924977461}
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
-  deliveryTimerText: {fileID: 0}
-  deliveryTimerFontSize: 36
-  introSequence: {fileID: 0}
   rightExtensionAnimator: {fileID: 1747325560}
   leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
@@ -3315,9 +3323,13 @@ MonoBehaviour:
   - missionName: BEZORG MISSIE
     missionType: 0
     isCompleted: 0
-    deliveryMode: 0
-    useDeliveryTimer: 1
-    deliveryTimeLimit: 30
+    startLocation:
+      locationName: ASML
+      actionText: Ophalen
+      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
+      shortInstruction: Vlieg naar ASML
+      description: Bestuur je helikopter om een chip op te halen bij ASML.
+      reward: 0
     endLocation:
       locationName: Brainport Tech Campus
       actionText: Bezorgen
@@ -3326,22 +3338,18 @@ MonoBehaviour:
       description: Lever de chip nu veilig af bij de high tech campus om de missie
         te voltooien.
       reward: 0
-    deliveryTargets:
-    - locationName: Airport
-      actionText: start
-      targetIcon: {fileID: 0}
-      shortInstruction: 
-      description: shart
-      reward: 0
-    searchCollectionMode: 0
     searchTargets: []
     scanTargets: []
   - missionName: Test
     missionType: 2
     isCompleted: 0
-    deliveryMode: 0
-    useDeliveryTimer: 0
-    deliveryTimeLimit: 30
+    startLocation:
+      locationName: Train Station
+      actionText: Missie scannen
+      targetIcon: {fileID: 0}
+      shortInstruction: Verschillende plekken ontdekken
+      description: Bekijk alle populaire musea in Eindhoven
+      reward: 0
     endLocation:
       locationName: Train Station
       actionText: 'Finale '
@@ -3349,8 +3357,6 @@ MonoBehaviour:
       shortInstruction: Gefeliciteerd
       description: Gefeliciteerd, je hebt de missie succesvol voltooid!
       reward: 0
-    deliveryTargets: []
-    searchCollectionMode: 0
     searchTargets: []
     scanTargets:
     - locationName: DAF Museum
@@ -3383,9 +3389,13 @@ MonoBehaviour:
   - missionName: Zoeken & vinden missie
     missionType: 1
     isCompleted: 0
-    deliveryMode: 0
-    useDeliveryTimer: 0
-    deliveryTimeLimit: 30
+    startLocation:
+      locationName: Stadium
+      actionText: Stadion
+      targetIcon: {fileID: 0}
+      shortInstruction: Stadion
+      description: Vind de drie technische campussen in EIndhoven.
+      reward: 0
     endLocation:
       locationName: ASML
       actionText: Bezorgen
@@ -3394,8 +3404,6 @@ MonoBehaviour:
       description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
         in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
       reward: 0
-    deliveryTargets: []
-    searchCollectionMode: 0
     searchTargets: []
     scanTargets:
     - locationName: ASML
@@ -3472,8 +3480,7 @@ MonoBehaviour:
       reward: 0
   interactionRange: 0.1
   scanDuration: 1.5
-  missionTransitionDelay: 5
-  missionRetryDelay: 2
+  defaultStartIcon: {fileID: 0}
 --- !u!1 &1145419102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,7 +4558,6 @@ MonoBehaviour:
   introPanel: {fileID: 1459896824}
   startButton: {fileID: 776730880}
   fadeDuration: 0.35
-  freeFlightDuration: 5
 --- !u!1 &1465698166
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,19 +5243,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 529481344}
-          m_TargetAssemblyTypeName: MissionAudioManager, Assembly-CSharp
-          m_MethodName: PlayJoystickTouchSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &1729101533
 GameObject:
   m_ObjectHideFlags: 0

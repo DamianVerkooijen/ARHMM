@@ -229,15 +229,20 @@ public class MissionUIController : MonoBehaviour
         isMissionCompleteDisplayActive = false;
         HideDeliveryTimer();
 
+        // Bovenpaneel animator uit zodat hij niet uit zichzelf opent
         if (panelAnimator != null)
         {
             panelAnimator.SetBool("isOpen", false);
             panelAnimator.enabled = false;
         }
 
-        if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
-        if (leftExtensionAnimator != null) leftExtensionAnimator.enabled = false;
         if (actionButton != null) actionButton.SetActive(false);
+
+        // Alleen RECHTS uitschakelen zodat de sprite stabiel blijft
+        if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
+
+        // LINKS LATEN WE HIER VOLLEDIG MET RUST! Geen .enabled = false meer.
+        // Zo blijft de admin lade gewoon reageren op je swipes.
 
         UpdateMissionUI();
         SetHUDState(false);
@@ -335,10 +340,9 @@ public class MissionUIController : MonoBehaviour
         if (missionDescriptionText != null) missionDescriptionText.text = "";
         if (statusText != null) statusText.text = "";
         if (actionButton != null) actionButton.SetActive(false);
-        if (extensionActionText != null) extensionActionText.text = "";
-        if (extensionActionIcon != null) extensionActionIcon.sprite = null;
         if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
-        if (leftExtensionAnimator != null) leftExtensionAnimator.enabled = false;
+
+        // Ook hier de linker animator NIET meer aanraken of uitzetten.
 
         SetHUDState(false);
     }
@@ -353,16 +357,19 @@ public class MissionUIController : MonoBehaviour
         if (missionPanelTopImage != null) missionPanelTopImage.sprite = isFinished ? panelFinished : panelNormal;
         if (radarBackground != null) radarBackground.sprite = isFinished ? radarFinished : radarNormal;
 
+        // RECHTS: Geforceerd aan op de default image
         if (extensionRight != null)
         {
             extensionRight.gameObject.SetActive(true);
             extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
         }
 
+        // LINKS: Alleen zorgen dat het GameObject op Active(true) staat.
+        // We overschrijven de sprite en de positie NIET, zodat de animator van je admin drag 
+        // vloeiend zijn eigen animaties en sprites kan afspelen.
         if (extensionLeft != null)
         {
             extensionLeft.gameObject.SetActive(true);
-            extensionLeft.sprite = isFinished ? extensionLeftFinished : extensionLeftNormal;
         }
     }
 
