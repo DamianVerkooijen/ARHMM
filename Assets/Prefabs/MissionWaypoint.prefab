@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8249797372471907145}
   - component: {fileID: 3748123374820239321}
   m_Layer: 0
-  m_Name: ShowMissionMarker
+  m_Name: MissionWaypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
