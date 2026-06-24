@@ -1061,6 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ARTrackingManager
   imageManager: {fileID: 167453773}
+  arSession: {fileID: 0}
   statusText: {fileID: 794538076}
   minX: 0
   maxX: 0
@@ -2112,10 +2113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MarkerManager
   markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
-  waypointPrefab: {fileID: 7496823615588689458, guid: a727e57d3afeb3f478ba6d3192cb1a0d, type: 3}
-  imageChildPath: TeardropBase/ImageMask/InnerIcon
+  waypointPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   hoverHeight: 0
-  defaultFallbackSprite: {fileID: 0}
   debugTextBox: {fileID: 851549268}
 --- !u!1 &641044866
 GameObject:

@@ -129,19 +129,20 @@ public class MissionUIController : MonoBehaviour
     {
         isMissionCompleteDisplayActive = false;
 
-        // 1. VOORKOM DAT DE POP-UP HET HOOFDPANEEL OPENGOOIT
-        // We zetten de animator uit of dwingen hem op false, zodat hij niet uit zichzelf opent
+        // Bovenpaneel animator uit zodat hij niet uit zichzelf opent
         if (panelAnimator != null)
         {
             panelAnimator.SetBool("isOpen", false);
-            panelAnimator.enabled = false; // Tijdelijk uitschakelen voorkomt ongewenste animaties
+            panelAnimator.enabled = false;
         }
 
         if (actionButton != null) actionButton.SetActive(false);
 
-        // 2. Extensie animators uitschakelen zodat ze de sprites niet onzichtbaar maken
+        // Alleen RECHTS uitschakelen zodat de sprite stabiel blijft
         if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
-        if (leftExtensionAnimator != null) leftExtensionAnimator.enabled = false;
+
+        // LINKS LATEN WE HIER VOLLEDIG MET RUST! Geen .enabled = false meer.
+        // Zo blijft de admin lade gewoon reageren op je swipes.
 
         UpdateMissionUI();
         SetHUDState(false);
@@ -203,16 +204,15 @@ public class MissionUIController : MonoBehaviour
 
         if (actionButton != null) actionButton.SetActive(false);
 
-        // Zet de animators uit bij een reset zodat ze de dichte staat niet verpesten
         if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
-        if (leftExtensionAnimator != null) leftExtensionAnimator.enabled = false;
+
+        // Ook hier de linker animator NIET meer aanraken of uitzetten.
 
         SetHUDState(false);
     }
 
     public void SetHUDState(bool isFinished)
     {
-        // Als de animators uitstaan, luistert Unity nu direct naar deze sprite-wissels:
         if (leftBar != null) leftBar.sprite = isFinished ? leftBarFinished : leftBarNormal;
         if (botBar != null) botBar.sprite = isFinished ? botBarFinished : botBarNormal;
         if (topBarR != null) topBarR.sprite = isFinished ? topBarFinished : topBarNormal;
@@ -221,16 +221,19 @@ public class MissionUIController : MonoBehaviour
         if (radarBackground != null) radarBackground.sprite = isFinished ? radarFinished : radarNormal;
         if (rightBar != null) rightBar.sprite = isFinished ? rightBarFinished : rightBarNormal;
 
-        // FORCEER DE DICHTE EXTENSIES VISUEEL ZICHTBAAR
+        // RECHTS: Geforceerd aan op de default image
         if (extensionRight != null)
         {
-            extensionRight.gameObject.SetActive(true); // Zorg dat het GameObject aan staat
+            extensionRight.gameObject.SetActive(true);
             extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
         }
+
+        // LINKS: Alleen zorgen dat het GameObject op Active(true) staat.
+        // We overschrijven de sprite en de positie NIET, zodat de animator van je admin drag 
+        // vloeiend zijn eigen animaties en sprites kan afspelen.
         if (extensionLeft != null)
         {
-            extensionLeft.gameObject.SetActive(true); // Zorg dat het GameObject aan staat
-            extensionLeft.sprite = isFinished ? extensionLeftFinished : extensionLeftNormal;
+            extensionLeft.gameObject.SetActive(true);
         }
     }
 
