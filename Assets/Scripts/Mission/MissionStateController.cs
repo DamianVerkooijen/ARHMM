@@ -167,25 +167,21 @@ public class MissionStateController : MonoBehaviour
 
         if (isInRange == wasInRange) return;
 
-        wasInRange = isInRange;
-
-        if (isInRange)
-        {
-            OnProximityChanged?.Invoke(
-                true,
-                "Start Missie",
-                defaultStartIcon,
-                $"[ {missions[closestIndex].missionName} ]\nDruk op de knop om te starten"
-            );
-        }
-        else
-        {
-            OnProximityChanged?.Invoke(
-                false,
-                "",
-                null,
-                "Vlieg naar een markering om een missie te starten"
-            );
+            // FIX: We sturen geen 'true' meer naar de HUD om de extensiebalk te openen voor het starten.
+            // De HUD blijft nu netjes gesloten en leeg totdat de missie via de pop-up geactiveerd is!
+            if (isInRange)
+            {
+                OnProximityChanged?.Invoke(
+                    false, // <--- Staat nu op false, dus de extensie blijft dicht!
+                    "",
+                    null,
+                    $"[ {missions[closestIndex].missionName} ] beschikbaar."
+                );
+            }
+            else
+            {
+                OnProximityChanged?.Invoke(false, "", null, "");
+            }
         }
     }
 

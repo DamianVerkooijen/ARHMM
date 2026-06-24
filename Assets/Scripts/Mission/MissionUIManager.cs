@@ -295,15 +295,14 @@ public class MissionUIController : MonoBehaviour
 
     public void ResetUI()
     {
-        HideDeliveryTimer();
-
-        if (missionTitleText != null) missionTitleText.text = "Start een missie";
-        if (missionTaskText != null) missionTaskText.text = "Volg de radar voor een missie";
+        // Zet de teksten nu volledig leeg in plaats van de placeholder instructies
+        if (missionTitleText != null) missionTitleText.text = "";
+        if (missionTaskText != null) missionTaskText.text = "";
         if (missionDescriptionText != null) missionDescriptionText.text = "";
-        if (statusText != null) statusText.text = "Fly to a marker to start a mission";
+        if (statusText != null) statusText.text = "";
 
-        // Zorg dat de actionButton zichtbaar/beschikbaar blijft voor de volgende missie-selectie
-        if (actionButton != null) actionButton.SetActive(true);
+        // Verberg de HUD actieknop zolang er geen actieve missie/taak is
+        if (actionButton != null) actionButton.SetActive(false);
 
         isExtensionOpen = false;
         if (rightExtensionAnimator != null) rightExtensionAnimator.SetBool(ANIM_PARAM, false);
