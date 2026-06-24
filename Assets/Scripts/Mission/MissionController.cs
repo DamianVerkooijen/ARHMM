@@ -11,16 +11,16 @@ public class MissionController : MonoBehaviour
     [Header("AR World Scene Tracking References")]
     public HelicopterManager manager;
     public LocationRegistry registry;
-    public RadarMarker radarMarker; // Retained field reference for external systems
+    public RadarMarker radarMarker;
 
     private bool initialized = false;
 
     private void Awake()
     {
-        // Enforce component gathering across child objects if needed
         if (stateController == null) stateController = GetComponentInChildren<MissionStateController>();
         if (uiController == null) uiController = GetComponentInChildren<MissionUIController>();
         if (markerManager == null) markerManager = GetComponentInChildren<MarkerManager>();
+        if (audioManager == null) audioManager = GetComponentInChildren<MissionAudioManager>();
     }
 
     private void Start()
@@ -28,27 +28,15 @@ public class MissionController : MonoBehaviour
         if (stateController != null) stateController.Initialize(manager, registry);
         if (uiController != null) uiController.Initialize(stateController);
         if (markerManager != null) markerManager.Initialize(stateController, manager);
-        if (audioManager == null) audioManager = GetComponentInChildren<MissionAudioManager>();
         if (audioManager != null) audioManager.Initialize(stateController, this);
     }
 
     private void Update()
     {
-        if (!initialized && manager != null && manager.hasSpawned)
-        {
-            if (markerManager != null && stateController != null)
-            {
-                markerManager.SpawnWorldMarkers(stateController.missions);
-            }
-            initialized = true;
-        }
+        if (!initialized && manager != null && manager.hasSpawned) initialized = true;
 
-        if (!initialized || manager.helicopter == null) return;
-
-        if (manager.helicopter.transform.localPosition == Vector3.zero)
-        {
-            return;
-        }
+        if (!initialized || manager == null || manager.helicopter == null) return;
+        if (manager.helicopter.transform.localPosition == Vector3.zero) return;
 
         if (stateController != null) stateController.EvaluateProgressionTick();
         if (markerManager != null) markerManager.EvaluateMarkerVisualPlacement();
@@ -56,26 +44,24 @@ public class MissionController : MonoBehaviour
 
     public void OnActionButtonPressed()
     {
-        if (stateController == null || manager == null || manager.helicopter == null) return;
+        if (stateController == null || stateController.selectedMissionIndex == -1) return;
+        if (manager == null || manager.helicopter == null) return;
+
         if (audioManager != null) audioManager.PlayClickSound();
 
-        if (stateController.selectedMissionIndex == -1)
-        {
-            // Use the cached closest mission index — no need to re-scan
-            int target = stateController.closestAvailableMissionIndex;
-            if (target != -1)
-            {
-                stateController.StartMission(target);
-            }
-        }
-        else
-        {
-            stateController.ProcessMissionStep();
-        }
+        stateController.ProcessMissionStep();
     }
 
-    // Pass-through calls to keep dependencies intact across external scripts
-    public bool IsMissionActive() => stateController != null && stateController.selectedMissionIndex != -1;
-    public Vector3 GetCurrentTargetWorldPos() => stateController != null ? stateController.GetCurrentTargetWorldPos() : Vector3.zero;
-    public Vector3 GetClosestAvailableMissionPos() => stateController != null ? stateController.GetClosestAvailableMissionPos() : Vector3.zero;
+    public bool IsMissionActive()
+    {
+        return stateController != null &&
+               stateController.selectedMissionIndex != -1;
+    }
+
+    public Vector3 GetCurrentTargetWorldPos()
+    {
+        return stateController != null
+            ? stateController.GetCurrentTargetWorldPos()
+            : Vector3.zero;
+    }
 }
