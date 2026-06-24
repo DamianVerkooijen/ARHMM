@@ -20,7 +20,7 @@ public class RadarMarker : MonoBehaviour
 
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
-        canvasGroup.alpha = 0f; // Start onzichtbaar
+        canvasGroup.alpha = 1f; // Start onzichtbaar
     }
 
     public void UpdatePosition(Vector3 targetWorldPos, Transform heliTransform, float radarRadius, float maxVisualDistance)
@@ -53,7 +53,7 @@ public class RadarMarker : MonoBehaviour
         if (canvasGroup != null) canvasGroup.alpha = alpha;
     }
 
-    public float GetAlpha() => canvasGroup != null ? canvasGroup.alpha : 0f;
+    public float GetAlpha() => canvasGroup != null ? canvasGroup.alpha : 1f;
 
     public void SetLabel(string text)
     {
