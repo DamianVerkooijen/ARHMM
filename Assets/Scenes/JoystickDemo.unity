@@ -3333,13 +3333,6 @@ MonoBehaviour:
     missionType: 2
     isCompleted: 0
     startLocation:
-<<<<<<< Updated upstream
-      locationName: ASML
-      actionText: Balls
-      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
-      shortInstruction: Fly to Balzac
-      description: my balzac
-=======
       locationName: Train Station
       actionText: Missie scannen
       targetIcon: {fileID: 0}
@@ -3391,7 +3384,6 @@ MonoBehaviour:
       targetIcon: {fileID: 0}
       shortInstruction: Stadion
       description: Vind de drie technische campussen in EIndhoven.
->>>>>>> Stashed changes
       reward: 0
     endLocation:
       locationName: ASML
