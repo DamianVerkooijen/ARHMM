@@ -116,14 +116,27 @@ public class IntroSequenceController : MonoBehaviour
         }
 
         var firstMission = stateController.missions[0];
+        var introPopup = firstMission.missionIntroPopup;
+
+        string title = "⚠️ WAARSCHUWING!";
+        string description = "De EVIL AI stuurt zijn handlangers op pad naar ASML om de chips te bemachtigen! " +
+                             "Laat dit niet gebeuren! We hebben deze chips hard nodig om de EVIL AI uit te schakelen!";
         Sprite icon = firstMission.startLocation?.targetIcon;
+        string actionLabel = "Start Missie!";
+
+        if (introPopup != null)
+        {
+            if (!string.IsNullOrEmpty(introPopup.title)) title = introPopup.title;
+            if (!string.IsNullOrEmpty(introPopup.description)) description = introPopup.description;
+            if (introPopup.icon != null) icon = introPopup.icon;
+            if (!string.IsNullOrEmpty(introPopup.actionButtonText)) actionLabel = introPopup.actionButtonText;
+        }
 
         PopupManager.Instance.ShowPopup(
-            "⚠️ WAARSCHUWING!",
-            "De EVIL AI stuurt zijn handlangers op pad naar ASML om de chips te bemachtigen! " +
-            "Laat dit niet gebeuren! We hebben deze chips hard nodig om de EVIL AI uit te schakelen!",
+            title,
+            description,
             icon,
-            "Start Missie!",
+            actionLabel,
             () => stateController.StartMission(0)
         );
 

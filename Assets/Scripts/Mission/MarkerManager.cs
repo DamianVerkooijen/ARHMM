@@ -73,7 +73,8 @@ public class MarkerManager : MonoBehaviour
 
             if (mainCameraTransform != null)
             {
-                activeWaypoint.transform.LookAt(activeWaypoint.transform.position + mainCameraTransform.rotation * Vector3.forward, mainCameraTransform.rotation * Vector3.up);
+                // Use prefab rotation instead of LookAt for consistent orientation with mission markers
+                activeWaypoint.transform.localRotation = waypointPrefab.transform.localRotation;
             }
 
             HideAllStartMarkers();
@@ -109,7 +110,7 @@ public class MarkerManager : MonoBehaviour
 
             GameObject marker = Instantiate(markerPrefab, activeARAnchor);
             marker.transform.localPosition = pureLocalPosition;
-            marker.transform.localRotation = Quaternion.identity;
+            marker.transform.localRotation = markerPrefab.transform.localRotation;
             if (currentMissions[i].isCompleted)
             {
                 Destroy(marker);

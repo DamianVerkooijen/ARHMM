@@ -100,14 +100,43 @@ public class PopupManager : MonoBehaviour
     private void HandleMissionCompleted(int completedIndex)
     {
         ClosePopup();
-        StartCoroutine(ShowCompletionThenNext());
+        StartCoroutine(ShowCompletionThenNext(completedIndex));
     }
 
-    private IEnumerator ShowCompletionThenNext()
+    private IEnumerator ShowCompletionThenNext(int completedIndex)
     {
         if (visualPanel != null) visualPanel.SetActive(false);
         yield return new WaitForSeconds(missionCompleteDelay);
 
+        // Show completion popup for the completed mission
+        if (stateController != null && completedIndex >= 0 && completedIndex < stateController.missions.Count)
+        {
+            var completedMission = stateController.missions[completedIndex];
+            if (completedMission.missionCompletionPopup != null)
+            {
+                ShowPopup(
+                    completedMission.missionCompletionPopup.title,
+                    completedMission.missionCompletionPopup.description,
+                    completedMission.missionCompletionPopup.icon,
+                    completedMission.missionCompletionPopup.actionButtonText,
+                    () => StartCoroutine(ShowNextMissionAfterDelay())
+                );
+                yield break;
+            }
+        }
+
+        // Fallback if no completion popup defined
+        ShowNextMissionOrGameEnd();
+    }
+
+    private IEnumerator ShowNextMissionAfterDelay()
+    {
+        yield return new WaitForSeconds(missionCompleteDelay);
+        ShowNextMissionOrGameEnd();
+    }
+
+    private void ShowNextMissionOrGameEnd()
+    {
         int nextIndex = -1;
         if (stateController != null)
         {
@@ -126,16 +155,29 @@ public class PopupManager : MonoBehaviour
         else
         {
             var next = stateController.missions[nextIndex];
-            var first = GetFirstTarget(next);
-            int captured = nextIndex;
+            if (next.missionIntroPopup != null)
+            {
+                ShowPopup(
+                    next.missionIntroPopup.title,
+                    next.missionIntroPopup.description,
+                    next.missionIntroPopup.icon,
+                    next.missionIntroPopup.actionButtonText,
+                    () => stateController.StartMission(nextIndex)
+                );
+            }
+            else
+            {
+                var first = GetFirstTarget(next);
+                int captured = nextIndex;
 
-            ShowPopup(
-                $"✅ Missie voltooid! Volgende: {next.missionName}",
-                first != null ? first.description : next.missionName,
-                first != null ? first.targetIcon : null,
-                "Start volgende missie!",
-                () => stateController.StartMission(captured)
-            );
+                ShowPopup(
+                    $"✅ Missie voltooid! Volgende: {next.missionName}",
+                    first != null ? first.description : next.missionName,
+                    first != null ? first.targetIcon : null,
+                    "Start volgende missie!",
+                    () => stateController.StartMission(captured)
+                );
+            }
         }
     }
 

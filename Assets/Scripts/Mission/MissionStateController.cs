@@ -18,6 +18,15 @@ public class MissionStateController : MonoBehaviour
     }
 
     [System.Serializable]
+    public class PopupContent
+    {
+        public string title;
+        [TextArea] public string description;
+        public Sprite icon;
+        public string actionButtonText;
+    }
+
+    [System.Serializable]
     public class Mission
     {
         public string missionName;
@@ -27,6 +36,11 @@ public class MissionStateController : MonoBehaviour
         public MissionTarget endLocation;
         public List<MissionTarget> searchTargets;
         public List<MissionTarget> scanTargets;
+        
+        [Header("Popup Content")]
+        public PopupContent missionIntroPopup;
+        public List<PopupContent> missionPopups = new List<PopupContent>();
+        public PopupContent missionCompletionPopup;
     }
 
     [Header("Missions Configuration")]
@@ -38,6 +52,7 @@ public class MissionStateController : MonoBehaviour
 
     public int selectedMissionIndex { get; private set; } = -1;
     public int currentTargetIndex { get; private set; } = 0;
+    public int currentPopupIndex { get; private set; } = 0;
     public bool missionActive { get; private set; } = false;
     public float scanTimer { get; private set; } = 0f;
     public bool isScanning { get; private set; } = false;
@@ -126,9 +141,6 @@ public class MissionStateController : MonoBehaviour
 
         if (dist < interactionRange)
         {
-            MissionTarget currentTarget = GetCurrentTarget(currentMission);
-            if (currentTarget == null) return;
-
             if (currentMission.missionType == MissionType.Scan)
             {
                 if (!wasInRange)
@@ -137,17 +149,9 @@ public class MissionStateController : MonoBehaviour
                     scanTimer = 0f;
                     isScanning = false;
                     OnScanProgressUpdated?.Invoke(0f);
-
-                    if (PopupManager.Instance != null)
-                    {
-                        PopupManager.Instance.ShowPopup(
-                            "📡 SCANNER GEACTIVEERD",
-                            $"{currentTarget.description}\n\nBreng de helikopter tot stilstand om de scan uit te voeren.",
-                            currentTarget.targetIcon,
-                            "Start Scannen",
-                            () => { isScanning = true; }
-                        );
-                    }
+                    
+                    // Show location popup from missionPopups list
+                    ShowCurrentPopup(() => { isScanning = true; });
                 }
 
                 if (isScanning)
@@ -164,20 +168,12 @@ public class MissionStateController : MonoBehaviour
             }
             else
             {
-                // Delivery of SearchFind
+                // Delivery or SearchFind
                 if (!wasInRange)
                 {
                     wasInRange = true;
-                    if (PopupManager.Instance != null)
-                    {
-                        PopupManager.Instance.ShowPopup(
-                            "📍 BESTEMMING BEREIKT",
-                            currentTarget.description,
-                            currentTarget.targetIcon,
-                            currentTarget.actionText,
-                            () => { ProcessMissionStep(); }
-                        );
-                    }
+                    // Show location popup from missionPopups list
+                    ShowCurrentPopup(() => { ProcessMissionStep(); });
                 }
             }
         }
@@ -206,6 +202,7 @@ public class MissionStateController : MonoBehaviour
         selectedMissionIndex = index;
         missionActive = false;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -224,6 +221,7 @@ public class MissionStateController : MonoBehaviour
             if (!missionActive)
             {
                 missionActive = true;
+                currentPopupIndex++;
                 wasInRange = false;
                 OnStepCompleted?.Invoke();
             }
@@ -235,6 +233,7 @@ public class MissionStateController : MonoBehaviour
         else if (m.missionType == MissionType.SearchFind)
         {
             currentTargetIndex++;
+            currentPopupIndex++;
             wasInRange = false;
             if (currentTargetIndex >= m.searchTargets.Count)
                 FinishMission();
@@ -246,6 +245,7 @@ public class MissionStateController : MonoBehaviour
     public void CompleteStep()
     {
         currentTargetIndex++;
+        currentPopupIndex++;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -269,6 +269,7 @@ public class MissionStateController : MonoBehaviour
         selectedMissionIndex = -1;
         missionActive = false;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -279,6 +280,7 @@ public class MissionStateController : MonoBehaviour
     {
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         missionActive = false;
         scanTimer = 0f;
         isScanning = false;
@@ -360,11 +362,32 @@ public class MissionStateController : MonoBehaviour
         return Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
     }
 
+    private void ShowCurrentPopup(Action onConfirmCallback = null)
+    {
+        if (selectedMissionIndex == -1 || PopupManager.Instance == null) return;
+
+        Mission mission = missions[selectedMissionIndex];
+        if (mission.missionPopups == null || mission.missionPopups.Count == 0) return;
+
+        // Clamp popup index to valid range
+        int popupIndex = Mathf.Clamp(currentPopupIndex, 0, mission.missionPopups.Count - 1);
+        PopupContent popup = mission.missionPopups[popupIndex];
+
+        PopupManager.Instance.ShowPopup(
+            popup.title,
+            popup.description,
+            popup.icon,
+            popup.actionButtonText,
+            onConfirmCallback
+        );
+    }
+
     public void ResetAllMissionsToStart()
     {
         // 1. Wipe all active tracking parameters completely
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         missionActive = false;
         scanTimer = 0f;
         isScanning = false;
