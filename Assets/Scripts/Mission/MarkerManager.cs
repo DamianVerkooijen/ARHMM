@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class MarkerManager : MonoBehaviour
@@ -10,18 +9,13 @@ public class MarkerManager : MonoBehaviour
     public GameObject waypointPrefab;
 
     [Header("UI Waypoint Settings")]
-    public string imageChildPath = "TeardropBase/ImageMask/InnerIcon";
     public float hoverHeight = 2.5f;
-    public Sprite defaultFallbackSprite;
 
     [Header("AR On-Screen Debugger")]
     public TextMeshProUGUI debugTextBox;
 
     private List<GameObject> spawnedMarkers = new List<GameObject>();
     private GameObject activeWaypoint;
-    private Image innerIconComponent;
-
-    private LocationRegistry registry;
     private Transform mainCameraTransform;
     private MissionStateController stateController;
     private HelicopterManager manager;
@@ -31,18 +25,11 @@ public class MarkerManager : MonoBehaviour
         stateController = controller;
         manager = heliManager;
 
-        registry = FindFirstObjectByType<LocationRegistry>();
         if (Camera.main != null) mainCameraTransform = Camera.main.transform;
 
         if (waypointPrefab != null)
         {
             activeWaypoint = Instantiate(waypointPrefab, transform);
-            Transform iconTransform = activeWaypoint.transform.Find(imageChildPath);
-            if (iconTransform != null)
-            {
-                innerIconComponent = iconTransform.GetComponent<Image>();
-            }
-
             activeWaypoint.SetActive(false);
         }
 
@@ -141,19 +128,6 @@ public class MarkerManager : MonoBehaviour
         Vector3 targetPos = stateController.GetCurrentTargetWorldPos();
         Vector3 calculatedWaypointPos = new Vector3(targetPos.x, targetPos.y + hoverHeight, targetPos.z);
         activeWaypoint.transform.position = calculatedWaypointPos;
-
-        string activeLocationName = GetCurrentLocationNameFromState();
-
-        Sprite targetSprite = null;
-        if (registry != null && !string.IsNullOrEmpty(activeLocationName))
-        {
-            targetSprite = registry.GetLocationSprite(activeLocationName);
-        }
-
-        if (innerIconComponent != null)
-        {
-            innerIconComponent.sprite = (targetSprite != null) ? targetSprite : defaultFallbackSprite;
-        }
     }
     private void HideAllStartMarkers()
     {
@@ -166,29 +140,7 @@ public class MarkerManager : MonoBehaviour
         }
     }
 
-    private string GetCurrentLocationNameFromState()
-    {
-        if (stateController == null || stateController.selectedMissionIndex == -1) return string.Empty;
-
-        var activeMission = stateController.missions[stateController.selectedMissionIndex];
-
-        switch (activeMission.missionType)
-        {
-            case MissionStateController.MissionType.Delivery:
-                return stateController.missionActive ? activeMission.endLocation.locationName : activeMission.startLocation.locationName;
-
-            case MissionStateController.MissionType.SearchFind:
-                if (activeMission.searchTargets != null && stateController.currentTargetIndex < activeMission.searchTargets.Count)
-                    return activeMission.searchTargets[stateController.currentTargetIndex].locationName;
-                break;
-
-            case MissionStateController.MissionType.Scan:
-                if (activeMission.scanTargets != null && stateController.currentTargetIndex < activeMission.scanTargets.Count)
-                    return activeMission.scanTargets[stateController.currentTargetIndex].locationName;
-                break;
-        }
-        return string.Empty;
-    }
+    
 
     private void HandleMissionStarted(int index)
     {
