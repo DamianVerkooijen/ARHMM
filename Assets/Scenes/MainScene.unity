@@ -2846,6 +2846,9 @@ MonoBehaviour:
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
+  deliveryTimerText: {fileID: 0}
+  deliveryTimerFontSize: 36
+  introSequence: {fileID: 0}
   rightExtensionAnimator: {fileID: 1747325560}
   leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
@@ -3371,13 +3374,9 @@ MonoBehaviour:
   - missionName: BEZORG MISSIE
     missionType: 0
     isCompleted: 0
-    startLocation:
-      locationName: ASML
-      actionText: Ophalen
-      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
-      shortInstruction: Vlieg naar ASML
-      description: Bestuur je helikopter om een chip op te halen bij ASML.
-      reward: 0
+    deliveryMode: 0
+    useDeliveryTimer: 0
+    deliveryTimeLimit: 30
     endLocation:
       locationName: Brainport Tech Campus
       actionText: Bezorgen
@@ -3386,6 +3385,8 @@ MonoBehaviour:
       description: Lever de chip nu veilig af bij de high tech campus om de missie
         te voltooien.
       reward: 0
+    deliveryTargets: []
+    searchCollectionMode: 0
     searchTargets: []
     scanTargets: []
     missionIntroPopup:
@@ -3410,13 +3411,9 @@ MonoBehaviour:
   - missionName: Test
     missionType: 2
     isCompleted: 0
-    startLocation:
-      locationName: Train Station
-      actionText: Missie scannen
-      targetIcon: {fileID: 0}
-      shortInstruction: Verschillende plekken ontdekken
-      description: Bekijk alle populaire musea in Eindhoven
-      reward: 0
+    deliveryMode: 0
+    useDeliveryTimer: 0
+    deliveryTimeLimit: 30
     endLocation:
       locationName: Train Station
       actionText: 'Finale '
@@ -3424,6 +3421,8 @@ MonoBehaviour:
       shortInstruction: Gefeliciteerd
       description: Gefeliciteerd, je hebt de missie succesvol voltooid!
       reward: 0
+    deliveryTargets: []
+    searchCollectionMode: 0
     searchTargets: []
     scanTargets:
     - locationName: DAF Museum
@@ -3467,13 +3466,9 @@ MonoBehaviour:
   - missionName: Zoeken & vinden missie
     missionType: 1
     isCompleted: 0
-    startLocation:
-      locationName: Stadium
-      actionText: Stadion
-      targetIcon: {fileID: 0}
-      shortInstruction: Stadion
-      description: Vind de drie technische campussen in EIndhoven.
-      reward: 0
+    deliveryMode: 0
+    useDeliveryTimer: 0
+    deliveryTimeLimit: 30
     endLocation:
       locationName: ASML
       actionText: Bezorgen
@@ -3482,6 +3477,8 @@ MonoBehaviour:
       description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
         in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
       reward: 0
+    deliveryTargets: []
+    searchCollectionMode: 0
     searchTargets: []
     scanTargets:
     - locationName: ASML
@@ -3569,7 +3566,8 @@ MonoBehaviour:
       actionButtonText: 
   interactionRange: 0.1
   scanDuration: 1.5
-  defaultStartIcon: {fileID: 0}
+  missionTransitionDelay: 5
+  missionRetryDelay: 2
 --- !u!1 &1145419102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,7 +3996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volg de radar voor een missie
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4647,6 +4645,7 @@ MonoBehaviour:
   introPanel: {fileID: 1459896824}
   startButton: {fileID: 776730880}
   fadeDuration: 0.35
+  freeFlightDuration: 5
 --- !u!1 &1465698166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,7 +6370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start een missie
+  m_text: Awaiting Message
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

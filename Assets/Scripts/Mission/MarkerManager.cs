@@ -98,7 +98,7 @@ public class MarkerManager : MonoBehaviour
 
         for (int i = 0; i < currentMissions.Count; i++)
         {
-            Vector2 gridPos = stateController.GetFirstTargetPosition(currentMissions[i]);
+            Vector2 gridPos = stateController.GetMissionFirstTargetGrid(currentMissions[i]);
 
             float percentX = gridPos.x / 100f;
             float percentZ = gridPos.y / 100f;

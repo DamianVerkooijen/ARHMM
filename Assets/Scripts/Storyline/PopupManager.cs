@@ -19,7 +19,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private MissionStateController stateController;
 
     [Header("Settings")]
-    [SerializeField] private float missionCompleteDelay = 1f;
+    [SerializeField] private float missionCompleteDelay = 5f;
 
     private TMP_Text buttonText;
     private Action pendingCallback;
@@ -106,9 +106,8 @@ public class PopupManager : MonoBehaviour
     private IEnumerator ShowCompletionThenNext(int completedIndex)
     {
         if (visualPanel != null) visualPanel.SetActive(false);
-        yield return new WaitForSeconds(missionCompleteDelay);
 
-        // Show completion popup for the completed mission
+        // Show completion popup for the completed mission immediately.
         if (stateController != null && completedIndex >= 0 && completedIndex < stateController.missions.Count)
         {
             var completedMission = stateController.missions[completedIndex];
@@ -125,7 +124,8 @@ public class PopupManager : MonoBehaviour
             }
         }
 
-        // Fallback if no completion popup defined
+        // Fallback if no completion popup defined: wait before showing the next mission popup.
+        yield return new WaitForSeconds(missionCompleteDelay);
         ShowNextMissionOrGameEnd();
     }
 
@@ -235,9 +235,17 @@ public class PopupManager : MonoBehaviour
     {
         switch (m.missionType)
         {
-            case MissionStateController.MissionType.Delivery: return m.startLocation;
-            case MissionStateController.MissionType.SearchFind: return (m.searchTargets != null && m.searchTargets.Count > 0) ? m.searchTargets[0] : null;
-            case MissionStateController.MissionType.Scan: return (m.scanTargets != null && m.scanTargets.Count > 0) ? m.scanTargets[0] : null;
+            case MissionStateController.MissionType.Delivery:
+                if (m.deliveryMode == MissionStateController.DeliveryMode.MultipleDestinations &&
+                    m.deliveryTargets != null && m.deliveryTargets.Count > 0)
+                {
+                    return m.deliveryTargets[0];
+                }
+                return m.endLocation;
+            case MissionStateController.MissionType.SearchFind:
+                return (m.searchTargets != null && m.searchTargets.Count > 0) ? m.searchTargets[0] : null;
+            case MissionStateController.MissionType.Scan:
+                return (m.scanTargets != null && m.scanTargets.Count > 0) ? m.scanTargets[0] : null;
         }
         return null;
     }

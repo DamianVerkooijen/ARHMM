@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +21,15 @@ public class MissionStateController : MonoBehaviour
         public string description;
 
         public int reward;
+    }
+
+    [System.Serializable]
+    public class PopupContent
+    {
+        public string title;
+        [TextArea] public string description;
+        public Sprite icon;
+        public string actionButtonText;
     }
 
     [Serializable]
@@ -49,6 +58,11 @@ public class MissionStateController : MonoBehaviour
 
         [Header("Scan Settings")]
         public List<MissionTarget> scanTargets = new List<MissionTarget>();
+
+        [Header("Popup Content")]
+        public PopupContent missionIntroPopup;
+        public List<PopupContent> missionPopups = new List<PopupContent>();
+        public PopupContent missionCompletionPopup;
     }
 
     [Header("Mission Configuration")]
@@ -65,6 +79,7 @@ public class MissionStateController : MonoBehaviour
 
     public int selectedMissionIndex { get; private set; } = -1;
     public int currentTargetIndex { get; private set; }
+    public int currentPopupIndex { get; private set; }
     public bool missionActive { get; private set; }
     public float scanTimer { get; private set; }
     public bool isScanning { get; private set; }
@@ -171,11 +186,7 @@ public class MissionStateController : MonoBehaviour
             if (!wasInRange)
             {
                 wasInRange = true;
-
-                if (mission.missionType == MissionType.Scan)
-                    ShowScanPopup(target);
-                else
-                    ShowTargetPopup(target);
+                ShowCurrentPopup(ProcessMissionStep);
             }
 
             if (mission.missionType == MissionType.Scan && isScanning)
@@ -208,55 +219,13 @@ public class MissionStateController : MonoBehaviour
                     target.description
                 );
 
-                ShowTargetPopup(target);
+                ShowCurrentPopup(ProcessMissionStep);
             }
         }
         else if (wasInRange)
         {
             ResetProximityState();
         }
-    }
-
-    private void ShowTargetPopup(MissionTarget target)
-    {
-        OnProximityChanged?.Invoke(
-            true,
-            target.actionText,
-            target.targetIcon,
-            target.description
-        );
-
-        if (PopupManager.Instance == null)
-            return;
-
-        PopupManager.Instance.ShowPopup(
-            "📍 BESTEMMING BEREIKT",
-            target.description,
-            target.targetIcon,
-            string.IsNullOrEmpty(target.actionText) ? "Doorgaan" : target.actionText,
-            ProcessMissionStep
-        );
-    }
-
-    private void ShowScanPopup(MissionTarget target)
-    {
-        OnProximityChanged?.Invoke(
-            true,
-            target.actionText,
-            target.targetIcon,
-            target.description
-        );
-
-        if (PopupManager.Instance == null)
-            return;
-
-        PopupManager.Instance.ShowPopup(
-            "📡 SCANNER GEACTIVEERD",
-            $"{target.description}\n\nBreng de helikopter tot stilstand om de scan uit te voeren.",
-            target.targetIcon,
-            "Start Scannen",
-            ProcessMissionStep
-        );
     }
 
     private void UpdateScanProgress()
@@ -300,6 +269,7 @@ public class MissionStateController : MonoBehaviour
 
         selectedMissionIndex = index;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         missionActive = true;
         scanTimer = 0f;
         isScanning = false;
@@ -355,7 +325,7 @@ public class MissionStateController : MonoBehaviour
         if (UsesMultipleDeliveryTargets(mission))
         {
             currentTargetIndex++;
-            wasInRange = false;
+        currentPopupIndex++;
 
             if (currentTargetIndex >= mission.deliveryTargets.Count)
                 FinishMission();
@@ -392,6 +362,7 @@ public class MissionStateController : MonoBehaviour
 
         collectedSearchTargets.Add(collectedIndex);
         wasInRange = false;
+        currentPopupIndex++;
 
         if (collectedSearchTargets.Count >= mission.searchTargets.Count)
         {
@@ -438,6 +409,7 @@ public class MissionStateController : MonoBehaviour
         Mission mission = missions[selectedMissionIndex];
 
         currentTargetIndex++;
+        currentPopupIndex++;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -466,11 +438,6 @@ public class MissionStateController : MonoBehaviour
         PopupManager.Instance?.ClosePopup();
         ClearCurrentMissionState();
         OnMissionCompleted?.Invoke(completedIndex);
-
-        int nextMissionIndex = completedIndex + 1;
-
-        if (nextMissionIndex < missions.Count)
-            ScheduleMission(nextMissionIndex, missionTransitionDelay);
     }
 
     public void FailMission()
@@ -521,6 +488,7 @@ public class MissionStateController : MonoBehaviour
     {
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
+        currentPopupIndex = 0;
         missionActive = false;
         scanTimer = 0f;
         isScanning = false;
@@ -555,6 +523,28 @@ public class MissionStateController : MonoBehaviour
         OnMissionReset?.Invoke();
     }
 
+    private bool ShowCurrentPopup(Action onConfirmCallback = null)
+    {
+        if (selectedMissionIndex == -1 || PopupManager.Instance == null) return false;
+
+        Mission mission = missions[selectedMissionIndex];
+        if (mission.missionPopups == null || mission.missionPopups.Count == 0) return false;
+
+        int popupIndex = Mathf.Clamp(currentPopupIndex, 0, mission.missionPopups.Count - 1);
+        PopupContent popup = mission.missionPopups[popupIndex];
+        if (popup == null) return false;
+
+        PopupManager.Instance.ShowPopup(
+            popup.title,
+            popup.description,
+            popup.icon,
+            string.IsNullOrEmpty(popup.actionButtonText) ? "Doorgaan" : popup.actionButtonText,
+            onConfirmCallback
+        );
+
+        return true;
+    }
+
     public Vector2 GetCurrentTargetGrid(Mission mission)
     {
         MissionTarget target = GetCurrentTarget(mission);
@@ -572,6 +562,45 @@ public class MissionStateController : MonoBehaviour
 
         Vector2 grid = GetCurrentTargetGrid(missions[selectedMissionIndex]);
         return manager.GetWorldPositionFromGrid(grid.x, grid.y);
+    }
+
+    public Vector2 GetMissionFirstTargetGrid(Mission mission)
+    {
+        MissionTarget target = GetFirstTarget(mission);
+        if (target == null || registry == null)
+            return Vector2.zero;
+
+        return registry.GetPosition(target.locationName);
+    }
+
+    private MissionTarget GetFirstTarget(Mission mission)
+    {
+        if (mission == null)
+            return null;
+
+        switch (mission.missionType)
+        {
+            case MissionType.Delivery:
+                if (UsesMultipleDeliveryTargets(mission) &&
+                    mission.deliveryTargets != null &&
+                    mission.deliveryTargets.Count > 0)
+                {
+                    return mission.deliveryTargets[0];
+                }
+                return mission.endLocation;
+
+            case MissionType.SearchFind:
+                return (mission.searchTargets != null && mission.searchTargets.Count > 0)
+                    ? mission.searchTargets[0]
+                    : null;
+
+            case MissionType.Scan:
+                return (mission.scanTargets != null && mission.scanTargets.Count > 0)
+                    ? mission.scanTargets[0]
+                    : null;
+        }
+
+        return null;
     }
 
     public Vector3 GetSearchTargetWorldPos(int targetIndex)
