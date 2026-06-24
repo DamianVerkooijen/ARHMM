@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class MissionStateController : MonoBehaviour
 {
     public enum MissionType { Delivery, SearchFind, Scan }
     public enum SearchCollectionMode { InOrder, AnyOrder }
+    public enum DeliveryMode { SingleDestination, MultipleDestinations }
 
     [System.Serializable]
     public class MissionTarget
@@ -14,7 +16,10 @@ public class MissionStateController : MonoBehaviour
         public string actionText;
         public Sprite targetIcon;
         public string shortInstruction;
-        [TextArea] public string description;
+
+        [TextArea]
+        public string description;
+
         public int reward;
     }
 
@@ -26,19 +31,24 @@ public class MissionStateController : MonoBehaviour
         public bool isCompleted = false;
 
         [Header("Delivery Settings")]
+        public DeliveryMode deliveryMode = DeliveryMode.SingleDestination;
         public bool useDeliveryTimer = false;
 
         [Min(1f)]
         public float deliveryTimeLimit = 30f;
 
+        [Tooltip("Used for a single-destination delivery mission")]
+        public MissionTarget endLocation;
+
+        [Tooltip("Used for a multiple-destination delivery mission")]
+        public List<MissionTarget> deliveryTargets = new List<MissionTarget>();
+
         [Header("Search & Find Settings")]
         public SearchCollectionMode searchCollectionMode = SearchCollectionMode.InOrder;
+        public List<MissionTarget> searchTargets = new List<MissionTarget>();
 
-        [Header("Mission Locations")]
-        public MissionTarget startLocation;
-        public MissionTarget endLocation;
-        public List<MissionTarget> searchTargets;
-        public List<MissionTarget> scanTargets;
+        [Header("Scan Settings")]
+        public List<MissionTarget> scanTargets = new List<MissionTarget>();
     }
 
     [Header("Mission Configuration")]
@@ -46,8 +56,12 @@ public class MissionStateController : MonoBehaviour
     public float interactionRange = 0.1f;
     public float scanDuration = 2f;
 
-    [Tooltip("Standard icon for starting a mission")]
-    public Sprite defaultStartIcon;
+    [Header("Mission Chain")]
+    [Tooltip("Delay before the next mission starts")]
+    public float missionTransitionDelay = 5f;
+
+    [Tooltip("Delay before a failed delivery mission restarts")]
+    public float missionRetryDelay = 2f;
 
     public int selectedMissionIndex { get; private set; } = -1;
     public int currentTargetIndex { get; private set; } = 0;
@@ -57,8 +71,6 @@ public class MissionStateController : MonoBehaviour
 
     public float deliveryTimeRemaining { get; private set; } = 0f;
     public bool isDeliveryTimerRunning { get; private set; } = false;
-
-    public int closestAvailableMissionIndex { get; private set; } = -1;
 
     public event Action<int> OnMissionStarted;
     public event Action<int> OnMissionCompleted;
@@ -73,6 +85,7 @@ public class MissionStateController : MonoBehaviour
     private HelicopterManager manager;
     private LocationRegistry registry;
     private bool wasInRange = false;
+    private Coroutine transitionCoroutine;
 
     private readonly HashSet<int> collectedSearchTargets = new HashSet<int>();
 
@@ -82,49 +95,54 @@ public class MissionStateController : MonoBehaviour
         registry = locRegistry;
     }
 
+    public void StartMissionChain()
+    {
+        StopTransition();
+        ClearCurrentMissionState();
+
+        foreach (Mission mission in missions)
+            mission.isCompleted = false;
+
+        if (missions.Count > 0)
+            StartMission(0);
+    }
+
     public void EvaluateProgressionTick()
     {
-        if (manager == null || manager.helicopter == null || registry == null) return;
-
-        UpdateDeliveryTimer();
-
-        if (manager.helicopter.transform.localPosition == Vector3.zero)
+        if (selectedMissionIndex == -1 ||
+            manager == null ||
+            manager.helicopter == null ||
+            registry == null)
         {
-            if (wasInRange)
-            {
-                ResetProximity();
-                OnProximityChanged?.Invoke(
-                    false,
-                    "",
-                    null,
-                    "Vlieg naar een markering om een missie te starten"
-                );
-            }
-
             return;
         }
 
-        if (selectedMissionIndex == -1)
-            EvaluateSelectionRange();
-        else
-            EvaluateActiveMissionRange();
+        UpdateDeliveryTimer();
+
+        // The delivery timer may have failed and cleared the mission.
+        if (selectedMissionIndex == -1) return;
+
+        if (manager.helicopter.transform.localPosition == Vector3.zero)
+            return;
+
+        EvaluateActiveMissionRange();
     }
 
     private void UpdateDeliveryTimer()
     {
-        if (selectedMissionIndex == -1) return;
-
         Mission mission = missions[selectedMissionIndex];
 
         if (mission.missionType != MissionType.Delivery ||
             !mission.useDeliveryTimer ||
-            !missionActive ||
             !isDeliveryTimerRunning)
         {
             return;
         }
 
-        deliveryTimeRemaining = Mathf.Max(0f, deliveryTimeRemaining - Time.deltaTime);
+        deliveryTimeRemaining = Mathf.Max(
+            0f,
+            deliveryTimeRemaining - Time.deltaTime
+        );
 
         OnDeliveryTimerUpdated?.Invoke(
             deliveryTimeRemaining,
@@ -133,56 +151,6 @@ public class MissionStateController : MonoBehaviour
 
         if (deliveryTimeRemaining <= 0f)
             FailMission();
-    }
-
-    private void EvaluateSelectionRange()
-    {
-        int closestIndex = -1;
-        float closestDistance = interactionRange;
-
-        for (int i = 0; i < missions.Count; i++)
-        {
-            if (missions[i].isCompleted || missions[i].startLocation == null) continue;
-
-            Vector2 gridPosition = GetFirstTargetPosition(missions[i]);
-            Vector3 worldPosition = manager.GetWorldPositionFromGrid(
-                gridPosition.x,
-                gridPosition.y
-            );
-
-            float distance = GetFlatDistance(
-                manager.helicopter.transform.position,
-                worldPosition
-            );
-
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestIndex = i;
-            }
-        }
-
-        closestAvailableMissionIndex = closestIndex;
-        bool isInRange = closestIndex != -1;
-
-        if (isInRange == wasInRange) return;
-
-            // FIX: We sturen geen 'true' meer naar de HUD om de extensiebalk te openen voor het starten.
-            // De HUD blijft nu netjes gesloten en leeg totdat de missie via de pop-up geactiveerd is!
-            if (isInRange)
-            {
-                OnProximityChanged?.Invoke(
-                    false, // <--- Staat nu op false, dus de extensie blijft dicht!
-                    "",
-                    null,
-                    $"[ {missions[closestIndex].missionName} ] beschikbaar."
-                );
-            }
-            else
-            {
-                OnProximityChanged?.Invoke(false, "", null, "");
-            }
-        }
     }
 
     private void EvaluateActiveMissionRange()
@@ -196,20 +164,19 @@ public class MissionStateController : MonoBehaviour
             return;
         }
 
-        MissionTarget currentTarget = GetCurrentTarget(mission);
-        if (currentTarget == null) return;
+        MissionTarget target = GetCurrentTarget(mission);
+        if (target == null) return;
 
-        Vector3 targetPosition = GetCurrentTargetWorldPos();
         float distance = GetFlatDistance(
             manager.helicopter.transform.position,
-            targetPosition
+            GetCurrentTargetWorldPos()
         );
 
         if (distance < interactionRange)
         {
             if (mission.missionType == MissionType.Scan)
             {
-                EvaluateScan(currentTarget);
+                EvaluateScan(target);
             }
             else if (!wasInRange)
             {
@@ -217,9 +184,9 @@ public class MissionStateController : MonoBehaviour
 
                 OnProximityChanged?.Invoke(
                     true,
-                    currentTarget.actionText,
-                    currentTarget.targetIcon,
-                    currentTarget.description
+                    target.actionText,
+                    target.targetIcon,
+                    target.description
                 );
             }
         }
@@ -248,7 +215,6 @@ public class MissionStateController : MonoBehaviour
             if (!wasInRange || targetChanged)
             {
                 wasInRange = true;
-
                 MissionTarget target = mission.searchTargets[closestTarget];
 
                 OnProximityChanged?.Invoke(
@@ -303,7 +269,7 @@ public class MissionStateController : MonoBehaviour
         OnScanProgressUpdated?.Invoke(progress);
 
         if (scanTimer >= scanDuration)
-            CompleteStep();
+            CompleteScanStep();
     }
 
     public void StartMission(int index)
@@ -314,26 +280,23 @@ public class MissionStateController : MonoBehaviour
 
         selectedMissionIndex = index;
         currentTargetIndex = 0;
+        missionActive = true;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
 
+        mission.isCompleted = false;
         collectedSearchTargets.Clear();
         ResetDeliveryTimer();
-
-        /*
-         * The player starts all missions at startLocation.
-         * After starting:
-         * Delivery points to endLocation.
-         * Search points to searchTargets[0].
-         * Scan points to scanTargets[0].
-         */
-        missionActive = mission.missionType == MissionType.Delivery;
 
         if (mission.missionType == MissionType.Delivery &&
             mission.useDeliveryTimer)
         {
-            deliveryTimeRemaining = Mathf.Max(1f, mission.deliveryTimeLimit);
+            deliveryTimeRemaining = Mathf.Max(
+                1f,
+                mission.deliveryTimeLimit
+            );
+
             isDeliveryTimerRunning = true;
 
             OnDeliveryTimerUpdated?.Invoke(
@@ -355,7 +318,7 @@ public class MissionStateController : MonoBehaviour
         switch (mission.missionType)
         {
             case MissionType.Delivery:
-                ProcessDelivery();
+                ProcessDelivery(mission);
                 break;
 
             case MissionType.SearchFind:
@@ -368,16 +331,33 @@ public class MissionStateController : MonoBehaviour
         }
     }
 
-    private void ProcessDelivery()
+    private void ProcessDelivery(Mission mission)
     {
         if (!IsCurrentTargetInRange()) return;
+
+        if (UsesMultipleDeliveryTargets(mission))
+        {
+            currentTargetIndex++;
+            wasInRange = false;
+
+            if (currentTargetIndex >= mission.deliveryTargets.Count)
+                FinishMission();
+            else
+                OnStepCompleted?.Invoke();
+
+            return;
+        }
+
         FinishMission();
     }
 
     private void ProcessSearchFind(Mission mission)
     {
-        if (mission.searchTargets == null || mission.searchTargets.Count == 0)
+        if (mission.searchTargets == null ||
+            mission.searchTargets.Count == 0)
+        {
             return;
+        }
 
         int collectedIndex;
 
@@ -432,7 +412,7 @@ public class MissionStateController : MonoBehaviour
         }
     }
 
-    public void CompleteStep()
+    private void CompleteScanStep()
     {
         if (selectedMissionIndex == -1) return;
 
@@ -465,6 +445,11 @@ public class MissionStateController : MonoBehaviour
 
         ClearCurrentMissionState();
         OnMissionCompleted?.Invoke(completedIndex);
+
+        int nextMissionIndex = completedIndex + 1;
+
+        if (nextMissionIndex < missions.Count)
+            ScheduleMission(nextMissionIndex, missionTransitionDelay);
     }
 
     public void FailMission()
@@ -483,7 +468,32 @@ public class MissionStateController : MonoBehaviour
         );
 
         OnMissionFailed?.Invoke(failedIndex);
-        OnMissionReset?.Invoke();
+        ScheduleMission(failedIndex, missionRetryDelay);
+    }
+
+    private void ScheduleMission(int missionIndex, float delay)
+    {
+        StopTransition();
+
+        transitionCoroutine = StartCoroutine(
+            StartMissionAfterDelay(missionIndex, delay)
+        );
+    }
+
+    private IEnumerator StartMissionAfterDelay(int missionIndex, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        transitionCoroutine = null;
+        StartMission(missionIndex);
+    }
+
+    private void StopTransition()
+    {
+        if (transitionCoroutine == null) return;
+
+        StopCoroutine(transitionCoroutine);
+        transitionCoroutine = null;
     }
 
     private void ClearCurrentMissionState()
@@ -494,7 +504,6 @@ public class MissionStateController : MonoBehaviour
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
-        closestAvailableMissionIndex = -1;
 
         collectedSearchTargets.Clear();
 
@@ -507,6 +516,7 @@ public class MissionStateController : MonoBehaviour
         wasInRange = false;
         isScanning = false;
         scanTimer = 0f;
+
         OnScanProgressUpdated?.Invoke(0f);
     }
 
@@ -514,62 +524,43 @@ public class MissionStateController : MonoBehaviour
     {
         deliveryTimeRemaining = 0f;
         isDeliveryTimerRunning = false;
+
         OnDeliveryTimerUpdated?.Invoke(0f, 0f);
     }
 
     public void TriggerFullReset()
     {
+        ResetAllMissionsToStart();
+    }
+
+    public void ResetAllMissionsToStart()
+    {
+        StopTransition();
         ClearCurrentMissionState();
 
         foreach (Mission mission in missions)
             mission.isCompleted = false;
 
         OnMissionReset?.Invoke();
-    }
 
-    public void ResetAllMissionsToStart()
-    {
-        TriggerFullReset();
-    }
-
-    /*
-     * This is now always the mission start marker.
-     * It no longer returns searchTargets[0] or scanTargets[0].
-     */
-    public Vector2 GetFirstTargetPosition(Mission mission)
-    {
-        if (mission == null || mission.startLocation == null)
-            return Vector2.zero;
-
-        return registry.GetPosition(mission.startLocation.locationName);
+        if (missions.Count > 0)
+            StartMission(0);
     }
 
     public Vector2 GetCurrentTargetGrid(Mission mission)
     {
-        switch (mission.missionType)
-        {
-            case MissionType.Delivery:
-                return registry.GetPosition(
-                    mission.endLocation.locationName
-                );
+        MissionTarget target = GetCurrentTarget(mission);
 
-            case MissionType.SearchFind:
-                return registry.GetPosition(
-                    mission.searchTargets[currentTargetIndex].locationName
-                );
+        if (target == null || registry == null)
+            return Vector2.zero;
 
-            case MissionType.Scan:
-                return registry.GetPosition(
-                    mission.scanTargets[currentTargetIndex].locationName
-                );
-        }
-
-        return Vector2.zero;
+        return registry.GetPosition(target.locationName);
     }
 
     public Vector3 GetCurrentTargetWorldPos()
     {
-        if (selectedMissionIndex == -1) return Vector3.zero;
+        if (selectedMissionIndex == -1 || manager == null)
+            return Vector3.zero;
 
         Vector2 grid = GetCurrentTargetGrid(
             missions[selectedMissionIndex]
@@ -580,7 +571,12 @@ public class MissionStateController : MonoBehaviour
 
     public Vector3 GetSearchTargetWorldPos(int targetIndex)
     {
-        if (selectedMissionIndex == -1) return Vector3.zero;
+        if (selectedMissionIndex == -1 ||
+            manager == null ||
+            registry == null)
+        {
+            return Vector3.zero;
+        }
 
         Mission mission = missions[selectedMissionIndex];
 
@@ -598,46 +594,18 @@ public class MissionStateController : MonoBehaviour
         return manager.GetWorldPositionFromGrid(grid.x, grid.y);
     }
 
-    public Vector3 GetClosestAvailableMissionPos()
-    {
-        float closestDistance = float.MaxValue;
-        Vector3 closestPosition = Vector3.zero;
-
-        foreach (Mission mission in missions)
-        {
-            if (mission.isCompleted || mission.startLocation == null)
-                continue;
-
-            Vector2 grid = GetFirstTargetPosition(mission);
-            Vector3 worldPosition = manager.GetWorldPositionFromGrid(
-                grid.x,
-                grid.y
-            );
-
-            float distance = GetFlatDistance(
-                manager.helicopter.transform.position,
-                worldPosition
-            );
-
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPosition = worldPosition;
-            }
-        }
-
-        return closestPosition;
-    }
-
     public string GetCurrentTargetLocationName()
     {
-        if (selectedMissionIndex == -1) return string.Empty;
+        if (selectedMissionIndex == -1)
+            return string.Empty;
 
         MissionTarget target = GetCurrentTarget(
             missions[selectedMissionIndex]
         );
 
-        return target != null ? target.locationName : string.Empty;
+        return target != null
+            ? target.locationName
+            : string.Empty;
     }
 
     public bool IsSearchTargetCollected(int targetIndex)
@@ -652,7 +620,8 @@ public class MissionStateController : MonoBehaviour
 
     public int GetSearchTargetCount()
     {
-        if (selectedMissionIndex == -1) return 0;
+        if (selectedMissionIndex == -1)
+            return 0;
 
         List<MissionTarget> targets =
             missions[selectedMissionIndex].searchTargets;
@@ -665,6 +634,14 @@ public class MissionStateController : MonoBehaviour
         switch (mission.missionType)
         {
             case MissionType.Delivery:
+                if (UsesMultipleDeliveryTargets(mission))
+                {
+                    if (currentTargetIndex < mission.deliveryTargets.Count)
+                        return mission.deliveryTargets[currentTargetIndex];
+
+                    return null;
+                }
+
                 return mission.endLocation;
 
             case MissionType.SearchFind:
@@ -689,6 +666,13 @@ public class MissionStateController : MonoBehaviour
         return null;
     }
 
+    private bool UsesMultipleDeliveryTargets(Mission mission)
+    {
+        return mission.deliveryMode == DeliveryMode.MultipleDestinations &&
+               mission.deliveryTargets != null &&
+               mission.deliveryTargets.Count > 0;
+    }
+
     private bool IsCurrentTargetInRange()
     {
         if (selectedMissionIndex == -1 ||
@@ -711,13 +695,12 @@ public class MissionStateController : MonoBehaviour
 
         for (int i = 0; i < mission.searchTargets.Count; i++)
         {
-            if (collectedSearchTargets.Contains(i)) continue;
-
-            Vector3 worldPosition = GetSearchTargetWorldPos(i);
+            if (collectedSearchTargets.Contains(i))
+                continue;
 
             float distance = GetFlatDistance(
                 manager.helicopter.transform.position,
-                worldPosition
+                GetSearchTargetWorldPos(i)
             );
 
             if (distance < closestDistance)

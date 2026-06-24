@@ -137,30 +137,4 @@ public class IntroSequenceController : MonoBehaviour
         if (startButton != null)
             startButton.onClick.RemoveListener(OnStartButtonPressed);
     }
-
-    public void ResetIntroSequence()
-    {
-        // 1. Ensure this controller GameObject is active again so it can run code
-        gameObject.SetActive(true);
-
-        // 2. Stop any lingering fade coroutines safely
-        StopAllCoroutines();
-
-        // 3. Reset the alpha and button interactability back to pristine states
-        if (introCanvasGroup != null) introCanvasGroup.alpha = 1f;
-        if (startButton != null) startButton.interactable = true;
-
-        // 4. Reset the panel visibility and joystick setups
-        InitialSetupState();
-    }
-
-    /// <summary>
-    /// Shared state logic to guarantee identical layout on Awake and on Soft Reset.
-    /// </summary>
-    private void InitialSetupState()
-    {
-        if (variableJoystickL != null) variableJoystickL.SetActive(false);
-        if (variableJoystickR != null) variableJoystickR.SetActive(false);
-        if (introPanel != null) introPanel.SetActive(true);
-    }
 }
