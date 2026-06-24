@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using JetBrains.Annotations;
 
@@ -11,9 +10,7 @@ public class MarkerManager : MonoBehaviour
     public GameObject waypointPrefab;
 
     [Header("UI Waypoint Settings")]
-    public string imageChildPath = "TeardropBase/ImageMask/InnerIcon";
     public float hoverHeight = 2.5f;
-    public Sprite defaultFallbackSprite;
 
     [Header("AR On-Screen Debugger")]
     public TextMeshProUGUI debugTextBox;
@@ -22,9 +19,6 @@ public class MarkerManager : MonoBehaviour
     private List<GameObject> searchWaypoints = new List<GameObject>();
 
     private GameObject activeWaypoint;
-    private Image innerIconComponent;
-
-    private LocationRegistry registry;
     private Transform mainCameraTransform;
     private MissionStateController stateController;
     private HelicopterManager manager;
@@ -34,16 +28,11 @@ public class MarkerManager : MonoBehaviour
         stateController = controller;
         manager = heliManager;
 
-        registry = FindFirstObjectByType<LocationRegistry>();
         if (Camera.main != null) mainCameraTransform = Camera.main.transform;
 
         if (waypointPrefab != null)
         {
             activeWaypoint = Instantiate(waypointPrefab, transform);
-
-            Transform iconTransform = activeWaypoint.transform.Find(imageChildPath);
-            if (iconTransform != null) innerIconComponent = iconTransform.GetComponent<Image>();
-
             activeWaypoint.SetActive(false);
         }
 
@@ -133,35 +122,8 @@ public class MarkerManager : MonoBehaviour
         if (activeWaypoint == null || stateController == null) return;
 
         Vector3 targetPos = stateController.GetCurrentTargetWorldPos();
-        activeWaypoint.transform.position =
-            new Vector3(targetPos.x, targetPos.y + hoverHeight, targetPos.z);
-
-        string locationName = GetCurrentLocationNameFromState();
-        Sprite targetSprite = registry != null
-            ? registry.GetLocationSprite(locationName)
-            : null;
-
-        if (innerIconComponent != null)
-            innerIconComponent.sprite = targetSprite != null
-                ? targetSprite
-                : defaultFallbackSprite;
-    }
-
-    private void EnsureSearchWaypoints(MissionStateController.Mission mission)
-    {
-        if (mission.searchTargets == null || waypointPrefab == null) return;
-        if (searchWaypoints.Count == mission.searchTargets.Count) return;
-
-        ClearSearchWaypoints();
-        Transform anchor = GetActiveARAnchor();
-
-        for (int i = 0; i < mission.searchTargets.Count; i++)
-        {
-            GameObject waypoint = Instantiate(waypointPrefab, anchor);
-            SetWaypointSprite(waypoint, mission.searchTargets[i].locationName);
-            waypoint.SetActive(false);
-            searchWaypoints.Add(waypoint);
-        }
+        Vector3 calculatedWaypointPos = new Vector3(targetPos.x, targetPos.y + hoverHeight, targetPos.z);
+        activeWaypoint.transform.position = calculatedWaypointPos;
     }
 
     private void UpdateSearchWaypoints()
@@ -252,40 +214,7 @@ public class MarkerManager : MonoBehaviour
         searchWaypoints.Clear();
     }
 
-    private string GetCurrentLocationNameFromState()
-    {
-        if (stateController == null || stateController.selectedMissionIndex == -1)
-            return string.Empty;
-
-        MissionStateController.Mission mission =
-            stateController.missions[stateController.selectedMissionIndex];
-
-        switch (mission.missionType)
-        {
-            case MissionStateController.MissionType.Delivery:
-                return stateController.missionActive
-                    ? mission.endLocation.locationName
-                    : mission.startLocation.locationName;
-
-            case MissionStateController.MissionType.SearchFind:
-                if (mission.searchTargets != null &&
-                    stateController.currentTargetIndex < mission.searchTargets.Count)
-                {
-                    return mission.searchTargets[stateController.currentTargetIndex].locationName;
-                }
-                break;
-
-            case MissionStateController.MissionType.Scan:
-                if (mission.scanTargets != null &&
-                    stateController.currentTargetIndex < mission.scanTargets.Count)
-                {
-                    return mission.scanTargets[stateController.currentTargetIndex].locationName;
-                }
-                break;
-        }
-
-        return string.Empty;
-    }
+    
 
     private void HandleMissionStarted(int index)
     {

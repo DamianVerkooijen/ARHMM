@@ -638,7 +638,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 110025014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2064326831}
+        m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
+        m_MethodName: OnActionButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &110025014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2782,7 +2794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionUIController
   statusText: {fileID: 794538076}
-  actionButton: {fileID: 1747325556}
+  actionButton: {fileID: 0}
   panelAnimator: {fileID: 1924977461}
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
@@ -5232,19 +5244,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 529481344}
-          m_TargetAssemblyTypeName: MissionAudioManager, Assembly-CSharp
-          m_MethodName: PlayJoystickTouchSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &1729101533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,7 +6576,6 @@ MonoBehaviour:
   missionIcon: {fileID: 41402348}
   actionButton: {fileID: 110025013}
   stateController: {fileID: 1130430549}
-  betweenPopupDelay: 0.3
   missionCompleteDelay: 1
 --- !u!1 &2067989027
 GameObject:
