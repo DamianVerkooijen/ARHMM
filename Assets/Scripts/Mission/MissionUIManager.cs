@@ -14,13 +14,6 @@ public class MissionUIController : MonoBehaviour
     public TMP_Text missionTaskText;
     public TMP_Text missionDescriptionText;
 
-    [Header("Delivery Timer Test UI")]
-    [Tooltip("Assign a TextMeshPro UI text placed in the top-left corner of the Canvas.")]
-    public TMP_Text deliveryTimerText;
-
-    [Min(10)]
-    public int deliveryTimerFontSize = 36;
-
     [Header("Intro Settings")]
     public IntroSequenceController introSequence;
 
@@ -46,6 +39,10 @@ public class MissionUIController : MonoBehaviour
     public Image extensionRight;
     public Image extensionLeft;
 
+    [Header("Delivery Warning Settings")]
+    [Min(1)]
+    public int deliveryWarningTime = 10;
+
     [Header("Sprites Normal (Blauw)")]
     public Sprite leftBarNormal;
     public Sprite rightBarNormal;
@@ -68,8 +65,27 @@ public class MissionUIController : MonoBehaviour
     public Sprite extensionLeftFinished;
     public Sprite rightBarFinishedOpened;
 
+    [Header("Sprites Warning (Rood)")]
+    public Sprite leftBarWarning;
+    public Sprite rightBarWarning;
+    public Sprite botBarWarning;
+    public Sprite topBarWarning;
+    public Sprite panelWarning;
+    public Sprite radarWarning;
+    public Sprite extensionRightWarning;
+    public Sprite extensionLeftWarning;
+    public Sprite rightBarWarningOpened;
+
     private MissionStateController stateController;
     private bool isMissionCompleteDisplayActive;
+    private bool isDeliveryWarningActive;
+
+    private enum HUDVisualState
+    {
+        Normal,
+        Finished,
+        Warning
+    }
 
     public void Initialize(MissionStateController controller)
     {
@@ -77,7 +93,11 @@ public class MissionUIController : MonoBehaviour
 
         if (stateController == null)
         {
-            Debug.LogError("MissionUIController: MissionStateController ontbreekt.", this);
+            Debug.LogError(
+                "MissionUIController: MissionStateController ontbreekt.",
+                this
+            );
+
             return;
         }
 
@@ -110,23 +130,30 @@ public class MissionUIController : MonoBehaviour
     public void UpdateMissionUI()
     {
         if (stateController == null || stateController.selectedMissionIndex == -1) return;
+        if (stateController.selectedMissionIndex >= stateController.missions.Count) return;
 
         MissionStateController.Mission activeMission =
             stateController.missions[stateController.selectedMissionIndex];
 
-        if (missionTitleText != null) missionTitleText.text = activeMission.missionName;
+        if (missionTitleText != null)
+            missionTitleText.text = activeMission.missionName;
 
-        MissionStateController.MissionTarget currentTarget = GetCurrentTarget(activeMission);
+        MissionStateController.MissionTarget currentTarget =
+            GetCurrentTarget(activeMission);
 
         if (currentTarget == null)
         {
             if (missionTaskText != null) missionTaskText.text = "";
             if (missionDescriptionText != null) missionDescriptionText.text = "";
+
             return;
         }
 
-        if (missionTaskText != null) missionTaskText.text = currentTarget.shortInstruction;
-        if (missionDescriptionText != null) missionDescriptionText.text = currentTarget.description;
+        if (missionTaskText != null)
+            missionTaskText.text = currentTarget.shortInstruction;
+
+        if (missionDescriptionText != null)
+            missionDescriptionText.text = currentTarget.description;
     }
 
     private MissionStateController.MissionTarget GetCurrentTarget(
@@ -137,7 +164,8 @@ public class MissionUIController : MonoBehaviour
         switch (mission.missionType)
         {
             case MissionStateController.MissionType.Delivery:
-                if (mission.deliveryMode == MissionStateController.DeliveryMode.MultipleDestinations &&
+                if (mission.deliveryMode ==
+                        MissionStateController.DeliveryMode.MultipleDestinations &&
                     mission.deliveryTargets != null &&
                     index >= 0 &&
                     index < mission.deliveryTargets.Count)
@@ -148,14 +176,22 @@ public class MissionUIController : MonoBehaviour
                 return mission.endLocation;
 
             case MissionStateController.MissionType.SearchFind:
-                if (mission.searchTargets != null && index >= 0 && index < mission.searchTargets.Count)
+                if (mission.searchTargets != null &&
+                    index >= 0 &&
+                    index < mission.searchTargets.Count)
+                {
                     return mission.searchTargets[index];
+                }
 
                 break;
 
             case MissionStateController.MissionType.Scan:
-                if (mission.scanTargets != null && index >= 0 && index < mission.scanTargets.Count)
+                if (mission.scanTargets != null &&
+                    index >= 0 &&
+                    index < mission.scanTargets.Count)
+                {
                     return mission.scanTargets[index];
+                }
 
                 break;
         }
@@ -173,10 +209,58 @@ public class MissionUIController : MonoBehaviour
 
         if (statusText != null) statusText.text = statusLabel;
 
-        SetHUDState(EvaluateIndexStateFinished());
+        RefreshHUDState();
 
-        // PopupManager handles the interaction button.
         if (actionButton != null) actionButton.SetActive(false);
+    }
+
+    private void HandleDeliveryTimerUpdated(
+        float remainingTime,
+        float totalTime)
+    {
+        if (isMissionCompleteDisplayActive) return;
+        if (stateController == null) return;
+        if (stateController.selectedMissionIndex == -1) return;
+        if (stateController.selectedMissionIndex >= stateController.missions.Count) return;
+
+        MissionStateController.Mission mission =
+            stateController.missions[stateController.selectedMissionIndex];
+
+        bool isTimedDelivery =
+            mission.missionType ==
+                MissionStateController.MissionType.Delivery &&
+            mission.useDeliveryTimer &&
+            totalTime > 0f &&
+            stateController.isDeliveryTimerRunning;
+
+        if (!isTimedDelivery)
+        {
+            isDeliveryWarningActive = false;
+            RefreshHUDState();
+            return;
+        }
+
+        int secondsRemaining =
+            Mathf.Max(0, Mathf.CeilToInt(remainingTime));
+
+        if (secondsRemaining <= 0)
+        {
+            isDeliveryWarningActive = true;
+            RefreshHUDState();
+            return;
+        }
+
+        if (secondsRemaining > deliveryWarningTime)
+        {
+            isDeliveryWarningActive = false;
+            RefreshHUDState();
+            return;
+        }
+
+        // 10 = red, 9 = blue, 8 = red, 7 = blue...
+        isDeliveryWarningActive = secondsRemaining % 2 == 0;
+
+        RefreshHUDState();
     }
 
     private void HandleScanProgressUpdated(float progressPercent)
@@ -185,41 +269,30 @@ public class MissionUIController : MonoBehaviour
 
         if (progressPercent <= 0f)
         {
-            if (statusText != null && statusText.text.StartsWith("Scanning"))
+            if (statusText != null &&
+                statusText.text.StartsWith("Scanning"))
+            {
                 statusText.text = "";
+            }
 
-            if (extensionActionText != null && extensionActionText.text.StartsWith("Bezig met scannen"))
+            if (extensionActionText != null &&
+                extensionActionText.text.StartsWith("Bezig met scannen"))
+            {
                 extensionActionText.text = "";
+            }
 
             return;
         }
 
-        int roundedProgress = Mathf.RoundToInt(progressPercent);
+        int roundedProgress =
+            Mathf.RoundToInt(progressPercent);
 
-        if (statusText != null) statusText.text = $"Scanning... {roundedProgress}%";
-        if (extensionActionText != null) extensionActionText.text = $"Bezig met scannen... {roundedProgress}%";
-    }
+        if (statusText != null)
+            statusText.text = $"Scanning... {roundedProgress}%";
 
-    private void HandleDeliveryTimerUpdated(float remainingTime, float totalTime)
-    {
-        if (deliveryTimerText == null) return;
-
-        bool shouldShow =
-            !isMissionCompleteDisplayActive &&
-            totalTime > 0f &&
-            remainingTime > 0f;
-
-        deliveryTimerText.gameObject.SetActive(shouldShow);
-
-        if (!shouldShow)
-        {
-            deliveryTimerText.text = "";
-            return;
-        }
-
-        deliveryTimerText.fontSize = deliveryTimerFontSize;
-        deliveryTimerText.color = Color.green;
-        deliveryTimerText.text = Mathf.CeilToInt(remainingTime).ToString();
+        if (extensionActionText != null)
+            extensionActionText.text =
+                $"Bezig met scannen... {roundedProgress}%";
     }
 
     private void HandleMissionStarted(int index)
@@ -227,36 +300,41 @@ public class MissionUIController : MonoBehaviour
         StopAllCoroutines();
 
         isMissionCompleteDisplayActive = false;
-        HideDeliveryTimer();
+        isDeliveryWarningActive = false;
 
-        // Bovenpaneel animator uit zodat hij niet uit zichzelf opent
         if (panelAnimator != null)
         {
             panelAnimator.SetBool("isOpen", false);
             panelAnimator.enabled = false;
         }
 
-        if (actionButton != null) actionButton.SetActive(false);
+        if (rightExtensionAnimator != null)
+            rightExtensionAnimator.enabled = false;
 
-        // Alleen RECHTS uitschakelen zodat de sprite stabiel blijft
-        if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
+        if (leftExtensionAnimator != null)
+            leftExtensionAnimator.enabled = false;
 
-        // LINKS LATEN WE HIER VOLLEDIG MET RUST! Geen .enabled = false meer.
-        // Zo blijft de admin lade gewoon reageren op je swipes.
+        if (actionButton != null)
+            actionButton.SetActive(false);
 
         UpdateMissionUI();
-        SetHUDState(false);
+        RefreshHUDState();
     }
 
     private void HandleMissionCompleted(int index)
     {
         isMissionCompleteDisplayActive = true;
-        HideDeliveryTimer();
+        isDeliveryWarningActive = false;
 
-        if (PopupManager.Instance != null) PopupManager.Instance.ClosePopup();
-        if (panelAnimator != null) panelAnimator.enabled = true;
+        if (PopupManager.Instance != null)
+            PopupManager.Instance.ClosePopup();
+
+        if (panelAnimator != null)
+            panelAnimator.enabled = true;
 
         StopAllCoroutines();
+
+        RefreshHUDState();
         StartCoroutine(ShowMissionCompletePanel());
     }
 
@@ -265,51 +343,72 @@ public class MissionUIController : MonoBehaviour
         StopAllCoroutines();
 
         isMissionCompleteDisplayActive = false;
-        HideDeliveryTimer();
+        isDeliveryWarningActive = true;
 
-        if (PopupManager.Instance != null) PopupManager.Instance.ClosePopup();
+        if (PopupManager.Instance != null)
+            PopupManager.Instance.ClosePopup();
 
-        if (missionTitleText != null) missionTitleText.text = "MISSIE MISLUKT";
-        if (missionTaskText != null) missionTaskText.text = "De missie wordt opnieuw gestart.";
-        if (missionDescriptionText != null) missionDescriptionText.text = "";
-        if (statusText != null) statusText.text = "De bezorgtijd is verstreken.";
+        if (missionTitleText != null)
+            missionTitleText.text = "MISSIE MISLUKT";
 
-        SetHUDState(false);
+        if (missionTaskText != null)
+            missionTaskText.text = "TIJD VERSTREKEN";
+
+        if (missionDescriptionText != null)
+            missionDescriptionText.text =
+                "De missie wordt opnieuw gestart.";
+
+        if (statusText != null)
+            statusText.text =
+                "De bezorgtijd is verstreken.";
+
+        RefreshHUDState();
     }
 
     private void HandleStepCompleted()
     {
-        if (PopupManager.Instance != null) PopupManager.Instance.ClosePopup();
+        if (PopupManager.Instance != null)
+            PopupManager.Instance.ClosePopup();
 
         UpdateMissionUI();
-        SetHUDState(false);
+        RefreshHUDState();
 
-        if (statusText != null) statusText.text = "";
+        if (statusText != null)
+            statusText.text = "";
     }
 
     private void HandleMissionReset()
     {
         StopAllCoroutines();
 
-        HideDeliveryTimer();
+        if (PopupManager.Instance != null)
+            PopupManager.Instance.ClosePopup();
 
-        if (PopupManager.Instance != null) PopupManager.Instance.ClosePopup();
-        if (introSequence != null) introSequence.ResetIntroSequence();
+        if (introSequence != null)
+            introSequence.ResetIntroSequence();
 
         isMissionCompleteDisplayActive = false;
+        isDeliveryWarningActive = false;
+
         ResetUI();
     }
 
     public IEnumerator ShowMissionCompletePanel()
     {
-        if (panelAnimator != null) panelAnimator.SetBool("isOpen", false);
+        if (panelAnimator != null)
+            panelAnimator.SetBool("isOpen", false);
 
-        SetHUDState(true);
+        if (missionTitleText != null)
+            missionTitleText.text = "MISSIE VOLTOOID";
 
-        if (missionTitleText != null) missionTitleText.text = "MISSIE VOLTOOID";
-        if (missionTaskText != null) missionTaskText.text = "Goed gedaan!";
-        if (missionDescriptionText != null) missionDescriptionText.text = "";
-        if (statusText != null) statusText.text = "";
+        if (missionTaskText != null)
+            missionTaskText.text = "Goed gedaan!";
+
+        if (missionDescriptionText != null)
+            missionDescriptionText.text = "";
+
+        if (statusText != null)
+            statusText.text = "";
 
         yield return new WaitForSeconds(5f);
 
@@ -317,17 +416,26 @@ public class MissionUIController : MonoBehaviour
         ResetUI();
     }
 
-    private void HideDeliveryTimer()
+    private void RefreshHUDState()
     {
-        if (deliveryTimerText == null) return;
+        if (isDeliveryWarningActive)
+        {
+            SetHUDState(HUDVisualState.Warning);
+            return;
+        }
 
-        deliveryTimerText.text = "";
-        deliveryTimerText.gameObject.SetActive(false);
+        if (isMissionCompleteDisplayActive)
+        {
+            SetHUDState(HUDVisualState.Finished);
+            return;
+        }
+
+        SetHUDState(HUDVisualState.Normal);
     }
 
     public void ResetUI()
     {
-        HideDeliveryTimer();
+        isDeliveryWarningActive = false;
 
         if (panelAnimator != null)
         {
@@ -335,50 +443,101 @@ public class MissionUIController : MonoBehaviour
             panelAnimator.SetBool("isOpen", false);
         }
 
-        if (missionTitleText != null) missionTitleText.text = "";
-        if (missionTaskText != null) missionTaskText.text = "";
-        if (missionDescriptionText != null) missionDescriptionText.text = "";
-        if (statusText != null) statusText.text = "";
-        if (actionButton != null) actionButton.SetActive(false);
-        if (rightExtensionAnimator != null) rightExtensionAnimator.enabled = false;
+        if (missionTitleText != null)
+            missionTitleText.text = "";
 
-        // Ook hier de linker animator NIET meer aanraken of uitzetten.
+        if (missionTaskText != null)
+            missionTaskText.text = "";
 
-        SetHUDState(false);
+        if (missionDescriptionText != null)
+            missionDescriptionText.text = "";
+
+        if (statusText != null)
+            statusText.text = "";
+
+        if (actionButton != null)
+            actionButton.SetActive(false);
+
+        if (extensionActionText != null)
+            extensionActionText.text = "";
+
+        if (extensionActionIcon != null)
+            extensionActionIcon.sprite = null;
+
+        if (rightExtensionAnimator != null)
+            rightExtensionAnimator.enabled = false;
+
+        if (leftExtensionAnimator != null)
+            leftExtensionAnimator.enabled = false;
+
+        SetHUDState(HUDVisualState.Normal);
     }
 
-    public void SetHUDState(bool isFinished)
+    private void SetHUDState(HUDVisualState state)
     {
-        if (leftBar != null) leftBar.sprite = isFinished ? leftBarFinished : leftBarNormal;
-        if (rightBar != null) rightBar.sprite = isFinished ? rightBarFinished : rightBarNormal;
-        if (botBar != null) botBar.sprite = isFinished ? botBarFinished : botBarNormal;
-        if (topBarR != null) topBarR.sprite = isFinished ? topBarFinished : topBarNormal;
-        if (topBarL != null) topBarL.sprite = isFinished ? topBarFinished : topBarNormal;
-        if (missionPanelTopImage != null) missionPanelTopImage.sprite = isFinished ? panelFinished : panelNormal;
-        if (radarBackground != null) radarBackground.sprite = isFinished ? radarFinished : radarNormal;
+        Sprite left = null;
+        Sprite right = null;
+        Sprite bottom = null;
+        Sprite top = null;
+        Sprite panel = null;
+        Sprite radar = null;
+        Sprite extensionRightSprite = null;
+        Sprite extensionLeftSprite = null;
 
-        // RECHTS: Geforceerd aan op de default image
+        switch (state)
+        {
+            case HUDVisualState.Finished:
+                left = leftBarFinished;
+                right = rightBarFinished;
+                bottom = botBarFinished;
+                top = topBarFinished;
+                panel = panelFinished;
+                radar = radarFinished;
+                extensionRightSprite = extensionRightFinished;
+                extensionLeftSprite = extensionLeftFinished;
+                break;
+
+            case HUDVisualState.Warning:
+                left = leftBarWarning;
+                right = rightBarWarning;
+                bottom = botBarWarning;
+                top = topBarWarning;
+                panel = panelWarning;
+                radar = radarWarning;
+                extensionRightSprite = extensionRightWarning;
+                extensionLeftSprite = extensionLeftWarning;
+                break;
+
+            default:
+                left = leftBarNormal;
+                right = rightBarNormal;
+                bottom = botBarNormal;
+                top = topBarNormal;
+                panel = panelNormal;
+                radar = radarNormal;
+                extensionRightSprite = extensionRightNormal;
+                extensionLeftSprite = extensionLeftNormal;
+                break;
+        }
+
+        if (leftBar != null) leftBar.sprite = left;
+        if (rightBar != null) rightBar.sprite = right;
+        if (botBar != null) botBar.sprite = bottom;
+        if (topBarR != null) topBarR.sprite = top;
+        if (topBarL != null) topBarL.sprite = top;
+        if (missionPanelTopImage != null) missionPanelTopImage.sprite = panel;
+        if (radarBackground != null) radarBackground.sprite = radar;
+
         if (extensionRight != null)
         {
             extensionRight.gameObject.SetActive(true);
-            extensionRight.sprite = isFinished ? extensionRightFinished : extensionRightNormal;
+            extensionRight.sprite = extensionRightSprite;
         }
 
-        // LINKS: Alleen zorgen dat het GameObject op Active(true) staat.
-        // We overschrijven de sprite en de positie NIET, zodat de animator van je admin drag 
-        // vloeiend zijn eigen animaties en sprites kan afspelen.
         if (extensionLeft != null)
         {
             extensionLeft.gameObject.SetActive(true);
+            extensionLeft.sprite = extensionLeftSprite;
         }
-    }
-
-    private bool EvaluateIndexStateFinished()
-    {
-        if (stateController == null || stateController.selectedMissionIndex == -1) return false;
-
-        return stateController
-            .missions[stateController.selectedMissionIndex]
-            .isCompleted;
     }
 }

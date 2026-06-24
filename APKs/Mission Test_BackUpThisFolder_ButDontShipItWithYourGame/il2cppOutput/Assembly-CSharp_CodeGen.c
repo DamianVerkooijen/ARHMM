@@ -262,15 +262,16 @@ extern void MissionUIController_OnDestroy_m1B94B46E3BB4EB8C2E2CF8D774D16767106B7
 extern void MissionUIController_UpdateMissionUI_m51135FC82D4C3558643966A5380ACC087ED0BCE7 (void);
 extern void MissionUIController_GetCurrentTarget_mB3351D0DBD0958B1E9ABCE20850D88CFD926968F (void);
 extern void MissionUIController_HandleProximityDisplay_m5D72D0E0C14792C033784A7E506972F1F6088703 (void);
-extern void MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4 (void);
 extern void MissionUIController_HandleDeliveryTimerUpdated_mDF6F94F8015D33A63541CAE1FE4E94C250BC5221 (void);
+extern void MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8 (void);
+extern void MissionUIController_RestoreCurrentTaskText_m3F204CA09B4B150C427BA38F5868CC9F1E6CD578 (void);
+extern void MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4 (void);
 extern void MissionUIController_HandleMissionStarted_m23C96E6EAE210107B9F7AB1798CBE4205C177C92 (void);
 extern void MissionUIController_HandleMissionCompleted_mE0D05271F07F0150856FCD25658C7F14B1569E4D (void);
 extern void MissionUIController_HandleMissionFailed_mC2E3150A01A6346EDABE47BFDDF5B390762959C0 (void);
 extern void MissionUIController_HandleStepCompleted_m51B5ADEC21AA9D92199077DD2373E7E744A9D35C (void);
 extern void MissionUIController_HandleMissionReset_m04FCB2753AEC2BD17CFB16AC0B951F0D61DEDC1C (void);
 extern void MissionUIController_ShowMissionCompletePanel_m0C8032D781355F38C3F396F0F6E4C818EDC11961 (void);
-extern void MissionUIController_HideDeliveryTimer_m7A028D276252AEB0111DE3413A59BC8EEF8BA083 (void);
 extern void MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD (void);
 extern void MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079 (void);
 extern void MissionUIController_EvaluateIndexStateFinished_mCD2FEDC34E597943F4F37C28158410F771BB7521 (void);
@@ -347,7 +348,7 @@ extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
 extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[340] = 
+static Il2CppMethodPointer s_methodPointers[341] = 
 {
 	JoystickPlayerExample_FixedUpdate_m9AEDBA111F95D67A006A5D3821956048224541B7,
 	JoystickPlayerExample__ctor_m702422E0AE29402330CF41FDDBEE76F0506342E2,
@@ -604,15 +605,16 @@ static Il2CppMethodPointer s_methodPointers[340] =
 	MissionUIController_UpdateMissionUI_m51135FC82D4C3558643966A5380ACC087ED0BCE7,
 	MissionUIController_GetCurrentTarget_mB3351D0DBD0958B1E9ABCE20850D88CFD926968F,
 	MissionUIController_HandleProximityDisplay_m5D72D0E0C14792C033784A7E506972F1F6088703,
-	MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4,
 	MissionUIController_HandleDeliveryTimerUpdated_mDF6F94F8015D33A63541CAE1FE4E94C250BC5221,
+	MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8,
+	MissionUIController_RestoreCurrentTaskText_m3F204CA09B4B150C427BA38F5868CC9F1E6CD578,
+	MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4,
 	MissionUIController_HandleMissionStarted_m23C96E6EAE210107B9F7AB1798CBE4205C177C92,
 	MissionUIController_HandleMissionCompleted_mE0D05271F07F0150856FCD25658C7F14B1569E4D,
 	MissionUIController_HandleMissionFailed_mC2E3150A01A6346EDABE47BFDDF5B390762959C0,
 	MissionUIController_HandleStepCompleted_m51B5ADEC21AA9D92199077DD2373E7E744A9D35C,
 	MissionUIController_HandleMissionReset_m04FCB2753AEC2BD17CFB16AC0B951F0D61DEDC1C,
 	MissionUIController_ShowMissionCompletePanel_m0C8032D781355F38C3F396F0F6E4C818EDC11961,
-	MissionUIController_HideDeliveryTimer_m7A028D276252AEB0111DE3413A59BC8EEF8BA083,
 	MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD,
 	MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079,
 	MissionUIController_EvaluateIndexStateFinished_mCD2FEDC34E597943F4F37C28158410F771BB7521,
@@ -690,7 +692,7 @@ static Il2CppMethodPointer s_methodPointers[340] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[340] = 
+static const int32_t s_InvokerIndices[341] = 
 {
 	16705,
 	16705,
@@ -947,15 +949,16 @@ static const int32_t s_InvokerIndices[340] =
 	16705,
 	10837,
 	1703,
-	12786,
 	6475,
+	12786,
+	16705,
+	12786,
 	12618,
 	12618,
 	12618,
 	16705,
 	16705,
 	16490,
-	16705,
 	16705,
 	12478,
 	16282,
@@ -1037,7 +1040,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	340,
+	341,
 	s_methodPointers,
 	0,
 	NULL,

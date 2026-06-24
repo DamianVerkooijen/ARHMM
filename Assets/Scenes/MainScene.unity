@@ -2112,9 +2112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bff5cf7b1b0be4d875922ad683d47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MarkerManager
-  markerPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   waypointPrefab: {fileID: 1445300852534212329, guid: 30e0749f98c25d04ba0e6c3d7b57b17b, type: 3}
   hoverHeight: 0
+  imageChildPath: TeardropBase/ImageMask/InnerIcon
+  defaultFallbackSprite: {fileID: 0}
   debugTextBox: {fileID: 851549268}
 --- !u!1 &641044866
 GameObject:
@@ -2408,7 +2409,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.75
+  m_fontSize: 45.6
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2798,6 +2799,7 @@ MonoBehaviour:
   missionTitleText: {fileID: 1976554554}
   missionTaskText: {fileID: 1225162054}
   missionDescriptionText: {fileID: 1795525815}
+  introSequence: {fileID: 0}
   rightExtensionAnimator: {fileID: 1747325560}
   leftExtensionAnimator: {fileID: 1729101537}
   extensionActionText: {fileID: 1467935546}
@@ -2812,6 +2814,7 @@ MonoBehaviour:
   radarBackground: {fileID: 1939871953}
   extensionRight: {fileID: 1747325558}
   extensionLeft: {fileID: 1729101535}
+  deliveryWarningTime: 10
   leftBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
   rightBarNormal: {fileID: 21300000, guid: 70ba45b5ba0412f46be1cb08a16c77c4, type: 3}
   botBarNormal: {fileID: 21300000, guid: 1eaf62ff529d5594092bfecd4e4c7f1b, type: 3}
@@ -2830,6 +2833,15 @@ MonoBehaviour:
   extensionRightFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
   extensionLeftFinished: {fileID: 21300000, guid: 04fbff25a9bc363479336429475eb128, type: 3}
   rightBarFinishedOpened: {fileID: 21300000, guid: 0c2b457070ba65e4cb9bb4a26f7ecc51, type: 3}
+  leftBarWarning: {fileID: 21300000, guid: e1c0a3c0c02246d4eb2d2c70e2ca95b8, type: 3}
+  rightBarWarning: {fileID: 21300000, guid: e1c0a3c0c02246d4eb2d2c70e2ca95b8, type: 3}
+  botBarWarning: {fileID: 21300000, guid: 08fb7f0cae7072c48b43a0f06ab25210, type: 3}
+  topBarWarning: {fileID: 21300000, guid: 0047387112011d244803deadcea7517c, type: 3}
+  panelWarning: {fileID: 21300000, guid: 6d843e51bc80e664f91fa3e7aee1bf11, type: 3}
+  radarWarning: {fileID: 21300000, guid: aaa00669f6b308b42bb1c574d7b8c3fa, type: 3}
+  extensionRightWarning: {fileID: 21300000, guid: e1c0a3c0c02246d4eb2d2c70e2ca95b8, type: 3}
+  extensionLeftWarning: {fileID: 21300000, guid: e1c0a3c0c02246d4eb2d2c70e2ca95b8, type: 3}
+  rightBarWarningOpened: {fileID: 21300000, guid: 6b28aec75aebe9243a97bd58374107e2, type: 3}
 --- !u!1 &915692059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,167 +3332,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionStateController
   missions:
-  - missionName: BEZORG MISSIE
+  - missionName: Test Delivery
     missionType: 0
     isCompleted: 0
-    startLocation:
-      locationName: ASML
-      actionText: Ophalen
-      targetIcon: {fileID: 21300000, guid: f95e8d825055a9943a4203e85f26e159, type: 3}
-      shortInstruction: Vlieg naar ASML
-      description: Bestuur je helikopter om een chip op te halen bij ASML.
-      reward: 0
+    deliveryMode: 1
+    useDeliveryTimer: 1
+    deliveryTimeLimit: 20
     endLocation:
-      locationName: Brainport Tech Campus
-      actionText: Bezorgen
-      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
-      shortInstruction: Vlieg naar PSV stadium
-      description: Lever de chip nu veilig af bij de high tech campus om de missie
-        te voltooien.
+      locationName: Train Station
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: 
+      description: 
       reward: 0
+    deliveryTargets:
+    - locationName: Airport
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: 
+      description: start
+      reward: 0
+    - locationName: DAF Museum
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: 
+      description: end
+      reward: 0
+    searchCollectionMode: 0
     searchTargets: []
     scanTargets: []
-  - missionName: Test
-    missionType: 2
-    isCompleted: 0
-    startLocation:
-      locationName: Train Station
-      actionText: Missie scannen
-      targetIcon: {fileID: 0}
-      shortInstruction: Verschillende plekken ontdekken
-      description: Bekijk alle populaire musea in Eindhoven
-      reward: 0
-    endLocation:
-      locationName: Train Station
-      actionText: 'Finale '
-      targetIcon: {fileID: 0}
-      shortInstruction: Gefeliciteerd
-      description: Gefeliciteerd, je hebt de missie succesvol voltooid!
-      reward: 0
-    searchTargets: []
-    scanTargets:
-    - locationName: DAF Museum
-      actionText: Scan
-      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
-      shortInstruction: Scan DAF Museum
-      description: Wist je dat DAF vroeger de uitklapbare wielen maakte waarmee F-16
-        gevechtsvliegtuigen landen?
-      reward: 0
-    - locationName: Philips Museum
-      actionText: Scan
-      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
-      shortInstruction: Scan Philips Museum
-      description: Philips is het grootste technologiebedrijf van Europa
-      reward: 0
-    - locationName: Van Abbemuseum
-      actionText: Scan
-      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
-      shortInstruction: Scan Van Abbemuseum
-      description: Het Van Abbemuseum was het allereerste museum ter wereld dat een
-        permanente tentoonstelling heeft ontworpen speciaal voor blinde en slechtziende
-        bezoekers.
-      reward: 0
-    - locationName: Philips Museum
-      actionText: Scan
-      targetIcon: {fileID: 21300000, guid: 88bdf9b2a1e85544c9f1809ec2041e06, type: 3}
-      shortInstruction: Scan Philips Museum
-      description: Philips is het grootste technologiebedrijf van Europa
-      reward: 0
-  - missionName: Zoeken & vinden missie
+  - missionName: Test All Search
     missionType: 1
     isCompleted: 0
-    startLocation:
-      locationName: Stadium
-      actionText: Stadion
-      targetIcon: {fileID: 0}
-      shortInstruction: Stadion
-      description: Vind de drie technische campussen in EIndhoven.
-      reward: 0
+    deliveryMode: 1
+    useDeliveryTimer: 1
+    deliveryTimeLimit: 20
     endLocation:
-      locationName: ASML
-      actionText: Bezorgen
-      targetIcon: {fileID: 21300000, guid: b78a940f921871844b421425108efa1e, type: 3}
-      shortInstruction: Vlieg naar PSV stadium
-      description: "Delft - Chip, De microchip \r\nis ontwikkeld in Delft en is nodig
-        in \r\nRotterdam gaat havenlogistieksystemen verbeteren."
-      reward: 0
-    searchTargets: []
-    scanTargets:
-    - locationName: ASML
-      actionText: scan
+      locationName: Train Station
+      actionText: 
       targetIcon: {fileID: 0}
-      shortInstruction: Balls
-      description: balzac
+      shortInstruction: 
+      description: 
       reward: 0
+    deliveryTargets:
     - locationName: Airport
-      actionText: scan
+      actionText: 
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: Brainport Tech Campus
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: Stadium
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: Train Station
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: High Tech Campus
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: TU
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: Strijp S
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
-      reward: 0
-    - locationName: Evoluon
-      actionText: scan
-      targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: 
+      description: start
       reward: 0
     - locationName: DAF Museum
-      actionText: scan
+      actionText: 
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: 
+      description: end
       reward: 0
-    - locationName: Philips Museum
-      actionText: scan
+    searchCollectionMode: 1
+    searchTargets:
+    - locationName: ASML
+      actionText: 
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: 
+      description: 
       reward: 0
-    - locationName: Van Abbemuseum
-      actionText: scan
+    - locationName: DAF Museum
+      actionText: 
       targetIcon: {fileID: 0}
-      shortInstruction: Balls2
-      description: balzac2
+      shortInstruction: 
+      description: 
       reward: 0
+    - locationName: Train Station
+      actionText: 
+      targetIcon: {fileID: 0}
+      shortInstruction: 
+      description: 
+      reward: 0
+    scanTargets: []
   interactionRange: 0.1
   scanDuration: 1.5
-  defaultStartIcon: {fileID: 0}
+  missionTransitionDelay: 5
+  missionRetryDelay: 2
 --- !u!1 &1145419102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,6 +4489,7 @@ MonoBehaviour:
   introPanel: {fileID: 1459896824}
   startButton: {fileID: 776730880}
   fadeDuration: 0.35
+  freeFlightDuration: 5
 --- !u!1 &1465698166
 GameObject:
   m_ObjectHideFlags: 0
