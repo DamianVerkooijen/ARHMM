@@ -303,7 +303,7 @@ struct CullStateChangedEvent_t6073CD0D951EC1256BF74B8F9107D68FC89B99B8;
 struct U3CStartMissionAfterDelayU3Ed__86_tB162AD062536F33604F434A99600A90D171A0E96;
 struct Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984;
 struct MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1;
-struct U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47;
+struct U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3;
 struct U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB;
 struct U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F;
 struct Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401;
@@ -347,7 +347,7 @@ IL2CPP_EXTERN_C RuntimeClass* TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522F
 IL2CPP_EXTERN_C RuntimeClass* U3CFadeOutAndStartGameU3Ed__11_t771BF11C8E7CDC8E84E4B4F1E9CC439BB8F207EC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CStartMissionAfterDelayU3Ed__86_tB162AD062536F33604F434A99600A90D171A0E96_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass14_0_tFBCFBC88C34180ECDFA8D9193BAA9BD7FB92F28B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass2_0_tBB60C4163CBBA5B185E7535DAA072AF0CE0A1EE2_il2cpp_TypeInfo_var;
@@ -363,6 +363,7 @@ IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5
 IL2CPP_EXTERN_C String_t* _stringLiteral01A29B30A718B6971E9DCBBDF5B4981E6A8502E4;
 IL2CPP_EXTERN_C String_t* _stringLiteral03AF0178A86C9E2C6F68A3153CA99497F5CF65B2;
 IL2CPP_EXTERN_C String_t* _stringLiteral0620A611295E28CF1610378FCEB8F860324FB754;
+IL2CPP_EXTERN_C String_t* _stringLiteral0B6C2E46DF01F8C829E0E221AB78D6CF49BA971D;
 IL2CPP_EXTERN_C String_t* _stringLiteral0E532BF9C28811EB5EE3CF79CA41EF6A8D467A16;
 IL2CPP_EXTERN_C String_t* _stringLiteral0ECA9AEC978788099F5F9983AB0ACE80D4AA21B5;
 IL2CPP_EXTERN_C String_t* _stringLiteral1168E92C164109D6220480DEDA987085B2A21155;
@@ -430,7 +431,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralEF8AE9E6CBCFDABA932FBEB4C85964F450F724F5
 IL2CPP_EXTERN_C String_t* _stringLiteralF040F3B9942853410947232CD21B94E9ADBD8C6F;
 IL2CPP_EXTERN_C String_t* _stringLiteralF32F3E56650C3F80BE23A9D6B31340C467EACE97;
 IL2CPP_EXTERN_C String_t* _stringLiteralF4745F468197882E598602399F3029E27188F5AE;
-IL2CPP_EXTERN_C String_t* _stringLiteralF98E88BA02F71912BE75EA2C7EECAE3A99FB4ABB;
 IL2CPP_EXTERN_C String_t* _stringLiteralFB1C8A92D0C8D4D89E5C8C51CF6D3871953591FF;
 IL2CPP_EXTERN_C String_t* _stringLiteralFDA32DC2E96C00474CE484C62A98501A5FB8786E;
 IL2CPP_EXTERN_C String_t* _stringLiteralFF6AA2675C8FC216CDF3648DD6E7B2B7E775B723;
@@ -590,7 +590,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* TrackableCollection_1_GetEnumerator_m5032F8
 IL2CPP_EXTERN_C const RuntimeMethod* U3CFadeOutAndStartGameU3Ed__11_System_Collections_IEnumerator_Reset_mDFC94B94B424568BD90D814FE09E757E303E45CE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CRetrySubscribeU3Ed__19_System_Collections_IEnumerator_Reset_m14D20AC020205E9E14EB5389A8D82A70C3970219_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CShowCompletionThenNextU3Ed__24_System_Collections_IEnumerator_Reset_m8AA09D549245C5035C7D613E60B1BE11711A0599_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CShowMissionCompletePanelU3Ed__55_System_Collections_IEnumerator_Reset_mFD64F7B47A9C413645F3FE1740E1847E7C747169_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CShowMissionCompletePanelU3Ed__65_System_Collections_IEnumerator_Reset_m7F6B8072EEFC18641D0C95620DD0E1DDD3987430_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CStartMissionAfterDelayU3Ed__86_System_Collections_IEnumerator_Reset_m029C6B258522B71E55DD1B8617C911EC8C5419BF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass14_0_U3CUpdateMarkerDataU3Eb__0_m217DAB75490F07DD0224E7C3C2B4E77F2D057B3F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass2_0_U3CGetLocationSpriteU3Eb__0_m57A64D96EB3475D0E8F130B8E6844CFC2CAE30E8_RuntimeMethod_var;
@@ -995,7 +995,7 @@ struct MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1  : public Runtime
 	String_t* ___description;
 	int32_t ___reward;
 };
-struct U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47  : public RuntimeObject
+struct U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -2161,6 +2161,10 @@ struct MissionType_tAB012FF9A9FD3DA310C67AEDBA7143C856554DB6
 	int32_t ___value__;
 };
 struct SearchCollectionMode_t0160DF0ADA0EBF012699E2D29AD13F0F82924446 
+{
+	int32_t ___value__;
+};
+struct HUDVisualState_t7B48188121E4B96030D1FE78A5C78FCC9E2247B3 
 {
 	int32_t ___value__;
 };
@@ -3563,6 +3567,7 @@ struct MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477  : public M
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___radarBackground;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___extensionRight;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___extensionLeft;
+	int32_t ___deliveryWarningTime;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___leftBarNormal;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___rightBarNormal;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___botBarNormal;
@@ -3581,8 +3586,18 @@ struct MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477  : public M
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___extensionRightFinished;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___extensionLeftFinished;
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___rightBarFinishedOpened;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___leftBarWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___rightBarWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___botBarWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___topBarWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___panelWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___radarWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___extensionRightWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___extensionLeftWarning;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___rightBarWarningOpened;
 	MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* ___stateController;
 	bool ___isMissionCompleteDisplayActive;
+	bool ___isDeliveryWarningActive;
 };
 struct Pointer_t800EF2832B62E889AC9C182E3B18098AF220E32A  : public InputDevice_t8BCF67533E872A75779C24C93D1D7085B72D364B
 {
@@ -5236,18 +5251,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_ResetUI_mE52D74CA647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionStateController_remove_OnScanProgressUpdated_m0560942D99E9F36D28BC8B0851FDCC58FA810807 (MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* __this, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionStateController_remove_OnDeliveryTimerUpdated_m965927BB052339A3ACDDD2CDE7014659D3D396E6 (MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* __this, Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* MissionUIController_GetCurrentTarget_mB3351D0DBD0958B1E9ABCE20850D88CFD926968F (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* ___0_mission, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, float ___0_remainingTime, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MissionUIController_EvaluateIndexStateFinished_mCD2FEDC34E597943F4F37C28158410F771BB7521 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, bool ___0_isFinished, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_RestoreCurrentTaskText_m3F204CA09B4B150C427BA38F5868CC9F1E6CD578 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline (float ___0_f, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline (int32_t ___0_a, int32_t ___1_b, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_StartsWith_mF75DBA1EB709811E711B44E26FF919C88A8E65C0 (String_t* __this, String_t* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_RoundToInt_m60F8B66CF27F1FA75AA219342BD184B75771EB4B_inline (float ___0_f, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_UpdateMissionUI_m51135FC82D4C3558643966A5380ACC087ED0BCE7 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MissionUIController_ShowMissionCompletePanel_m0C8032D781355F38C3F396F0F6E4C818EDC11961 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IntroSequenceController_ResetIntroSequence_mF5110CCCB12C99A4E837258034CDE3696D3C0B2C (IntroSequenceController_t779009D1E4AD5C832383251C15EDEAD8E55CF37E* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__55__ctor_m509B713264FB05A5A39CAA826058C4E378982766 (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__65__ctor_m82FED414BC1D0E8DE7BFAFA210CF984B5EFF9927 (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, int32_t ___0_state, const RuntimeMethod* method) ;
 inline RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* GameObject_AddComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m771EB78FF8813B5AFF21AC0D252E5461943E6388 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
 	return ((  RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared)(__this, method);
@@ -19332,11 +19346,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_Initialize_mD6DA5526
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:69>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:92>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = ___0_controller;
 		__this->___stateController = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___stateController), (void*)L_0);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:71>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:94>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_1 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -19347,66 +19361,69 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_Initialize_mD6DA5526
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:73>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:96>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:97>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:98>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:99>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteral9D168C5A8897C24547FE411A8A70E26A23E96425, __this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:74>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:101>
 		return;
 	}
 
 IL_0021:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:77>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:104>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_3 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_4 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_4, __this, (intptr_t)((void*)MissionUIController_HandleMissionStarted_m23C96E6EAE210107B9F7AB1798CBE4205C177C92_RuntimeMethod_var), NULL);
 		NullCheck(L_3);
 		MissionStateController_add_OnMissionStarted_m74C53C4ADCDB08A41500C86CEC9164C99D55E1E2(L_3, L_4, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:78>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:105>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_5 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_6 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_6, __this, (intptr_t)((void*)MissionUIController_HandleMissionCompleted_mE0D05271F07F0150856FCD25658C7F14B1569E4D_RuntimeMethod_var), NULL);
 		NullCheck(L_5);
 		MissionStateController_add_OnMissionCompleted_mFA6D244B01779DC25C4E20AA3B0DFE802A9F3148(L_5, L_6, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:79>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:106>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_7 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_8 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_8, __this, (intptr_t)((void*)MissionUIController_HandleMissionFailed_mC2E3150A01A6346EDABE47BFDDF5B390762959C0_RuntimeMethod_var), NULL);
 		NullCheck(L_7);
 		MissionStateController_add_OnMissionFailed_m100E7417228CBA3CDC247B0C5BF2DABB8806A7AC(L_7, L_8, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:80>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:107>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_9 = __this->___stateController;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_10 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_10, __this, (intptr_t)((void*)MissionUIController_HandleStepCompleted_m51B5ADEC21AA9D92199077DD2373E7E744A9D35C_RuntimeMethod_var), NULL);
 		NullCheck(L_9);
 		MissionStateController_add_OnStepCompleted_m170F8AD2B852D56586C01BA775EB8AF0C557AEB6(L_9, L_10, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:81>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:108>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_11 = __this->___stateController;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_12 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_12, __this, (intptr_t)((void*)MissionUIController_HandleMissionReset_m04FCB2753AEC2BD17CFB16AC0B951F0D61DEDC1C_RuntimeMethod_var), NULL);
 		NullCheck(L_11);
 		MissionStateController_add_OnMissionReset_mC0DD3903567DCD83FAA3F67A110297956B14F213(L_11, L_12, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:82>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:109>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_13 = __this->___stateController;
 		Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3* L_14 = (Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3*)il2cpp_codegen_object_new(Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3_il2cpp_TypeInfo_var);
 		Action_4__ctor_m2E14F457E92CDF3BE0D615BEF7AB6E8C4B1FAEF3(L_14, __this, (intptr_t)((void*)MissionUIController_HandleProximityDisplay_m5D72D0E0C14792C033784A7E506972F1F6088703_RuntimeMethod_var), NULL);
 		NullCheck(L_13);
 		MissionStateController_add_OnProximityChanged_mB80CE514E336442732482246D9F94437FADFC79A(L_13, L_14, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:83>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:110>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_15 = __this->___stateController;
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_16 = (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)il2cpp_codegen_object_new(Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A_il2cpp_TypeInfo_var);
 		Action_1__ctor_m770CD2F8BB65F2EDA5128CA2F96D71C35B23E859(L_16, __this, (intptr_t)((void*)MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4_RuntimeMethod_var), NULL);
 		NullCheck(L_15);
 		MissionStateController_add_OnScanProgressUpdated_m6415A73864D046E0907DBDFE16DADBEA5358BB7D(L_15, L_16, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:84>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:111>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_17 = __this->___stateController;
 		Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132* L_18 = (Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132*)il2cpp_codegen_object_new(Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132_il2cpp_TypeInfo_var);
 		Action_2__ctor_m8DB7FCC3AD997F665B9CD9BEC16DD4A0BA4BE89D(L_18, __this, (intptr_t)((void*)MissionUIController_HandleDeliveryTimerUpdated_mDF6F94F8015D33A63541CAE1FE4E94C250BC5221_RuntimeMethod_var), NULL);
 		NullCheck(L_17);
 		MissionStateController_add_OnDeliveryTimerUpdated_mF35C017AB8ECB8269AB56C2666CFDE844E1D4848(L_17, L_18, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:86>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:113>
 		MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:87>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:114>
 		return;
 	}
 }
@@ -19433,7 +19450,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_OnDestroy_m1B94B46E3
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:91>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:118>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -19444,61 +19461,61 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_OnDestroy_m1B94B46E3
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:91>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:118>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:93>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:120>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_2 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_3 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_3, __this, (intptr_t)((void*)MissionUIController_HandleMissionStarted_m23C96E6EAE210107B9F7AB1798CBE4205C177C92_RuntimeMethod_var), NULL);
 		NullCheck(L_2);
 		MissionStateController_remove_OnMissionStarted_m83EED3AB786DB5834B439A42A8956C152CFD442C(L_2, L_3, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:94>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:121>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_4 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_5 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_5, __this, (intptr_t)((void*)MissionUIController_HandleMissionCompleted_mE0D05271F07F0150856FCD25658C7F14B1569E4D_RuntimeMethod_var), NULL);
 		NullCheck(L_4);
 		MissionStateController_remove_OnMissionCompleted_m10228252102035D963EAAF5613BA1E6C8BC4D211(L_4, L_5, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:95>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:122>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_6 = __this->___stateController;
 		Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* L_7 = (Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404*)il2cpp_codegen_object_new(Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404_il2cpp_TypeInfo_var);
 		Action_1__ctor_m1BA854F3F4319EA4A4294DDFDA21C395B8D0FF87(L_7, __this, (intptr_t)((void*)MissionUIController_HandleMissionFailed_mC2E3150A01A6346EDABE47BFDDF5B390762959C0_RuntimeMethod_var), NULL);
 		NullCheck(L_6);
 		MissionStateController_remove_OnMissionFailed_m9396F85D524FAC7D56865C11B53CBB8E3BF1912B(L_6, L_7, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:96>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:123>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_8 = __this->___stateController;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_9 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_9, __this, (intptr_t)((void*)MissionUIController_HandleStepCompleted_m51B5ADEC21AA9D92199077DD2373E7E744A9D35C_RuntimeMethod_var), NULL);
 		NullCheck(L_8);
 		MissionStateController_remove_OnStepCompleted_mD0CE5DD05213E9FE2818EACF6F81D6789EE7CE13(L_8, L_9, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:97>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:124>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_10 = __this->___stateController;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_11 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_11, __this, (intptr_t)((void*)MissionUIController_HandleMissionReset_m04FCB2753AEC2BD17CFB16AC0B951F0D61DEDC1C_RuntimeMethod_var), NULL);
 		NullCheck(L_10);
 		MissionStateController_remove_OnMissionReset_m1F770D4ED50054783B6446418E66B0EC99D8B6A6(L_10, L_11, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:98>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:125>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_12 = __this->___stateController;
 		Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3* L_13 = (Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3*)il2cpp_codegen_object_new(Action_4_t196490DB138EC57C5EA68AD2A27E0EEEFACB9CC3_il2cpp_TypeInfo_var);
 		Action_4__ctor_m2E14F457E92CDF3BE0D615BEF7AB6E8C4B1FAEF3(L_13, __this, (intptr_t)((void*)MissionUIController_HandleProximityDisplay_m5D72D0E0C14792C033784A7E506972F1F6088703_RuntimeMethod_var), NULL);
 		NullCheck(L_12);
 		MissionStateController_remove_OnProximityChanged_m4F3E081658BEE05700BD6F5224BEE086793A6563(L_12, L_13, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:99>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:126>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_14 = __this->___stateController;
 		Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* L_15 = (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A*)il2cpp_codegen_object_new(Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A_il2cpp_TypeInfo_var);
 		Action_1__ctor_m770CD2F8BB65F2EDA5128CA2F96D71C35B23E859(L_15, __this, (intptr_t)((void*)MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4_RuntimeMethod_var), NULL);
 		NullCheck(L_14);
 		MissionStateController_remove_OnScanProgressUpdated_m0560942D99E9F36D28BC8B0851FDCC58FA810807(L_14, L_15, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:100>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:127>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_16 = __this->___stateController;
 		Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132* L_17 = (Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132*)il2cpp_codegen_object_new(Action_2_t4195ED8D681728C29103F36BCD591C0F089C9132_il2cpp_TypeInfo_var);
 		Action_2__ctor_m8DB7FCC3AD997F665B9CD9BEC16DD4A0BA4BE89D(L_17, __this, (intptr_t)((void*)MissionUIController_HandleDeliveryTimerUpdated_mDF6F94F8015D33A63541CAE1FE4E94C250BC5221_RuntimeMethod_var), NULL);
 		NullCheck(L_16);
 		MissionStateController_remove_OnDeliveryTimerUpdated_m965927BB052339A3ACDDD2CDE7014659D3D396E6(L_16, L_17, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:101>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:128>
 		return;
 	}
 }
@@ -19517,7 +19534,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_UpdateMissionUI_m511
 	Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* V_0 = NULL;
 	MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* V_1 = NULL;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:105>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:132>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -19540,13 +19557,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_UpdateMissionUI_m511
 
 IL_001c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:105>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:132>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:106>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:133>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_4 = __this->___stateController;
 		NullCheck(L_4);
 		int32_t L_5;
@@ -19563,14 +19580,14 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:106>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:133>
 		return;
 	}
 
 IL_003b:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:108>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:109>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:135>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:136>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_9 = __this->___stateController;
 		NullCheck(L_9);
 		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_10 = L_9->___missions;
@@ -19582,7 +19599,7 @@ IL_003b:
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_13;
 		L_13 = List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC(L_10, L_12, List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
 		V_0 = L_13;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:111>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:138>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_14 = __this->___missionTitleText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_15;
@@ -19593,7 +19610,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:111>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:139>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_16 = __this->___missionTitleText;
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_17 = V_0;
 		NullCheck(L_17);
@@ -19604,12 +19621,13 @@ IL_003b:
 
 IL_0076:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:113>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:141>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:142>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_19 = V_0;
 		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_20;
 		L_20 = MissionUIController_GetCurrentTarget_mB3351D0DBD0958B1E9ABCE20850D88CFD926968F(__this, L_19, NULL);
 		V_1 = L_20;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:115>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:144>
 		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_21 = V_1;
 		if (L_21)
 		{
@@ -19617,7 +19635,7 @@ IL_0076:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:117>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:146>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_22 = __this->___missionTaskText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_23;
@@ -19628,7 +19646,7 @@ IL_0076:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:117>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:146>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_24 = __this->___missionTaskText;
 		NullCheck(L_24);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_24, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
@@ -19636,7 +19654,7 @@ IL_0076:
 
 IL_009f:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:118>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:147>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_25 = __this->___missionDescriptionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_26;
@@ -19647,7 +19665,7 @@ IL_009f:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:118>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:147>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_27 = __this->___missionDescriptionText;
 		NullCheck(L_27);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_27, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
@@ -19655,14 +19673,14 @@ IL_009f:
 
 IL_00bd:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:119>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:149>
 		return;
 	}
 
 IL_00be:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:122>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_28 = __this->___missionDescriptionText;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:152>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_28 = __this->___missionTaskText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_29;
 		L_29 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_28, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
@@ -19672,72 +19690,40 @@ IL_00be:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:122>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_30 = __this->___missionDescriptionText;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:153>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_30 = __this->___missionTaskText;
 		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_31 = V_1;
 		NullCheck(L_31);
-		String_t* L_32 = L_31->___description;
+		String_t* L_32 = L_31->___shortInstruction;
 		NullCheck(L_30);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_30, L_32);
 	}
 
 IL_00dd:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:124>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:125>
-		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_33 = V_0;
-		NullCheck(L_33);
-		int32_t L_34 = L_33->___missionType;
-		if (L_34)
-		{
-			goto IL_0104;
-		}
-	}
-	{
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_35 = __this->___stateController;
-		NullCheck(L_35);
-		bool L_36;
-		L_36 = MissionStateController_get_isDeliveryTimerRunning_m0CB5054B5EA6958F9367C21C30B41EAE094B7F33_inline(L_35, NULL);
-		if (!L_36)
-		{
-			goto IL_0104;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:127>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_37 = __this->___stateController;
-		NullCheck(L_37);
-		float L_38;
-		L_38 = MissionStateController_get_deliveryTimeRemaining_m834E72BFE5C6A822993ABE656C2AD73C82741349_inline(L_37, NULL);
-		MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8(__this, L_38, NULL);
-		return;
-	}
-
-IL_0104:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:131>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_39 = __this->___missionTaskText;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:155>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_33 = __this->___missionDescriptionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_40;
-		L_40 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_39, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_40)
+		bool L_34;
+		L_34 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_33, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_34)
 		{
-			goto IL_0123;
+			goto IL_00fc;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:131>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_41 = __this->___missionTaskText;
-		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_42 = V_1;
-		NullCheck(L_42);
-		String_t* L_43 = L_42->___shortInstruction;
-		NullCheck(L_41);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_41, L_43);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:156>
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_35 = __this->___missionDescriptionText;
+		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_36 = V_1;
+		NullCheck(L_36);
+		String_t* L_37 = L_36->___description;
+		NullCheck(L_35);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_35, L_37);
 	}
 
-IL_0123:
+IL_00fc:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:133>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:157>
 		return;
 	}
 }
@@ -19754,13 +19740,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MissionTarget_t01DFB26BFAB29B4474010166C8B02B
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:138>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:162>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = MissionStateController_get_currentTargetIndex_m680F7242377BED67F20672F217D163C992ADD6AE_inline(L_0, NULL);
 		V_0 = L_1;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:140>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:164>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_2 = ___0_mission;
 		NullCheck(L_2);
 		int32_t L_3 = L_2->___missionType;
@@ -19788,10 +19774,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MissionTarget_t01DFB26BFAB29B4474010166C8B02B
 
 IL_002a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:143>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:144>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:145>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:146>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:167>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:168>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:169>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:170>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:171>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_5 = ___0_mission;
 		NullCheck(L_5);
 		int32_t L_6 = L_5->___deliveryMode;
@@ -19830,7 +19817,7 @@ IL_002a:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:148>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:173>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_14 = ___0_mission;
 		NullCheck(L_14);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_15 = L_14->___deliveryTargets;
@@ -19843,7 +19830,7 @@ IL_002a:
 
 IL_005a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:151>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:176>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_18 = ___0_mission;
 		NullCheck(L_18);
 		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_19 = L_18->___endLocation;
@@ -19852,7 +19839,9 @@ IL_005a:
 
 IL_0061:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:154>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:179>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:180>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:181>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_20 = ___0_mission;
 		NullCheck(L_20);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_21 = L_20->___searchTargets;
@@ -19882,7 +19871,7 @@ IL_0061:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:155>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:183>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_27 = ___0_mission;
 		NullCheck(L_27);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_28 = L_27->___searchTargets;
@@ -19895,7 +19884,9 @@ IL_0061:
 
 IL_0088:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:160>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:189>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:190>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:191>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_31 = ___0_mission;
 		NullCheck(L_31);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_32 = L_31->___scanTargets;
@@ -19925,7 +19916,7 @@ IL_0088:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:161>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:193>
 		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_38 = ___0_mission;
 		NullCheck(L_38);
 		List_1_t72BE64AD8CF14525149568005759519985275A00* L_39 = L_38->___scanTargets;
@@ -19938,7 +19929,7 @@ IL_0088:
 
 IL_00af:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:166>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:199>
 		return (MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1*)NULL;
 	}
 }
@@ -19952,7 +19943,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleProximityDispl
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:175>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:208>
 		bool L_0 = __this->___isMissionCompleteDisplayActive;
 		if (!L_0)
 		{
@@ -19960,13 +19951,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleProximityDispl
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:175>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:208>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:177>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:210>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_1 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -19977,7 +19968,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:177>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:210>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_3 = __this->___statusText;
 		String_t* L_4 = ___3_statusLabel;
 		NullCheck(L_3);
@@ -19986,30 +19977,28 @@ IL_0009:
 
 IL_0024:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:179>
-		bool L_5;
-		L_5 = MissionUIController_EvaluateIndexStateFinished_mCD2FEDC34E597943F4F37C28158410F771BB7521(__this, NULL);
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(__this, L_5, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:181>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___actionButton;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:212>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:214>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___actionButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_7;
-		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_7)
+		bool L_6;
+		L_6 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_6)
 		{
-			goto IL_004a;
+			goto IL_0044;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:181>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___actionButton;
-		NullCheck(L_8);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:214>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___actionButton;
+		NullCheck(L_7);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_7, (bool)0, NULL);
 	}
 
-IL_004a:
+IL_0044:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:182>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:215>
 		return;
 	}
 }
@@ -20019,12 +20008,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleDeliveryTimerU
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t G_B10_0 = 0;
+	Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* V_0 = NULL;
+	int32_t V_1 = 0;
+	int32_t G_B13_0 = 0;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:186>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:221>
 		bool L_0 = __this->___isMissionCompleteDisplayActive;
 		if (!L_0)
 		{
@@ -20032,13 +20025,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleDeliveryTimerU
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:186>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:221>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:187>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:222>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_1 = __this->___stateController;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -20049,13 +20042,13 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:187>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:222>
 		return;
 	}
 
 IL_0018:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:188>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:223>
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_3 = __this->___stateController;
 		NullCheck(L_3);
 		int32_t L_4;
@@ -20066,255 +20059,166 @@ IL_0018:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:188>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:223>
 		return;
 	}
 
 IL_0027:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:190>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:191>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:192>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:193>
-		float L_5 = ___1_totalTime;
-		if ((!(((float)L_5) > ((float)(0.0f)))))
-		{
-			goto IL_0044;
-		}
-	}
-	{
-		float L_6 = ___0_remainingTime;
-		if ((!(((float)L_6) > ((float)(0.0f)))))
-		{
-			goto IL_0044;
-		}
-	}
-	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:224>
+		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_5 = __this->___stateController;
+		NullCheck(L_5);
+		int32_t L_6;
+		L_6 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_5, NULL);
 		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_7 = __this->___stateController;
 		NullCheck(L_7);
-		bool L_8;
-		L_8 = MissionStateController_get_isDeliveryTimerRunning_m0CB5054B5EA6958F9367C21C30B41EAE094B7F33_inline(L_7, NULL);
-		G_B10_0 = ((int32_t)(L_8));
-		goto IL_0045;
+		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_8 = L_7->___missions;
+		NullCheck(L_8);
+		int32_t L_9;
+		L_9 = List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_inline(L_8, List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
+		if ((((int32_t)L_6) < ((int32_t)L_9)))
+		{
+			goto IL_0045;
+		}
 	}
-
-IL_0044:
 	{
-		G_B10_0 = 0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:224>
+		return;
 	}
 
 IL_0045:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:195>
-		if (G_B10_0)
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:226>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:227>
+		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_10 = __this->___stateController;
+		NullCheck(L_10);
+		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_11 = L_10->___missions;
+		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_12 = __this->___stateController;
+		NullCheck(L_12);
+		int32_t L_13;
+		L_13 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_12, NULL);
+		NullCheck(L_11);
+		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_14;
+		L_14 = List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC(L_11, L_13, List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
+		V_0 = L_14;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:229>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:230>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:231>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:232>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:233>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:234>
+		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_15 = V_0;
+		NullCheck(L_15);
+		int32_t L_16 = L_15->___missionType;
+		if (L_16)
 		{
-			goto IL_004e;
+			goto IL_0086;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:197>
-		MissionUIController_RestoreCurrentTaskText_m3F204CA09B4B150C427BA38F5868CC9F1E6CD578(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:198>
+		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_17 = V_0;
+		NullCheck(L_17);
+		bool L_18 = L_17->___useDeliveryTimer;
+		if (!L_18)
+		{
+			goto IL_0086;
+		}
+	}
+	{
+		float L_19 = ___1_totalTime;
+		if ((!(((float)L_19) > ((float)(0.0f)))))
+		{
+			goto IL_0086;
+		}
+	}
+	{
+		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_20 = __this->___stateController;
+		NullCheck(L_20);
+		bool L_21;
+		L_21 = MissionStateController_get_isDeliveryTimerRunning_m0CB5054B5EA6958F9367C21C30B41EAE094B7F33_inline(L_20, NULL);
+		G_B13_0 = ((int32_t)(L_21));
+		goto IL_0087;
+	}
+
+IL_0086:
+	{
+		G_B13_0 = 0;
+	}
+
+IL_0087:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:236>
+		if (G_B13_0)
+		{
+			goto IL_0097;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:238>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:239>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:240>
 		return;
 	}
 
-IL_004e:
+IL_0097:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:201>
-		float L_9 = ___0_remainingTime;
-		MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8(__this, L_9, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:202>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:243>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:244>
+		float L_22 = ___0_remainingTime;
+		int32_t L_23;
+		L_23 = Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline(L_22, NULL);
+		int32_t L_24;
+		L_24 = Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline(0, L_23, NULL);
+		V_1 = L_24;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:246>
+		int32_t L_25 = V_1;
+		if ((((int32_t)L_25) > ((int32_t)0)))
+		{
+			goto IL_00b6;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:248>
+		__this->___isDeliveryWarningActive = (bool)1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:249>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:250>
+		return;
+	}
+
+IL_00b6:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:253>
+		int32_t L_26 = V_1;
+		int32_t L_27 = __this->___deliveryWarningTime;
+		if ((((int32_t)L_26) <= ((int32_t)L_27)))
+		{
+			goto IL_00cd;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:255>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:256>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:257>
+		return;
+	}
+
+IL_00cd:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:261>
+		int32_t L_28 = V_1;
+		__this->___isDeliveryWarningActive = (bool)((((int32_t)((int32_t)(L_28%2))) == ((int32_t)0))? 1 : 0);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:263>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:264>
 		return;
 	}
 }
 // Method Definition Index: 86871
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_UpdateDeliveryTimerText_mBFFD9520E2B62C58CC5FFD18EC39871A94A6A1A8 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, float ___0_remainingTime, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF98E88BA02F71912BE75EA2C7EECAE3A99FB4ABB);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:206>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___missionTaskText;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_1)
-		{
-			goto IL_000f;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:206>
-		return;
-	}
-
-IL_000f:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:208>
-		float L_2 = ___0_remainingTime;
-		int32_t L_3;
-		L_3 = Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline(L_2, NULL);
-		V_0 = L_3;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:209>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_4 = __this->___missionTaskText;
-		int32_t L_5 = V_0;
-		int32_t L_6 = L_5;
-		RuntimeObject* L_7 = Box(il2cpp_defaults.int32_class, &L_6);
-		String_t* L_8;
-		L_8 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF98E88BA02F71912BE75EA2C7EECAE3A99FB4ABB, L_7, NULL);
-		NullCheck(L_4);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_4, L_8);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:210>
-		return;
-	}
-}
-// Method Definition Index: 86872
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_RestoreCurrentTaskText_m3F204CA09B4B150C427BA38F5868CC9F1E6CD578 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		s_Il2CppMethodInitialized = true;
-	}
-	Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* V_0 = NULL;
-	MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* V_1 = NULL;
-	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* G_B8_0 = NULL;
-	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* G_B7_0 = NULL;
-	String_t* G_B9_0 = NULL;
-	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* G_B9_1 = NULL;
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:214>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___missionTaskText;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_1)
-		{
-			goto IL_000f;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:214>
-		return;
-	}
-
-IL_000f:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:216>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:217>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:218>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_2 = __this->___stateController;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_3;
-		L_3 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (L_3)
-		{
-			goto IL_0048;
-		}
-	}
-	{
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_4 = __this->___stateController;
-		NullCheck(L_4);
-		int32_t L_5;
-		L_5 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_4, NULL);
-		if ((((int32_t)L_5) == ((int32_t)(-1))))
-		{
-			goto IL_0048;
-		}
-	}
-	{
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_6 = __this->___stateController;
-		NullCheck(L_6);
-		int32_t L_7;
-		L_7 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_6, NULL);
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_8 = __this->___stateController;
-		NullCheck(L_8);
-		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_9 = L_8->___missions;
-		NullCheck(L_9);
-		int32_t L_10;
-		L_10 = List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_inline(L_9, List_1_get_Count_mB9E89DC57BA190F41A5114C9BA16E15206DBBC17_RuntimeMethod_var);
-		if ((((int32_t)L_7) < ((int32_t)L_10)))
-		{
-			goto IL_0059;
-		}
-	}
-
-IL_0048:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:220>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_11 = __this->___missionTaskText;
-		NullCheck(L_11);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_11, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:221>
-		return;
-	}
-
-IL_0059:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:224>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:225>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_12 = __this->___stateController;
-		NullCheck(L_12);
-		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_13 = L_12->___missions;
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_14 = __this->___stateController;
-		NullCheck(L_14);
-		int32_t L_15;
-		L_15 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_14, NULL);
-		NullCheck(L_13);
-		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_16;
-		L_16 = List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC(L_13, L_15, List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
-		V_0 = L_16;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:227>
-		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_17 = V_0;
-		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_18;
-		L_18 = MissionUIController_GetCurrentTarget_mB3351D0DBD0958B1E9ABCE20850D88CFD926968F(__this, L_17, NULL);
-		V_1 = L_18;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:229>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:230>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:231>
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_19 = __this->___missionTaskText;
-		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_20 = V_1;
-		if (L_20)
-		{
-			G_B8_0 = L_19;
-			goto IL_008d;
-		}
-		G_B7_0 = L_19;
-	}
-	{
-		G_B9_0 = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
-		G_B9_1 = G_B7_0;
-		goto IL_0093;
-	}
-
-IL_008d:
-	{
-		MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* L_21 = V_1;
-		NullCheck(L_21);
-		String_t* L_22 = L_21->___shortInstruction;
-		G_B9_0 = L_22;
-		G_B9_1 = G_B8_0;
-	}
-
-IL_0093:
-	{
-		NullCheck(G_B9_1);
-		VirtualActionInvoker1< String_t* >::Invoke(66, G_B9_1, G_B9_0);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:232>
-		return;
-	}
-}
-// Method Definition Index: 86873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleScanProgressUpdated_m0930B4AA760926A74C66052D6BD23378DFEE96C4 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, float ___0_progressPercent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20330,7 +20234,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleScanProgressUp
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:236>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:268>
 		bool L_0 = __this->___isMissionCompleteDisplayActive;
 		if (!L_0)
 		{
@@ -20338,13 +20242,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleScanProgressUp
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:236>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:268>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:238>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:270>
 		float L_1 = ___0_progressPercent;
 		if ((!(((float)L_1) <= ((float)(0.0f)))))
 		{
@@ -20352,7 +20256,8 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:240>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:272>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:273>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -20376,7 +20281,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:241>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:275>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_7 = __this->___statusText;
 		NullCheck(L_7);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_7, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
@@ -20384,8 +20289,8 @@ IL_0009:
 
 IL_0046:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:243>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:244>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:278>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:279>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_8 = __this->___extensionActionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -20409,7 +20314,7 @@ IL_0046:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:246>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:281>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_13 = __this->___extensionActionText;
 		NullCheck(L_13);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_13, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
@@ -20417,18 +20322,19 @@ IL_0046:
 
 IL_007b:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:249>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:284>
 		return;
 	}
 
 IL_007c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:252>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:287>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:288>
 		float L_14 = ___0_progressPercent;
 		int32_t L_15;
 		L_15 = Mathf_RoundToInt_m60F8B66CF27F1FA75AA219342BD184B75771EB4B_inline(L_14, NULL);
 		V_0 = L_15;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:254>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:290>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_16 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_17;
@@ -20439,7 +20345,7 @@ IL_007c:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:255>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:291>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_18 = __this->___statusText;
 		int32_t L_19 = V_0;
 		int32_t L_20 = L_19;
@@ -20452,7 +20358,7 @@ IL_007c:
 
 IL_00ac:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:257>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:293>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_23 = __this->___extensionActionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_24;
@@ -20463,7 +20369,8 @@ IL_00ac:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:258>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:294>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:295>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_25 = __this->___extensionActionText;
 		int32_t L_26 = V_0;
 		int32_t L_27 = L_26;
@@ -20476,11 +20383,11 @@ IL_00ac:
 
 IL_00d5:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:259>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:296>
 		return;
 	}
 }
-// Method Definition Index: 86874
+// Method Definition Index: 86872
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionStarted_m23C96E6EAE210107B9F7AB1798CBE4205C177C92 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20491,99 +20398,101 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionStarted
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:263>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:300>
 		MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:265>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:302>
 		__this->___isMissionCompleteDisplayActive = (bool)0;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:267>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:303>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:305>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_0 = __this->___panelAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_0038;
+			goto IL_003f;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:269>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:307>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_2 = __this->___panelAnimator;
 		NullCheck(L_2);
 		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_2, _stringLiteralAACE4943E442BDF1FB5DE004C127DD4FE0F7AB2C, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:270>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:308>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_3 = __this->___panelAnimator;
 		NullCheck(L_3);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_3, (bool)0, NULL);
 	}
 
-IL_0038:
+IL_003f:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:273>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:311>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_4 = __this->___rightExtensionAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
 		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_5)
 		{
-			goto IL_0052;
+			goto IL_0059;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:273>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:312>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_6 = __this->___rightExtensionAnimator;
 		NullCheck(L_6);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_6, (bool)0, NULL);
 	}
 
-IL_0052:
+IL_0059:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:274>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:314>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_7 = __this->___leftExtensionAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
 		L_8 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_7, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_8)
 		{
-			goto IL_006c;
+			goto IL_0073;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:274>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:315>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_9 = __this->___leftExtensionAnimator;
 		NullCheck(L_9);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_9, (bool)0, NULL);
 	}
 
-IL_006c:
+IL_0073:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:275>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:317>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___actionButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
 		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_11)
 		{
-			goto IL_0086;
+			goto IL_008d;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:275>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:318>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___actionButton;
 		NullCheck(L_12);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_12, (bool)0, NULL);
 	}
 
-IL_0086:
+IL_008d:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:277>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:320>
 		MissionUIController_UpdateMissionUI_m51135FC82D4C3558643966A5380ACC087ED0BCE7(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:278>
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:279>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:321>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:322>
 		return;
 	}
 }
-// Method Definition Index: 86875
+// Method Definition Index: 86873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionCompleted_mE0D05271F07F0150856FCD25658C7F14B1569E4D (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20593,9 +20502,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionComplet
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:283>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:326>
 		__this->___isMissionCompleteDisplayActive = (bool)1;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:285>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:327>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:329>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_0;
 		L_0 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -20603,68 +20514,72 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionComplet
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_001e;
+			goto IL_0025;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:285>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:330>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_2;
 		L_2 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		NullCheck(L_2);
 		PopupManager_ClosePopup_mB372FADEC95213422E51A476EB5852A1DD738707(L_2, NULL);
 	}
 
-IL_001e:
+IL_0025:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:286>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:332>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_3 = __this->___panelAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_4)
 		{
-			goto IL_0038;
+			goto IL_003f;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:286>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:333>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_5 = __this->___panelAnimator;
 		NullCheck(L_5);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_5, (bool)1, NULL);
 	}
 
-IL_0038:
+IL_003f:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:288>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:335>
 		MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:289>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:337>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:338>
 		RuntimeObject* L_6;
 		L_6 = MissionUIController_ShowMissionCompletePanel_m0C8032D781355F38C3F396F0F6E4C818EDC11961(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_7;
 		L_7 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_6, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:290>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:339>
 		return;
 	}
 }
-// Method Definition Index: 86876
+// Method Definition Index: 86874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionFailed_mC2E3150A01A6346EDABE47BFDDF5B390762959C0 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0B6C2E46DF01F8C829E0E221AB78D6CF49BA971D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0ECA9AEC978788099F5F9983AB0ACE80D4AA21B5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA51BD809FB22692C7E7581F375E124E2E054D5EC);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDF1AA34EF772F8023949A27B9175E25AC59CBA98);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:294>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:343>
 		MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:296>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:345>
 		__this->___isMissionCompleteDisplayActive = (bool)0;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:298>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:346>
+		__this->___isDeliveryWarningActive = (bool)1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:348>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_0;
 		L_0 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -20672,102 +20587,104 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionFailed_
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_0024;
+			goto IL_002b;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:298>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:349>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_2;
 		L_2 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		NullCheck(L_2);
 		PopupManager_ClosePopup_mB372FADEC95213422E51A476EB5852A1DD738707(L_2, NULL);
 	}
 
-IL_0024:
+IL_002b:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:300>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:351>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_3 = __this->___missionTitleText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_4)
 		{
-			goto IL_0042;
+			goto IL_0049;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:300>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:352>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_5 = __this->___missionTitleText;
 		NullCheck(L_5);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_5, _stringLiteralA51BD809FB22692C7E7581F375E124E2E054D5EC);
 	}
 
-IL_0042:
+IL_0049:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:301>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:354>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_6 = __this->___missionTaskText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
 		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_7)
 		{
-			goto IL_0060;
+			goto IL_0067;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:301>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:355>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_8 = __this->___missionTaskText;
 		NullCheck(L_8);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_8, _stringLiteral0ECA9AEC978788099F5F9983AB0ACE80D4AA21B5);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_8, _stringLiteral0B6C2E46DF01F8C829E0E221AB78D6CF49BA971D);
 	}
 
-IL_0060:
+IL_0067:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:302>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:357>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_9 = __this->___missionDescriptionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_10;
 		L_10 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_9, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_10)
 		{
-			goto IL_007e;
+			goto IL_0085;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:302>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:358>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:359>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_11 = __this->___missionDescriptionText;
 		NullCheck(L_11);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_11, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_11, _stringLiteral0ECA9AEC978788099F5F9983AB0ACE80D4AA21B5);
 	}
 
-IL_007e:
+IL_0085:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:303>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:361>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_12 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
 		L_13 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_12, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_13)
 		{
-			goto IL_009c;
+			goto IL_00a3;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:303>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:362>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:363>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_14 = __this->___statusText;
 		NullCheck(L_14);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_14, _stringLiteralDF1AA34EF772F8023949A27B9175E25AC59CBA98);
 	}
 
-IL_009c:
+IL_00a3:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:305>
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:306>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:365>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:366>
 		return;
 	}
 }
-// Method Definition Index: 86877
+// Method Definition Index: 86875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleStepCompleted_m51B5ADEC21AA9D92199077DD2373E7E744A9D35C (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20778,7 +20695,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleStepCompleted_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:310>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:370>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_0;
 		L_0 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -20790,7 +20707,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleStepCompleted_
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:310>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:371>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_2;
 		L_2 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		NullCheck(L_2);
@@ -20799,34 +20716,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleStepCompleted_
 
 IL_0017:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:312>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:373>
 		MissionUIController_UpdateMissionUI_m51135FC82D4C3558643966A5380ACC087ED0BCE7(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:313>
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:315>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:374>
+		MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285(__this, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:376>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_3 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_4)
 		{
-			goto IL_0042;
+			goto IL_0041;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:315>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:377>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_5 = __this->___statusText;
 		NullCheck(L_5);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_5, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_0042:
+IL_0041:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:316>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:378>
 		return;
 	}
 }
-// Method Definition Index: 86878
+// Method Definition Index: 86876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionReset_m04FCB2753AEC2BD17CFB16AC0B951F0D61DEDC1C (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20836,9 +20753,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionReset_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:320>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:382>
 		MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:322>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:384>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_0;
 		L_0 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -20850,7 +20767,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionReset_m
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:322>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:385>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_2;
 		L_2 = PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline(NULL);
 		NullCheck(L_2);
@@ -20859,7 +20776,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_HandleMissionReset_m
 
 IL_001d:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:323>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:387>
 		IntroSequenceController_t779009D1E4AD5C832383251C15EDEAD8E55CF37E* L_3 = __this->___introSequence;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -20870,7 +20787,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:323>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:388>
 		IntroSequenceController_t779009D1E4AD5C832383251C15EDEAD8E55CF37E* L_5 = __this->___introSequence;
 		NullCheck(L_5);
 		IntroSequenceController_ResetIntroSequence_mF5110CCCB12C99A4E837258034CDE3696D3C0B2C(L_5, NULL);
@@ -20878,34 +20795,78 @@ IL_001d:
 
 IL_0036:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:325>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:390>
 		__this->___isMissionCompleteDisplayActive = (bool)0;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:326>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:391>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:393>
 		MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD(__this, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:327>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:394>
 		return;
 	}
 }
-// Method Definition Index: 86879
+// Method Definition Index: 86877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MissionUIController_ShowMissionCompletePanel_m0C8032D781355F38C3F396F0F6E4C818EDC11961 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* L_0 = (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47*)il2cpp_codegen_object_new(U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47_il2cpp_TypeInfo_var);
-		U3CShowMissionCompletePanelU3Ed__55__ctor_m509B713264FB05A5A39CAA826058C4E378982766(L_0, 0, NULL);
-		U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* L_1 = L_0;
+		U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* L_0 = (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3*)il2cpp_codegen_object_new(U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3_il2cpp_TypeInfo_var);
+		U3CShowMissionCompletePanelU3Ed__65__ctor_m82FED414BC1D0E8DE7BFAFA210CF984B5EFF9927(L_0, 0, NULL);
+		U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
 		return L_1;
 	}
 }
-// Method Definition Index: 86880
+// Method Definition Index: 86878
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_RefreshHUDState_mFD07F806FCD4AB73FF21638D73066D46B92BB285 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:421>
+		bool L_0 = __this->___isDeliveryWarningActive;
+		if (!L_0)
+		{
+			goto IL_0010;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:423>
+		MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453(__this, 2, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:424>
+		return;
+	}
+
+IL_0010:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:427>
+		bool L_1 = __this->___isMissionCompleteDisplayActive;
+		if (!L_1)
+		{
+			goto IL_0020;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:429>
+		MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453(__this, 1, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:430>
+		return;
+	}
+
+IL_0020:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:433>
+		MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453(__this, 0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:434>
+		return;
+	}
+}
+// Method Definition Index: 86879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20917,208 +20878,210 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_ResetUI_mE52D74CA647
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:348>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:438>
+		__this->___isDeliveryWarningActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:440>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_0 = __this->___panelAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_002b;
+			goto IL_0032;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:350>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:442>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_2 = __this->___panelAnimator;
 		NullCheck(L_2);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_2, (bool)1, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:351>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:443>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_3 = __this->___panelAnimator;
 		NullCheck(L_3);
 		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_3, _stringLiteralAACE4943E442BDF1FB5DE004C127DD4FE0F7AB2C, (bool)0, NULL);
 	}
 
-IL_002b:
+IL_0032:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:354>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:446>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_4 = __this->___missionTitleText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
 		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_5)
 		{
-			goto IL_0049;
+			goto IL_0050;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:354>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:447>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_6 = __this->___missionTitleText;
 		NullCheck(L_6);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_6, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_0049:
+IL_0050:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:355>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:449>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_7 = __this->___missionTaskText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
 		L_8 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_7, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_8)
 		{
-			goto IL_0067;
+			goto IL_006e;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:355>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:450>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_9 = __this->___missionTaskText;
 		NullCheck(L_9);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_9, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_0067:
+IL_006e:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:356>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:452>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_10 = __this->___missionDescriptionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
 		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_11)
 		{
-			goto IL_0085;
+			goto IL_008c;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:356>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:453>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_12 = __this->___missionDescriptionText;
 		NullCheck(L_12);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_12, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_0085:
+IL_008c:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:357>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:455>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_13 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_14;
 		L_14 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_13, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_14)
 		{
-			goto IL_00a3;
+			goto IL_00aa;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:357>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:456>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_15 = __this->___statusText;
 		NullCheck(L_15);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_15, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_00a3:
+IL_00aa:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:358>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:458>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___actionButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_17;
 		L_17 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_16, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_17)
 		{
-			goto IL_00bd;
+			goto IL_00c4;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:358>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:459>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___actionButton;
 		NullCheck(L_18);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_18, (bool)0, NULL);
 	}
 
-IL_00bd:
+IL_00c4:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:359>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:461>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_19 = __this->___extensionActionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_20;
 		L_20 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_19, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_20)
 		{
-			goto IL_00db;
+			goto IL_00e2;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:359>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:462>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_21 = __this->___extensionActionText;
 		NullCheck(L_21);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_21, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_00db:
+IL_00e2:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:360>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:464>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_22 = __this->___extensionActionIcon;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_23;
 		L_23 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_22, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_23)
 		{
-			goto IL_00f5;
+			goto IL_00fc;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:360>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:465>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_24 = __this->___extensionActionIcon;
 		NullCheck(L_24);
 		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_24, (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL, NULL);
 	}
 
-IL_00f5:
+IL_00fc:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:361>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:467>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_25 = __this->___rightExtensionAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_26;
 		L_26 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_25, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_26)
 		{
-			goto IL_010f;
+			goto IL_0116;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:361>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:468>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_27 = __this->___rightExtensionAnimator;
 		NullCheck(L_27);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_27, (bool)0, NULL);
 	}
 
-IL_010f:
+IL_0116:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:362>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:470>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_28 = __this->___leftExtensionAnimator;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_29;
 		L_29 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_28, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_29)
 		{
-			goto IL_0129;
+			goto IL_0130;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:362>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:471>
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_30 = __this->___leftExtensionAnimator;
 		NullCheck(L_30);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_30, (bool)0, NULL);
 	}
 
-IL_0129:
+IL_0130:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:364>
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(__this, (bool)0, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:365>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:473>
+		MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453(__this, 0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:474>
 		return;
 	}
 }
-// Method Definition Index: 86881
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, bool ___0_isFinished, const RuntimeMethod* method) 
+// Method Definition Index: 86880
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_SetHUDState_m8E8FBFAC66EA58A70441986CD5A436783BB6D453 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, int32_t ___0_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -21126,510 +21089,342 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController_SetHUDState_m85B30A1
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B3_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B2_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B4_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B4_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B8_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B7_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B9_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B9_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B13_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B12_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B14_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B14_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B18_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B17_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B19_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B19_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B23_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B22_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B24_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B24_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B28_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B27_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B29_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B29_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B33_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B32_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B34_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B34_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B38_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B37_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B39_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B39_1 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B43_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B42_0 = NULL;
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B44_0 = NULL;
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B44_1 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_0 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_1 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_2 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_3 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_4 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_5 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_6 = NULL;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_7 = NULL;
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:369>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_0 = __this->___leftBar;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:478>
+		V_0 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:479>
+		V_1 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:480>
+		V_2 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:481>
+		V_3 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:482>
+		V_4 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:483>
+		V_5 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:484>
+		V_6 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:485>
+		V_7 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
+		int32_t L_0 = ___0_state;
+		if ((((int32_t)L_0) == ((int32_t)1)))
+		{
+			goto IL_001e;
+		}
+	}
+	{
+		int32_t L_1 = ___0_state;
+		if ((((int32_t)L_1) == ((int32_t)2)))
+		{
+			goto IL_005c;
+		}
+	}
+	{
+		goto IL_009a;
+	}
+
+IL_001e:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:490>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_2 = __this->___leftBarFinished;
+		V_0 = L_2;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:491>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3 = __this->___rightBarFinished;
+		V_1 = L_3;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:492>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_4 = __this->___botBarFinished;
+		V_2 = L_4;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:493>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_5 = __this->___topBarFinished;
+		V_3 = L_5;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:494>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_6 = __this->___panelFinished;
+		V_4 = L_6;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:495>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_7 = __this->___radarFinished;
+		V_5 = L_7;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:496>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_8 = __this->___extensionRightFinished;
+		V_6 = L_8;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:497>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_9 = __this->___extensionLeftFinished;
+		V_7 = L_9;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:498>
+		goto IL_00d6;
+	}
+
+IL_005c:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:501>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_10 = __this->___leftBarWarning;
+		V_0 = L_10;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:502>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_11 = __this->___rightBarWarning;
+		V_1 = L_11;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:503>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_12 = __this->___botBarWarning;
+		V_2 = L_12;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:504>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_13 = __this->___topBarWarning;
+		V_3 = L_13;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:505>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_14 = __this->___panelWarning;
+		V_4 = L_14;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:506>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_15 = __this->___radarWarning;
+		V_5 = L_15;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:507>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_16 = __this->___extensionRightWarning;
+		V_6 = L_16;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:508>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_17 = __this->___extensionLeftWarning;
+		V_7 = L_17;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:509>
+		goto IL_00d6;
+	}
+
+IL_009a:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:512>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_18 = __this->___leftBarNormal;
+		V_0 = L_18;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:513>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_19 = __this->___rightBarNormal;
+		V_1 = L_19;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:514>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_20 = __this->___botBarNormal;
+		V_2 = L_20;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:515>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_21 = __this->___topBarNormal;
+		V_3 = L_21;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:516>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_22 = __this->___panelNormal;
+		V_4 = L_22;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:517>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_23 = __this->___radarNormal;
+		V_5 = L_23;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:518>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_24 = __this->___extensionRightNormal;
+		V_6 = L_24;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:519>
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_25 = __this->___extensionLeftNormal;
+		V_7 = L_25;
+	}
+
+IL_00d6:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:523>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_26 = __this->___leftBar;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_1)
+		bool L_27;
+		L_27 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_26, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_27)
 		{
-			goto IL_002a;
+			goto IL_00f0;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:369>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_2 = __this->___leftBar;
-		bool L_3 = ___0_isFinished;
-		if (L_3)
-		{
-			G_B3_0 = L_2;
-			goto IL_001f;
-		}
-		G_B2_0 = L_2;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_4 = __this->___leftBarNormal;
-		G_B4_0 = L_4;
-		G_B4_1 = G_B2_0;
-		goto IL_0025;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:523>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_28 = __this->___leftBar;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_29 = V_0;
+		NullCheck(L_28);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_28, L_29, NULL);
 	}
 
-IL_001f:
+IL_00f0:
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_5 = __this->___leftBarFinished;
-		G_B4_0 = L_5;
-		G_B4_1 = G_B3_0;
-	}
-
-IL_0025:
-	{
-		NullCheck(G_B4_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B4_1, G_B4_0, NULL);
-	}
-
-IL_002a:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:370>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_6 = __this->___rightBar;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_7;
-		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_7)
-		{
-			goto IL_0054;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:370>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_8 = __this->___rightBar;
-		bool L_9 = ___0_isFinished;
-		if (L_9)
-		{
-			G_B8_0 = L_8;
-			goto IL_0049;
-		}
-		G_B7_0 = L_8;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_10 = __this->___rightBarNormal;
-		G_B9_0 = L_10;
-		G_B9_1 = G_B7_0;
-		goto IL_004f;
-	}
-
-IL_0049:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_11 = __this->___rightBarFinished;
-		G_B9_0 = L_11;
-		G_B9_1 = G_B8_0;
-	}
-
-IL_004f:
-	{
-		NullCheck(G_B9_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B9_1, G_B9_0, NULL);
-	}
-
-IL_0054:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:371>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_12 = __this->___botBar;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_13;
-		L_13 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_12, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_13)
-		{
-			goto IL_007e;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:371>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_14 = __this->___botBar;
-		bool L_15 = ___0_isFinished;
-		if (L_15)
-		{
-			G_B13_0 = L_14;
-			goto IL_0073;
-		}
-		G_B12_0 = L_14;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_16 = __this->___botBarNormal;
-		G_B14_0 = L_16;
-		G_B14_1 = G_B12_0;
-		goto IL_0079;
-	}
-
-IL_0073:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_17 = __this->___botBarFinished;
-		G_B14_0 = L_17;
-		G_B14_1 = G_B13_0;
-	}
-
-IL_0079:
-	{
-		NullCheck(G_B14_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B14_1, G_B14_0, NULL);
-	}
-
-IL_007e:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:372>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_18 = __this->___topBarR;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_19;
-		L_19 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_18, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_19)
-		{
-			goto IL_00a8;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:372>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_20 = __this->___topBarR;
-		bool L_21 = ___0_isFinished;
-		if (L_21)
-		{
-			G_B18_0 = L_20;
-			goto IL_009d;
-		}
-		G_B17_0 = L_20;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_22 = __this->___topBarNormal;
-		G_B19_0 = L_22;
-		G_B19_1 = G_B17_0;
-		goto IL_00a3;
-	}
-
-IL_009d:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_23 = __this->___topBarFinished;
-		G_B19_0 = L_23;
-		G_B19_1 = G_B18_0;
-	}
-
-IL_00a3:
-	{
-		NullCheck(G_B19_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B19_1, G_B19_0, NULL);
-	}
-
-IL_00a8:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:373>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_24 = __this->___topBarL;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_25;
-		L_25 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_24, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_25)
-		{
-			goto IL_00d2;
-		}
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:373>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_26 = __this->___topBarL;
-		bool L_27 = ___0_isFinished;
-		if (L_27)
-		{
-			G_B23_0 = L_26;
-			goto IL_00c7;
-		}
-		G_B22_0 = L_26;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_28 = __this->___topBarNormal;
-		G_B24_0 = L_28;
-		G_B24_1 = G_B22_0;
-		goto IL_00cd;
-	}
-
-IL_00c7:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_29 = __this->___topBarFinished;
-		G_B24_0 = L_29;
-		G_B24_1 = G_B23_0;
-	}
-
-IL_00cd:
-	{
-		NullCheck(G_B24_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B24_1, G_B24_0, NULL);
-	}
-
-IL_00d2:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:374>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_30 = __this->___missionPanelTopImage;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:524>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_30 = __this->___rightBar;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_31;
 		L_31 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_30, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_31)
 		{
-			goto IL_00fc;
+			goto IL_010a;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:374>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_32 = __this->___missionPanelTopImage;
-		bool L_33 = ___0_isFinished;
-		if (L_33)
-		{
-			G_B28_0 = L_32;
-			goto IL_00f1;
-		}
-		G_B27_0 = L_32;
-	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_34 = __this->___panelNormal;
-		G_B29_0 = L_34;
-		G_B29_1 = G_B27_0;
-		goto IL_00f7;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:524>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_32 = __this->___rightBar;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_33 = V_1;
+		NullCheck(L_32);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_32, L_33, NULL);
 	}
 
-IL_00f1:
+IL_010a:
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_35 = __this->___panelFinished;
-		G_B29_0 = L_35;
-		G_B29_1 = G_B28_0;
-	}
-
-IL_00f7:
-	{
-		NullCheck(G_B29_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B29_1, G_B29_0, NULL);
-	}
-
-IL_00fc:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:375>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_36 = __this->___radarBackground;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:525>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_34 = __this->___botBar;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_37;
-		L_37 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_36, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_37)
+		bool L_35;
+		L_35 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_34, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_35)
 		{
-			goto IL_0126;
+			goto IL_0124;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:375>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_38 = __this->___radarBackground;
-		bool L_39 = ___0_isFinished;
-		if (L_39)
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:525>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_36 = __this->___botBar;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_37 = V_2;
+		NullCheck(L_36);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_36, L_37, NULL);
+	}
+
+IL_0124:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:526>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_38 = __this->___topBarR;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_39;
+		L_39 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_38, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_39)
 		{
-			G_B33_0 = L_38;
-			goto IL_011b;
+			goto IL_013e;
 		}
-		G_B32_0 = L_38;
 	}
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_40 = __this->___radarNormal;
-		G_B34_0 = L_40;
-		G_B34_1 = G_B32_0;
-		goto IL_0121;
-	}
-
-IL_011b:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_41 = __this->___radarFinished;
-		G_B34_0 = L_41;
-		G_B34_1 = G_B33_0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:526>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_40 = __this->___topBarR;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_41 = V_3;
+		NullCheck(L_40);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_40, L_41, NULL);
 	}
 
-IL_0121:
+IL_013e:
 	{
-		NullCheck(G_B34_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B34_1, G_B34_0, NULL);
-	}
-
-IL_0126:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:377>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_42 = __this->___extensionRight;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:527>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_42 = __this->___topBarL;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_43;
 		L_43 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_42, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_43)
 		{
-			goto IL_0161;
+			goto IL_0158;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:379>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_44 = __this->___extensionRight;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:527>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_44 = __this->___topBarL;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_45 = V_3;
 		NullCheck(L_44);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_45;
-		L_45 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_44, NULL);
-		NullCheck(L_45);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_45, (bool)1, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:380>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_46 = __this->___extensionRight;
-		bool L_47 = ___0_isFinished;
-		if (L_47)
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_44, L_45, NULL);
+	}
+
+IL_0158:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:528>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_46 = __this->___missionPanelTopImage;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_47;
+		L_47 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_46, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_47)
 		{
-			G_B38_0 = L_46;
-			goto IL_0156;
+			goto IL_0173;
 		}
-		G_B37_0 = L_46;
 	}
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_48 = __this->___extensionRightNormal;
-		G_B39_0 = L_48;
-		G_B39_1 = G_B37_0;
-		goto IL_015c;
-	}
-
-IL_0156:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_49 = __this->___extensionRightFinished;
-		G_B39_0 = L_49;
-		G_B39_1 = G_B38_0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:528>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_48 = __this->___missionPanelTopImage;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_49 = V_4;
+		NullCheck(L_48);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_48, L_49, NULL);
 	}
 
-IL_015c:
+IL_0173:
 	{
-		NullCheck(G_B39_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B39_1, G_B39_0, NULL);
-	}
-
-IL_0161:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:383>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_50 = __this->___extensionLeft;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:529>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_50 = __this->___radarBackground;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_51;
 		L_51 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_50, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_51)
 		{
-			goto IL_019c;
+			goto IL_018e;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:385>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_52 = __this->___extensionLeft;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:529>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_52 = __this->___radarBackground;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_53 = V_5;
 		NullCheck(L_52);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_53;
-		L_53 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_52, NULL);
-		NullCheck(L_53);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_53, (bool)1, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:386>
-		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_54 = __this->___extensionLeft;
-		bool L_55 = ___0_isFinished;
-		if (L_55)
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_52, L_53, NULL);
+	}
+
+IL_018e:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:531>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_54 = __this->___extensionRight;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_55;
+		L_55 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_54, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_55)
 		{
-			G_B43_0 = L_54;
-			goto IL_0191;
+			goto IL_01ba;
 		}
-		G_B42_0 = L_54;
 	}
 	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_56 = __this->___extensionLeftNormal;
-		G_B44_0 = L_56;
-		G_B44_1 = G_B42_0;
-		goto IL_0197;
-	}
-
-IL_0191:
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_57 = __this->___extensionLeftFinished;
-		G_B44_0 = L_57;
-		G_B44_1 = G_B43_0;
-	}
-
-IL_0197:
-	{
-		NullCheck(G_B44_1);
-		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(G_B44_1, G_B44_0, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:533>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_56 = __this->___extensionRight;
+		NullCheck(L_56);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_57;
+		L_57 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_56, NULL);
+		NullCheck(L_57);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_57, (bool)1, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:534>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_58 = __this->___extensionRight;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_59 = V_6;
+		NullCheck(L_58);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_58, L_59, NULL);
 	}
 
-IL_019c:
+IL_01ba:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:388>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:537>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_60 = __this->___extensionLeft;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_61;
+		L_61 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_60, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_61)
+		{
+			goto IL_01e6;
+		}
+	}
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:539>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_62 = __this->___extensionLeft;
+		NullCheck(L_62);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_63;
+		L_63 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_62, NULL);
+		NullCheck(L_63);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_63, (bool)1, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:540>
+		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_64 = __this->___extensionLeft;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_65 = V_7;
+		NullCheck(L_64);
+		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_64, L_65, NULL);
+	}
+
+IL_01e6:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:542>
 		return;
 	}
 }
-// Method Definition Index: 86882
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MissionUIController_EvaluateIndexStateFinished_mCD2FEDC34E597943F4F37C28158410F771BB7521 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:392>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_0 = __this->___stateController;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (L_1)
-		{
-			goto IL_001c;
-		}
-	}
-	{
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_2 = __this->___stateController;
-		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_2, NULL);
-		if ((!(((uint32_t)L_3) == ((uint32_t)(-1)))))
-		{
-			goto IL_001e;
-		}
-	}
-
-IL_001c:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:392>
-		return (bool)0;
-	}
-
-IL_001e:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:394>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:395>
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:396>
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_4 = __this->___stateController;
-		NullCheck(L_4);
-		List_1_tA1C40D8EA9976F758517342B226B92A9E974AB1A* L_5 = L_4->___missions;
-		MissionStateController_t13E24DF1ADE037C441E850C870EB37CF0CD1673E* L_6 = __this->___stateController;
-		NullCheck(L_6);
-		int32_t L_7;
-		L_7 = MissionStateController_get_selectedMissionIndex_m3B13FE8A992B8A70C458F2C2B63192FE5931843D_inline(L_6, NULL);
-		NullCheck(L_5);
-		Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* L_8;
-		L_8 = List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC(L_5, L_7, List_1_get_Item_m586983027DAE67B10D8C5D8E7901BA2E0A0C05FC_RuntimeMethod_var);
-		NullCheck(L_8);
-		bool L_9 = L_8->___isCompleted;
-		return L_9;
-	}
-}
-// Method Definition Index: 86883
+// Method Definition Index: 86881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController__ctor_mA77B5F820C476CE20F94877FABFEE66253176C88 (MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* __this, const RuntimeMethod* method) 
 {
 	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:44>
+		__this->___deliveryWarningTime = ((int32_t)10);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
@@ -21642,8 +21437,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MissionUIController__ctor_mA77B5F820C476
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86884
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__55__ctor_m509B713264FB05A5A39CAA826058C4E378982766 (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 86882
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__65__ctor_m82FED414BC1D0E8DE7BFAFA210CF984B5EFF9927 (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -21652,15 +21455,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__55__cto
 		return;
 	}
 }
-// Method Definition Index: 86885
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__55_System_IDisposable_Dispose_m8F3677DCB708F647AF1651EC9FC72F0732B7076C (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, const RuntimeMethod* method) 
+// Method Definition Index: 86883
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__65_System_IDisposable_Dispose_m1AE73BE84C1C04E4B0029EE2340FB08BD610036B (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 86886
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowMissionCompletePanelU3Ed__55_MoveNext_m8A51FC06415A1511F40D2DD0E6DB0C1166F5C7AF (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, const RuntimeMethod* method) 
+// Method Definition Index: 86884
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowMissionCompletePanelU3Ed__65_MoveNext_mFD5F760E2E9E59875C408D6657F1338D21344BD0 (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -21690,7 +21493,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowMissionCompletePanelU3Ed__55_Move
 		int32_t L_3 = V_0;
 		if ((((int32_t)L_3) == ((int32_t)1)))
 		{
-			goto IL_00d8;
+			goto IL_00d1;
 		}
 	}
 	{
@@ -21700,7 +21503,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowMissionCompletePanelU3Ed__55_Move
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:331>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:398>
 		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_4 = V_1;
 		NullCheck(L_4);
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_5 = L_4->___panelAnimator;
@@ -21713,7 +21516,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:331>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:399>
 		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_7 = V_1;
 		NullCheck(L_7);
 		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_8 = L_7->___panelAnimator;
@@ -21723,145 +21526,141 @@ IL_001a:
 
 IL_0040:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:333>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:401>
 		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_9 = V_1;
 		NullCheck(L_9);
-		MissionUIController_SetHUDState_m85B30A123A6AFA62E8DA2928D2A6DC501B7F0079(L_9, (bool)1, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:335>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_10 = V_1;
-		NullCheck(L_10);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_11 = L_10->___missionTitleText;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_10 = L_9->___missionTitleText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_12;
-		L_12 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_11, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_12)
+		bool L_11;
+		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_11)
 		{
-			goto IL_0065;
+			goto IL_005e;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:335>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_13 = V_1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:402>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_12 = V_1;
+		NullCheck(L_12);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_13 = L_12->___missionTitleText;
 		NullCheck(L_13);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_14 = L_13->___missionTitleText;
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_13, _stringLiteral0620A611295E28CF1610378FCEB8F860324FB754);
+	}
+
+IL_005e:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:404>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_14 = V_1;
 		NullCheck(L_14);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_14, _stringLiteral0620A611295E28CF1610378FCEB8F860324FB754);
-	}
-
-IL_0065:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:336>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_15 = V_1;
-		NullCheck(L_15);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_16 = L_15->___missionTaskText;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_15 = L_14->___missionTaskText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_17;
-		L_17 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_16, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_17)
+		bool L_16;
+		L_16 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_15, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_16)
 		{
-			goto IL_0083;
+			goto IL_007c;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:336>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_18 = V_1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:405>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_17 = V_1;
+		NullCheck(L_17);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_18 = L_17->___missionTaskText;
 		NullCheck(L_18);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_19 = L_18->___missionTaskText;
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_18, _stringLiteral8B84FAA73FF8D7859BD6C22B2650D8BF4EC22461);
+	}
+
+IL_007c:
+	{
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:407>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_19 = V_1;
 		NullCheck(L_19);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_19, _stringLiteral8B84FAA73FF8D7859BD6C22B2650D8BF4EC22461);
-	}
-
-IL_0083:
-	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:337>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_20 = V_1;
-		NullCheck(L_20);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_21 = L_20->___missionDescriptionText;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_20 = L_19->___missionDescriptionText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_22;
-		L_22 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_21, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_22)
+		bool L_21;
+		L_21 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_20, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_21)
 		{
-			goto IL_00a1;
+			goto IL_009a;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:337>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_23 = V_1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:408>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_22 = V_1;
+		NullCheck(L_22);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_23 = L_22->___missionDescriptionText;
 		NullCheck(L_23);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_24 = L_23->___missionDescriptionText;
-		NullCheck(L_24);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_24, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_23, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_00a1:
+IL_009a:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:338>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_25 = V_1;
-		NullCheck(L_25);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_26 = L_25->___statusText;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:410>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_24 = V_1;
+		NullCheck(L_24);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_25 = L_24->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_27;
-		L_27 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_26, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_27)
+		bool L_26;
+		L_26 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_25, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_26)
 		{
-			goto IL_00bf;
+			goto IL_00b8;
 		}
 	}
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:338>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_28 = V_1;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:411>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_27 = V_1;
+		NullCheck(L_27);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_28 = L_27->___statusText;
 		NullCheck(L_28);
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_29 = L_28->___statusText;
-		NullCheck(L_29);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_29, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_28, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
-IL_00bf:
+IL_00b8:
 	{
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:340>
-		WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* L_30 = (WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3*)il2cpp_codegen_object_new(WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var);
-		WaitForSeconds__ctor_m579F95BADEDBAB4B3A7E302C6EE3995926EF2EFC(L_30, (5.0f), NULL);
-		__this->___U3CU3E2__current = L_30;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_30);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:413>
+		WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* L_29 = (WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3*)il2cpp_codegen_object_new(WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var);
+		WaitForSeconds__ctor_m579F95BADEDBAB4B3A7E302C6EE3995926EF2EFC(L_29, (5.0f), NULL);
+		__this->___U3CU3E2__current = L_29;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_29);
 		__this->___U3CU3E1__state = 1;
 		return (bool)1;
 	}
 
-IL_00d8:
+IL_00d1:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:342>
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:415>
+		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_30 = V_1;
+		NullCheck(L_30);
+		L_30->___isMissionCompleteDisplayActive = (bool)0;
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:416>
 		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_31 = V_1;
 		NullCheck(L_31);
-		L_31->___isMissionCompleteDisplayActive = (bool)0;
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:343>
-		MissionUIController_t701A28E3BBC614C39495D07C28AD5F4437773477* L_32 = V_1;
-		NullCheck(L_32);
-		MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD(L_32, NULL);
-		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:344>
+		MissionUIController_ResetUI_mE52D74CA64775FC9044209BE94D64D8128B619FD(L_31, NULL);
+		//<source_info:C:/Users/georg/Documents/Unit School/ARHMM/Assets/Scripts/Mission/MissionUIManager.cs:417>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 86887
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowMissionCompletePanelU3Ed__55_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m45F6D31E741B239DAB605A3DE53CCB7B2CB9BFF8 (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, const RuntimeMethod* method) 
+// Method Definition Index: 86885
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowMissionCompletePanelU3Ed__65_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m5616853EB8FA516BD22825A3DD35481B6547246A (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 86888
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__55_System_Collections_IEnumerator_Reset_mFD64F7B47A9C413645F3FE1740E1847E7C747169 (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, const RuntimeMethod* method) 
+// Method Definition Index: 86886
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowMissionCompletePanelU3Ed__65_System_Collections_IEnumerator_Reset_m7F6B8072EEFC18641D0C95620DD0E1DDD3987430 (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CShowMissionCompletePanelU3Ed__55_System_Collections_IEnumerator_Reset_mFD64F7B47A9C413645F3FE1740E1847E7C747169_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CShowMissionCompletePanelU3Ed__65_System_Collections_IEnumerator_Reset_m7F6B8072EEFC18641D0C95620DD0E1DDD3987430_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 86889
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowMissionCompletePanelU3Ed__55_System_Collections_IEnumerator_get_Current_mB2B24644AA2289E07E0AADFDED74F6603DD85077 (U3CShowMissionCompletePanelU3Ed__55_t71D7F903A10E57CA131AF5393E8FE67944F68D47* __this, const RuntimeMethod* method) 
+// Method Definition Index: 86887
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowMissionCompletePanelU3Ed__65_System_Collections_IEnumerator_get_Current_mF3258FEBD2FE2DB486C00EAC00350548579CE46D (U3CShowMissionCompletePanelU3Ed__65_t2E5B8ED233DE882236BA88C518F7405239860AD3* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -21876,7 +21675,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowMissionCompletePanelU3E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86890
+// Method Definition Index: 86888
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_Awake_m4CFE03044F39C1E767CCA22C4C848F2C9A8946FD (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22002,7 +21801,7 @@ IL_00d8:
 		return;
 	}
 }
-// Method Definition Index: 86891
+// Method Definition Index: 86889
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_UpdatePosition_mC6115B543344305AFDDF248679AC2199E1B7CD38 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_targetWorldPos, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_heliTransform, float ___2_radarRadius, float ___3_maxVisualDistance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22092,7 +21891,7 @@ IL_0046:
 		return;
 	}
 }
-// Method Definition Index: 86892
+// Method Definition Index: 86890
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_SetAlpha_m58E41FB644F29865B52F345DD2C1C88C9A953A14 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, float ___0_alpha, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22126,7 +21925,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 86893
+// Method Definition Index: 86891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float RadarMarker_GetAlpha_m4247347FFF47E08D19409D77AFF11146B108B9E4 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22159,7 +21958,7 @@ IL_0014:
 		return L_3;
 	}
 }
-// Method Definition Index: 86894
+// Method Definition Index: 86892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_SetLabel_m0E6278C89AA540EEAC69043A8B1978795995E4C7 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, String_t* ___0_text, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22193,7 +21992,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 86895
+// Method Definition Index: 86893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker_SetLabelVisible_mA50DFFBDD94F22B9C797A4CFF5320FFB1B492089 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, bool ___0_visible, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22230,7 +22029,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 86896
+// Method Definition Index: 86894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 RadarMarker_GetAnchoredPos_mCC29551152003434282493541BD3B835A9A2DCC6 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22265,7 +22064,7 @@ IL_0014:
 		return L_4;
 	}
 }
-// Method Definition Index: 86897
+// Method Definition Index: 86895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker__ctor_m0C2AFCEAFF550A198579B9C2560BBF1C7FE85278 (RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22281,7 +22080,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarMarker__ctor_m0C2AFCEAFF550A198579B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86898
+// Method Definition Index: 86896
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner_Update_mDC7EAF970970B984A2C4CB9CB580EE566D458707 (RadarScanner_t3093043FAFC33DA2C41B54917BE59E3CD9C84A72* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22306,7 +22105,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner_Update_mDC7EAF970970B984A2C
 		return;
 	}
 }
-// Method Definition Index: 86899
+// Method Definition Index: 86897
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner__ctor_m41599E490F4101788D1A9F4B23EB786504F6B675 (RadarScanner_t3093043FAFC33DA2C41B54917BE59E3CD9C84A72* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22324,7 +22123,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScanner__ctor_m41599E490F4101788D1A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86900
+// Method Definition Index: 86898
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_Start_mB16B9A8C3D9E7CDD5314EEE8CDEE7E64CFE18EAF (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22444,7 +22243,7 @@ IL_0037:
 		return;
 	}
 }
-// Method Definition Index: 86901
+// Method Definition Index: 86899
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_Update_m8691A5C1D500F0FB422306CAFFF900F42A6CF749 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22674,7 +22473,7 @@ IL_0137:
 		return;
 	}
 }
-// Method Definition Index: 86902
+// Method Definition Index: 86900
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t36939EF99EDCED2AD6631C38DD1F023685E6DE00* RadarScannerLogic_BuildDesiredBlips_m74A9C1DD8C15EA0E0394D3B8F7181FE0A425C6AD (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22866,7 +22665,7 @@ IL_00ca:
 		return L_34;
 	}
 }
-// Method Definition Index: 86903
+// Method Definition Index: 86901
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_AddAnyOrderSearchBlips_m0AF9612F4247D1A3CE63B2861DB776BC33DE76E9 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, Dictionary_2_t36939EF99EDCED2AD6631C38DD1F023685E6DE00* ___0_result, Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* ___1_mission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22985,7 +22784,7 @@ IL_0068:
 		return;
 	}
 }
-// Method Definition Index: 86904
+// Method Definition Index: 86902
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_UpdateAutomaticDistance_mAA07D16BC468E26094B704C1DA3A4D56CC61C47A (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_helicopter, Dictionary_2_t36939EF99EDCED2AD6631C38DD1F023685E6DE00* ___1_desiredBlips, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23143,7 +22942,7 @@ IL_0075:
 		return;
 	}
 }
-// Method Definition Index: 86905
+// Method Definition Index: 86903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_RemoveObsoleteMarkers_m4C3C72FCC31F9B29DAEFB049CA861B459B69ABA5 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, Dictionary_2_t36939EF99EDCED2AD6631C38DD1F023685E6DE00* ___0_desiredBlips, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23345,7 +23144,7 @@ IL_00af:
 		return;
 	}
 }
-// Method Definition Index: 86906
+// Method Definition Index: 86904
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_HandlePing_m64CE09A93D6972D13DAEF1E6D7EC4C936E5924DB (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* ___0_marker, bool ___1_isActive, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23594,7 +23393,7 @@ IL_00fb:
 		return;
 	}
 }
-// Method Definition Index: 86907
+// Method Definition Index: 86905
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RadarMarker_t66C90826B03EE853DAABE0ABFB23CDA3C0A249B0* RadarScannerLogic_CreateMarker_m277CF6C39757AB9E842B59D127B2141230CDB998 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, String_t* ___0_id, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23814,7 +23613,7 @@ IL_0119:
 		return L_47;
 	}
 }
-// Method Definition Index: 86908
+// Method Definition Index: 86906
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RadarScannerLogic_IsReady_m175F6B4E6D0E3BCA9243C71DC427BB354500D853 (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23888,7 +23687,7 @@ IL_0058:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 86909
+// Method Definition Index: 86907
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic_ClearAllMarkers_m4D8C67B1AD768FFB222518837265B8ACE64F4B8C (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23989,7 +23788,7 @@ IL_0048:
 		return;
 	}
 }
-// Method Definition Index: 86910
+// Method Definition Index: 86908
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RadarScannerLogic__ctor_m70F9C008B763BA7B56617E68E50E276B25CE6E0F (RadarScannerLogic_t7C6D53A2964958B0FC9836415906FC1CAF1BFEF5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24068,7 +23867,7 @@ IL2CPP_EXTERN_C void BlipData_t6117C1A354A25EC28C645149D0C46606FE804976_marshal_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86911
+// Method Definition Index: 86909
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_Start_m401D4B809E207E3D8967C85393218A773F347943 (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24103,7 +23902,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 86912
+// Method Definition Index: 86910
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_Update_m054F98B28D3115DC691D4DDB98DA9165994B287C (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24113,7 +23912,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_Update_m054F98B28D3115
 		return;
 	}
 }
-// Method Definition Index: 86913
+// Method Definition Index: 86911
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_HandleInput_mCCCBD08BBB70D217DD05A1696416AA95627FD0A5 (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24325,7 +24124,7 @@ IL_00d4:
 		return;
 	}
 }
-// Method Definition Index: 86914
+// Method Definition Index: 86912
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_StartSwipe_m8A09717BF634412B74E1776EA6C505E166E0519E (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_screenPos, const RuntimeMethod* method) 
 {
 	UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* G_B3_0 = NULL;
@@ -24390,7 +24189,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 86915
+// Method Definition Index: 86913
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_EndSwipe_m8286DA2A7D868DA211E7C34A50B20E068BB9294F (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_screenPos, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -24468,7 +24267,7 @@ IL_0056:
 		return;
 	}
 }
-// Method Definition Index: 86916
+// Method Definition Index: 86914
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer_SetDrawerState_m199D765F4D5D5D0888A45AE6C99636317B1C8CCE (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, bool ___0_open, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24506,7 +24305,7 @@ IL_0027:
 		return;
 	}
 }
-// Method Definition Index: 86917
+// Method Definition Index: 86915
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer__ctor_mE28334483964B6C6A1205ED8361935676F2D55EA (UIExtensionDrawer_t96711C523475D3F6B2C4FA3F2DA541706FDC4673* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24537,7 +24336,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIExtensionDrawer__ctor_mE28334483964B6C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86918
+// Method Definition Index: 86916
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupButton_Awake_m9597D2AFB7F28B5DFD00DB4481F1D96AE20E365A (PopupButton_t0B82A9CFB486744077DB78F0C61D5F55590A0373* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24573,7 +24372,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 86919
+// Method Definition Index: 86917
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupButton_OnButtonPressed_m47AC60A89403D4463A4A2282D0B45DCB1D8798AE (PopupButton_t0B82A9CFB486744077DB78F0C61D5F55590A0373* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24606,7 +24405,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 86920
+// Method Definition Index: 86918
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupButton__ctor_mABA8C2637D8BF38241829901C9D3C017506F1B33 (PopupButton_t0B82A9CFB486744077DB78F0C61D5F55590A0373* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24622,7 +24421,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupButton__ctor_mABA8C2637D8BF38241829
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86921
+// Method Definition Index: 86919
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24637,7 +24436,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B
 		return L_0;
 	}
 }
-// Method Definition Index: 86922
+// Method Definition Index: 86920
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_set_Instance_m7EFFA12B0A1CFE68218AD709BCBD1F9EF572D27A (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24654,7 +24453,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_set_Instance_m7EFFA12B0A1CF
 		return;
 	}
 }
-// Method Definition Index: 86923
+// Method Definition Index: 86921
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_Awake_m2977512949054A9EF2AE29FF431960777C4F4ECC (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24740,7 +24539,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 86924
+// Method Definition Index: 86922
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_Start_mA218BEF50CC724138489278EF6D06DF4C26F375E (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -24750,7 +24549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_Start_mA218BEF50CC724138489
 		return;
 	}
 }
-// Method Definition Index: 86925
+// Method Definition Index: 86923
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_TrySubscribe_mDC18FA434CBA2F123183D8A2C46F7A640042025A (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24838,7 +24637,7 @@ IL_0051:
 		return;
 	}
 }
-// Method Definition Index: 86926
+// Method Definition Index: 86924
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PopupManager_RetrySubscribe_m29F879057B4852F9497A72264E78BE3260E2CE1C (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24857,7 +24656,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PopupManager_RetrySubscribe_m2
 		return L_1;
 	}
 }
-// Method Definition Index: 86927
+// Method Definition Index: 86925
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_SubscribeToMissionEvents_mA8EE98608C1693D4F95568B056A4B6ECFE95847C (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24937,7 +24736,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 86928
+// Method Definition Index: 86926
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_OnDestroy_mC8DA4D388EE707CC48870CF57F0B5C5CC68D32B6 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25044,7 +24843,7 @@ IL_00b0:
 		return;
 	}
 }
-// Method Definition Index: 86929
+// Method Definition Index: 86927
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionStarted_m0395C3D5AB3076B9FF56F9885A940B949F74A40E (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, int32_t ___0_missionIndex, const RuntimeMethod* method) 
 {
 	{
@@ -25056,7 +24855,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionStarted_m0395C
 		return;
 	}
 }
-// Method Definition Index: 86930
+// Method Definition Index: 86928
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionCompleted_m2F71305FCF4FA50E3EC12EA0033191F34ECBF6C9 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, int32_t ___0_completedIndex, const RuntimeMethod* method) 
 {
 	{
@@ -25074,7 +24873,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionCompleted_m2F7
 		return;
 	}
 }
-// Method Definition Index: 86931
+// Method Definition Index: 86929
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PopupManager_ShowCompletionThenNext_mAA282654B5EF57B52CB8E3694D5C4EAE611ADE8F (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, int32_t ___0_completedIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25097,7 +24896,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PopupManager_ShowCompletionThe
 		return L_2;
 	}
 }
-// Method Definition Index: 86932
+// Method Definition Index: 86930
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionFailed_m4CE9BB28CE392A18A15B49755758D4E262BE6F20 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, int32_t ___0_missionIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25124,7 +24923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionFailed_m4CE9BB
 		return;
 	}
 }
-// Method Definition Index: 86933
+// Method Definition Index: 86931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionReset_mFE0AC94BE01342C8F36574E37ED0E7391D09FD33 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -25136,7 +24935,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleMissionReset_mFE0AC94
 		return;
 	}
 }
-// Method Definition Index: 86934
+// Method Definition Index: 86932
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_HandleScanProgressUpdate_mB160D97D701F4C7CEC468906CD1E56ACC8210C5D (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, float ___0_progressPercent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25284,7 +25083,7 @@ IL_00b1:
 		return;
 	}
 }
-// Method Definition Index: 86935
+// Method Definition Index: 86933
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_ShowPopup_m2ACA6D5FB233C2A5AD319FC94CF580CB88BF6F9D (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, String_t* ___0_title, String_t* ___1_description, Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___2_iconSprite, String_t* ___3_buttonLabel, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___4_onConfirmCallback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25470,7 +25269,7 @@ IL_00d1:
 		return;
 	}
 }
-// Method Definition Index: 86936
+// Method Definition Index: 86934
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_ClosePopup_mB372FADEC95213422E51A476EB5852A1DD738707 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25529,7 +25328,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 86937
+// Method Definition Index: 86935
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager_OnActionButtonClick_m5F5958E5641894EB99D204BB86C903F6F0522100 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25684,7 +25483,7 @@ IL_00a8:
 		return;
 	}
 }
-// Method Definition Index: 86938
+// Method Definition Index: 86936
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1* PopupManager_GetFirstTarget_m67098D1E7F30CD58E2737E40E9C55C781B3292EE (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, Mission_t7A808247A786A15A4F3FBD1360EEA0BC5700F984* ___0_mission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25864,7 +25663,7 @@ IL_0099:
 		return (MissionTarget_t01DFB26BFAB29B4474010166C8B02B44539D08E1*)NULL;
 	}
 }
-// Method Definition Index: 86939
+// Method Definition Index: 86937
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager__ctor_m6171F8CDA25C4FE2113A731A6307D18867F1DA09 (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25891,7 +25690,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PopupManager__ctor_m6171F8CDA25C4FE2113A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86940
+// Method Definition Index: 86938
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRetrySubscribeU3Ed__19__ctor_mFB33A328F9BFB246CDFA9A7F7E0D3B7B6A7A1CB5 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -25901,14 +25700,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRetrySubscribeU3Ed__19__ctor_mFB33A32
 		return;
 	}
 }
-// Method Definition Index: 86941
+// Method Definition Index: 86939
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRetrySubscribeU3Ed__19_System_IDisposable_Dispose_m4F1F262F6C3E736A0DD679A3F83BE548B06E40A3 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 86942
+// Method Definition Index: 86940
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRetrySubscribeU3Ed__19_MoveNext_mC10E39B5C026E548258A7CD22E42CA723A5674B8 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25998,7 +25797,7 @@ IL_0042:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 86943
+// Method Definition Index: 86941
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRetrySubscribeU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAA378F849F5F670568C4DE53816583FC99575EE2 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26006,7 +25805,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRetrySubscribeU3Ed__19_Syst
 		return L_0;
 	}
 }
-// Method Definition Index: 86944
+// Method Definition Index: 86942
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRetrySubscribeU3Ed__19_System_Collections_IEnumerator_Reset_m14D20AC020205E9E14EB5389A8D82A70C3970219 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26015,7 +25814,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRetrySubscribeU3Ed__19_System_Collect
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CRetrySubscribeU3Ed__19_System_Collections_IEnumerator_Reset_m14D20AC020205E9E14EB5389A8D82A70C3970219_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 86945
+// Method Definition Index: 86943
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRetrySubscribeU3Ed__19_System_Collections_IEnumerator_get_Current_m4E87D323E27B8D2688F15C4FC7D508FA569D00A0 (U3CRetrySubscribeU3Ed__19_t11ABD1CD23C1AE5A1D7CE4712774C33E31207EAB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26031,7 +25830,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CRetrySubscribeU3Ed__19_Syst
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86946
+// Method Definition Index: 86944
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowCompletionThenNextU3Ed__24__ctor_mE04E748DAEDCE58E381B9B41A5BBC5BB2952115D (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -26041,14 +25840,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowCompletionThenNextU3Ed__24__ctor_
 		return;
 	}
 }
-// Method Definition Index: 86947
+// Method Definition Index: 86945
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowCompletionThenNextU3Ed__24_System_IDisposable_Dispose_m1C80CE9BC4F6F469D978E332A8C9BD55EF2FF222 (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 86948
+// Method Definition Index: 86946
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CShowCompletionThenNextU3Ed__24_MoveNext_m06AA21FE77CAA6A70785486D2BE920EF9C92D621 (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26295,7 +26094,7 @@ IL_00e3:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 86949
+// Method Definition Index: 86947
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowCompletionThenNextU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m09D9112065435750BDE030E53EF7446C5DA9F490 (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26303,7 +26102,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowCompletionThenNextU3Ed_
 		return L_0;
 	}
 }
-// Method Definition Index: 86950
+// Method Definition Index: 86948
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowCompletionThenNextU3Ed__24_System_Collections_IEnumerator_Reset_m8AA09D549245C5035C7D613E60B1BE11711A0599 (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26312,7 +26111,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShowCompletionThenNextU3Ed__24_System
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CShowCompletionThenNextU3Ed__24_System_Collections_IEnumerator_Reset_m8AA09D549245C5035C7D613E60B1BE11711A0599_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 86951
+// Method Definition Index: 86949
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowCompletionThenNextU3Ed__24_System_Collections_IEnumerator_get_Current_mC2C46A311C1476D48E52B3A87FB4328D81F79FAC (U3CShowCompletionThenNextU3Ed__24_tC690D73F96F18F2C72DD58BF249360AEB8D1507F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26328,7 +26127,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CShowCompletionThenNextU3Ed_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86952
+// Method Definition Index: 86950
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26344,7 +26143,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A90
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86953
+// Method Definition Index: 86951
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26360,7 +26159,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 86954
+// Method Definition Index: 86952
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26394,7 +26193,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 86955
+// Method Definition Index: 86953
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27530,7 +27329,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1
 		return L_0;
 	}
 }
-// Method Definition Index: 86921
+// Method Definition Index: 86919
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* PopupManager_get_Instance_m05ABB7A0615DFC07991FB37CAD038F3EB79B5604_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27771,6 +27570,43 @@ IL_000c:
 		return L_2;
 	}
 }
+// Method Definition Index: 36033
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline (int32_t ___0_a, int32_t ___1_b, const RuntimeMethod* method) 
+{
+	int32_t V_0 = 0;
+	int32_t G_B3_0 = 0;
+	{
+		int32_t L_0 = ___0_a;
+		int32_t L_1 = ___1_b;
+		if ((((int32_t)L_0) > ((int32_t)L_1)))
+		{
+			goto IL_0008;
+		}
+	}
+	{
+		int32_t L_2 = ___1_b;
+		G_B3_0 = L_2;
+		goto IL_0009;
+	}
+
+IL_0008:
+	{
+		int32_t L_3 = ___0_a;
+		G_B3_0 = L_3;
+	}
+
+IL_0009:
+	{
+		V_0 = G_B3_0;
+		goto IL_000c;
+	}
+
+IL_000c:
+	{
+		int32_t L_4 = V_0;
+		return L_4;
+	}
+}
 // Method Definition Index: 36044
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_RoundToInt_m60F8B66CF27F1FA75AA219342BD184B75771EB4B_inline (float ___0_f, const RuntimeMethod* method) 
 {
@@ -27977,7 +27813,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2Control_t8D1B4021A1D82671A
 		return L_0;
 	}
 }
-// Method Definition Index: 86922
+// Method Definition Index: 86920
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PopupManager_set_Instance_m7EFFA12B0A1CFE68218AD709BCBD1F9EF572D27A_inline (PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
