@@ -31,10 +31,6 @@ public class IntroSequenceController : MonoBehaviour
         if (startButton != null)
             startButton.onClick.AddListener(OnStartButtonPressed);
 
-<<<<<<< Updated upstream
-        // Zet de startposities direct in Awake keihard goed
-        if (variableJoystickL != null) variableJoystickL.SetActive(true);
-=======
         InitialSetupState();
     }
 
@@ -42,7 +38,6 @@ public class IntroSequenceController : MonoBehaviour
     {
         // Joysticks uit bij start
         if (variableJoystickL != null) variableJoystickL.SetActive(false);
->>>>>>> Stashed changes
         if (variableJoystickR != null) variableJoystickR.SetActive(false);
 
         // Intro paneel aan
@@ -72,22 +67,7 @@ public class IntroSequenceController : MonoBehaviour
 
     private IEnumerator FadeOutAndStartGame()
     {
-<<<<<<< Updated upstream
-        // 1. Verhuis de linker joystick nu definitief naar de hoofd-UI zodat hij ALTIJD blijft staan
-        if (variableJoystickL != null && introPanel != null)
-        {
-            if (variableJoystickL.transform.IsChildOf(introPanel.transform))
-            {
-                variableJoystickL.transform.SetParent(introPanel.transform.parent, true);
-            }
-
-            // Dwing alle alphas op de linker joystick naar 1 (voorkomt onzichtbaarheid)
-            CanvasGroup[] allJLCGs = variableJoystickL.GetComponentsInChildren<CanvasGroup>(true);
-            foreach (var cg in allJLCGs) cg.alpha = 1f;
-        }
-=======
         if (startButton != null) startButton.interactable = false;
->>>>>>> Stashed changes
 
         // 1. Fade het intro paneel uit
         float elapsed = 0f;
@@ -99,11 +79,7 @@ public class IntroSequenceController : MonoBehaviour
             yield return null;
         }
 
-<<<<<<< Updated upstream
-        // 3. Fade het intro paneel netjes uit
-=======
         // FIX: Instead of killing the whole GameObject here, turn off interaction & visibility
->>>>>>> Stashed changes
         if (introCanvasGroup != null)
         {
             introCanvasGroup.alpha = 0f;
@@ -160,9 +136,5 @@ public class IntroSequenceController : MonoBehaviour
     {
         if (startButton != null)
             startButton.onClick.RemoveListener(OnStartButtonPressed);
-<<<<<<< Updated upstream
-        }
-=======
->>>>>>> Stashed changes
     }
 }

@@ -199,7 +199,7 @@ public class MissionUIController : MonoBehaviour
     private void HandleStepCompleted()
     {
         // Teksten updaten voor het volgende doel.
-        // De extensie NIET sluiten hier — MissionStateController heeft wasInRange gereset
+        // De extensie NIET sluiten hier ï¿½ MissionStateController heeft wasInRange gereset
         // en evalueert de proximity opnieuw de volgende tick. Als de speler nog in range
         // staat (bijv. bij Delivery op de startmarker) vuurt OnProximityChanged direct
         // opnieuw met de juiste nieuwe tekst (Bezorgen). Als de speler buiten range is,
@@ -237,14 +237,9 @@ public class MissionUIController : MonoBehaviour
 
     public void ResetUI()
     {
-<<<<<<< Updated upstream
-        if (missionTitleText != null) missionTitleText.text = "Start een missie";
-        if (missionTaskText != null) missionTaskText.text = "Volg de radar voor een missie";
-=======
         // Zet de teksten nu volledig leeg in plaats van de placeholder instructies
         if (missionTitleText != null) missionTitleText.text = "";
         if (missionTaskText != null) missionTaskText.text = "";
->>>>>>> Stashed changes
         if (missionDescriptionText != null) missionDescriptionText.text = "";
         if (statusText != null) statusText.text = "";
 

@@ -125,26 +125,15 @@ public class MissionStateController : MonoBehaviour
             if (isInRange)
             {
                 OnProximityChanged?.Invoke(
-<<<<<<< Updated upstream
-                    true,
-                    "Start Missie",
-                    defaultStartIcon,
-                    $"[ {missions[closestIndex].missionName} ]\nPress Button to Start"
-=======
                     false, // <--- Staat nu op false, dus de extensie blijft dicht!
                     "",
                     null,
                     $"[ {missions[closestIndex].missionName} ] beschikbaar."
->>>>>>> Stashed changes
                 );
             }
             else
             {
-<<<<<<< Updated upstream
-                OnProximityChanged?.Invoke(false, "", null, "Fly to a marker to start a mission");
-=======
                 OnProximityChanged?.Invoke(false, "", null, "");
->>>>>>> Stashed changes
             }
         }
     }
