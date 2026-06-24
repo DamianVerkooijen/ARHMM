@@ -23,7 +23,16 @@ public class MissionStateController : MonoBehaviour
         public int reward;
     }
 
-    [Serializable]
+    [System.Serializable]
+    public class PopupContent
+    {
+        public string title;
+        [TextArea] public string description;
+        public Sprite icon;
+        public string actionButtonText;
+    }
+
+    [System.Serializable]
     public class Mission
     {
         public string missionName;
@@ -39,16 +48,13 @@ public class MissionStateController : MonoBehaviour
 
         [Tooltip("Used for Single Destination delivery missions")]
         public MissionTarget endLocation;
-
-        [Tooltip("Used for Multiple Destinations delivery missions")]
-        public List<MissionTarget> deliveryTargets = new List<MissionTarget>();
-
-        [Header("Search & Find Settings")]
-        public SearchCollectionMode searchCollectionMode = SearchCollectionMode.InOrder;
-        public List<MissionTarget> searchTargets = new List<MissionTarget>();
-
-        [Header("Scan Settings")]
-        public List<MissionTarget> scanTargets = new List<MissionTarget>();
+        public List<MissionTarget> searchTargets;
+        public List<MissionTarget> scanTargets;
+        
+        [Header("Popup Content")]
+        public PopupContent missionIntroPopup;
+        public List<PopupContent> missionPopups = new List<PopupContent>();
+        public PopupContent missionCompletionPopup;
     }
 
     [Header("Mission Configuration")]
@@ -64,13 +70,12 @@ public class MissionStateController : MonoBehaviour
     public float missionRetryDelay = 2f;
 
     public int selectedMissionIndex { get; private set; } = -1;
-    public int currentTargetIndex { get; private set; }
-    public bool missionActive { get; private set; }
-    public float scanTimer { get; private set; }
-    public bool isScanning { get; private set; }
-
-    public float deliveryTimeRemaining { get; private set; }
-    public bool isDeliveryTimerRunning { get; private set; }
+    public int currentTargetIndex { get; private set; } = 0;
+    public int currentPopupIndex { get; private set; } = 0;
+    public bool missionActive { get; private set; } = false;
+    public float scanTimer { get; private set; } = 0f;
+    public bool isScanning { get; private set; } = false;
+    public int closestAvailableMissionIndex { get; private set; } = -1;
 
     public event Action<int> OnMissionStarted;
     public event Action<int> OnMissionCompleted;
@@ -154,28 +159,30 @@ public class MissionStateController : MonoBehaviour
         if (mission.missionType == MissionType.SearchFind &&
             mission.searchCollectionMode == SearchCollectionMode.AnyOrder)
         {
-            EvaluateAnyOrderSearchRange(mission);
-            return;
-        }
-
-        MissionTarget target = GetCurrentTarget(mission);
-        if (target == null) return;
-
-        float distance = GetFlatDistance(
-            manager.helicopter.transform.position,
-            GetCurrentTargetWorldPos()
-        );
-
-        if (distance < interactionRange)
-        {
-            if (!wasInRange)
+            if (currentMission.missionType == MissionType.Scan)
             {
-                wasInRange = true;
+                if (!wasInRange)
+                {
+                    wasInRange = true;
+                    scanTimer = 0f;
+                    isScanning = false;
+                    OnScanProgressUpdated?.Invoke(0f);
+                    
+                    // Show location popup from missionPopups list
+                    ShowCurrentPopup(() => { isScanning = true; });
+                }
 
-                if (mission.missionType == MissionType.Scan)
-                    ShowScanPopup(target);
-                else
-                    ShowTargetPopup(target);
+                if (isScanning)
+                {
+                    scanTimer += Time.deltaTime;
+                    float progress = Mathf.Clamp((scanTimer / scanDuration) * 100f, 0f, 100f);
+                    OnScanProgressUpdated?.Invoke(Mathf.Round(progress));
+
+                    if (scanTimer >= scanDuration)
+                    {
+                        CompleteStep();
+                    }
+                }
             }
 
             if (mission.missionType == MissionType.Scan && isScanning)
@@ -198,17 +205,13 @@ public class MissionStateController : MonoBehaviour
 
             if (!wasInRange || targetChanged)
             {
-                wasInRange = true;
-                MissionTarget target = mission.searchTargets[closestTargetIndex];
-
-                OnProximityChanged?.Invoke(
-                    true,
-                    target.actionText,
-                    target.targetIcon,
-                    target.description
-                );
-
-                ShowTargetPopup(target);
+                // Delivery or SearchFind
+                if (!wasInRange)
+                {
+                    wasInRange = true;
+                    // Show location popup from missionPopups list
+                    ShowCurrentPopup(() => { ProcessMissionStep(); });
+                }
             }
         }
         else if (wasInRange)
@@ -300,7 +303,7 @@ public class MissionStateController : MonoBehaviour
 
         selectedMissionIndex = index;
         currentTargetIndex = 0;
-        missionActive = true;
+        currentPopupIndex = 0;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -333,17 +336,27 @@ public class MissionStateController : MonoBehaviour
 
         switch (mission.missionType)
         {
-            case MissionType.Delivery:
-                ProcessDelivery(mission);
-                break;
-
-            case MissionType.SearchFind:
-                ProcessSearchFind(mission);
-                break;
-
-            case MissionType.Scan:
-                ProcessScan(mission);
-                break;
+            if (!missionActive)
+            {
+                missionActive = true;
+                currentPopupIndex++;
+                wasInRange = false;
+                OnStepCompleted?.Invoke();
+            }
+            else
+            {
+                FinishMission();
+            }
+        }
+        else if (m.missionType == MissionType.SearchFind)
+        {
+            currentTargetIndex++;
+            currentPopupIndex++;
+            wasInRange = false;
+            if (currentTargetIndex >= m.searchTargets.Count)
+                FinishMission();
+            else
+                OnStepCompleted?.Invoke();
         }
     }
 
@@ -438,6 +451,7 @@ public class MissionStateController : MonoBehaviour
         Mission mission = missions[selectedMissionIndex];
 
         currentTargetIndex++;
+        currentPopupIndex++;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -521,7 +535,7 @@ public class MissionStateController : MonoBehaviour
     {
         selectedMissionIndex = -1;
         currentTargetIndex = 0;
-        missionActive = false;
+        currentPopupIndex = 0;
         scanTimer = 0f;
         isScanning = false;
         wasInRange = false;
@@ -540,14 +554,121 @@ public class MissionStateController : MonoBehaviour
 
     public void TriggerFullReset()
     {
-        ResetAllMissionsToStart();
+        selectedMissionIndex = -1;
+        currentTargetIndex = 0;
+        currentPopupIndex = 0;
+        missionActive = false;
+        scanTimer = 0f;
+        isScanning = false;
+        wasInRange = false;
+        closestAvailableMissionIndex = -1;
+
+        foreach (var m in missions) m.isCompleted = false;
+
+        OnScanProgressUpdated?.Invoke(0f);
+        OnMissionReset?.Invoke();
+    }
+
+    public Vector2 GetFirstTargetPosition(Mission m)
+    {
+        if (m.missionType == MissionType.SearchFind && m.searchTargets != null && m.searchTargets.Count > 0)
+            return registry.GetPosition(m.searchTargets[0].locationName);
+        if (m.missionType == MissionType.Scan && m.scanTargets != null && m.scanTargets.Count > 0)
+            return registry.GetPosition(m.scanTargets[0].locationName);
+
+        return registry.GetPosition(m.startLocation.locationName);
+    }
+
+    public Vector2 GetCurrentTargetGrid(Mission currentMission)
+    {
+        switch (currentMission.missionType)
+        {
+            case MissionType.Delivery:
+                return registry.GetPosition(missionActive ? currentMission.endLocation.locationName : currentMission.startLocation.locationName);
+            case MissionType.SearchFind:
+                return registry.GetPosition(currentMission.searchTargets[currentTargetIndex].locationName);
+            case MissionType.Scan:
+                return registry.GetPosition(currentMission.scanTargets[currentTargetIndex].locationName);
+        }
+        return registry.GetPosition(currentMission.startLocation.locationName);
+    }
+
+    public Vector3 GetCurrentTargetWorldPos()
+    {
+        if (selectedMissionIndex == -1) return Vector3.zero;
+        Vector2 grid = GetCurrentTargetGrid(missions[selectedMissionIndex]);
+        return manager.GetWorldPositionFromGrid(grid.x, grid.y);
+    }
+
+    public Vector3 GetClosestAvailableMissionPos()
+    {
+        float closestDist = float.MaxValue;
+        Vector3 closestPos = Vector3.zero;
+
+        foreach (var m in missions)
+        {
+            if (m.isCompleted) continue;
+            Vector2 grid = GetFirstTargetPosition(m);
+            Vector3 worldPos = manager.GetWorldPositionFromGrid(grid.x, grid.y);
+            float d = GetFlatDistance(manager.helicopter.transform.position, worldPos);
+
+            if (d < closestDist)
+            {
+                closestDist = d;
+                closestPos = worldPos;
+            }
+        }
+        return closestPos;
+    }
+
+    private MissionTarget GetCurrentTarget(Mission currentMission)
+    {
+        if (currentMission.missionType == MissionType.Delivery)
+            return missionActive ? currentMission.endLocation : currentMission.startLocation;
+        if (currentMission.missionType == MissionType.SearchFind)
+            return (currentMission.searchTargets != null && currentMission.searchTargets.Count > 0) ? currentMission.searchTargets[currentTargetIndex] : null;
+        if (currentMission.missionType == MissionType.Scan)
+            return (currentMission.scanTargets != null && currentMission.scanTargets.Count > 0) ? currentMission.scanTargets[currentTargetIndex] : null;
+
+        return null;
+    }
+
+    private float GetFlatDistance(Vector3 a, Vector3 b)
+    {
+        return Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
+    }
+
+    private void ShowCurrentPopup(Action onConfirmCallback = null)
+    {
+        if (selectedMissionIndex == -1 || PopupManager.Instance == null) return;
+
+        Mission mission = missions[selectedMissionIndex];
+        if (mission.missionPopups == null || mission.missionPopups.Count == 0) return;
+
+        // Clamp popup index to valid range
+        int popupIndex = Mathf.Clamp(currentPopupIndex, 0, mission.missionPopups.Count - 1);
+        PopupContent popup = mission.missionPopups[popupIndex];
+
+        PopupManager.Instance.ShowPopup(
+            popup.title,
+            popup.description,
+            popup.icon,
+            popup.actionButtonText,
+            onConfirmCallback
+        );
     }
 
     public void ResetAllMissionsToStart()
     {
-        StopTransition();
-        PopupManager.Instance?.ClosePopup();
-        ClearCurrentMissionState();
+        // 1. Wipe all active tracking parameters completely
+        selectedMissionIndex = -1;
+        currentTargetIndex = 0;
+        currentPopupIndex = 0;
+        missionActive = false;
+        scanTimer = 0f;
+        isScanning = false;
+        wasInRange = false;
+        closestAvailableMissionIndex = -1;
 
         foreach (Mission mission in missions)
             mission.isCompleted = false;

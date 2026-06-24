@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -121,21 +121,76 @@ public class PopupManager : MonoBehaviour
     {
         yield return new WaitForSeconds(missionCompleteDelay);
 
-        if (stateController == null || stateController.missions == null) yield break;
-
-        int nextIndex = completedIndex + 1;
-        bool allMissionsCompleted = nextIndex >= stateController.missions.Count;
-
-        if (allMissionsCompleted)
+        // Show completion popup for the completed mission
+        if (stateController != null && completedIndex >= 0 && completedIndex < stateController.missions.Count)
         {
-            ShowPopup(
-                "🎉 ALLE MISSIES VOLTOOID!",
-                "Geweldig werk! Je hebt de EVIL AI verslagen en ASML beschermd!",
-                null,
-                "Afsluiten!"
-            );
+            var completedMission = stateController.missions[completedIndex];
+            if (completedMission.missionCompletionPopup != null)
+            {
+                ShowPopup(
+                    completedMission.missionCompletionPopup.title,
+                    completedMission.missionCompletionPopup.description,
+                    completedMission.missionCompletionPopup.icon,
+                    completedMission.missionCompletionPopup.actionButtonText,
+                    () => StartCoroutine(ShowNextMissionAfterDelay())
+                );
+                yield break;
+            }
+        }
 
-            yield break;
+        // Fallback if no completion popup defined
+        ShowNextMissionOrGameEnd();
+    }
+
+    private IEnumerator ShowNextMissionAfterDelay()
+    {
+        yield return new WaitForSeconds(missionCompleteDelay);
+        ShowNextMissionOrGameEnd();
+    }
+
+    private void ShowNextMissionOrGameEnd()
+    {
+        int nextIndex = -1;
+        if (stateController != null)
+        {
+            for (int i = 0; i < stateController.missions.Count; i++)
+            {
+                if (!stateController.missions[i].isCompleted) { nextIndex = i; break; }
+            }
+        }
+
+        if (nextIndex == -1)
+        {
+            ShowPopup("🎉 ALLE MISSIES VOLTOOID!",
+                      "Geweldig werk! Je hebt de EVIL AI verslagen en ASML beschermd!",
+                      null, "Afsluiten!");
+        }
+        else
+        {
+            var next = stateController.missions[nextIndex];
+            if (next.missionIntroPopup != null)
+            {
+                ShowPopup(
+                    next.missionIntroPopup.title,
+                    next.missionIntroPopup.description,
+                    next.missionIntroPopup.icon,
+                    next.missionIntroPopup.actionButtonText,
+                    () => stateController.StartMission(nextIndex)
+                );
+            }
+            else
+            {
+                var first = GetFirstTarget(next);
+                int captured = nextIndex;
+
+                ShowPopup(
+                    $"✅ Missie voltooid! Volgende: {next.missionName}",
+                    first != null ? first.description : next.missionName,
+                    first != null ? first.targetIcon : null,
+                    "Start volgende missie!",
+                    () => stateController.StartMission(captured)
+                );
+            }
         }
 
         MissionStateController.Mission nextMission = stateController.missions[nextIndex];
